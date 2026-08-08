@@ -1,0 +1,25 @@
+{
+  "schema": "durable-agent-harness/stats/v1",
+  "as_of": "2026-08-08",
+  "disclaimer": "Aggregates only. Exact private trees are not published.",
+  "metrics": [
+    {
+      "id": "skills",
+      "label": "Agent skills",
+      "value": "69",
+      "detail": "From 2 versioned skills at harness start to dozens of domain procedures."
+    },
+    {
+      "id": "patterns",
+      "label": "Signed patterns",
+      "value": "95",
+      "detail": "Cross-cutting ways of working with an explicit sign-off state."
+    },
+    {
+      "id": "rules",
+      "label": "Constraint rules",
+      "value": "53",
+      "detail": "Fail-closed memories agents can load — most requestable, few always-on."
+    }
+  ]
+}

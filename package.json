@@ -1,0 +1,16 @@
+{
+  "name": "durable-agent-harness",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Public lab note: building a durable harness around AI coding agents",
+  "scripts": {
+    "sync": "bash scripts/sync-content.sh",
+    "privacy": "bash scripts/privacy-check.sh",
+    "serve": "npx --yes serve docs -l 4173",
+    "test": "npm run privacy && npx playwright test",
+    "test:ui": "npx playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2"
+  }
+}

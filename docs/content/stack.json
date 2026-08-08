@@ -1,0 +1,42 @@
+{
+  "schema": "durable-agent-harness/stack/v1",
+  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, and human gates. The model is powerful; the harness is what makes it reliable.",
+  "layers": [
+    {
+      "id": "skills",
+      "title": "Skills",
+      "subtitle": "How to do a job",
+      "body": "Thin, named procedures the agent loads when a task matches — board bring-up, docs, PR hygiene, brand production. Detail lives on demand so every turn stays cheap."
+    },
+    {
+      "id": "rules",
+      "title": "Rules",
+      "subtitle": "What must never go wrong",
+      "body": "Fail-closed constraints: secrets stay out of chat, outbound messages need clear approval, scripts must not overwrite source with redirects. Few always-on; most requestable."
+    },
+    {
+      "id": "memory",
+      "title": "Memory",
+      "subtitle": "Curated, not a transcript dump",
+      "body": "Durable facts and decisions in a searchable store — people stances, project tickets, signed patterns — without pasting private inboxes into the public internet."
+    },
+    {
+      "id": "patterns",
+      "title": "Patterns",
+      "subtitle": "Kaizen with teeth",
+      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic review. The registry is the difference between lore and an operating system."
+    },
+    {
+      "id": "gates",
+      "title": "Human gates",
+      "subtitle": "Irreversible stays human",
+      "body": "Desktop decisions for forks that matter. Speed is not an excuse to skip consent on send, publish, or destructive ops."
+    },
+    {
+      "id": "lanes",
+      "title": "Parallel lanes",
+      "subtitle": "Team-shaped solo work",
+      "body": "Named agent lanes with clear ownership and handoffs. Useful for product loops; dangerous without kyosei (co-prosperity) on shared benches."
+    }
+  ]
+}

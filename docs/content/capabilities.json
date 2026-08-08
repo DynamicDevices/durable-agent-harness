@@ -1,0 +1,49 @@
+{
+  "schema": "durable-agent-harness/capabilities/v1",
+  "intro": "Productivity here is mostly scope: work that was uneconomic or impossible solo becomes routine — with proof and review still required.",
+  "scale": [
+    { "id": "solo-easy", "label": "Solo-easy" },
+    { "id": "solo-hard", "label": "Solo-hard" },
+    { "id": "team", "label": "Needed a team" },
+    { "id": "uneconomic", "label": "Uneconomic" },
+    { "id": "impossible", "label": "Not realistic" }
+  ],
+  "rows": [
+    {
+      "outcome": "Fast UI / tool prototype from a crisp brief",
+      "before": "uneconomic",
+      "now": "solo-easy",
+      "note": "Useful for demos; still needs an engineer’s taste for production."
+    },
+    {
+      "outcome": "Agentic work inside a real multi-repo codebase",
+      "before": "impossible",
+      "now": "solo-hard",
+      "note": "The IDE becomes a cockpit: read, patch, test, iterate."
+    },
+    {
+      "outcome": "Remote target investigation with a human in the loop",
+      "before": "team",
+      "now": "solo-hard",
+      "note": "Powerful and easy to over-trust — proof class matters more than chatter."
+    },
+    {
+      "outcome": "Parallel agents on one product loop",
+      "before": "impossible",
+      "now": "team",
+      "note": "Feels like a small squad for short bursts; review load stays on the human."
+    },
+    {
+      "outcome": "Durable agent behaviour across months",
+      "before": "impossible",
+      "now": "solo-hard",
+      "note": "Skills and signed patterns beat “we talked about this in a chat once”."
+    },
+    {
+      "outcome": "Same familiar ticket, wall-clock only",
+      "before": "solo-hard",
+      "now": "solo-hard",
+      "note": "We do not claim a universal speedup. Measurement is honest — see Measure."
+    }
+  ]
+}

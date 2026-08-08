@@ -1,0 +1,36 @@
+{
+  "schema": "durable-agent-harness/patterns/v1",
+  "intro": "A few patterns worth stealing. Names are conceptual; this is not a dump of a private registry.",
+  "patterns": [
+    {
+      "name": "Lean tool sessions",
+      "problem": "Optional integrations loaded every turn quietly burn context and expand blast radius.",
+      "move": "Keep a tiny always-on core. Enable specialty tools only for the task, then unload."
+    },
+    {
+      "name": "Fail-closed outbound",
+      "problem": "Agents are eager to “be helpful” by sending, posting, or publishing.",
+      "move": "Draft freely; irreversible outbound needs an explicit human gate with the full referent visible."
+    },
+    {
+      "name": "Secrets out of chat",
+      "problem": "Passwords pasted into transcripts leak into logs and backups.",
+      "move": "Capture secrets through a desktop dialog into a vault. Agents may confirm length — never echo the value."
+    },
+    {
+      "name": "Proof class over vibes",
+      "problem": "Generated confidence outruns hardware and integration reality.",
+      "move": "Define what counts as done (flash, serial, CI, screenshot). Do not celebrate a plan as a fix."
+    },
+    {
+      "name": "Kaizen with sign-off",
+      "problem": "Cross-cutting habits invent themselves differently in every chat.",
+      "move": "Propose a pattern, get a human sign-off, encode it, apply it, review it."
+    },
+    {
+      "name": "Felt ≠ measured",
+      "problem": "People feel faster with AI even when wall-clock says otherwise.",
+      "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC."
+    }
+  ]
+}

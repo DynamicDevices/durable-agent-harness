@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Durable Agent Harness — Dynamic Devices</title>
+    <meta
+      name="description"
+      content="A public lab note on building a durable harness around AI coding agents: skills, rules, memory, patterns, and honest measurement."
+    />
+    <meta name="theme-color" content="#0B1C2C" />
+    <link rel="icon" href="assets/symbol-box.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@700;800&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" data-testid="brand">
+        <img src="assets/symbol-box.svg" width="32" height="32" alt="" />
+        <span>Durable Agent Harness</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#clocks">Clocks</a>
+        <a href="#explore">Explore</a>
+        <a href="#measure">Measure</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top" data-testid="hero">
+      <div class="hero-inner">
+        <img
+          class="hero-mark"
+          src="assets/symbol-box.svg"
+          width="56"
+          height="56"
+          alt="Dynamic Devices mark"
+        />
+        <p class="hero-brand">Durable Agent Harness</p>
+        <h1>Make the model powerful. Make the system trustworthy.</h1>
+        <p class="hero-lead">
+          A public lab note from Dynamic Devices on the engineering journey of
+          working with AI agents — clocks, stack, capability, and measurement
+          honesty. No private life. No secrets dump.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#explore" data-testid="cta-explore">Explore the stack</a>
+          <a class="btn btn-ghost" href="https://github.com/DynamicDevices/durable-agent-harness">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <main id="main">
+      <section id="clocks" data-testid="section-clocks">
+        <p class="section-label">Tenure</p>
+        <h2>Three clocks that matter</h2>
+        <p class="section-lead">
+          Not “first heard of ChatGPT”. These clocks mark when hands-on AI work,
+          the agentic IDE, and a versioned harness each became real.
+        </p>
+        <div class="clock-grid" id="clock-grid" data-testid="clock-grid"></div>
+        <div class="stat-strip" id="stat-strip" data-testid="stat-strip" aria-live="polite"></div>
+      </section>
+
+      <section id="explore" data-testid="section-explore">
+        <p class="section-label">Explore</p>
+        <h2>One place to walk the journey</h2>
+        <p class="section-lead">
+          Pick a lens. Stay as long as you like. Everything here is written to
+          be safe on the public internet.
+        </p>
+        <div class="explore-shell">
+          <div class="explore-tabs" role="tablist" aria-label="Explore lenses" data-testid="explore-tabs">
+            <button type="button" role="tab" id="tab-timeline" aria-controls="panel-timeline" aria-selected="true" data-panel="timeline">Timeline</button>
+            <button type="button" role="tab" id="tab-stack" aria-controls="panel-stack" aria-selected="false" data-panel="stack">Stack</button>
+            <button type="button" role="tab" id="tab-capability" aria-controls="panel-capability" aria-selected="false" data-panel="capability">Capability</button>
+            <button type="button" role="tab" id="tab-patterns" aria-controls="panel-patterns" aria-selected="false" data-panel="patterns">Patterns</button>
+            <button type="button" role="tab" id="tab-literature" aria-controls="panel-literature" aria-selected="false" data-panel="literature">Research</button>
+          </div>
+          <div class="explore-panels">
+            <div class="panel active" role="tabpanel" id="panel-timeline" aria-labelledby="tab-timeline" data-testid="panel-timeline"></div>
+            <div class="panel" role="tabpanel" id="panel-stack" aria-labelledby="tab-stack" hidden data-testid="panel-stack"></div>
+            <div class="panel" role="tabpanel" id="panel-capability" aria-labelledby="tab-capability" hidden data-testid="panel-capability"></div>
+            <div class="panel" role="tabpanel" id="panel-patterns" aria-labelledby="tab-patterns" hidden data-testid="panel-patterns"></div>
+            <div class="panel" role="tabpanel" id="panel-literature" aria-labelledby="tab-literature" hidden data-testid="panel-literature"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="measure" data-testid="section-measure">
+        <p class="section-label">Measure</p>
+        <h2>Felt speed is not a metric</h2>
+        <p class="section-lead">
+          We track tenure and capability. We refuse a marketing “N× more
+          productive” number without a method.
+        </p>
+        <div class="measure-grid">
+          <div class="measure-box">
+            <h3>What we count</h3>
+            <ul>
+              <li>Calendar tenure on the three clocks</li>
+              <li>Harness growth (skills / patterns) as investment</li>
+              <li>Outcomes that moved from impossible or uneconomic to routine</li>
+              <li>Proof-backed delivery — not lines of code</li>
+            </ul>
+          </div>
+          <div class="measure-box caution">
+            <h3>What we will not claim</h3>
+            <ul>
+              <li>A universal speedup versus every developer class</li>
+              <li>That agentic IDEs always win on familiar tickets (see METR 2025)</li>
+              <li>That more generated text equals more engineering</li>
+              <li>Anything that requires exposing private work to “prove” it</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="privacy-box" data-testid="section-privacy">
+        <p class="section-label">Publication bar</p>
+        <h2>Public means redacted</h2>
+        <p>
+          This site is generated from a privacy-safe content pack. Private
+          chats, family details, credentials, lab addresses, and competitive
+          product plans stay out — on purpose. Read
+          <a href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/PRIVACY.md">PRIVACY.md</a>
+          and run <code>npm run privacy</code> before publishing changes.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <div>
+          Published by
+          <a href="https://www.dynamicdevices.co.uk/">Dynamic Devices</a>
+          · Connected intelligence, engineered.
+        </div>
+        <div>
+          <a href="https://github.com/DynamicDevices/durable-agent-harness">GitHub</a>
+          ·
+          <a href="#privacy">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

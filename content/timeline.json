@@ -1,0 +1,49 @@
+{
+  "schema": "durable-agent-harness/timeline/v1",
+  "events": [
+    {
+      "date": "2025-06",
+      "title": "Hands-on LLMs on real work",
+      "body": "Moved from curiosity and bid-awareness into daily use: drafting, scaffolding, and iterating with frontier models on engineering problems."
+    },
+    {
+      "date": "2025-06",
+      "title": "Public vibe-coding demo",
+      "body": "Shipped a small public visualiser repo as a concrete “agents can build UI fast” proof — useful, imperfect, instructive.",
+      "link": {
+        "label": "inst-visualiser (public)",
+        "href": "https://github.com/DynamicDevices/inst-visualiser"
+      }
+    },
+    {
+      "date": "2025-07",
+      "title": "Cursor as the cockpit",
+      "body": "Standardised on an agentic IDE: the model can read the tree, run commands, and stay in a proof loop instead of endless copy-paste."
+    },
+    {
+      "date": "2025-08",
+      "title": "Agents meet hardware",
+      "body": "Connected the cockpit to real repositories and remote development targets — with a human still holding the reins when the model drifts."
+    },
+    {
+      "date": "2026-05",
+      "title": "Harness becomes durable",
+      "body": "Skills and rules stopped living only in chat memory. They became versioned artefacts you can restore, review, and improve."
+    },
+    {
+      "date": "2026-06",
+      "title": "Domain skills compound",
+      "body": "Embedded bring-up, lab workflows, and voice/comms skills accumulated — each one encoding a failure we refused to repeat."
+    },
+    {
+      "date": "2026-07",
+      "title": "Patterns & parallel lanes",
+      "body": "Cross-cutting working patterns were signed off deliberately. Multi-agent lanes became a way to run team-shaped work without losing accountability."
+    },
+    {
+      "date": "2026-08",
+      "title": "This lab note",
+      "body": "Published a privacy-safe public map of the journey: clocks, stack, capability view, and measurement honesty."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "durable-agent-harness/clocks/v1",
+  "as_of": "2026-08-08",
+  "note": "Public tenure clocks for the engineering narrative. Starts are intentional; they are not a claim about first-ever LLM curiosity.",
+  "clocks": [
+    {
+      "id": "serious_ai",
+      "label": "Serious hands-on AI",
+      "start": "2025-06-06",
+      "blurb": "Personal LLM use on real engineering work — not “heard of ChatGPT”, but shipping with it."
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor",
+      "start": "2025-07-23",
+      "blurb": "Agentic IDE work as the daily cockpit: repos, tools, and proof loops in one place."
+    },
+    {
+      "id": "harness",
+      "label": "Durable harness",
+      "start": "2026-05-31",
+      "blurb": "Versioned skills, rules, and signed working patterns — the operating system around the model."
+    }
+  ]
+}
