@@ -2,7 +2,7 @@
 
 **Public engineering notebook** from [Active-ESL](https://www.active-esl.com/) on building a *durable working relationship* with AI coding agents. Published with [Dynamic Devices](https://www.dynamicdevices.co.uk/).
 
-🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
+🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
