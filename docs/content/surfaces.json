@@ -59,9 +59,9 @@
     },
     {
       "id": "secrets",
-      "title": "Secrets dialog",
-      "body": "Desktop capture into a vault; agents confirm success or length — never echo the secret.",
-      "lesson": "Chat is not a vault."
+      "title": "Secrets dialog → Bitwarden",
+      "body": "Desktop capture into Bitwarden — Password Manager for human logins, Bitwarden Secrets Manager for agent/API tokens — so captured values never enter the AI conversation.",
+      "lesson": "Chat is not a vault. Bitwarden is."
     },
     {
       "id": "pages_ci",

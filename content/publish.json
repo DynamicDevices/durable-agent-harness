@@ -23,9 +23,9 @@
     },
     {
       "id": "secrets",
-      "title": "Secrets via desktop dialog",
-      "body": "Capture secrets through a desktop dialog into a vault. Agents may confirm length or success — never echo the value into chat, logs, or commits.",
-      "lesson": "Chat is not a vault."
+      "title": "Secrets via Bitwarden",
+      "body": "Capture secrets through a desktop dialog into Bitwarden — not into Composer. Password Manager holds human credentials; Bitwarden Secrets Manager holds machine tokens agents may resolve. Confirm length or success — never echo the value into chat, logs, or commits.",
+      "lesson": "Isolate tokens from the AI conversation. Chat is not a vault."
     },
     {
       "id": "pages_ci",

@@ -55,6 +55,14 @@
       "def": "A GitHub commit status (context `preloop`) posted by a Preloop Cloud pull-request reviewer after it looks at a PR SHA. CI can optionally wait on that status before burning self-hosted runners. Separate plane from Preloop’s desktop MCP firewall in Cursor."
     },
     {
+      "term": "Bitwarden Password Manager",
+      "def": "Human credential vault. Logins and passwords live here — captured via desktop dialog, never pasted into the AI chat."
+    },
+    {
+      "term": "Bitwarden Secrets Manager",
+      "def": "Machine-secret plane for API tokens and agent-resolvable keys. Isolates captured tokens from the conversation and from the human Password Manager vault."
+    },
+    {
       "term": "Human gate",
       "def": "An explicit approval step before irreversible action (send, publish, destroy, spend). The referent must be visible."
     },
@@ -139,6 +147,10 @@
     {
       "q": "How do you keep tokens under control?",
       "a": "Thin skill dispatchers, requestable-by-default rules, enable/unload specialty tools, split parallel lanes, and measure the always-on tax when sessions feel heavy."
+    },
+    {
+      "q": "Where do API keys and passwords go?",
+      "a": "Not into chat. Desktop capture into Bitwarden — Password Manager for human logins, Bitwarden Secrets Manager for machine/agent secrets — so values never enter the model context or transcript."
     },
     {
       "q": "How often is this notebook updated?",

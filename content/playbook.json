@@ -19,8 +19,8 @@
     {
       "id": "2",
       "title": "Write three fail-closed rules",
-      "body": "Start with: (1) secrets never pasted into chat, (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects. Keep them short.",
-      "done": "Three rules in version control; agents actually obey them."
+      "body": "Start with: (1) secrets never pasted into chat — capture via desktop dialog into Bitwarden (Password Manager for humans; Bitwarden Secrets Manager for agent tokens), (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects. Keep them short.",
+      "done": "Three rules in version control; agents actually obey them; tokens stay out of the conversation."
     },
     {
       "id": "3",

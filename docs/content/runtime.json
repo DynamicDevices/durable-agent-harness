@@ -26,7 +26,7 @@
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
       "Use provider failover for uptime; use explicit model fallback lists when you accept a different model answering.",
-      "Keep API keys in a vault — never in chat or skills.",
+      "Keep API keys in Bitwarden Secrets Manager — never in chat or skills.",
       "Measure comfort vs cost: routing flexibility is not an excuse to skip proof class."
     ],
     "not": [
@@ -58,7 +58,7 @@
     ],
     "practices": [
       "Treat the Preloop status as a review signal, not as merge authority — humans still merge.",
-      "Keep OpenRouter keys in the vault that Preloop Cloud uses; never in workflow YAML or chat.",
+      "Keep OpenRouter keys in Bitwarden Secrets Manager (or the vault Preloop Cloud uses); never in workflow YAML or chat.",
       "Prefer async review by default; make CI wait only when runner time is scarce or the failure mode is expensive.",
       "When the gate is on, fix or skip with an explicit, rare bypass — do not normalise “ignore Preloop”.",
       "Keep Cursor’s Preloop MCP firewall (desktop tool audit) and the GitHub PR-reviewer flow mentally separate — same vendor, different planes."

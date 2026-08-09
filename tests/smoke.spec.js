@@ -125,6 +125,8 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
     await expect(page.getByTestId("panel-patterns")).toContainText("Preloop before expensive CI");
     await expect(page.getByTestId("panel-patterns")).toContainText("Notebook updates at EOW");
+    await expect(page.getByTestId("panel-patterns")).toContainText("Bitwarden");
+    await expect(page.getByTestId("panel-stack")).toContainText("Bitwarden");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
@@ -132,6 +134,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");
     await expect(page.getByTestId("panel-glossary")).toContainText("OpenRouter");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop commit status");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Bitwarden Secrets Manager");
     await expect(page.getByTestId("panel-glossary")).toContainText("Briar");
     await expect(page.getByTestId("panel-glossary")).toContainText("Token lean");
     await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");

@@ -25,6 +25,17 @@
       ]
     },
     {
+      "id": "vault",
+      "title": "Secrets vault (Bitwarden)",
+      "subtitle": "Two planes — humans vs agents",
+      "body": "Captured passwords and API tokens must never enter the AI conversation. We use Bitwarden Password Manager for human logins and Bitwarden Secrets Manager for machine secrets agents resolve — filled through desktop dialogs, not chat paste.",
+      "tips": [
+        "Desktop capture → vault; agent confirms length only",
+        "Password Manager ≠ Secrets Manager — keep the planes separate",
+        "Never put vault tokens or secret values in skills, git, or chat"
+      ]
+    },
+    {
       "id": "memory",
       "title": "Memory (MemPalace)",
       "subtitle": "Curated palace, not a transcript dump",
