@@ -1,6 +1,6 @@
 # Durable Agent Harness
 
-**Public engineering notebook** by [Alex Lennon](https://chopwoodcarrywater.uk/) under the **Chop Wood Carry Water** brand — building a *durable working relationship* with AI coding agents.
+**Public engineering notebook** by [Alex Lennon](https://chopwoodcarrywater.uk/) ([@embedded_iot](https://x.com/embedded_iot)) under the **Chop Wood Carry Water** brand — building a *durable working relationship* with AI coding agents.
 
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
