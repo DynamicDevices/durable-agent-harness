@@ -35,8 +35,8 @@
       "def": "Honest reflection after work or on a cadence: what worked, what failed, keep / amend / retire. Feeds the next Kaizen."
     },
     {
-      "term": "TWP",
-      "def": "Toyota Way Practices — umbrella name for the lean learning cluster (Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people). Map to the member practice that matches the pain."
+      "term": "Toyota Way Practices",
+      "def": "Umbrella name for the lean learning cluster (Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people). Map to the member practice that matches the pain."
     },
     {
       "term": "Gemba",
@@ -117,8 +117,8 @@
       "a": "Skills/rules are procedures and constraints. MemPalace holds durable facts the loop needs (decisions, stances, tickets). Both compound; neither replaces the other."
     },
     {
-      "q": "What is Kaizen → Hansei → TWP?",
-      "a": "Kaizen improves and encodes; Hansei reviews honestly; TWP names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
+      "q": "What is Kaizen → Hansei → Toyota Way Practices?",
+      "a": "Kaizen improves and encodes; Hansei reviews honestly; Toyota Way Practices names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
     },
     {
       "q": "Does Preloop replace human approval?",

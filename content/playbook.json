@@ -42,9 +42,9 @@
     },
     {
       "id": "6",
-      "title": "Start Kaizen → Hansei (patterns + TWP)",
-      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say TWP) so agents load the right member practice.",
-      "done": "At least one signed-off pattern, one Hansei note, and a clear TWP/member map."
+      "title": "Start Kaizen → Hansei (patterns + Toyota Way Practices)",
+      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say Toyota Way Practices) so agents load the right member practice.",
+      "done": "At least one signed-off pattern, one Hansei note, and a clear Toyota Way Practices / member map."
     },
     {
       "id": "7",
