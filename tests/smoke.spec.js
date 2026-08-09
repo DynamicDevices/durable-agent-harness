@@ -93,7 +93,7 @@ test.describe("Durable Agent Harness site", () => {
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
-      "https://dynamicdevices.github.io/durable-agent-harness/",
+      "https://chopwoodcarrywater.uk/",
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
