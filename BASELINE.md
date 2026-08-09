@@ -24,6 +24,7 @@ Locked shape:
 ## What “locked” means
 
 - **Do not** casually rewrite the public IA, brand, or hero finish line mid-week.
+- **Do** capture mid-week sparks in [`blog-inbox.md`](blog-inbox.md); promote (or skip) in the **EOW** pass when the week earned it.
 - **Do** improve copy, pack contents, patterns, and blog notes in the **EOW** pass when the week earned it.
 - **Do** cut `v1.1.0` (or later) when the shape itself changes (new primary CTA path, rebrand, pack format break).
 - Privacy denylist + `npm test` remain the publish gate.

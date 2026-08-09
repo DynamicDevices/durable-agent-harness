@@ -25,7 +25,7 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
 | **Cases** | Before/after outcomes that show the harness at work |
 | **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
-| **Blog** | Short first-person notes from the work |
+| **Blog** | What broke / locked / earned a place on disk — sparks in [`blog-inbox.md`](blog-inbox.md), published at EOW |
 | **About** | Notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
 
 ## Local check

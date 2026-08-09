@@ -59,11 +59,11 @@
     {
       "name": "Notebook updates at EOW",
       "problem": "Public notebooks either rot or get spammy daily posts that teach nothing.",
-      "move": "Update chopwoodcarrywater.uk during end-of-week review — not daily. Ship a real note or pack/pattern tweak when the week earned it; skip the week rather than invent filler.",
+      "move": "Capture sparks mid-week in blog-inbox.md. At EOW, promote zero-or-more into the blog (and/or pack/pattern tweaks) — or skip. No filler calendar.",
       "signals": [
         "Stale pack while practice moved on",
         "Blog calendar filling empty weeks",
-        "Midweek drive-by site edits with no review"
+        "Good lessons died in chat because nothing was filed"
       ]
     },
     {
