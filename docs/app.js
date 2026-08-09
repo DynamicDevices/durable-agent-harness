@@ -76,6 +76,46 @@ function renderStats(data) {
   if (note) note.textContent = data.growthNote || data.disclaimer || "";
 }
 
+function renderRuntime(data) {
+  document.querySelector("#runtime-intro").textContent = data.intro;
+  document.querySelector("#runtime-stance").textContent = data.stance;
+  document.querySelector("#runtime-together").textContent = data.together;
+
+  function block(key, obj) {
+    return el("article", { className: "case-card", "data-runtime": key }, [
+      el("div", { className: "label", text: key === "preloop" ? "Policy / audit" : "Model routing" }),
+      el("h3", { text: obj.title }),
+      el("p", { text: obj.lede }),
+      el("p", {}, [
+        el("a", {
+          className: "text-link",
+          href: obj.docs,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: "Docs",
+        }),
+      ]),
+      el("h4", { className: "minihead", text: "Do" }),
+      el(
+        "ul",
+        { className: "tip-list" },
+        obj.practices.map((p) => el("li", { text: p })),
+      ),
+      el("h4", { className: "minihead", text: "Not" }),
+      el(
+        "ul",
+        { className: "tip-list" },
+        obj.not.map((p) => el("li", { text: p })),
+      ),
+    ]);
+  }
+
+  document.querySelector("#runtime-cols").replaceChildren(
+    block("preloop", data.preloop),
+    block("openrouter", data.openrouter),
+  );
+}
+
 function renderLearning(data) {
   document.querySelector("#learning-intro").textContent = data.intro;
   document.querySelector("#learning-loop-line").textContent = data.loopOneLiner;
@@ -398,6 +438,7 @@ async function main() {
     stats,
     playbook,
     learning,
+    runtime,
     timeline,
     stack,
     capabilities,
@@ -412,6 +453,7 @@ async function main() {
     loadJSON("stats.json"),
     loadJSON("playbook.json"),
     loadJSON("learning.json"),
+    loadJSON("runtime.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
@@ -427,6 +469,7 @@ async function main() {
   renderStats(stats);
   renderPlaybook(playbook);
   renderLearning(learning);
+  renderRuntime(runtime);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);

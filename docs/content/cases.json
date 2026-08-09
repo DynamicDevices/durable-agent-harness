@@ -55,6 +55,15 @@
       "after": "Assistants draft freely; irreversible outbound requires a human gate with the full referent visible.",
       "harness": ["Fail-closed outbound", "Secrets out of chat", "Least-privilege tool enablement"],
       "lesson": "Publish the idea of gates — not the private channels."
+    },
+    {
+      "id": "runtime-routing",
+      "title": "Runtime policy + model routing",
+      "domain": "Platform",
+      "before": "Tool use unaudited beyond chat discipline; single-upstream model lock-in.",
+      "after": "Preloop layered under P0 for tool audit/policy; OpenRouter for multi-model routing with vaulted keys.",
+      "harness": ["Preloop under P0", "OpenRouter failover", "Keys never in chat/git"],
+      "lesson": "Runtime and routing support the harness — they do not replace human consent or proof class."
     }
   ]
 }

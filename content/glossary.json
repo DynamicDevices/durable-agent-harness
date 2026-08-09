@@ -43,6 +43,14 @@
       "def": "Go see the real work. Start improvements from evidence in the session, not from slogans."
     },
     {
+      "term": "Preloop",
+      "def": "A runtime policy and audit plane for agent tool use. Layer under human P0 gates — do not replace send/secrets/irreversible consent. Docs: docs.preloop.ai"
+    },
+    {
+      "term": "OpenRouter",
+      "def": "A multi-model API router across providers, with provider failover and optional model fallbacks. Transport for model calls — not a substitute for skills, rules, or proof class."
+    },
+    {
       "term": "Human gate",
       "def": "An explicit approval step before irreversible action (send, publish, destroy, spend). The referent must be visible."
     },
@@ -91,6 +99,14 @@
     {
       "q": "What is Kaizen → Hansei → TWP?",
       "a": "Kaizen improves and encodes; Hansei reviews honestly; TWP names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
+    },
+    {
+      "q": "Does Preloop replace human approval?",
+      "a": "No. Layer it under P0 gates. Humans still own irreversible outbound and secrets. Preloop adds audit/policy on tool runtime."
+    },
+    {
+      "q": "Why OpenRouter?",
+      "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies."
     }
   ]
 }

@@ -51,6 +51,18 @@
       "signals": ["Re-litigating settled decisions", "Duplicate contradictory notes"]
     },
     {
+      "name": "Preloop under P0",
+      "problem": "Teams either skip runtime audit or try to replace human consent with a firewall.",
+      "move": "Layer Preloop for tool policy/audit under send/secrets/irreversible gates. Never publish tokens or local enrollment config.",
+      "signals": ["Policy UI without send-gates", "Secrets in Preloop config pasted to chat"]
+    },
+    {
+      "name": "Route models on purpose",
+      "problem": "Single-upstream outages or lock-in stall the cockpit; random model hopping breaks proof expectations.",
+      "move": "Use OpenRouter (or similar) with deliberate model lists and provider failover. Keep keys vaulted; keep proof class fixed.",
+      "signals": ["One provider outage blocks all work", "Silent model swaps on critical reviews"]
+    },
+    {
       "name": "Felt ≠ measured",
       "problem": "People feel faster with AI even when wall-clock says otherwise.",
       "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC.",

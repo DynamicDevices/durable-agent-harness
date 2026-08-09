@@ -70,6 +70,24 @@
       "date": "2026-08",
       "title": "Public lab notebook",
       "body": "Published this privacy-safe map: clocks, stack, playbook, starters, capability view, and measurement honesty."
+    },
+    {
+      "date": "2026-08",
+      "title": "Preloop under P0 gates",
+      "body": "Started layering Preloop as a durable runtime policy/audit plane on tool use — under existing human gates, not instead of them.",
+      "link": {
+        "label": "Preloop docs",
+        "href": "https://docs.preloop.ai"
+      }
+    },
+    {
+      "date": "2026-08",
+      "title": "OpenRouter for model routing",
+      "body": "Started using OpenRouter for multi-model access: provider failover and optional model fallbacks, with keys vaulted and proof class unchanged.",
+      "link": {
+        "label": "OpenRouter docs",
+        "href": "https://openrouter.ai/docs"
+      }
     }
   ]
 }

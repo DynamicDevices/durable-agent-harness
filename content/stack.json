@@ -52,11 +52,23 @@
       "id": "gates",
       "title": "Human gates",
       "subtitle": "Irreversible stays human",
-      "body": "Desktop decisions for forks that matter. The referent (draft, command, path) must be visible in the ask — not implied by chat order.",
+      "body": "Desktop decisions for forks that matter. The referent (draft, command, path) must be visible in the ask — not implied by chat order. Runtime policy (Preloop) layers under these gates — it does not replace them.",
       "tips": [
         "One gate for irreversible outbound — not soft nag stacks",
         "Name who acts: human vs agent",
-        "Danger chrome for destructive arms"
+        "Danger chrome for destructive arms",
+        "Layer Preloop audit under P0; never swap consent for a firewall alone"
+      ]
+    },
+    {
+      "id": "runtime",
+      "title": "Runtime + routing",
+      "subtitle": "Preloop · OpenRouter",
+      "body": "Preloop adds a durable policy/audit plane on tool use. OpenRouter adds multi-model routing with provider failover and optional model fallbacks. Both serve the harness; neither is the harness.",
+      "tips": [
+        "Keep keys in a vault",
+        "Document methods, not enrollment secrets",
+        "Route models deliberately; still require proof class"
       ]
     },
     {

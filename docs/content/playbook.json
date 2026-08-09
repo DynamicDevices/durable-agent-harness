@@ -57,6 +57,18 @@
       "title": "Measure scope, not vibes",
       "body": "Freeze start dates for your practice. Keep a capability map of outcomes that became possible. Resist inventing multipliers for slides.",
       "done": "You can explain progress without a fake “2×” claim."
+    },
+    {
+      "id": "9",
+      "title": "Layer runtime policy (Preloop)",
+      "body": "Add a durable runtime audit/policy plane under your human P0 gates. Do not replace send/secrets consent with a firewall. Keep enrollment tokens out of git and chat.",
+      "done": "Tool use is auditable; irreversible actions still need a human gate with a visible referent."
+    },
+    {
+      "id": "10",
+      "title": "Add multi-model routing (OpenRouter)",
+      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit. Configure failover deliberately; vault the API key; keep proof class unchanged.",
+      "done": "You can switch or fall back across models/providers without pasting keys into chat."
     }
   ],
   "antiPatterns": [
