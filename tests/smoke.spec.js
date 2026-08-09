@@ -7,6 +7,12 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("brand")).toBeVisible();
     await expect(page.getByTestId("hero")).toContainText("Chop Wood Carry Water");
     await expect(page.getByTestId("hero")).toContainText("Durable Agent Harness");
+    await expect(page.getByTestId("hero-byline")).toContainText("Brought to you by Alex Lennon");
+    await expect(page.getByTestId("hero-byline")).toContainText("@embedded_iot");
+    await expect(page.getByTestId("hero-byline").locator("a.hero-handle")).toHaveAttribute(
+      "href",
+      "https://x.com/embedded_iot",
+    );
     const brand = page.locator(".hero-brand");
     const brandSize = await brand.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     const h1Size = await page.locator(".hero h1").evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
@@ -107,6 +113,7 @@ test.describe("Durable Agent Harness site", () => {
   test("about section is present", async ({ page }) => {
     await page.goto("/#privacy");
     await expect(page.getByTestId("section-privacy")).toContainText("Alex Lennon");
+    await expect(page.getByTestId("section-privacy")).toContainText("@embedded_iot");
     await expect(page.getByTestId("section-privacy")).not.toContainText("Active-ESL");
   });
 
@@ -151,6 +158,7 @@ test.describe("Durable Agent Harness site", () => {
     expect(ld).toContain("TechArticle");
     expect(ld).toContain("Chop Wood Carry Water");
     expect(ld).toContain("Alex Lennon");
+    expect(ld).toContain("embedded_iot");
     expect(ld).not.toContain("Active-ESL");
   });
 });
