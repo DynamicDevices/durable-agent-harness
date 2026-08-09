@@ -1,0 +1,25 @@
+{
+  "name": "Durable Agent Harness",
+  "short_name": "Agent Harness",
+  "description": "Public engineering notebook on building a durable harness around AI coding agents — playbook, starters, patterns, and honest measurement.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0B1C2C",
+  "theme_color": "#0B1C2C",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "assets/symbol-box.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/og-cover.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

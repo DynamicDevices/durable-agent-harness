@@ -62,4 +62,29 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#privacy");
     await expect(page.getByTestId("section-privacy")).toContainText("Public means redacted");
   });
+
+  test("SEO metadata and social cards are present", async ({ page }) => {
+    await page.goto("/");
+    await expect(page).toHaveTitle(/Durable Agent Harness/);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      "content",
+      /durable AI agent harness/i,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://dynamicdevices.github.io/durable-agent-harness/",
+    );
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      /assets\/og-cover\.png$/,
+    );
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+      "content",
+      "summary_large_image",
+    );
+    const ld = await page.locator('script[type="application/ld+json"]').textContent();
+    expect(ld).toContain("TechArticle");
+    expect(ld).toContain("Dynamic Devices Ltd");
+  });
 });
+

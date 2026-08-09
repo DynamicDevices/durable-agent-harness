@@ -5,6 +5,10 @@
 🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
+**Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
+
+Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Organization`), `robots.txt`, and `sitemap.xml`.
+
 ## What’s inside
 
 | Area | What you get |
