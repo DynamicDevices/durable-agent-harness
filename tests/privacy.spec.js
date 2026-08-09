@@ -2,11 +2,14 @@ const { test, expect } = require("@playwright/test");
 const fs = require("fs");
 const path = require("path");
 
-const DENY = path.join(__dirname, "..", "content", "denylist.txt");
+const DEFAULT_DENY =
+  process.env.DENYLIST_FILE ||
+  "/home/ajlennon/data_drive/dd/personal/ai-tenure/public-site-denylist.txt";
 
 function loadRules() {
+  if (!fs.existsSync(DEFAULT_DENY)) return [];
   return fs
-    .readFileSync(DENY, "utf8")
+    .readFileSync(DEFAULT_DENY, "utf8")
     .split(/\r?\n/)
     .map((l) => l.trim())
     .filter((l) => l && !l.startsWith("#"))
@@ -25,7 +28,17 @@ test("rendered page text contains no denylisted personal/ops material", async ({
   const html = (await page.content()).toLowerCase();
   const blob = `${text}\n${html}`;
 
-  for (const rule of loadRules()) {
+  // Generic gates always.
+  expect(blob).not.toMatch(/\b447\d{9}\b/);
+  expect(blob).not.toMatch(/\b192\.168\.\d+\.\d+\b/);
+
+  const rules = loadRules();
+  test.info().annotations.push({
+    type: "denylist",
+    description: rules.length ? `private denylist (${rules.length} rules)` : "generic only",
+  });
+
+  for (const rule of rules) {
     if (rule.kind === "plain") {
       expect(blob, `denylist plain hit: ${rule.pattern}`).not.toContain(rule.pattern.toLowerCase());
     } else if (rule.kind === "re") {

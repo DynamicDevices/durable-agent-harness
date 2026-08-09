@@ -25,7 +25,11 @@ This repository is **public on purpose**. It describes *methods* for working wit
 npm test
 ```
 
-`npm test` syncs content, runs the denylist privacy gate, then Playwright UX checks.
+`npm test` syncs content, runs the privacy gate, then Playwright UX checks.
+
+The full denylist is **not stored in this public repo** (that would publish the
+sensitive strings). Maintainers keep it in a private local path and can point
+`DENYLIST_FILE` at it. CI still applies generic token/IP/phone gates.
 
 ## Controllers / contact
 

@@ -19,3 +19,5 @@ jobs:
       - run: npm test
         env:
           CI: true
+          # Full private denylist is local-only; CI uses generic gates.
+          DENYLIST_FILE: ""
