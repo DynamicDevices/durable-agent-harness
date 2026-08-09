@@ -5,6 +5,10 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true", { timeout: 20000 });
     await expect(page.getByTestId("brand")).toBeVisible();
+    const mark = page.locator(".brand img");
+    await expect(mark).toHaveAttribute("src", /chopwood-mark\.png$/);
+    await expect(mark).toHaveJSProperty("naturalWidth", await mark.evaluate((el) => el.naturalWidth));
+    expect(await mark.evaluate((el) => el.naturalWidth)).toBeGreaterThan(0);
     await expect(page.getByTestId("hero")).toContainText("Chop Wood Carry Water");
     await expect(page.getByTestId("hero")).toContainText("Durable Agent Harness");
     await expect(page.getByTestId("hero-byline")).toContainText("Brought to you by Alex Lennon");
