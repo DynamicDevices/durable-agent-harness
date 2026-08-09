@@ -8,6 +8,12 @@
   "theme_color": "#0B1210",
   "icons": [
     {
+      "src": "assets/chopwood-mark.png",
+      "sizes": "176x140",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "assets/chopwood-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
@@ -16,7 +22,7 @@
     {
       "src": "assets/og-cover.jpg",
       "sizes": "1200x630",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     }
   ]
