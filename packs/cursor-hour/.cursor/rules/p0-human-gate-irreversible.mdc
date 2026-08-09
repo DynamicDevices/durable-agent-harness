@@ -1,11 +1,15 @@
 ---
 description: >-
-  P0 — Do not send email, post publicly, merge trust-plane policy, or destroy
-  data without an explicit human approval that shows the referent.
+  Priority 0 (P0) — fail-closed, always-on. Do not send email, post publicly,
+  merge trust-plane policy, or destroy data without an explicit human approval
+  that shows the referent.
 alwaysApply: true
 ---
 
-# Human gate for irreversible actions
+# Human gate for irreversible actions (P0)
+
+**P0** = Priority 0: this rule is always loaded and fail-closed. The “gate” is
+the human’s explicit go-ahead for *that* action.
 
 Agents may **draft** freely. Agents must **not** send, publish, or destroy
 without a visible human approval for *that* action.

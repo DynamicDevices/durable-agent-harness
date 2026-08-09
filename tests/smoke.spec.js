@@ -57,6 +57,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-hour")).toContainText("Start in 60 minutes");
     await expect(page.getByTestId("hour-steps").locator(".step-card")).toHaveCount(8);
+    await expect(page.getByTestId("section-hour")).toContainText("Priority 0 (P0)");
     await expect(page.getByTestId("hour-done")).toContainText("Done when");
     const download = page.getByTestId("hour-download");
     await expect(download).toHaveAttribute("href", /cursor-hour-starter\.zip$/);
@@ -129,6 +130,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-stack")).toContainText("Bitwarden");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
+    await expect(page.getByTestId("panel-glossary")).toContainText("P0 (Priority 0)");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
     await expect(page.getByTestId("panel-glossary")).toContainText("Toyota Way Practices");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");
@@ -137,6 +139,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-glossary")).toContainText("Bitwarden Secrets Manager");
     await expect(page.getByTestId("panel-glossary")).toContainText("Briar");
     await expect(page.getByTestId("panel-glossary")).toContainText("Token lean");
+    await expect(page.getByTestId("panel-glossary")).toContainText("What does P0 mean?");
     await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");
     await page.getByRole("tab", { name: "Research" }).click();
     await expect(page.getByTestId("panel-literature")).toContainText("METR");
