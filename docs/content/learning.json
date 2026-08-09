@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/learning/v1",
-  "title": "Kaizen → Hansei → TWP",
-  "intro": "Tools alone aren’t the harness. We improve on purpose (Kaizen), reflect on what actually happened (Hansei), and keep a named practice cluster (Toyota Way Practices / TWP) so agents load the right lens for the live pain — not the whole philosophy every turn.",
+  "title": "Kaizen → Hansei → Toyota Way Practices",
+  "intro": "Tools alone aren’t the harness. We improve on purpose (Kaizen), reflect on what actually happened (Hansei), and keep a named practice cluster (Toyota Way Practices) so agents load the right lens for the live pain — not the whole philosophy every turn.",
   "flow": [
     {
       "id": "gemba",
@@ -29,9 +29,9 @@
     },
     {
       "id": "twp",
-      "name": "TWP",
-      "gloss": "Toyota Way Practices",
-      "body": "Umbrella name for the lean learning cluster. When someone says TWP, map to the member practice that matches the pain — do not dump the whole philosophy every turn."
+      "name": "Toyota Way Practices",
+      "gloss": "Named lean practice cluster",
+      "body": "Umbrella name for the lean learning cluster. When someone says Toyota Way Practices, map to the member practice that matches the pain — do not dump the whole philosophy every turn."
     }
   ],
   "twpMembers": [
@@ -75,5 +75,5 @@
       "Not automatic immortality for every token the model ever saw."
     ]
   },
-  "loopOneLiner": "Gemba → Kaizen (sign-off + encode) → Apply → Hansei → (repeat), under the TWP umbrella — with MemPalace holding the durable facts the loop needs."
+  "loopOneLiner": "Gemba → Kaizen (sign-off + encode) → Apply → Hansei → (repeat), under the Toyota Way Practices umbrella — with MemPalace holding the durable facts the loop needs."
 }

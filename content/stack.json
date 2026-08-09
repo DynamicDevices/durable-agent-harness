@@ -39,12 +39,12 @@
     {
       "id": "patterns",
       "title": "Patterns",
-      "subtitle": "Kaizen → Hansei → TWP",
-      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices (TWP); patterns are the registry that makes Kaizen real.",
+      "subtitle": "Kaizen → Hansei → Toyota Way Practices",
+      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices; patterns are the registry that makes Kaizen real.",
       "tips": [
         "No silent promotion to signed-off",
         "Hansei keeps / amends / retires — on a cadence",
-        "TWP names the cluster; load the member practice for the live pain",
+        "Toyota Way Practices names the cluster; load the member practice for the live pain",
         "Encode into skills/rules where agents will load them"
       ]
     },

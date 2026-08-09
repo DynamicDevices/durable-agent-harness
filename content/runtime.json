@@ -69,5 +69,5 @@
       "Not the same thing as Preloop’s desktop MCP approvals in Cursor."
     ]
   },
-  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→TWP) steers behaviour. Preloop audits tool runtime and can review PR commits. OpenRouter routes model capacity for both. CI may wait on the Preloop commit status. Humans still own irreversible actions and merges."
+  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→Toyota Way Practices) steers behaviour. Preloop audits tool runtime and can review PR commits. OpenRouter routes model capacity for both. CI may wait on the Preloop commit status. Humans still own irreversible actions and merges."
 }

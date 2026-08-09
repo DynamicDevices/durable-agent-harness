@@ -22,7 +22,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-start")).toContainText("Playbook");
     await expect(page.getByTestId("section-start")).toContainText("Blog");
-    await expect(page.getByTestId("section-start")).toContainText("Kaizen → TWP");
+    await expect(page.getByTestId("section-start")).toContainText("Kaizen → Toyota Way Practices");
     await expect(page.getByTestId("section-start")).toContainText("Preloop + OpenRouter");
     await expect(page.getByTestId("section-start")).toContainText("Channels & lean");
     await expect(page.getByTestId("clock-serious_ai")).toBeVisible();
@@ -74,7 +74,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
-    await expect(page.getByTestId("panel-glossary")).toContainText("TWP");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Toyota Way Practices");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");
     await expect(page.getByTestId("panel-glossary")).toContainText("OpenRouter");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop commit status");

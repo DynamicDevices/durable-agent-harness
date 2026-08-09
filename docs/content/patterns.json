@@ -57,7 +57,7 @@
       ]
     },
     {
-      "name": "TWP member, not mega-prompt",
+      "name": "Toyota Way Practices member, not mega-prompt",
       "problem": "Dumping the whole lean philosophy every turn burns tokens and muddies the ask.",
       "move": "Treat Toyota Way Practices as an umbrella. Load the one member skill that matches the live pain (poka-yoke, muda/jidoka, kyosei, …).",
       "signals": [
