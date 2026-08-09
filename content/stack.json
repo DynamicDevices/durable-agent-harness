@@ -28,7 +28,7 @@
       "id": "memory",
       "title": "Memory (MemPalace)",
       "subtitle": "Curated palace, not a transcript dump",
-      "body": "We use MemPalace as the durable-memory layer: searchable drawers and a light knowledge graph for decisions, stances, tickets, and signed patterns — without pasting private inboxes onto the public internet.",
+      "body": "We use MemPalace as the durable-memory layer: searchable drawers and a light knowledge graph for decisions, stances, tickets, and signed patterns.",
       "tips": [
         "Write with a retention reason",
         "File by wing/room so agents can find the shelf",
@@ -86,10 +86,10 @@
       "id": "channels",
       "title": "Channels & media",
       "subtitle": "WhatsApp · ingest · voice",
-      "body": "Messaging (Briar on WhatsApp), voice notes, and purposeful file/image ingest are harness surfaces — same fail-closed outbound and privacy rules as the cockpit.",
+      "body": "Messaging (Briar on WhatsApp), voice notes, and purposeful file/image ingest are harness surfaces — same fail-closed outbound rules as the cockpit.",
       "tips": [
         "One watcher per live channel",
-        "Ingest for the task; curate into memory; never public-dump private media",
+        "Ingest for the task; curate into memory",
         "Voice is a medium, not a privilege escalation"
       ]
     },

@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/runtime/v1",
   "title": "Runtime layer: Preloop + OpenRouter",
-  "intro": "Two recent additions sit under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter for multi-model routing. Both are methods-level — no tokens, no private config.",
+  "intro": "Two recent additions sit under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter for multi-model routing.",
   "stance": "Layer runtime controls under human P0 gates (send, secrets, irreversible publish). A policy firewall does not replace consent.",
   "preloop": {
     "title": "Preloop",
@@ -11,12 +11,12 @@
       "Treat Preloop as a durable runtime companion for MCP/tool audit and approvals UI — not as the only safety system.",
       "Keep human gates for irreversible outbound and secret handling; Preloop adds another inspection layer.",
       "Prefer lean builtins for approvals; do not let policy tooling become a second always-on essay.",
-      "Never put enrollment tokens or local Preloop config secrets in skills, chat, or public git."
+      "Keep enrollment tokens and local Preloop config secrets out of skills and chat."
     ],
     "not": [
       "Not a substitute for P0 send-gates or secrets capture dialogs.",
       "Not a reason to auto-approve destructive shell or publish actions.",
-      "Not something to document with private paths or API tokens."
+      "Not a place to store API tokens in the harness tree."
     ]
   },
   "openrouter": {
@@ -26,7 +26,7 @@
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
       "Use provider failover for uptime; use explicit model fallback lists when you accept a different model answering.",
-      "Keep API keys in a vault — never in chat, skills, or this public notebook.",
+      "Keep API keys in a vault — never in chat or skills.",
       "Measure comfort vs cost: routing flexibility is not an excuse to skip proof class."
     ],
     "not": [

@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/cases/v1",
-  "intro": "Sanitized outcomes. No customer names, no private channels, no lab topology — just the shape of the work and what changed.",
+  "intro": "Before/after shapes of the work — what changed when the harness showed up.",
   "cases": [
     {
       "id": "prototype-spike",
@@ -54,7 +54,7 @@
       "before": "Manual drafts and risky “just send it” moments.",
       "after": "Assistants draft freely; irreversible outbound requires a human gate with the full referent visible.",
       "harness": ["Fail-closed outbound", "Secrets out of chat", "Least-privilege tool enablement"],
-      "lesson": "Publish the idea of gates — not the private channels."
+      "lesson": "Draft freely; irreversible outbound still needs a visible human gate."
     },
     {
       "id": "runtime-routing",
@@ -72,7 +72,7 @@
       "before": "Either ignore the channel or risk eager auto-replies to the wrong person.",
       "after": "Briar-style monitor/triage: one watcher, light carve-outs, drafts elsewhere, voice as a medium with the same gates.",
       "harness": ["Tiered send authority", "Inbound as untrusted data", "Enable/unload messaging tools"],
-      "lesson": "A messaging assistant is a harness surface — publish methods, not the private topology."
+      "lesson": "A messaging assistant is a harness surface with the same fail-closed rules as the cockpit."
     },
     {
       "id": "token-lean",
@@ -89,7 +89,7 @@
       "domain": "Documentation",
       "before": "Branded DOCX copies drifted; comments never returned to the canonical text.",
       "after": "Markdown SoT in git; branded DOCX/PDF and Drive mirrors for humans; comment ingest back to SoT.",
-      "harness": ["Spec SoT, export views", "Privacy gate before public publish", "Proof: revision table + export check"],
+      "harness": ["Spec SoT, export views", "CI publish checks", "Proof: revision table + export check"],
       "lesson": "One source of truth; many views."
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/patterns/v1",
-  "intro": "Portable patterns worth stealing. Conceptual names — not a dump of a private registry.",
+  "intro": "Portable patterns worth stealing — named moves you can encode in your own harness.",
   "patterns": [
     {
       "name": "Lean tool sessions",
@@ -53,7 +53,7 @@
     {
       "name": "Preloop under P0",
       "problem": "Teams either skip runtime audit or try to replace human consent with a firewall.",
-      "move": "Layer Preloop for tool policy/audit under send/secrets/irreversible gates. Never publish tokens or local enrollment config.",
+      "move": "Layer Preloop for tool policy/audit under send/secrets/irreversible gates. Keep enrollment config and tokens out of chat.",
       "signals": ["Policy UI without send-gates", "Secrets in Preloop config pasted to chat"]
     },
     {
@@ -107,8 +107,8 @@
     {
       "name": "Purposeful media ingest",
       "problem": "Exports and images get dumped into context forever.",
-      "move": "Ingest what the task needs. Curate facts into memory; leave bulk local. Privacy-gate before any public publish.",
-      "signals": ["Mega-attachments in every turn", "Private media in public docs"]
+      "move": "Ingest what the task needs. Curate facts into memory; leave bulk local.",
+      "signals": ["Mega-attachments in every turn", "Context full before the work starts"]
     },
     {
       "name": "Spec SoT, export views",
@@ -130,9 +130,9 @@
     },
     {
       "name": "Publish as a proof class",
-      "problem": "“Looks fine locally” ships private strings and broken UX.",
-      "move": "Sync content → privacy/denylist gate → Playwright UX checks. Green is the publish proof.",
-      "signals": ["Manual-only deploys", "Sensitive strings in public HTML"]
+      "problem": "“Looks fine locally” ships broken UX and stale content.",
+      "move": "Sync content → automated checks → Playwright UX. Green is the publish proof.",
+      "signals": ["Manual-only deploys", "Unchecked content drift"]
     }
   ]
 }

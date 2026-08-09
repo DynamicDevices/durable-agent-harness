@@ -43,8 +43,8 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-channels")).toContainText("WhatsApp");
     await expect(page.getByTestId("section-channels")).toContainText("Token monitoring");
     await expect(page.getByTestId("section-channels")).toContainText("Desktop MCQ");
-    await expect(page.getByTestId("section-channels")).toContainText("Privacy gate");
-    await expect(page.getByTestId("section-cases")).toContainText("Sanitized case studies");
+    await expect(page.getByTestId("section-channels")).toContainText("CI publish checks");
+    await expect(page.getByTestId("section-cases")).toContainText("Case studies");
     await expect(page.locator("#case-grid .case-card")).toHaveCount(10);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
     await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
@@ -77,9 +77,9 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-literature")).toContainText("METR");
   });
 
-  test("privacy section is present", async ({ page }) => {
+  test("about section is present", async ({ page }) => {
     await page.goto("/#privacy");
-    await expect(page.getByTestId("section-privacy")).toContainText("Public means redacted");
+    await expect(page.getByTestId("section-privacy")).toContainText("About this notebook");
   });
 
   test("SEO metadata and social cards are present", async ({ page }) => {

@@ -55,7 +55,7 @@
       "outcome": "Guarded operational assistance",
       "before": "solo-hard",
       "now": "solo-easy",
-      "note": "Assistants draft; irreversible outbound is gated. Channels stay private.",
+      "note": "Assistants draft; irreversible outbound is gated.",
       "band": "PA + engineer"
     },
     {

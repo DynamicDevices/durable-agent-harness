@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/stats/v1",
   "as_of": "2026-08-08",
-  "disclaimer": "Aggregates only. Exact private trees are not published.",
+  "disclaimer": "Aggregates only — proxies for harness size, not quality.",
   "metrics": [
     {
       "id": "skills",

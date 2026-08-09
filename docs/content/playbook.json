@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/playbook/v1",
   "title": "Build your own harness",
-  "intro": "You do not need our private tree. You need a small, versioned operating system around the model — then you grow it only when a failure repeats.",
+  "intro": "You need a small, versioned operating system around the model — then you grow it only when a failure repeats.",
   "principles": [
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
@@ -73,7 +73,7 @@
     {
       "id": "11",
       "title": "Treat channels like the cockpit",
-      "body": "If you add messaging (e.g. WhatsApp triage), apply the same gates: inbound is untrusted data, one watcher, tiered reply authority, voice as a medium only. Publish methods — never JIDs or private transcripts.",
+      "body": "If you add messaging (e.g. WhatsApp triage), apply the same gates: inbound is untrusted data, one watcher, tiered reply authority, voice as a medium only.",
       "done": "Channel skills exist; irreversible outbound still fails closed with a visible referent."
     },
     {

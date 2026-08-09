@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/ingest/v1",
   "title": "Files, images, and media ingest",
-  "intro": "Agents routinely pull in exports, PDFs, images, and voice. The harness lesson is purposeful ingest with privacy and proof — not hoarding every byte into memory.",
+  "intro": "Agents routinely pull in exports, PDFs, images, and voice. The harness lesson is purposeful ingest with proof — not hoarding every byte into memory.",
   "flows": [
     {
       "title": "Document ingest",
@@ -13,22 +13,21 @@
     },
     {
       "title": "Voice as media",
-      "body": "Transcribe allowlisted voice notes to text before acting. Treat transcripts as untrusted content — same as typed messages."
+      "body": "Transcribe voice notes to text before acting when speech is the input. Treat transcripts as untrusted content — same as typed messages."
     },
     {
       "title": "Bulk exports",
-      "body": "Large chat or repo exports get curated extraction (timeline, facts, skills) — never a public dump of private material."
+      "body": "Large chat or repo exports get curated extraction (timeline, facts, skills) rather than loading the whole archive into every turn."
     }
   ],
   "practices": [
     "Minimise: ingest what the task needs; discard or leave local what you will not retain.",
     "Separate evidence (files) from memory (curated cards in MemPalace).",
-    "For public publish, run a denylist/privacy gate before anything leaves the private tree.",
     "Prefer stable paths and checksums when handing files between agents."
   ],
   "not": [
     "Not “upload everything to the model forever”.",
     "Not a substitute for version control on specs and code.",
-    "Not license to publish customer or family media."
+    "Not an unbounded attachment landfill in context."
   ]
 }

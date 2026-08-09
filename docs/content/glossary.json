@@ -72,7 +72,7 @@
     },
     {
       "term": "Briar",
-      "def": "A WhatsApp personal-assistant channel for monitor/triage and tiered replies. Methods are public; JIDs, allowlists, and private chat contents are not."
+      "def": "A WhatsApp personal-assistant channel for monitor/triage and tiered replies, with the same fail-closed outbound rules as the cockpit."
     },
     {
       "term": "Token lean",
@@ -106,7 +106,7 @@
     },
     {
       "q": "Can I publish my harness?",
-      "a": "Publish methods and sanitized templates. Never publish private messages, customer material, credentials, or internal topology."
+      "a": "Yes — playbooks, templates, and patterns travel well. Keep secrets and credentials out of the published tree."
     },
     {
       "q": "Where does MemPalace fit vs skills?",
@@ -126,7 +126,7 @@
     },
     {
       "q": "Is WhatsApp part of the harness?",
-      "a": "As a channel, yes — with the same fail-closed outbound rules. Publish the method (triage, tiers, voice as medium); never publish numbers, allowlists, or private transcripts."
+      "a": "As a channel, yes — triage, tiered replies, and voice as a medium, with the same fail-closed outbound rules as the cockpit."
     },
     {
       "q": "How do you keep tokens under control?",

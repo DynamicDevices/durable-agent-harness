@@ -65,8 +65,8 @@
     },
     {
       "id": "pages_ci",
-      "title": "Publish proof (privacy + Playwright)",
-      "body": "Content sync → denylist/privacy gate → Playwright UX checks. That pipeline is the publish proof class for this notebook.",
+      "title": "CI publish checks",
+      "body": "Content sync → automated content checks → Playwright UX. That pipeline is the publish proof class for this notebook.",
       "lesson": "Green checks beat “looks fine locally”."
     }
   ]

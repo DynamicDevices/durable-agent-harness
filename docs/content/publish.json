@@ -29,8 +29,8 @@
     },
     {
       "id": "pages_ci",
-      "title": "Privacy gate + Playwright CI",
-      "body": "Public pages sync from content JSON, run a denylist/privacy gate, then Playwright UX checks (desktop + mobile). Green checks are the proof class for publish — not “looks fine locally”.",
+      "title": "CI publish checks",
+      "body": "Public pages sync from content JSON, then run automated content and Playwright UX checks (desktop + mobile). Green checks are the proof class for publish — not “looks fine locally”.",
       "lesson": "Publish is a proof class, not a hope."
     }
   ]

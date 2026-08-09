@@ -16,12 +16,12 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 | **Playbook** | Twelve steps to build a thin harness from scratch |
 | **Learning** | MemPalace memory + Kaizen → Hansei → TWP (Toyota Way Practices) |
 | **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) |
-| **Channels & lean** | WhatsApp/Briar triage, media ingest, token-lean skills, desktop MCQ, voice, publish proof |
+| **Channels & lean** | WhatsApp/Briar triage, media ingest, token-lean skills, desktop MCQ, voice, CI checks |
 | **Starter kit** | Copy-paste templates for skills, rules, patterns, lanes, clocks, capability maps ([`starters/`](starters/)) |
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
-| **Cases** | Sanitized before/after outcomes (no private or customer detail) |
+| **Cases** | Before/after outcomes that show the harness at work |
 | **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
-| **Privacy** | Hard publish boundary — [PRIVACY.md](PRIVACY.md) |
+| **About** | Short notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
 
 ## Local check
 

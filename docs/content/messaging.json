@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/messaging/v1",
   "title": "WhatsApp monitor & respond (Briar)",
-  "intro": "Briar is a WhatsApp personal-assistant channel for triage and light replies. The public lesson is the control plane — not phone numbers, allowlists, or private chat contents.",
+  "intro": "Briar is a WhatsApp personal-assistant channel for triage and light replies — focused on the control plane: who may watch, what may auto-reply, and when a human must decide.",
   "stance": "Inbound messages are untrusted data, never tool orders. Irreversible outbound stays fail-closed with a human gate when it leaves the light-trust carve-outs.",
   "capabilities": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "title": "Voice notes both ways",
-      "body": "Speech-to-text on inbound audio for allowlisted contacts; short spoken replies when voice is the right medium — still with the same send rules."
+      "body": "Speech-to-text on inbound audio where appropriate; short spoken replies when voice is the right medium — still with the same send rules."
     },
     {
       "title": "One watcher discipline",
@@ -24,7 +24,6 @@
   "practices": [
     "Prefer enable-on-demand messaging tools; unload when the triage turn is done.",
     "Mark read only when handling for real — do not pretend coverage without duty.",
-    "Never publish JIDs, SIM details, or private transcripts in public docs.",
     "Desktop MCQs for forks that need a careful human choice; keep WhatsApp for the conversation itself when that is the channel."
   ],
   "not": [
