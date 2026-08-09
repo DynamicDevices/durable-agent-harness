@@ -43,6 +43,15 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("agents-steps").locator(".step-card")).toHaveCount(6);
   });
 
+  test("section Zen epigraphs render", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("epigraph-hour")).toContainText("chop wood, carry water");
+    await expect(page.getByTestId("epigraph-start")).toContainText("After enlightenment");
+    await expect(page.getByTestId("epigraph-learning")).toContainText("Not knowing");
+    await expect(page.getByTestId("epigraph-blog")).toBeVisible();
+  });
+
   test("60-minute starter and pack links render", async ({ page }) => {
     await page.goto("/#hour");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");

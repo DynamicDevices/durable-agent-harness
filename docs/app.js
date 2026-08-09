@@ -120,6 +120,17 @@ function renderBlog(data) {
   );
 }
 
+function renderEpigraphs(data) {
+  const quotes = data.quotes || {};
+  document.querySelectorAll("[data-epigraph]").forEach((node) => {
+    const key = node.getAttribute("data-epigraph");
+    const quote = quotes[key];
+    if (!quote) return;
+    node.textContent = quote;
+    node.hidden = false;
+  });
+}
+
 function renderIngest(data) {
   document.querySelector("#ingest-title").textContent = data.title;
   document.querySelector("#ingest-intro").textContent = data.intro;
@@ -629,6 +640,7 @@ async function main() {
     starters,
     blog,
     hour,
+    epigraphs,
   ] = await Promise.all([
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
@@ -651,8 +663,10 @@ async function main() {
     loadJSON("starters.json"),
     loadJSON("blog.json"),
     loadJSON("hour.json"),
+    loadJSON("epigraphs.json"),
   ]);
 
+  renderEpigraphs(epigraphs);
   renderHour(hour);
   renderClocks(clocks);
   renderStats(stats);

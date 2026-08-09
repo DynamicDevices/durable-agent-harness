@@ -344,6 +344,18 @@ section h2 {
   letter-spacing: -0.03em;
 }
 
+.epigraph {
+  margin: 0.4rem 0 1.1rem;
+  max-width: 38rem;
+  padding: 0 0 0 0.95rem;
+  border-left: 3px solid rgba(196, 138, 74, 0.55);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: var(--graphite);
+}
+
 .section-lede,
 .panel-intro {
   margin: 0.75rem 0 1.5rem;

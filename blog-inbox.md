@@ -21,3 +21,6 @@ Documented Cloud PR reviewer + OpenRouter + `preloop` commit status as a separat
 
 ### 2026-08-09 — Agents entry page
 Public `agents.html` + repo `AGENTS.md` so coding agents have a single get-going door (pack + 60-minute path).
+
+### 2026-08-09 — Section epigraphs
+Quiet Zen / CWCW lines at the start of each notebook section — varied, no attribution essay.
