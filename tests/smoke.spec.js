@@ -122,6 +122,8 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("section-blog")).toContainText("What broke");
+    await expect(page.getByTestId("section-blog")).not.toContainText("Not a content calendar");
     await expect(page.getByTestId("blog-v1-baseline")).toContainText("v1.0");
     await expect(page.getByTestId("blog-notebook-at-eow")).toContainText("EOW");
     await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");

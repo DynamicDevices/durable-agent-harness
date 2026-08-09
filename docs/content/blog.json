@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/blog/v1",
-  "intro": "Short notes from the work. First person. Not a content calendar.",
+  "intro": "What broke, what we locked, and what earned a place on disk — filed when the week earns it.",
   "posts": [
     {
       "id": "v1-baseline",
