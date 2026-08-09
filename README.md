@@ -1,6 +1,6 @@
 # Durable Agent Harness
 
-**Public engineering notebook** from [Dynamic Devices](https://www.dynamicdevices.co.uk/) on building a *durable working relationship* with AI coding agents.
+**Public engineering notebook** from [Active-ESL](https://www.active-esl.com/) on building a *durable working relationship* with AI coding agents. Published with [Dynamic Devices](https://www.dynamicdevices.co.uk/).
 
 🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
@@ -46,4 +46,4 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-*Site and materials were AI-assisted (Cursor) under human direction at Dynamic Devices.*
+*Site and materials were AI-assisted (Cursor) under human direction at Active-ESL / Dynamic Devices.*

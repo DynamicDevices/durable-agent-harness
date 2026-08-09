@@ -5,11 +5,13 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true", { timeout: 20000 });
     await expect(page.getByTestId("brand")).toBeVisible();
+    await expect(page.getByTestId("hero")).toContainText("Active-ESL");
     await expect(page.getByTestId("hero")).toContainText("Durable Agent Harness");
     const brand = page.locator(".hero-brand");
     const brandSize = await brand.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     const h1Size = await page.locator(".hero h1").evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     expect(brandSize).toBeGreaterThan(h1Size);
+    await expect(brand).toHaveText("Active-ESL");
 
     await page.getByTestId("cta-explore").click();
     await expect(page.getByTestId("section-explore")).toBeInViewport();
@@ -103,7 +105,8 @@ test.describe("Durable Agent Harness site", () => {
     );
     const ld = await page.locator('script[type="application/ld+json"]').textContent();
     expect(ld).toContain("TechArticle");
-    expect(ld).toContain("Dynamic Devices Ltd");
+    expect(ld).toContain("Active-ESL");
+    expect(ld).toContain("Active Edge Solutions Limited");
   });
 });
 

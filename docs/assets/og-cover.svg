@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Durable Agent Harness — Active-ESL">
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111F"/>
+      <stop offset="42%" stop-color="#0C2340"/>
+      <stop offset="72%" stop-color="#3A2A7A"/>
+      <stop offset="100%" stop-color="#1A4A3A"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#20D6D2"/>
+      <stop offset="52%" stop-color="#7557FF"/>
+      <stop offset="100%" stop-color="#B6F23B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#hero)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#signal)"/>
+  <g transform="translate(72,150) scale(1.15)">
+    <path d="M110 23.467L174.533 88L110 152.533L45.467 88L110 23.467Z" fill="#07111F" stroke="#F7F9FC" stroke-width="7.333"/>
+    <path d="M77 54.267L115.133 88L77 121.733M110.733 54.267L148.867 88L110.733 121.733" fill="none" stroke="url(#signal)" stroke-width="9.533"/>
+    <path d="M18.333 51.333C64.533 8.8 158.4 14.667 202.4 57.2M18.333 124.667C67.467 165.733 159.867 161.333 202.4 118.8" fill="none" stroke="url(#signal)" stroke-width="5.867"/>
+    <path d="M27.667 51.333L18.333 42L9 51.333L18.333 60.667L27.667 51.333Z" fill="#20D6D2"/>
+    <path d="M211.734 118.8L202.4 109.466L193.066 118.8L202.4 128.134L211.734 118.8Z" fill="#B6F23B"/>
+  </g>
+  <text x="360" y="250" fill="#F7F9FC" font-family="Sora, Space Grotesk, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="-2">Active-ESL</text>
+  <text x="360" y="330" fill="#F7F9FC" font-family="Sora, Space Grotesk, Arial, sans-serif" font-size="44" font-weight="600" letter-spacing="-1">Durable Agent Harness</text>
+  <text x="360" y="390" fill="#B8C4D0" font-family="IBM Plex Sans, Arial, sans-serif" font-size="26">Build a working relationship with AI that compounds.</text>
+  <text x="360" y="520" fill="#20D6D2" font-family="Space Grotesk, Arial, sans-serif" font-size="20" letter-spacing="2">EMBEDDED INTELLIGENCE. MADE REAL.</text>
+</svg>

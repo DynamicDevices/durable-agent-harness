@@ -35,5 +35,5 @@ sensitive strings). Maintainers keep it in a private local path and can point
 
 ## Controllers / contact
 
-Published by **Dynamic Devices Ltd** as engineering education material.  
+Published by **Active-ESL** (Active Edge Solutions Limited), with Dynamic Devices Ltd.  
 Questions: `ajlennon@dynamicdevices.co.uk` (work mailbox).
