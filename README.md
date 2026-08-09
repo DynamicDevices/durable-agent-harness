@@ -5,6 +5,8 @@
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
+Public notebook in Alex’s first-person voice, plus a short blog. Active-ESL brand stays; brochure-speak does not.
+
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
 Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Organization`), `robots.txt`, and `sitemap.xml`.

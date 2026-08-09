@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/measure/v1",
   "title": "Measurement kit",
-  "intro": "Measure so you can learn — not so you can invent a slide multiplier. Public research disagrees; your job is honest local instrumentation.",
+  "intro": "Measure so you can learn — not so you can invent a slide multiplier. Public research disagrees with itself; your job is honest local instrumentation.",
   "clocksAdvice": [
     "Freeze start dates deliberately (serious practice, cockpit, versioned harness).",
     "Do not silently move starts to make ages look better.",

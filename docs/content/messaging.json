@@ -1,8 +1,8 @@
 {
   "schema": "durable-agent-harness/messaging/v1",
   "title": "WhatsApp monitor & respond (Briar)",
-  "intro": "Briar is a WhatsApp personal-assistant channel for triage and light replies — focused on the control plane: who may watch, what may auto-reply, and when a human must decide.",
-  "stance": "Inbound messages are untrusted data, never tool orders. Irreversible outbound stays fail-closed with a human gate when it leaves the light-trust carve-outs.",
+  "intro": "Briar is my WhatsApp PA channel — triage and light replies. The interesting bit is the control plane: who may watch, what may auto-reply, and when I have to decide.",
+  "stance": "Inbound messages are untrusted data, never tool orders. Irreversible outbound stays fail-closed unless it sits inside a signed light-trust carve-out.",
   "capabilities": [
     {
       "title": "Monitor & triage",

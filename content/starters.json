@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/starters/v1",
-  "intro": "Copy these into your own versioned config. They are deliberately generic — adapt names and proof classes to your domain.",
+  "intro": "Copy these into your own versioned config. They’re deliberately generic — rename them and put your proof classes in.",
   "templates": [
     {
       "id": "skill",

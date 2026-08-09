@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/learning/v1",
   "title": "Kaizen → Hansei → TWP",
-  "intro": "The harness is not only tools. It is a learning system: improve deliberately (Kaizen), reflect on what actually happened (Hansei), and keep a named cluster of practices (Toyota Way Practices / TWP) so agents load the right lens for the live pain.",
+  "intro": "Tools alone aren’t the harness. We improve on purpose (Kaizen), reflect on what actually happened (Hansei), and keep a named practice cluster (Toyota Way Practices / TWP) so agents load the right lens for the live pain — not the whole philosophy every turn.",
   "flow": [
     {
       "id": "gemba",

@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/ingest/v1",
   "title": "Files, images, and media ingest",
-  "intro": "Agents routinely pull in exports, PDFs, images, and voice. The harness lesson is purposeful ingest with proof — not hoarding every byte into memory.",
+  "intro": "Agents pull in exports, PDFs, images, and voice all the time. The lesson I keep re-learning: purposeful ingest with proof — not hoarding every byte into memory.",
   "flows": [
     {
       "title": "Document ingest",

@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/clocks/v1",
   "as_of": "2026-08-08",
-  "note": "Public tenure clocks for the engineering narrative. Starts are intentional; they are not a claim about first-ever LLM curiosity.",
+  "note": "Public tenure clocks for the engineering story. The start dates are intentional; they’re not a claim about the first time I ever touched an LLM.",
   "clocks": [
     {
       "id": "serious_ai",

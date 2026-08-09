@@ -96,6 +96,30 @@ function renderMessaging(data) {
   );
 }
 
+function renderBlog(data) {
+  const intro = document.querySelector("#blog-intro");
+  if (intro) intro.textContent = data.intro || "";
+  const list = document.querySelector("#blog-list");
+  if (!list) return;
+  list.replaceChildren(
+    ...data.posts.map((post) =>
+      el(
+        "article",
+        {
+          className: "blog-card",
+          id: `blog-${post.id}`,
+          "data-testid": `blog-${post.id}`,
+        },
+        [
+          el("time", { datetime: post.date, text: post.date }),
+          el("h3", { text: post.title }),
+          ...post.body.map((para) => el("p", { text: para })),
+        ],
+      ),
+    ),
+  );
+}
+
 function renderIngest(data) {
   document.querySelector("#ingest-title").textContent = data.title;
   document.querySelector("#ingest-intro").textContent = data.intro;
@@ -537,6 +561,7 @@ async function main() {
     cases,
     measure,
     starters,
+    blog,
   ] = await Promise.all([
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
@@ -557,6 +582,7 @@ async function main() {
     loadJSON("cases.json"),
     loadJSON("measure.json"),
     loadJSON("starters.json"),
+    loadJSON("blog.json"),
   ]);
 
   renderClocks(clocks);
@@ -578,6 +604,7 @@ async function main() {
   renderCases(cases);
   renderMeasure(measure);
   await renderStarters(starters);
+  renderBlog(blog);
   wireTabs();
   document.body.dataset.ready = "true";
 }

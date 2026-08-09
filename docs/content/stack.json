@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/stack/v1",
-  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes it reliable.",
+  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes Monday morning repeatable.",
   "layers": [
     {
       "id": "skills",

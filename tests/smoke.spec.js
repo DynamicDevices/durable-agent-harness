@@ -14,13 +14,14 @@ test.describe("Durable Agent Harness site", () => {
     await expect(brand).toHaveText("Active-ESL");
 
     await page.getByTestId("cta-explore").click();
-    await expect(page.getByTestId("section-explore")).toBeInViewport();
+    await expect(page.getByTestId("section-blog")).toBeInViewport();
   });
 
   test("start paths and clocks render", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-start")).toContainText("Playbook");
+    await expect(page.getByTestId("section-start")).toContainText("Blog");
     await expect(page.getByTestId("section-start")).toContainText("Kaizen → TWP");
     await expect(page.getByTestId("section-start")).toContainText("Preloop + OpenRouter");
     await expect(page.getByTestId("section-start")).toContainText("Channels & lean");
@@ -81,7 +82,21 @@ test.describe("Durable Agent Harness site", () => {
 
   test("about section is present", async ({ page }) => {
     await page.goto("/#privacy");
-    await expect(page.getByTestId("section-privacy")).toContainText("About this notebook");
+    await expect(page.getByTestId("section-privacy")).toContainText("Alex Lennon");
+    await expect(page.getByTestId("section-privacy")).toContainText("Active-ESL");
+  });
+
+  test("blog posts render in first person", async ({ page }) => {
+    await page.goto("/#blog");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("blog-chop-wood-carry-water")).toContainText(
+      "chopwoodcarrywater.uk",
+    );
+    await expect(page.getByTestId("blog-context-is-rent")).toContainText("Context is rent");
+    await expect(page.getByTestId("blog-standard-work-not-lore")).toContainText(
+      "Standard work, not lore",
+    );
   });
 
   test("SEO metadata and social cards are present", async ({ page }) => {
@@ -89,7 +104,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page).toHaveTitle(/Durable Agent Harness/);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       "content",
-      /durable AI agent harness/i,
+      /working relationship with AI coding agents/i,
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
