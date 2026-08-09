@@ -42,6 +42,9 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("#learning-flow .flow-card")).toHaveCount(5);
     await expect(page.getByTestId("section-runtime")).toContainText("Preloop");
     await expect(page.getByTestId("section-runtime")).toContainText("OpenRouter");
+    await expect(page.getByTestId("section-runtime")).toContainText("PR / commit checks");
+    await expect(page.getByTestId("runtime-pr-steps").locator(".step-card")).toHaveCount(4);
+    await expect(page.getByTestId("section-runtime")).toContainText("commit status");
     await expect(page.getByTestId("section-channels")).toContainText("Briar");
     await expect(page.getByTestId("section-channels")).toContainText("WhatsApp");
     await expect(page.getByTestId("section-channels")).toContainText("Token monitoring");
@@ -67,12 +70,14 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-capability")).toContainText("Before AI");
     await page.getByRole("tab", { name: "Patterns" }).click();
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
+    await expect(page.getByTestId("panel-patterns")).toContainText("Preloop before expensive CI");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
     await expect(page.getByTestId("panel-glossary")).toContainText("TWP");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");
     await expect(page.getByTestId("panel-glossary")).toContainText("OpenRouter");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Preloop commit status");
     await expect(page.getByTestId("panel-glossary")).toContainText("Briar");
     await expect(page.getByTestId("panel-glossary")).toContainText("Token lean");
     await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");
@@ -90,6 +95,9 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(
+      "PR commits",
+    );
     await expect(page.getByTestId("blog-chop-wood-carry-water")).toContainText(
       "chopwoodcarrywater.uk",
     );
