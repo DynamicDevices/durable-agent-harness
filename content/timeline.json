@@ -87,6 +87,11 @@
     },
     {
       "date": "2026-08",
+      "title": "Trash instead of hard delete",
+      "body": "Signed pattern: when removing project files, move them to trash first so mistakes stay recoverable. Emptying trash is a separate, deliberate step."
+    },
+    {
+      "date": "2026-08",
       "title": "Start in 60 minutes",
       "body": "Added a timed checklist and downloadable Cursor pack so visitors leave with rules, a skill, a signed pattern, and a clock — not just a read."
     },

@@ -30,3 +30,6 @@ Document two-plane vault: Password Manager for humans, Bitwarden Secrets Manager
 
 ### 2026-08-09 — Clarify P0 = Priority 0
 Glossary + first mentions: P0 means fail-closed always-on rules (secrets; human gate), not “any important rule”.
+
+### 2026-08-09 — Trash instead of hard delete
+Delete = move to OS/project trash first so agents (and humans) can recover from wrong-path mistakes. Not a third always-on P0.

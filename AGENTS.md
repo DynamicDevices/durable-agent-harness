@@ -21,6 +21,7 @@ Done when those eight are true. Then stop for the day.
 
 - Prefer skills/rules/patterns on disk over chat folklore.
 - Fail closed on secrets and irreversible send/publish. Capture secrets via desktop dialog into **Bitwarden** (Password Manager for humans; **Bitwarden Secrets Manager** for machine tokens) — never into chat.
+- Prefer **trash over hard delete**: move files to the OS/project trash so mistakes stay recoverable (not a third always-on P0 — still do it).
 - Capture sparks for the public blog in [`blog-inbox.md`](blog-inbox.md) — do **not** publish the inbox. Promote at EOW or skip.
 - Public site shape is locked at **v1.0** — see [`BASELINE.md`](BASELINE.md). Improve pack/notes at EOW; don’t casually rewrite the IA mid-week.
 

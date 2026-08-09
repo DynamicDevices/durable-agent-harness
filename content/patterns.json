@@ -141,6 +141,16 @@
       ]
     },
     {
+      "name": "Trash instead of hard delete",
+      "problem": "Agents (and humans) hard-delete files when “cleaning up,” then cannot recover from a wrong path or a rushed rm.",
+      "move": "Treat delete as move-to-trash: send files into the OS trash or a project trash folder first. Recover if wrong; empty trash only as a separate, deliberate step. Prefer this over rm for project data.",
+      "signals": [
+        "rm -rf on a workspace path",
+        "“I deleted the wrong folder”",
+        "Cleanup that cannot be undone"
+      ]
+    },
+    {
       "name": "Encode the second burn",
       "problem": "Teams re-pay for the same mistake because the fix lived only in a chat.",
       "move": "When a failure repeats once, write or update a skill before moving on.",

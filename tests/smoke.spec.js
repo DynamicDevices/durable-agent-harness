@@ -124,6 +124,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-capability")).toContainText("Before AI");
     await page.getByRole("tab", { name: "Patterns" }).click();
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
+    await expect(page.getByTestId("panel-patterns")).toContainText("Trash instead of hard delete");
     await expect(page.getByTestId("panel-patterns")).toContainText("Preloop before expensive CI");
     await expect(page.getByTestId("panel-patterns")).toContainText("Notebook updates at EOW");
     await expect(page.getByTestId("panel-patterns")).toContainText("Bitwarden");
@@ -131,6 +132,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
     await expect(page.getByTestId("panel-glossary")).toContainText("P0 (Priority 0)");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Trash delete");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
     await expect(page.getByTestId("panel-glossary")).toContainText("Toyota Way Practices");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");

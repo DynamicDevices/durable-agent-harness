@@ -19,6 +19,10 @@
       "def": "The highest-priority, fail-closed constraints that stay always-on in the agent harness. In this notebook’s starter pack there are two: (1) never put secrets in chat — capture into Bitwarden, (2) get explicit human approval before irreversible send/publish/destroy. A “P0 gate” is that human approval step. Not every rule is P0 — most should be requestable."
     },
     {
+      "term": "Trash delete",
+      "def": "Prefer moving files to the OS trash or a project trash folder over hard delete (rm). Recovery stays possible until trash is emptied on purpose. A signed pattern — not a third always-on P0 in the starter pack."
+    },
+    {
       "term": "Pattern",
       "def": "A cross-cutting way of working with an explicit lifecycle: propose → human sign-off → encode → apply → review."
     },
