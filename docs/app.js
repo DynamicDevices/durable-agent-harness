@@ -181,20 +181,6 @@ function renderSurfaces(data) {
   );
 }
 
-function renderPublish(data) {
-  document.querySelector("#publish-title").textContent = data.title;
-  document.querySelector("#publish-intro").textContent = data.intro;
-  document.querySelector("#publish-grid").replaceChildren(
-    ...data.items.map((item) =>
-      el("article", { className: "band-card", "data-publish": item.id }, [
-        el("h3", { text: item.title }),
-        el("p", { text: item.body }),
-        el("p", { className: "lesson", text: item.lesson }),
-      ]),
-    ),
-  );
-}
-
 function renderRuntime(data) {
   document.querySelector("#runtime-intro").textContent = data.intro;
   document.querySelector("#runtime-stance").textContent = data.stance;
@@ -628,7 +614,6 @@ async function main() {
     ingest,
     tokens,
     surfaces,
-    publish,
     timeline,
     stack,
     capabilities,
@@ -651,7 +636,6 @@ async function main() {
     loadJSON("ingest.json"),
     loadJSON("tokens.json"),
     loadJSON("surfaces.json"),
-    loadJSON("publish.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
@@ -677,7 +661,6 @@ async function main() {
   renderIngest(ingest);
   renderTokens(tokens);
   renderSurfaces(surfaces);
-  renderPublish(publish);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);

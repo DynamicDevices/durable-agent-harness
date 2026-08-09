@@ -19,7 +19,8 @@ Locked shape:
 | Agents entry | [`agents.html`](https://chopwoodcarrywater.uk/agents.html) + repo [`AGENTS.md`](AGENTS.md) |
 | Operating system | Playbook, Learning (Kaizen → Hansei → Toyota Way Practices), runtime (Preloop + OpenRouter + PR checks), channels & lean |
 | Explore | Timeline, stack, capability, patterns, glossary/FAQ, research |
-| Honesty | Measure section, clocks, weekly ritual — no fake multipliers |
+| Honesty | Measure section (includes tenure clocks), weekly ritual — no fake multipliers |
+| Licence | Notebook content CC BY-SA 4.0; site code MIT |
 | Cadence | Updates at **EOW review** (`chopwood-notebook-eow`) — skip empty weeks |
 
 ## What “locked” means

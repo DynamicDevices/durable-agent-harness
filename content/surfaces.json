@@ -1,49 +1,43 @@
 {
   "schema": "durable-agent-harness/surfaces/v1",
-  "title": "Other practice surfaces",
-  "intro": "Beyond messaging and ingest, the same discipline shows up in how we decide, speak, run parallel lanes, share designs, and keep specs honest.",
+  "title": "Practice surfaces",
+  "intro": "Same discipline outside the chat: decisions, lanes, secrets, brand, media convert, and the publish proof class. One list — not a second copy of the same cards.",
   "surfaces": [
     {
       "id": "mcq",
       "title": "Desktop MCQ dialogs",
-      "body": "Decision forks use a desktop multiple-choice dialog — not markdown A/B/C walls. Questions explain why the fork matters; dangerous arms are marked; the referent (draft/path) is visible in the ask.",
+      "body": "Decision forks use a desktop multiple-choice dialog — not markdown A/B/C walls. Dangerous arms are marked; the referent (draft/path) stays visible in the ask.",
       "lesson": "Readable-first decisions beat buried approvals."
-    },
-    {
-      "id": "voice",
-      "title": "Voice notes both ways",
-      "body": "Inbound speech becomes text via STT; outbound can be short TTS when voice fits. Same trust and send rules as typed WhatsApp — voice is a medium, not a privilege escalation.",
-      "lesson": "Transcripts stay untrusted data."
-    },
-    {
-      "id": "lanes",
-      "title": "Parallel agent lanes",
-      "body": "Named lanes with owns / never / handoffs. One writer per tree. MemPalace tickets for REQUEST/ACK/DONE when peers must coordinate.",
-      "lesson": "Team-shaped solo work needs explicit ownership."
-    },
-    {
-      "id": "trash",
-      "title": "Delete → trash folder",
-      "body": "When removing project files, move them to the OS trash or a project trash folder — do not hard-delete first. Mistakes stay recoverable until trash is emptied on purpose.",
-      "lesson": "Soft delete buys recovery; rm spends it."
     },
     {
       "id": "outbound",
       "title": "Tiered send authority",
-      "body": "Draft freely. Light carve-outs for trusted contexts; everything else fail-closed with a human gate showing the full message. No soft “shall I send?” stacks that hide the body.",
+      "body": "Draft freely. Light carve-outs for trusted contexts; everything else fail-closed with a human gate showing the full message.",
       "lesson": "Speed is not consent."
     },
     {
-      "id": "design_share",
-      "title": "Design-share / Pages review",
-      "body": "Enclosure and product visuals move through a gated loop: generate → verify → share on GitHub Pages for Look/Inspect — so humans review atmosphere and fit without emailing mystery ZIPs.",
-      "lesson": "Share the review surface, not an ungoverned dump."
+      "id": "secrets",
+      "title": "Secrets dialog → Bitwarden",
+      "body": "Capture through a desktop dialog into Bitwarden — not Composer. Password Manager for human logins; Bitwarden Secrets Manager for machine/agent tokens. Confirm length or success — never echo the value into chat, logs, or commits.",
+      "lesson": "Isolate tokens from the AI conversation."
     },
     {
-      "id": "specs",
-      "title": "Specification documents",
-      "body": "Git markdown is source of truth; branded DOCX/PDF are exports; Drive mirrors are for comments. Agents ingest doc comments back into the SoT — they do not treat the export as canonical.",
-      "lesson": "One SoT; many views."
+      "id": "trash",
+      "title": "Delete → trash folder",
+      "body": "When removing project files, move them to the OS trash or a project trash folder first. Empty trash only as a separate, deliberate step.",
+      "lesson": "Soft delete buys recovery; rm spends it."
+    },
+    {
+      "id": "lanes",
+      "title": "Parallel agent lanes",
+      "body": "Named lanes with owns / never / handoffs. One writer per tree. Tickets for REQUEST/ACK/DONE when peers must coordinate.",
+      "lesson": "Team-shaped solo work needs explicit ownership."
+    },
+    {
+      "id": "voice",
+      "title": "Voice as a medium",
+      "body": "Inbound STT and short outbound TTS when voice fits. Same trust and send rules as typed chat — plus a confirm step before speech becomes the ask.",
+      "lesson": "No silent act-on-noise."
     },
     {
       "id": "convert",
@@ -55,25 +49,25 @@
       "id": "brand",
       "title": "Brand as a skill",
       "body": "Loadable brand procedures keep email, web, PDF, and UI on one visual and verbal system across agent sessions.",
-      "lesson": "Brand is encoded behaviour."
+      "lesson": "Brand is a procedure, not a vibe prompt."
     },
     {
-      "id": "voice_box",
-      "title": "Voice-turn confirm box",
-      "body": "Mic → local STT → human confirms the transcript before the agent treats speech as the ask.",
-      "lesson": "No silent act-on-noise."
+      "id": "specs",
+      "title": "Specification documents",
+      "body": "Git markdown is source of truth; branded DOCX/PDF are exports; Drive mirrors are for comments. Ingest comments back into the SoT.",
+      "lesson": "One SoT; many views."
     },
     {
-      "id": "secrets",
-      "title": "Secrets dialog → Bitwarden",
-      "body": "Desktop capture into Bitwarden — Password Manager for human logins, Bitwarden Secrets Manager for agent/API tokens — so captured values never enter the AI conversation.",
-      "lesson": "Chat is not a vault. Bitwarden is."
+      "id": "design_share",
+      "title": "Design-share / Pages review",
+      "body": "Generate → verify → share on a gated Pages review (Look/Inspect) so humans judge atmosphere and fit without mystery ZIPs.",
+      "lesson": "Share the review surface, not an ungoverned dump."
     },
     {
       "id": "pages_ci",
       "title": "CI publish checks",
-      "body": "Content sync → automated content checks → Playwright UX. That pipeline is the publish proof class for this notebook.",
-      "lesson": "Green checks beat “looks fine locally”."
+      "body": "Content sync → automated content checks → Playwright UX (desktop + mobile). Green checks are the publish proof class — not “looks fine locally”.",
+      "lesson": "Publish is a proof class, not a hope."
     }
   ]
 }
