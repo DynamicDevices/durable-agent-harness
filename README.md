@@ -15,6 +15,7 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 
 | Area | What you get |
 |---|---|
+| **60 minutes** | Timed checklist + [Cursor starter pack](packs/cursor-hour/) (zip on the site) |
 | **Playbook** | Twelve steps to build a thin harness from scratch |
 | **Learning** | MemPalace memory + Kaizen → Hansei → Toyota Way Practices |
 | **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) + PR commit checks (`preloop` status) |

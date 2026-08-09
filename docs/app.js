@@ -503,6 +503,50 @@ function renderMeasure(data) {
   );
 }
 
+function renderHour(data) {
+  document.querySelector("#hour-intro").textContent = data.intro;
+  document.querySelector("#hour-promise").textContent = data.promise;
+  document.querySelector("#hour-next").textContent = data.next;
+
+  const pack = data.pack;
+  document.querySelector("#hour-actions").replaceChildren(
+    el("a", {
+      className: "btn primary",
+      href: pack.zip,
+      download: "cursor-hour-starter.zip",
+      "data-testid": "hour-download",
+      text: pack.label,
+    }),
+    el("a", {
+      className: "btn ghost",
+      href: pack.browse,
+      "data-testid": "hour-browse",
+      text: pack.browseLabel,
+    }),
+  );
+
+  document.querySelector("#hour-steps").replaceChildren(
+    ...data.steps.map((step) =>
+      el("li", { className: "step-card", "data-hour-step": step.id }, [
+        el("div", { className: "step-num", text: `Step ${step.id} · ~${step.minutes} min` }),
+        el("h3", { text: step.title }),
+        el("p", { className: "hour-why", text: step.why }),
+        el("p", {}, [el("strong", { text: "Do: " }), step.do]),
+        el("p", { className: "done-line" }, [el("strong", { text: "Proof: " }), step.proof]),
+      ]),
+    ),
+  );
+
+  document.querySelector("#hour-done").replaceChildren(
+    el("h3", { className: "subhead", text: data.done.title }),
+    el(
+      "ul",
+      { className: "tip-list hour-done-list" },
+      data.done.checks.map((c) => el("li", { text: c })),
+    ),
+  );
+}
+
 async function renderStarters(data) {
   document.querySelector("#starters-intro").textContent = data.intro;
   const list = document.querySelector("#starter-list");
@@ -584,6 +628,7 @@ async function main() {
     measure,
     starters,
     blog,
+    hour,
   ] = await Promise.all([
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
@@ -605,8 +650,10 @@ async function main() {
     loadJSON("measure.json"),
     loadJSON("starters.json"),
     loadJSON("blog.json"),
+    loadJSON("hour.json"),
   ]);
 
+  renderHour(hour);
   renderClocks(clocks);
   renderStats(stats);
   renderPlaybook(playbook);

@@ -590,6 +590,42 @@ section h2 {
   transition: transform 180ms ease;
 }
 
+.path-card-feature {
+  border-color: rgba(42, 107, 124, 0.45);
+  background:
+    linear-gradient(135deg, rgba(42, 107, 124, 0.08), transparent 55%),
+    var(--card);
+}
+
+.hour {
+  padding: 3.5rem 0 1rem;
+}
+
+.hour-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.hour-why {
+  color: var(--graphite);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.hour-done {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hour-done .subhead {
+  margin-top: 0;
+}
+
 .path-card:hover {
   transform: translateY(-3px);
 }

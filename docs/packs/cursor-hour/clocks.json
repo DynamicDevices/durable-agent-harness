@@ -1,0 +1,10 @@
+{
+  "note": "Freeze start dates. Recompute ages; do not silently back-date.",
+  "clocks": {
+    "harness": {
+      "label": "Harness practice",
+      "start": "YYYY-MM-DD",
+      "hint": "Set to the day you installed this pack."
+    }
+  }
+}

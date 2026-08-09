@@ -1,0 +1,21 @@
+---
+description: >-
+  P0 — Do not send email, post publicly, merge trust-plane policy, or destroy
+  data without an explicit human approval that shows the referent.
+alwaysApply: true
+---
+
+# Human gate for irreversible actions
+
+Agents may **draft** freely. Agents must **not** send, publish, or destroy
+without a visible human approval for *that* action.
+
+## Why
+
+Eager autonomy burns reputation faster than it saves time.
+
+## Check
+
+Before send/publish/destroy: show From/To/Subject or path + effect, then wait
+for an explicit go-ahead in this session. “Looks good” on an earlier draft is
+not enough if the content changed.
