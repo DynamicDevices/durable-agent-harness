@@ -18,3 +18,6 @@ Baseline tagged; LinkedIn Chop Wood banner cut; 60-minute pack is the finish lin
 
 ### 2026-08-09 — Preloop before expensive CI
 Documented Cloud PR reviewer + OpenRouter + `preloop` commit status as a separate plane from desktop MCP.
+
+### 2026-08-09 — Agents entry page
+Public `agents.html` + repo `AGENTS.md` so coding agents have a single get-going door (pack + 60-minute path).

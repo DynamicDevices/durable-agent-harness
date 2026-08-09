@@ -13,6 +13,11 @@ test.describe("Durable Agent Harness site", () => {
       "href",
       "https://x.com/embedded_iot",
     );
+    await expect(page.getByTestId("hero-agents")).toContainText("Agents: start here");
+    await expect(page.getByTestId("hero-agents").locator("a")).toHaveAttribute(
+      "href",
+      "agents.html",
+    );
     const brand = page.locator(".hero-brand");
     const brandSize = await brand.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     const h1Size = await page.locator(".hero h1").evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
@@ -21,6 +26,17 @@ test.describe("Durable Agent Harness site", () => {
 
     await page.getByTestId("cta-start").click();
     await expect(page.getByTestId("section-hour")).toBeInViewport();
+  });
+
+  test("agents get-going page links to pack and hour path", async ({ page }) => {
+    await page.goto("/agents.html");
+    await expect(page.getByTestId("page-agents")).toContainText("Get going");
+    await expect(page.getByTestId("agents-pack")).toHaveAttribute(
+      "href",
+      /cursor-hour-starter\.zip$/,
+    );
+    await expect(page.getByTestId("agents-hour")).toHaveAttribute("href", "./#hour");
+    await expect(page.getByTestId("agents-steps").locator(".step-card")).toHaveCount(6);
   });
 
   test("60-minute starter and pack links render", async ({ page }) => {
