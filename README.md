@@ -3,7 +3,8 @@
 **Public engineering notebook** by [Alex Lennon](https://chopwoodcarrywater.uk/) ([@embedded_iot](https://x.com/embedded_iot)) under the **Chop Wood Carry Water** brand — building a *durable working relationship* with AI coding agents.
 
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
-📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
+📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>  
+🏷️ **Release:** [v1.0.0](https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0) · baseline locked in [BASELINE.md](BASELINE.md)
 
 First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
 
