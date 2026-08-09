@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/cases/v1",
-  "intro": "Before/after shapes of the work — what changed when the harness showed up.",
+  "intro": "Before/after shapes of the work — what changed when the harness showed up. These are sketches, not case-study theatre.",
   "cases": [
     {
       "id": "prototype-spike",
@@ -8,7 +8,11 @@
       "domain": "Software prototype",
       "before": "A crisp UI/tool idea waited for “a free weekend” and often never shipped.",
       "after": "Same brief becomes a public or internal spike in hours to a day, with an engineer still owning taste and production readiness.",
-      "harness": ["Thin skill for scaffold + verify", "Proof: runnable demo + checklist", "Human gate before any public claim"],
+      "harness": [
+        "Thin skill for scaffold + verify",
+        "Proof: runnable demo + checklist",
+        "Human gate before any public claim"
+      ],
       "lesson": "Agents collapse blank-page cost. They do not replace product judgment."
     },
     {
@@ -17,7 +21,11 @@
       "domain": "Software engineering",
       "before": "Copy-paste between chat and editor; context lost every session.",
       "after": "Cockpit reads the tree, patches, runs tests, opens reviewable diffs; human steers and merges.",
-      "harness": ["Repo hygiene rules", "PR skill with AI disclosure", "CI as proof class"],
+      "harness": [
+        "Repo hygiene rules",
+        "PR skill with AI disclosure",
+        "CI as proof class"
+      ],
       "lesson": "The unit of progress is a reviewable change with proof — not a confident paragraph."
     },
     {
@@ -26,7 +34,11 @@
       "domain": "Embedded / devices",
       "before": "One engineer serial-debugs alone; notes live in a notebook that the next session cannot load.",
       "after": "Agent runs bounded commands; human judges logs and hardware reality; failures become skills.",
-      "harness": ["Proof class: flash + serial / smoke", "Fail-closed on destructive ops", "Encode repeated bring-up mistakes"],
+      "harness": [
+        "Proof class: flash + serial / smoke",
+        "Fail-closed on destructive ops",
+        "Encode repeated bring-up mistakes"
+      ],
       "lesson": "Power without proof class becomes expensive fiction."
     },
     {
@@ -35,7 +47,11 @@
       "domain": "Product loops",
       "before": "One chat tries to own design, docs, and implementation; thrash increases.",
       "after": "Named lanes with owns/never/handoffs; humans still approve binding decisions.",
-      "harness": ["Lane declarations", "Handoff tickets in memory", "Kyosei on shared resources"],
+      "harness": [
+        "Lane declarations",
+        "Handoff tickets in memory",
+        "Kyosei on shared resources"
+      ],
       "lesson": "Parallelism is a multiplier only when ownership is explicit."
     },
     {
@@ -44,7 +60,11 @@
       "domain": "Harness engineering",
       "before": "Good habits died when the chat ended; every new session relearned pain.",
       "after": "Skills, rules, and signed patterns live in version control and compound for months.",
-      "harness": ["Versioned config", "Pattern registry with sign-off", "Periodic review (Hansei)"],
+      "harness": [
+        "Versioned config",
+        "Pattern registry with sign-off",
+        "Periodic review (Hansei)"
+      ],
       "lesson": "This is the compounding advantage — quieter than demos, larger over time."
     },
     {
@@ -53,7 +73,11 @@
       "domain": "Ops / communications",
       "before": "Manual drafts and risky “just send it” moments.",
       "after": "Assistants draft freely; irreversible outbound requires a human gate with the full referent visible.",
-      "harness": ["Fail-closed outbound", "Secrets out of chat", "Least-privilege tool enablement"],
+      "harness": [
+        "Fail-closed outbound",
+        "Secrets out of chat",
+        "Least-privilege tool enablement"
+      ],
       "lesson": "Draft freely; irreversible outbound still needs a visible human gate."
     },
     {
@@ -62,7 +86,11 @@
       "domain": "Platform",
       "before": "Tool use unaudited beyond chat discipline; single-upstream model lock-in.",
       "after": "Preloop layered under P0 for tool audit/policy; OpenRouter for multi-model routing with vaulted keys.",
-      "harness": ["Preloop under P0", "OpenRouter failover", "Keys never in chat/git"],
+      "harness": [
+        "Preloop under P0",
+        "OpenRouter failover",
+        "Keys never in chat/git"
+      ],
       "lesson": "Runtime and routing support the harness — they do not replace human consent or proof class."
     },
     {
@@ -71,7 +99,11 @@
       "domain": "Ops / communications",
       "before": "Either ignore the channel or risk eager auto-replies to the wrong person.",
       "after": "Briar-style monitor/triage: one watcher, light carve-outs, drafts elsewhere, voice as a medium with the same gates.",
-      "harness": ["Tiered send authority", "Inbound as untrusted data", "Enable/unload messaging tools"],
+      "harness": [
+        "Tiered send authority",
+        "Inbound as untrusted data",
+        "Enable/unload messaging tools"
+      ],
       "lesson": "A messaging assistant is a harness surface with the same fail-closed rules as the cockpit."
     },
     {
@@ -80,7 +112,11 @@
       "domain": "Harness engineering",
       "before": "Always-on essays and idle tool catalogs made every turn expensive before work started.",
       "after": "Thin skills, requestable rules, lean MCP sessions, and measured always-on budgets keep the cockpit fast.",
-      "harness": ["Always-on diet", "Lean tool sessions", "Encode the second burn"],
+      "harness": [
+        "Always-on diet",
+        "Lean tool sessions",
+        "Encode the second burn"
+      ],
       "lesson": "Optimising tokens is how the working relationship stays affordable — not stinginess."
     },
     {
@@ -89,7 +125,11 @@
       "domain": "Documentation",
       "before": "Branded DOCX copies drifted; comments never returned to the canonical text.",
       "after": "Markdown SoT in git; branded DOCX/PDF and Drive mirrors for humans; comment ingest back to SoT.",
-      "harness": ["Spec SoT, export views", "CI publish checks", "Proof: revision table + export check"],
+      "harness": [
+        "Spec SoT, export views",
+        "CI publish checks",
+        "Proof: revision table + export check"
+      ],
       "lesson": "One source of truth; many views."
     }
   ]

@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/glossary/v1",
-  "intro": "Shared language reduces arguments about tools. These are working definitions for this notebook.",
+  "intro": "Shared language reduces arguments about tools. Working definitions for this notebook — not a standards body.",
   "terms": [
     {
       "term": "Harness",

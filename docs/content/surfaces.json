@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/surfaces/v1",
   "title": "Other practice surfaces",
-  "intro": "Beyond messaging and ingest, the same harness shows up in how we decide, speak, parallelise, share designs, and keep specs honest.",
+  "intro": "Beyond messaging and ingest, the same discipline shows up in how we decide, speak, run parallel lanes, share designs, and keep specs honest.",
   "surfaces": [
     {
       "id": "mcq",

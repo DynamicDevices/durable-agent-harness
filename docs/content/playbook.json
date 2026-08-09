@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/playbook/v1",
   "title": "Build your own harness",
-  "intro": "You need a small, versioned operating system around the model — then you grow it only when a failure repeats.",
+  "intro": "If I were starting again tomorrow: a small, versioned operating system around the model — then grow it only when the same failure shows up twice.",
   "principles": [
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",

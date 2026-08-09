@@ -1,8 +1,8 @@
 {
   "schema": "durable-agent-harness/runtime/v1",
   "title": "Runtime layer: Preloop + OpenRouter",
-  "intro": "Two recent additions sit under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter for multi-model routing.",
-  "stance": "Layer runtime controls under human P0 gates (send, secrets, irreversible publish). A policy firewall does not replace consent.",
+  "intro": "Two layers I added under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter when multi-model routing earns its keep.",
+  "stance": "Runtime controls sit under human P0 gates — send, secrets, irreversible publish. A policy firewall is not consent.",
   "preloop": {
     "title": "Preloop",
     "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor’s existing fail-closed gates — it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",

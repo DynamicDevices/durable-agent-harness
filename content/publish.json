@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/publish/v1",
   "title": "Publish proof & supporting surfaces",
-  "intro": "Extra harness surfaces that keep media, brand, voice, secrets, and public publish honest.",
+  "intro": "Extra surfaces that keep media, brand, voice, secrets, and public publish honest — same gates as the rest of the cockpit.",
   "items": [
     {
       "id": "convert",

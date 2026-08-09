@@ -1,0 +1,36 @@
+{
+  "schema": "durable-agent-harness/blog/v1",
+  "intro": "Short notes from the work. First person. Not a content calendar.",
+  "posts": [
+    {
+      "id": "chop-wood-carry-water",
+      "date": "2026-08-09",
+      "title": "Why this site is called chopwoodcarrywater.uk",
+      "body": [
+        "There’s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.",
+        "The temptation after a good insight is novelty — another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.",
+        "So when we needed a proper domain for this notebook, I didn’t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right."
+      ]
+    },
+    {
+      "id": "context-is-rent",
+      "date": "2026-08-05",
+      "title": "Context is rent",
+      "body": [
+        "Every always-on rule, fat skill, and optional tool server is paid on every turn. That’s not a metaphor — it’s the invoice.",
+        "We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No “leave it on in case”. Reloading the window is cheaper than carrying last week’s AppSec server forever.",
+        "If a session feels heavy, that’s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring."
+      ]
+    },
+    {
+      "id": "standard-work-not-lore",
+      "date": "2026-08-04",
+      "title": "Standard work, not lore",
+      "body": [
+        "Chat is a terrible place to keep how you work. The next session won’t remember the clever aside, and the model will invent a confident substitute.",
+        "What stuck for us: when something actually works — or fails twice the same way — propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.",
+        "That’s why this notebook talks about skills, rules, and signed patterns instead of “prompts”. The model is powerful. The operating system around it is what makes Monday morning repeatable."
+      ]
+    }
+  ]
+}

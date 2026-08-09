@@ -2,11 +2,26 @@
   "schema": "durable-agent-harness/capabilities/v1",
   "intro": "Productivity here is mostly scope: work that was uneconomic or impossible solo becomes routine — with proof and review still required.",
   "scale": [
-    { "id": "solo-easy", "label": "Solo-easy" },
-    { "id": "solo-hard", "label": "Solo-hard" },
-    { "id": "team", "label": "Needed a team" },
-    { "id": "uneconomic", "label": "Uneconomic" },
-    { "id": "impossible", "label": "Not realistic" }
+    {
+      "id": "solo-easy",
+      "label": "Solo-easy"
+    },
+    {
+      "id": "solo-hard",
+      "label": "Solo-hard"
+    },
+    {
+      "id": "team",
+      "label": "Needed a team"
+    },
+    {
+      "id": "uneconomic",
+      "label": "Uneconomic"
+    },
+    {
+      "id": "impossible",
+      "label": "Not realistic"
+    }
   ],
   "rows": [
     {
