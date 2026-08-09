@@ -36,15 +36,15 @@
     },
     {
       "id": "5",
-      "title": "Add a tiny memory discipline",
-      "body": "Curate durable facts (decisions, people stances, project tickets). Do not dump transcripts. Search with purpose; write with a retention reason.",
-      "done": "You can answer “what did we decide?” without re-litigating a chat."
+      "title": "Add MemPalace-style memory discipline",
+      "body": "Stand up a curated durable store (we use MemPalace): decisions, stances, tickets, signed patterns. File by shelf/wing. Do not dump transcripts. Search with purpose; write with a retention reason.",
+      "done": "You can answer “what did we decide?” from memory without re-litigating a chat."
     },
     {
       "id": "6",
-      "title": "Start a patterns registry",
-      "body": "One markdown table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after a human agrees the lesson is real.",
-      "done": "At least one signed-off pattern that changes default behaviour."
+      "title": "Start Kaizen → Hansei (patterns + TWP)",
+      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say TWP) so agents load the right member practice.",
+      "done": "At least one signed-off pattern, one Hansei note, and a clear TWP/member map."
     },
     {
       "id": "7",

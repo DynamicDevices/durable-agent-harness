@@ -29,8 +29,26 @@
     {
       "name": "Kaizen with sign-off",
       "problem": "Cross-cutting habits invent themselves differently in every chat.",
-      "move": "Propose a pattern, get a human sign-off, encode it, apply it, review it.",
+      "move": "Propose a pattern, get a human sign-off, encode it, apply it — then Hansei on a cadence (keep / amend / retire).",
       "signals": ["Same debate weekly", "Contradictory “house style” answers"]
+    },
+    {
+      "name": "Hansei on a cadence",
+      "problem": "Teams encode forever and never look back; the registry rots.",
+      "move": "After pain or on a weekly/EOW rhythm: what worked, what failed, what to change. Feed the next Kaizen.",
+      "signals": ["Patterns nobody loads", "No retirement path"]
+    },
+    {
+      "name": "TWP member, not mega-prompt",
+      "problem": "Dumping the whole lean philosophy every turn burns tokens and muddies the ask.",
+      "move": "Treat Toyota Way Practices as an umbrella. Load the one member skill that matches the live pain (poka-yoke, muda/jidoka, kyosei, …).",
+      "signals": ["Essay-length lean digressions", "No named practice for the failure"]
+    },
+    {
+      "name": "MemPalace with purpose",
+      "problem": "Transcript sludge and contradictory “facts” make agents confidently wrong.",
+      "move": "File curated drawers; search before re-deciding; invalidate stale cards. Memory supports the Kaizen/Hansei loop — it is not a chat landfill.",
+      "signals": ["Re-litigating settled decisions", "Duplicate contradictory notes"]
     },
     {
       "name": "Felt ≠ measured",

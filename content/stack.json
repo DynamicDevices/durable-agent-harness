@@ -26,23 +26,25 @@
     },
     {
       "id": "memory",
-      "title": "Memory",
-      "subtitle": "Curated, not a transcript dump",
-      "body": "Durable facts and decisions in a searchable store — stances, tickets, signed patterns — without pasting private inboxes onto the public internet.",
+      "title": "Memory (MemPalace)",
+      "subtitle": "Curated palace, not a transcript dump",
+      "body": "We use MemPalace as the durable-memory layer: searchable drawers and a light knowledge graph for decisions, stances, tickets, and signed patterns — without pasting private inboxes onto the public internet.",
       "tips": [
         "Write with a retention reason",
-        "Prefer structured cards over prose sludge",
-        "Invalidate stale facts instead of stacking contradictions"
+        "File by wing/room so agents can find the shelf",
+        "Invalidate stale facts instead of stacking contradictions",
+        "Cite memory in Kaizen/Hansei — do not re-litigate whole chats"
       ]
     },
     {
       "id": "patterns",
       "title": "Patterns",
-      "subtitle": "Kaizen with teeth",
-      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic review. The registry turns lore into an operating system.",
+      "subtitle": "Kaizen → Hansei → TWP",
+      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices (TWP); patterns are the registry that makes Kaizen real.",
       "tips": [
         "No silent promotion to signed-off",
-        "Deprecate without guilt",
+        "Hansei keeps / amends / retires — on a cadence",
+        "TWP names the cluster; load the member practice for the live pain",
         "Encode into skills/rules where agents will load them"
       ]
     },

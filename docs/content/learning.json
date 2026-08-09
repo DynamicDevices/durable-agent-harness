@@ -1,0 +1,80 @@
+{
+  "schema": "durable-agent-harness/learning/v1",
+  "title": "Kaizen → Hansei → TWP",
+  "intro": "The harness is not only tools. It is a learning system: improve deliberately (Kaizen), reflect on what actually happened (Hansei), and keep a named cluster of practices (Toyota Way Practices / TWP) so agents load the right lens for the live pain.",
+  "flow": [
+    {
+      "id": "gemba",
+      "name": "Gemba",
+      "gloss": "Go see the real work",
+      "body": "Start from evidence in the session — logs, diffs, failed proof — not from a slogan. Name the waste or risk in one line."
+    },
+    {
+      "id": "kaizen",
+      "name": "Kaizen",
+      "gloss": "Continuous improvement with sign-off",
+      "body": "Propose a thin working pattern or skill. A human signs it off. Encode it where agents will load it. No silent policy."
+    },
+    {
+      "id": "apply",
+      "name": "Apply",
+      "gloss": "Standard work in motion",
+      "body": "On matching tasks, skim signed-off patterns and load the relevant skill. Prefer the smallest change that prevents the next burn."
+    },
+    {
+      "id": "hansei",
+      "name": "Hansei",
+      "gloss": "Honest reflection",
+      "body": "Periodically (or after pain): what worked, what failed, what to keep / amend / retire. Hansei feeds the next Kaizen — it is not optional theatre."
+    },
+    {
+      "id": "twp",
+      "name": "TWP",
+      "gloss": "Toyota Way Practices",
+      "body": "Umbrella name for the lean learning cluster. When someone says TWP, map to the member practice that matches the pain — do not dump the whole philosophy every turn."
+    }
+  ],
+  "twpMembers": [
+    {
+      "name": "Kaizen / Hansei",
+      "role": "Pattern lifecycle and periodic review"
+    },
+    {
+      "name": "Poka-yoke",
+      "role": "Mistake-proof gates so wrong-stage retries are hard"
+    },
+    {
+      "name": "Muda + Jidoka",
+      "role": "Cut waiting waste; stop the line when abnormal"
+    },
+    {
+      "name": "Shoshin × known unknowns",
+      "role": "Beginner’s mind with explicit epistemic humility"
+    },
+    {
+      "name": "Kyosei",
+      "role": "Co-prosperity on shared benches and agent lanes"
+    },
+    {
+      "name": "Respect for People",
+      "role": "Twin of Kaizen — design for the humans in the loop"
+    }
+  ],
+  "mempalace": {
+    "title": "MemPalace for memories",
+    "lede": "MemPalace is the curated durable-memory layer: searchable drawers and a light knowledge graph — not a dump of every chat transcript.",
+    "practices": [
+      "Write with a retention reason (decision, stance, ticket, signed pattern).",
+      "Prefer structured cards over prose sludge; invalidate stale facts.",
+      "Use wings/rooms as a filing discipline so agents can find the right shelf.",
+      "Keep private life and customer material out of anything you might publish.",
+      "Memory supports Kaizen/Hansei: proposals and reviews cite drawers instead of re-litigating chat."
+    ],
+    "not": [
+      "Not a substitute for skills/rules (procedures and constraints still live in the harness).",
+      "Not an excuse to store secrets or raw credentials.",
+      "Not automatic immortality for every token the model ever saw."
+    ]
+  },
+  "loopOneLiner": "Gemba → Kaizen (sign-off + encode) → Apply → Hansei → (repeat), under the TWP umbrella — with MemPalace holding the durable facts the loop needs."
+}

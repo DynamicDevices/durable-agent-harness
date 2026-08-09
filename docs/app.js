@@ -76,6 +76,35 @@ function renderStats(data) {
   if (note) note.textContent = data.growthNote || data.disclaimer || "";
 }
 
+function renderLearning(data) {
+  document.querySelector("#learning-intro").textContent = data.intro;
+  document.querySelector("#learning-loop-line").textContent = data.loopOneLiner;
+  document.querySelector("#learning-flow").replaceChildren(
+    ...data.flow.map((step, index) =>
+      el("li", { className: "flow-card" }, [
+        el("div", { className: "step-num", text: `${index + 1}. ${step.name}` }),
+        el("div", { className: "subtitle", text: step.gloss }),
+        el("p", { text: step.body }),
+      ]),
+    ),
+  );
+  document.querySelector("#mempalace-lede").textContent = data.mempalace.lede;
+  document.querySelector("#mempalace-do").replaceChildren(
+    ...data.mempalace.practices.map((p) => el("li", { text: p })),
+  );
+  document.querySelector("#mempalace-not").replaceChildren(
+    ...data.mempalace.not.map((p) => el("li", { text: p })),
+  );
+  document.querySelector("#twp-grid").replaceChildren(
+    ...data.twpMembers.map((m) =>
+      el("article", { className: "band-card" }, [
+        el("h3", { text: m.name }),
+        el("p", { text: m.role }),
+      ]),
+    ),
+  );
+}
+
 function renderPlaybook(data) {
   document.querySelector("#playbook-intro").textContent = data.intro;
   document.querySelector("#principle-strip").replaceChildren(
@@ -368,6 +397,7 @@ async function main() {
     clocks,
     stats,
     playbook,
+    learning,
     timeline,
     stack,
     capabilities,
@@ -381,6 +411,7 @@ async function main() {
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
     loadJSON("playbook.json"),
+    loadJSON("learning.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
@@ -395,6 +426,7 @@ async function main() {
   renderClocks(clocks);
   renderStats(stats);
   renderPlaybook(playbook);
+  renderLearning(learning);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);

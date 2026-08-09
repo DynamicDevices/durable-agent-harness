@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Durable Agent Harness — Dynamic Devices</title>
-  <meta name="description" content="Public engineering notebook on building a durable AI agent harness: playbook, starter templates, patterns, capability maps, and honest measurement — from Dynamic Devices." />
-  <meta name="keywords" content="AI agents, agent harness, Cursor, developer tools, AI engineering, agent skills, working patterns, LLM productivity, Dynamic Devices" />
+  <meta name="description" content="Public engineering notebook on building a durable AI agent harness: MemPalace memory, Kaizen→Hansei→TWP learning loop, playbook, starters, and honest measurement — from Dynamic Devices." />
+  <meta name="keywords" content="AI agents, agent harness, MemPalace, Kaizen, Hansei, Toyota Way Practices, TWP, Cursor, developer tools, AI engineering, agent skills, working patterns, LLM productivity, Dynamic Devices" />
   <meta name="author" content="Dynamic Devices Ltd" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#0B1C2C" />
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://dynamicdevices.github.io/durable-agent-harness/" />
   <meta property="og:title" content="Durable Agent Harness — Dynamic Devices" />
-  <meta property="og:description" content="Build a working relationship with AI that compounds. Playbook, starters, patterns, and honest measurement — methods only." />
+  <meta property="og:description" content="Build a working relationship with AI that compounds. MemPalace memory, Kaizen→Hansei→TWP, playbook, starters — methods only." />
   <meta property="og:image" content="https://dynamicdevices.github.io/durable-agent-harness/assets/og-cover.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
@@ -28,7 +28,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Durable Agent Harness — Dynamic Devices" />
-  <meta name="twitter:description" content="Build a working relationship with AI that compounds. Playbook, starters, patterns, and honest measurement." />
+  <meta name="twitter:description" content="Build a working relationship with AI that compounds. MemPalace, Kaizen→Hansei→TWP, playbook, starters." />
   <meta name="twitter:image" content="https://dynamicdevices.github.io/durable-agent-harness/assets/og-cover.png" />
   <meta name="twitter:image:alt" content="Durable Agent Harness cover" />
 
@@ -76,7 +76,7 @@
         "@id": "https://dynamicdevices.github.io/durable-agent-harness/#techarticle",
         "headline": "Durable Agent Harness",
         "alternativeHeadline": "Build a working relationship with AI that compounds",
-        "description": "Methods for skills, rules, memory, patterns, and human gates around AI coding agents — without private or customer detail.",
+        "description": "Methods for skills, rules, MemPalace memory, Kaizen→Hansei→TWP, patterns, and human gates around AI coding agents — without private or customer detail.",
         "author": { "@id": "https://www.dynamicdevices.co.uk/#organization" },
         "publisher": { "@id": "https://www.dynamicdevices.co.uk/#organization" },
         "datePublished": "2026-08-08",
@@ -86,6 +86,11 @@
         "keywords": [
           "AI agents",
           "agent harness",
+          "MemPalace",
+          "Kaizen",
+          "Hansei",
+          "Toyota Way Practices",
+          "TWP",
           "Cursor",
           "developer tools",
           "LLM engineering",
@@ -129,6 +134,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#start">Start</a>
       <a href="#playbook">Playbook</a>
+      <a href="#learning">Learning</a>
       <a href="#explore">Explore</a>
       <a href="#cases">Cases</a>
       <a href="#measure">Measure</a>
@@ -143,7 +149,7 @@
       <div class="hero-inner">
         <p class="hero-brand" data-testid="brand">Durable Agent Harness</p>
         <h1 id="hero-headline">Build a working relationship with AI that compounds.</h1>
-        <p class="lede">Playbook, patterns, starters, and honest measurement — a public engineering notebook. Methods only; nothing private.</p>
+        <p class="lede">MemPalace memory, Kaizen → Hansei → TWP, playbook, starters, and honest measurement — a public engineering notebook. Methods only; nothing private.</p>
         <div class="cta-row">
           <a class="btn primary" href="#start" data-testid="cta-start">Start here</a>
           <a class="btn ghost" href="#explore" data-testid="cta-explore">Explore the journey</a>
@@ -166,8 +172,13 @@
             <strong>Starter kit</strong>
             <span>Templates for skills, rules, patterns, lanes, and clocks.</span>
           </a>
-          <a class="path-card" href="#explore">
+          <a class="path-card" href="#learning">
             <span class="path-kicker">Learn</span>
+            <strong>Kaizen → TWP</strong>
+            <span>MemPalace memory and the Kaizen → Hansei → TWP loop.</span>
+          </a>
+          <a class="path-card" href="#explore">
+            <span class="path-kicker">Browse</span>
             <strong>Explore</strong>
             <span>Timeline, stack, capability, patterns, glossary, research.</span>
           </a>
@@ -198,6 +209,29 @@
         <ol class="steps" id="playbook-steps"></ol>
         <h3 class="subhead">Anti-patterns</h3>
         <div class="steal-grid" id="anti-grid"></div>
+      </div>
+    </section>
+
+    <section class="learning" id="learning" data-testid="section-learning" aria-labelledby="learning-title">
+      <div class="wrap">
+        <h2 id="learning-title">Kaizen → Hansei → TWP</h2>
+        <p class="section-lede" id="learning-intro"></p>
+        <p class="loop-line" id="learning-loop-line"></p>
+        <ol class="flow-grid" id="learning-flow"></ol>
+        <h3 class="subhead">MemPalace for memories</h3>
+        <p class="section-lede" id="mempalace-lede"></p>
+        <div class="two-col">
+          <div>
+            <h4 class="minihead">Do</h4>
+            <ul class="tip-list" id="mempalace-do"></ul>
+          </div>
+          <div>
+            <h4 class="minihead">Not</h4>
+            <ul class="tip-list" id="mempalace-not"></ul>
+          </div>
+        </div>
+        <h3 class="subhead">TWP member practices</h3>
+        <div class="band-grid" id="twp-grid"></div>
       </div>
     </section>
 

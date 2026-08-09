@@ -19,6 +19,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-start")).toContainText("Playbook");
+    await expect(page.getByTestId("section-start")).toContainText("Kaizen → TWP");
     await expect(page.getByTestId("clock-serious_ai")).toBeVisible();
     await expect(page.getByTestId("clock-cursor")).toBeVisible();
     await expect(page.getByTestId("clock-harness")).toBeVisible();
@@ -31,6 +32,9 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-playbook")).toContainText("Build your own harness");
     await expect(page.locator("#playbook-steps .step-card")).toHaveCount(8);
+    await expect(page.getByTestId("section-learning")).toContainText("MemPalace");
+    await expect(page.getByTestId("section-learning")).toContainText("Toyota Way Practices");
+    await expect(page.locator("#learning-flow .flow-card")).toHaveCount(5);
     await expect(page.getByTestId("section-cases")).toContainText("Sanitized case studies");
     await expect(page.locator("#case-grid .case-card")).toHaveCount(6);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
@@ -53,6 +57,8 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
+    await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
+    await expect(page.getByTestId("panel-glossary")).toContainText("TWP");
     await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");
     await page.getByRole("tab", { name: "Research" }).click();
     await expect(page.getByTestId("panel-literature")).toContainText("METR");

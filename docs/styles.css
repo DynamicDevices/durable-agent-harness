@@ -495,8 +495,51 @@ section h2 {
 
 .path-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.flow-grid {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.flow-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+.loop-line {
+  margin: -0.5rem 0 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--green);
+  background: rgba(109, 179, 63, 0.1);
+  border-radius: 0 14px 14px 0;
+  font-family: var(--font-label);
+  color: var(--navy);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.minihead {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-label);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--copper);
 }
 
 .path-card {
@@ -785,9 +828,11 @@ section h2 {
   .stack-grid,
   .steal-grid,
   .path-grid,
+  .flow-grid,
   .case-grid,
   .measure-grid,
-  .band-grid {
+  .band-grid,
+  .two-col {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -809,9 +854,11 @@ section h2 {
   .stack-grid,
   .steal-grid,
   .path-grid,
+  .flow-grid,
   .case-grid,
   .measure-grid,
-  .band-grid {
+  .band-grid,
+  .two-col {
     grid-template-columns: 1fr;
   }
 

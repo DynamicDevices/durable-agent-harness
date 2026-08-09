@@ -53,6 +53,16 @@
     },
     {
       "date": "2026-07",
+      "title": "MemPalace as durable memory",
+      "body": "Curated drawers and a light knowledge graph became the memory layer — searchable facts for Kaizen/Hansei, not a dump of every transcript."
+    },
+    {
+      "date": "2026-08",
+      "title": "TWP names the learning core",
+      "body": "Toyota Way Practices (TWP) became the umbrella for the lean cluster: Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people — load the member that matches the pain."
+    },
+    {
+      "date": "2026-07",
       "title": "Fail-closed outbound",
       "body": "Draft freely; irreversible sends and publishes require a human gate that shows the full referent. Speed is not consent."
     },
