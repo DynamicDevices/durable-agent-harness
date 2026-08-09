@@ -13,13 +13,30 @@ test.describe("Durable Agent Harness site", () => {
     expect(brandSize).toBeGreaterThan(h1Size);
     await expect(brand).toHaveText("Chop Wood Carry Water");
 
-    await page.getByTestId("cta-explore").click();
-    await expect(page.getByTestId("section-blog")).toBeInViewport();
+    await page.getByTestId("cta-start").click();
+    await expect(page.getByTestId("section-hour")).toBeInViewport();
+  });
+
+  test("60-minute starter and pack links render", async ({ page }) => {
+    await page.goto("/#hour");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("section-hour")).toContainText("Start in 60 minutes");
+    await expect(page.getByTestId("hour-steps").locator(".step-card")).toHaveCount(8);
+    await expect(page.getByTestId("hour-done")).toContainText("Done when");
+    const download = page.getByTestId("hour-download");
+    await expect(download).toHaveAttribute("href", /cursor-hour-starter\.zip$/);
+    const res = await page.request.get("/packs/cursor-hour-starter.zip");
+    expect(res.ok()).toBeTruthy();
+    await expect(page.getByTestId("hour-browse")).toHaveAttribute(
+      "href",
+      /packs\/cursor-hour\/README\.md$/,
+    );
   });
 
   test("start paths and clocks render", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("section-start")).toContainText("60 minutes");
     await expect(page.getByTestId("section-start")).toContainText("Playbook");
     await expect(page.getByTestId("section-start")).toContainText("Blog");
     await expect(page.getByTestId("section-start")).toContainText("Kaizen → Toyota Way Practices");
@@ -95,6 +112,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");
     await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(
       "PR commits",
     );

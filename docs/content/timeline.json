@@ -73,6 +73,11 @@
     },
     {
       "date": "2026-08",
+      "title": "Start in 60 minutes",
+      "body": "Added a timed checklist and downloadable Cursor pack so visitors leave with rules, a skill, a signed pattern, and a clock — not just a read."
+    },
+    {
+      "date": "2026-08",
       "title": "Preloop under P0 gates",
       "body": "Started layering Preloop as a durable runtime policy/audit plane on tool use — under existing human gates, not instead of them.",
       "link": {

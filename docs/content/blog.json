@@ -3,6 +3,16 @@
   "intro": "Short notes from the work. First person. Not a content calendar.",
   "posts": [
     {
+      "id": "start-in-60-minutes",
+      "date": "2026-08-09",
+      "title": "Start in 60 minutes",
+      "body": [
+        "A notebook full of patterns is useless if people only nod and leave. The useful finish line is a thin harness on disk.",
+        "There’s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.",
+        "Come back for Toyota Way Practices and Preloop when the boring basics are already earning rent."
+      ]
+    },
+    {
       "id": "preloop-openrouter-pr-checks",
       "date": "2026-08-09",
       "title": "Preloop + OpenRouter on PR commits",

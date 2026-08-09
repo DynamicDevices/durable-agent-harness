@@ -1,0 +1,90 @@
+{
+  "schema": "durable-agent-harness/hour/v1",
+  "title": "Start in 60 minutes",
+  "intro": "Don’t read the whole notebook. Get a thin harness into Cursor in about an hour — then come back for the philosophy.",
+  "promise": "When you finish you have: two fail-closed rules, one on-demand skill, one signed pattern, and a tenure clock. That’s enough to stop the next stupid burn.",
+  "pack": {
+    "zip": "packs/cursor-hour-starter.zip",
+    "browse": "packs/cursor-hour/README.md",
+    "label": "Download Cursor pack (.zip)",
+    "browseLabel": "Read pack README"
+  },
+  "steps": [
+    {
+      "id": "1",
+      "minutes": 5,
+      "title": "Download the pack",
+      "why": "Empty templates invite dithering. This pack is already named and filled with boring defaults you can rename.",
+      "do": "Download the zip (or browse the files). Unzip next to a scratch project — or into a small git repo you control.",
+      "proof": "You can see README.md and a .cursor/ tree on disk."
+    },
+    {
+      "id": "2",
+      "minutes": 10,
+      "title": "Drop files where Cursor loads them",
+      "why": "A harness that lives only in chat dies when the chat dies.",
+      "do": "Copy the pack’s `.cursor` folder into your project root (prefer project-local). Open the folder in Cursor and Reload Window if rules don’t show yet.",
+      "proof": "Cursor sees the two .mdc rules and the example-domain-task skill."
+    },
+    {
+      "id": "3",
+      "minutes": 10,
+      "title": "Rename the skill to your real job",
+      "why": "Generic skills don’t fire. Trigger nouns must match how you talk.",
+      "do": "Edit skills/example-domain-task/SKILL.md: change the name, description triggers, When/Do steps, and Proof of done to one task you do weekly.",
+      "proof": "You can say the trigger phrase out loud and it matches the description."
+    },
+    {
+      "id": "4",
+      "minutes": 10,
+      "title": "Keep the two P0 rules always-on",
+      "why": "Secrets in chat and silent outbound are the burns that don’t forgive.",
+      "do": "Read both rules. Change the wording if you must, but keep alwaysApply: true. Do not add a third always-on rule today.",
+      "proof": "You can explain each rule in one sentence to a colleague."
+    },
+    {
+      "id": "5",
+      "minutes": 10,
+      "title": "Sign off one pattern",
+      "why": "Unsigned patterns are just opinions. Sign-off is what makes Kaizen real.",
+      "do": "Open patterns/WORKING-PATTERNS.md. Keep lean-tool-sessions as signed-off, or replace it with a failure you had this month. Write the problem in one line.",
+      "proof": "The table has exactly one signed-off row that matches a real incident."
+    },
+    {
+      "id": "6",
+      "minutes": 5,
+      "title": "Freeze a tenure clock",
+      "why": "Without a start date, every demo invents a heroic timeline.",
+      "do": "Edit clocks.json: set harness.start to today’s date (ISO). Leave the other clocks or delete them.",
+      "proof": "A date you trust is on disk — not only in a slide."
+    },
+    {
+      "id": "7",
+      "minutes": 5,
+      "title": "Run one real task",
+      "why": "The harness is only real under load.",
+      "do": "Ask the agent to do the skill’s task. Require the proof checklist. If it skips a gate, stop and tighten the rule — don’t shrug.",
+      "proof": "You have a short note of what changed and how you verified it."
+    },
+    {
+      "id": "8",
+      "minutes": 5,
+      "title": "Schedule a tiny Hansei",
+      "why": "Without reflection the pack becomes folklore in a week.",
+      "do": "Put a 15-minute calendar block in seven days: keep / amend / retire on the pattern and skill. Link this site’s Learning section if you want the longer loop.",
+      "proof": "The calendar (or ticket) exists. You are done for today."
+    }
+  ],
+  "done": {
+    "title": "Done when",
+    "checks": [
+      "Pack installed where Cursor loads it",
+      "Skill renamed to your domain",
+      "Two always-on P0 rules still always-on",
+      "One signed-off pattern with a real problem line",
+      "One frozen clock date",
+      "One task run with proof — not a plan alone"
+    ]
+  },
+  "next": "When this feels boring (good), read the Playbook or Learning sections. Skip what you don’t need."
+}
