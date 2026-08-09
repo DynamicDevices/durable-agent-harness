@@ -51,6 +51,10 @@
       "def": "A multi-model API router across providers, with provider failover and optional model fallbacks. Transport for model calls — not a substitute for skills, rules, or proof class."
     },
     {
+      "term": "Preloop commit status",
+      "def": "A GitHub commit status (context `preloop`) posted by a Preloop Cloud pull-request reviewer after it looks at a PR SHA. CI can optionally wait on that status before burning self-hosted runners. Separate plane from Preloop’s desktop MCP firewall in Cursor."
+    },
+    {
       "term": "Human gate",
       "def": "An explicit approval step before irreversible action (send, publish, destroy, spend). The referent must be visible."
     },
@@ -122,7 +126,11 @@
     },
     {
       "q": "Why OpenRouter?",
-      "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies."
+      "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies. Same transport can serve Preloop’s PR reviewer."
+    },
+    {
+      "q": "How do Preloop and OpenRouter check PR commits?",
+      "a": "Preloop Cloud runs a pull-request reviewer on the push; OpenRouter is the model path. Preloop posts a GitHub commit status (`preloop`). Actions can wait on that status before expensive jobs, or leave reviews async. Humans still merge."
     },
     {
       "q": "Is WhatsApp part of the harness?",

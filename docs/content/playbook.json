@@ -61,14 +61,14 @@
     {
       "id": "9",
       "title": "Layer runtime policy (Preloop)",
-      "body": "Add a durable runtime audit/policy plane under your human P0 gates. Do not replace send/secrets consent with a firewall. Keep enrollment tokens out of git and chat.",
-      "done": "Tool use is auditable; irreversible actions still need a human gate with a visible referent."
+      "body": "Add a durable runtime audit/policy plane under your human P0 gates. Do not replace send/secrets consent with a firewall. Keep enrollment tokens out of git and chat. On product repos, wire Preloop Cloud as a PR reviewer so each push can post a `preloop` commit status.",
+      "done": "Tool use is auditable; irreversible actions still need a human gate; PR commits can get a Preloop status without treating it as merge authority."
     },
     {
       "id": "10",
       "title": "Add multi-model routing (OpenRouter)",
-      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit. Configure failover deliberately; vault the API key; keep proof class unchanged.",
-      "done": "You can switch or fall back across models/providers without pasting keys into chat."
+      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit — and so Preloop’s PR reviewer has a deliberate model path. Configure failover deliberately; vault the API key; keep proof class unchanged.",
+      "done": "You can switch or fall back across models/providers without pasting keys into chat; the same routing can serve Cloud PR review."
     },
     {
       "id": "11",

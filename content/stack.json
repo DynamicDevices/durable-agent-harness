@@ -64,7 +64,7 @@
       "id": "runtime",
       "title": "Runtime + routing",
       "subtitle": "Preloop · OpenRouter",
-      "body": "Preloop adds a durable policy/audit plane on tool use. OpenRouter adds multi-model routing with provider failover and optional model fallbacks. Both serve the harness; neither is the harness.",
+      "body": "Preloop adds a durable policy/audit plane on tool use — and a Cloud PR reviewer that posts a `preloop` commit status. OpenRouter routes models for the cockpit and that reviewer. Both serve the harness; neither is the harness.",
       "tips": [
         "Keep keys in a vault",
         "Document methods, not enrollment secrets",

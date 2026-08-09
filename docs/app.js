@@ -222,6 +222,28 @@ function renderRuntime(data) {
     block("preloop", data.preloop),
     block("openrouter", data.openrouter),
   );
+
+  const pr = data.prChecks;
+  if (pr) {
+    const title = document.querySelector("#runtime-pr-title");
+    if (title) title.textContent = pr.title;
+    document.querySelector("#runtime-pr-lede").textContent = pr.lede;
+    document.querySelector("#runtime-pr-steps").replaceChildren(
+      ...pr.steps.map((step, index) =>
+        el("li", { className: "step-card" }, [
+          el("div", { className: "step-num", text: `Step ${index + 1}` }),
+          el("h3", { text: step.title }),
+          el("p", { text: step.body }),
+        ]),
+      ),
+    );
+    document.querySelector("#runtime-pr-do").replaceChildren(
+      ...pr.practices.map((p) => el("li", { text: p })),
+    );
+    document.querySelector("#runtime-pr-not").replaceChildren(
+      ...pr.not.map((p) => el("li", { text: p })),
+    );
+  }
 }
 
 function renderLearning(data) {

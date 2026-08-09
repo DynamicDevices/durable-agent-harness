@@ -84,14 +84,15 @@
       "id": "runtime-routing",
       "title": "Runtime policy + model routing",
       "domain": "Platform",
-      "before": "Tool use unaudited beyond chat discipline; single-upstream model lock-in.",
-      "after": "Preloop layered under P0 for tool audit/policy; OpenRouter for multi-model routing with vaulted keys.",
+      "before": "Tool use unaudited beyond chat discipline; single-upstream model lock-in; CI burned hours before a semantic miss was obvious.",
+      "after": "Preloop layered under P0 for tool audit/policy; OpenRouter for multi-model routing with vaulted keys; Preloop Cloud posts a `preloop` commit status on PRs so Actions can wait before self-hosted jobs.",
       "harness": [
         "Preloop under P0",
         "OpenRouter failover",
+        "PR commit status before expensive CI",
         "Keys never in chat/git"
       ],
-      "lesson": "Runtime and routing support the harness — they do not replace human consent or proof class."
+      "lesson": "Runtime and routing support the harness — they do not replace human consent, tests, or merge authority."
     },
     {
       "id": "whatsapp-triage",

@@ -93,6 +93,16 @@
       ]
     },
     {
+      "name": "Preloop before expensive CI",
+      "problem": "Self-hosted runners burn hours on PRs that a semantic reviewer would have flagged in minutes.",
+      "move": "Run a Preloop Cloud PR reviewer (models via OpenRouter) so each push gets a `preloop` commit status. Prefer async review by default; make Actions wait only when runner time is scarce. Keep desktop Preloop MCP and the GitHub reviewer as separate planes.",
+      "signals": [
+        "Long CI queues on obvious review misses",
+        "Treating Preloop status as merge authority",
+        "Confusing Cursor tool firewall with GitHub commit checks"
+      ]
+    },
+    {
       "name": "Felt ≠ measured",
       "problem": "People feel faster with AI even when wall-clock says otherwise.",
       "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC.",

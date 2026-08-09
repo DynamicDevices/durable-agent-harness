@@ -90,6 +90,11 @@
       }
     },
     {
+      "date": "2026-08",
+      "title": "Preloop + OpenRouter on PR commits",
+      "body": "Wired Preloop Cloud as a pull-request reviewer with OpenRouter as the model path. Each push can get a GitHub `preloop` commit status; CI waits only when runner time is scarce."
+    },
+    {
       "date": "2026-07",
       "title": "WhatsApp channel (Briar)",
       "body": "Added a monitor/triage WhatsApp channel with tiered reply authority, one-watcher discipline, and voice notes both ways — still fail-closed on irreversible outbound."

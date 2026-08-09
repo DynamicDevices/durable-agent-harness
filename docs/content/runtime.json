@@ -1,8 +1,8 @@
 {
   "schema": "durable-agent-harness/runtime/v1",
   "title": "Runtime layer: Preloop + OpenRouter",
-  "intro": "Two layers I added under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter when multi-model routing earns its keep.",
-  "stance": "Runtime controls sit under human P0 gates — send, secrets, irreversible publish. A policy firewall is not consent.",
+  "intro": "Two layers I added under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter when multi-model routing earns its keep. The same pair also runs checks on PR commits before we burn expensive CI.",
+  "stance": "Runtime controls sit under human P0 gates — send, secrets, irreversible publish. A policy firewall is not consent. A PR review bot is not a merge button.",
   "preloop": {
     "title": "Preloop",
     "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor’s existing fail-closed gates — it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
@@ -21,7 +21,7 @@
   },
   "openrouter": {
     "title": "OpenRouter",
-    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. Useful when the harness should not be married to a single upstream.",
+    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. Useful when the harness — and Preloop’s reviewer — should not be married to a single upstream.",
     "docs": "https://openrouter.ai/docs",
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
@@ -35,5 +35,39 @@
       "Not a productivity multiplier claim by itself."
     ]
   },
-  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→TWP) steers behaviour. Preloop audits and gates tool runtime. OpenRouter routes model capacity. Humans still own irreversible actions."
+  "prChecks": {
+    "title": "PR / commit checks",
+    "lede": "On product repos I wire Preloop Cloud as a pull-request reviewer and OpenRouter as the model path behind it. The point is shift-left: catch semantic issues on the commit before self-hosted CI eats the afternoon.",
+    "steps": [
+      {
+        "title": "Push the PR commit",
+        "body": "Ordinary git push. No special local ritual — the check lives in Cloud + GitHub, not in a fat always-on prompt."
+      },
+      {
+        "title": "Preloop reviewer runs",
+        "body": "A Preloop Cloud pull-request reviewer flow looks at the change set. Models are reached through OpenRouter (first-class routing on the Preloop gateway — not a one-off script in the repo)."
+      },
+      {
+        "title": "Commit status posts",
+        "body": "Preloop posts a GitHub commit status (context `preloop`) — pass / fail / pending — against that SHA. Comments or findings can land on the PR as well."
+      },
+      {
+        "title": "CI can wait (optional gate)",
+        "body": "GitHub Actions that burn self-hosted runners can wait for that `preloop` status before starting. Flip the gate on when you want ordering; leave reviews async when you only want the signal."
+      }
+    ],
+    "practices": [
+      "Treat the Preloop status as a review signal, not as merge authority — humans still merge.",
+      "Keep OpenRouter keys in the vault that Preloop Cloud uses; never in workflow YAML or chat.",
+      "Prefer async review by default; make CI wait only when runner time is scarce or the failure mode is expensive.",
+      "When the gate is on, fix or skip with an explicit, rare bypass — do not normalise “ignore Preloop”.",
+      "Keep Cursor’s Preloop MCP firewall (desktop tool audit) and the GitHub PR-reviewer flow mentally separate — same vendor, different planes."
+    ],
+    "not": [
+      "Not a replacement for unit tests, hardware proof, or Bugbot / human review.",
+      "Not a reason to paste secrets into GitHub Actions logs “so the reviewer can see them”.",
+      "Not the same thing as Preloop’s desktop MCP approvals in Cursor."
+    ]
+  },
+  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→TWP) steers behaviour. Preloop audits tool runtime and can review PR commits. OpenRouter routes model capacity for both. CI may wait on the Preloop commit status. Humans still own irreversible actions and merges."
 }
