@@ -22,6 +22,12 @@
       "lesson": "Team-shaped solo work needs explicit ownership."
     },
     {
+      "id": "trash",
+      "title": "Delete → trash folder",
+      "body": "When removing project files, move them to the OS trash or a project trash folder — do not hard-delete first. Mistakes stay recoverable until trash is emptied on purpose.",
+      "lesson": "Soft delete buys recovery; rm spends it."
+    },
+    {
       "id": "outbound",
       "title": "Tiered send authority",
       "body": "Draft freely. Light carve-outs for trusted contexts; everything else fail-closed with a human gate showing the full message. No soft “shall I send?” stacks that hide the body.",

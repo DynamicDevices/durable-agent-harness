@@ -47,8 +47,8 @@
       "minutes": 10,
       "title": "Sign off one pattern",
       "why": "Unsigned patterns are just opinions. Sign-off is what makes Kaizen real.",
-      "do": "Open patterns/WORKING-PATTERNS.md. Keep lean-tool-sessions as signed-off, or replace it with a failure you had this month. Write the problem in one line.",
-      "proof": "The table has exactly one signed-off row that matches a real incident."
+      "do": "Open patterns/WORKING-PATTERNS.md. Keep a signed-off row that matches a real failure (the pack ships lean-tool-sessions and trash-instead-of-hard-delete as examples), or replace with one of yours. Write the problem in one line.",
+      "proof": "The table has at least one signed-off row that matches a real incident."
     },
     {
       "id": "6",
@@ -81,7 +81,7 @@
       "Pack installed where Cursor loads it",
       "Skill renamed to your domain",
       "Two Priority 0 (P0) rules still always-on (secrets; human gate)",
-      "One signed-off pattern with a real problem line",
+      "At least one signed-off pattern with a real problem line",
       "One frozen clock date",
       "One task run with proof — not a plan alone"
     ]

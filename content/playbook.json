@@ -6,6 +6,7 @@
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
     "Irreversible actions stay human. Draft freely; send/publish/destroy only with an explicit gate.",
+    "Prefer trash over hard delete. Move files to a trash folder first so mistakes stay recoverable.",
     "Prefer proof over narrative. Define what “done” looks like before celebrating.",
     "Sign off cross-cutting habits. Lore in chat is not an operating system."
   ],
@@ -19,8 +20,8 @@
     {
       "id": "2",
       "title": "Write three fail-closed rules",
-      "body": "Start with: (1) secrets never pasted into chat — capture via desktop dialog into Bitwarden (Password Manager for humans; Bitwarden Secrets Manager for agent tokens), (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects. Keep them short.",
-      "done": "Three rules in version control; agents actually obey them; tokens stay out of the conversation."
+      "body": "Start with: (1) secrets never pasted into chat — capture via desktop dialog into Bitwarden (Password Manager for humans; Bitwarden Secrets Manager for agent tokens), (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects, (4) delete by moving to trash — not hard rm — so mistakes stay recoverable. Keep them short; only the first two need to be always-on Priority 0 (P0).",
+      "done": "Fail-closed rules in version control; agents actually obey them; tokens stay out of the conversation; deletes are recoverable."
     },
     {
       "id": "3",
