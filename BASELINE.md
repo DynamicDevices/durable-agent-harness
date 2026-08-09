@@ -16,6 +16,7 @@ Locked shape:
 |---|---|
 | Brand | Chop Wood Carry Water · Alex Lennon · [@embedded_iot](https://x.com/embedded_iot) |
 | Finish line | [#hour](https://chopwoodcarrywater.uk/#hour) — 60-minute checklist + Cursor pack zip |
+| Agents entry | [`agents.html`](https://chopwoodcarrywater.uk/agents.html) + repo [`AGENTS.md`](AGENTS.md) |
 | Operating system | Playbook, Learning (Kaizen → Hansei → Toyota Way Practices), runtime (Preloop + OpenRouter + PR checks), channels & lean |
 | Explore | Timeline, stack, capability, patterns, glossary/FAQ, research |
 | Honesty | Measure section, clocks, weekly ritual — no fake multipliers |

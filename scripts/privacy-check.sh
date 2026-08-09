@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEFAULT_DENY="/home/ajlennon/data_drive/dd/personal/ai-tenure/public-site-denylist.txt"
 DENY="${DENYLIST_FILE:-$DEFAULT_DENY}"
-TARGETS=("$ROOT/docs" "$ROOT/content" "$ROOT/starters" "$ROOT/packs" "$ROOT/README.md" "$ROOT/BASELINE.md" "$ROOT/blog-inbox.md" "$ROOT/PRIVACY.md" "$ROOT/CONTRIBUTING.md")
+TARGETS=("$ROOT/docs" "$ROOT/content" "$ROOT/starters" "$ROOT/packs" "$ROOT/README.md" "$ROOT/AGENTS.md" "$ROOT/BASELINE.md" "$ROOT/blog-inbox.md" "$ROOT/PRIVACY.md" "$ROOT/CONTRIBUTING.md")
 
 # Ensure pages content matches SoT before scanning.
 "$ROOT/scripts/sync-content.sh" >/dev/null
