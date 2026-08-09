@@ -1,26 +1,28 @@
 :root {
-  --carbon: #07111f;
-  --carbon-deep: #040a12;
-  --cyan: #20d6d2;
-  --violet: #7557ff;
-  --lime: #b6f23b;
+  --carbon: #0b1210;
+  --carbon-deep: #060a09;
+  --timber: #c48a4a;
+  --water: #2a6b7c;
+  --lime: #8fbc6a;
   --cloud: #f7f9fc;
   --mist: #eef2f7;
   --graphite: #5a6b78;
-  --ink: #0e1a28;
+  --ink: #121a18;
   --card: #ffffff;
-  --line: rgba(7, 17, 31, 0.12);
-  --shadow: 0 18px 50px rgba(7, 17, 31, 0.14);
+  --line: rgba(11, 18, 16, 0.12);
+  --shadow: 0 18px 50px rgba(11, 18, 16, 0.14);
   --radius: 18px;
   --font-display: "Sora", system-ui, sans-serif;
   --font-label: "Space Grotesk", system-ui, sans-serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
   --wrap: min(1120px, calc(100% - 2.5rem));
-  /* aliases for gradual migration */
+  /* aliases used elsewhere in the stylesheet */
   --navy: var(--carbon);
   --navy-deep: var(--carbon-deep);
-  --green: var(--lime);
-  --copper: var(--violet);
+  --green: var(--water);
+  --copper: var(--timber);
+  --cyan: var(--water);
+  --violet: var(--timber);
 }
 
 *,
@@ -37,10 +39,10 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 8% -12%, rgba(32, 214, 210, 0.14), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, rgba(117, 87, 255, 0.12), transparent 50%),
-    radial-gradient(700px 400px at 70% 20%, rgba(182, 242, 59, 0.08), transparent 45%),
-    linear-gradient(180deg, var(--cloud) 0%, var(--mist) 45%, #e6ecf4 100%);
+    radial-gradient(1200px 600px at 8% -12%, rgba(42, 107, 124, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(196, 138, 74, 0.1), transparent 50%),
+    radial-gradient(700px 400px at 70% 20%, rgba(143, 188, 106, 0.08), transparent 45%),
+    linear-gradient(180deg, var(--cloud) 0%, var(--mist) 45%, #e8eee8 100%);
   font-family: var(--font-body);
   line-height: 1.55;
   text-rendering: optimizeLegibility;
@@ -154,16 +156,16 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(7, 17, 31, 0.2), rgba(7, 17, 31, 0.65)),
+    linear-gradient(120deg, rgba(11, 18, 16, 0.25), rgba(11, 18, 16, 0.7)),
     linear-gradient(
       135deg,
       var(--carbon) 0%,
-      #0a2a3a 28%,
-      #2a1f6a 58%,
-      #1a4030 82%,
-      #123028 100%
+      #143038 32%,
+      #2c1810 62%,
+      #1a2a28 88%,
+      #0b1210 100%
     ),
-    linear-gradient(90deg, rgba(32, 214, 210, 0.35), rgba(117, 87, 255, 0.35), rgba(182, 242, 59, 0.28));
+    linear-gradient(90deg, rgba(196, 138, 74, 0.28), rgba(42, 107, 124, 0.3), rgba(143, 188, 106, 0.18));
   background-blend-mode: normal, normal, soft-light;
   animation: hero-drift 18s ease-in-out infinite alternate;
 }
@@ -188,12 +190,12 @@ a {
 
 .hero-brand {
   margin: 0;
-  max-width: 16ch;
+  max-width: 12ch;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.2rem, 8vw, 6rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
 }
 
 .hero h1 {
