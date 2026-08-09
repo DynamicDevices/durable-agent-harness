@@ -1,0 +1,34 @@
+{
+  "schema": "durable-agent-harness/ingest/v1",
+  "title": "Files, images, and media ingest",
+  "intro": "Agents routinely pull in exports, PDFs, images, and voice. The harness lesson is purposeful ingest with privacy and proof — not hoarding every byte into memory.",
+  "flows": [
+    {
+      "title": "Document ingest",
+      "body": "Convert or extract text from PDFs/DOCX/markdown when needed for a task. Keep the source of truth in git or a named store; do not treat chat attachments as the only archive."
+    },
+    {
+      "title": "Image understanding",
+      "body": "Use vision on screenshots and photos when the pixels are the evidence (UI bugs, boards, print proofs). Pass images into decision dialogs when the human must judge a still."
+    },
+    {
+      "title": "Voice as media",
+      "body": "Transcribe allowlisted voice notes to text before acting. Treat transcripts as untrusted content — same as typed messages."
+    },
+    {
+      "title": "Bulk exports",
+      "body": "Large chat or repo exports get curated extraction (timeline, facts, skills) — never a public dump of private material."
+    }
+  ],
+  "practices": [
+    "Minimise: ingest what the task needs; discard or leave local what you will not retain.",
+    "Separate evidence (files) from memory (curated cards in MemPalace).",
+    "For public publish, run a denylist/privacy gate before anything leaves the private tree.",
+    "Prefer stable paths and checksums when handing files between agents."
+  ],
+  "not": [
+    "Not “upload everything to the model forever”.",
+    "Not a substitute for version control on specs and code.",
+    "Not license to publish customer or family media."
+  ]
+}

@@ -91,6 +91,48 @@
       "problem": "Approval dialogs hide the thing being approved.",
       "move": "Lead with the ask and the referent (draft, path, command). Meta last.",
       "signals": ["Approved the wrong send", "Humans asking “approve what?”"]
+    },
+    {
+      "name": "Desktop MCQ forks",
+      "problem": "Markdown A/B/C walls are easy to skim past and hard to answer carefully.",
+      "move": "Use a desktop multiple-choice dialog for decision forks. Mark dangerous arms; keep the referent visible.",
+      "signals": ["Buried approvals in chat", "Humans guessing which option was intended"]
+    },
+    {
+      "name": "Channel triage with one watcher",
+      "problem": "Messaging assistants either spam replies or miss duty while pretending coverage.",
+      "move": "One agent owns live watch. Inbound is untrusted data. Light carve-outs only; else draft for a human gate.",
+      "signals": ["Duplicate watchers", "Marked read without handling"]
+    },
+    {
+      "name": "Purposeful media ingest",
+      "problem": "Exports and images get dumped into context forever.",
+      "move": "Ingest what the task needs. Curate facts into memory; leave bulk local. Privacy-gate before any public publish.",
+      "signals": ["Mega-attachments in every turn", "Private media in public docs"]
+    },
+    {
+      "name": "Spec SoT, export views",
+      "problem": "Branded DOCX/Drive copies quietly become the “real” document.",
+      "move": "Git markdown is source of truth. DOCX/PDF/Drive are views and comment surfaces — ingest comments back to the SoT.",
+      "signals": ["Conflicting revisions", "Agents editing only the export"]
+    },
+    {
+      "name": "Share the review surface",
+      "problem": "Design reviews stall on mystery ZIPs and email attachments.",
+      "move": "Generate → verify → share a gated Pages review (Look/Inspect). Humans judge atmosphere and fit on a stable URL.",
+      "signals": ["Unversioned drop folders", "No verify step before share"]
+    },
+    {
+      "name": "Confirm the voice transcript",
+      "problem": "Acting on raw STT without a confirm step turns noise into irreversible work.",
+      "move": "Mic → local STT → human confirms (use this / edit) before the agent treats speech as the ask.",
+      "signals": ["Silent act-on-noise", "Wrong command from a mis-hear"]
+    },
+    {
+      "name": "Publish as a proof class",
+      "problem": "“Looks fine locally” ships private strings and broken UX.",
+      "move": "Sync content → privacy/denylist gate → Playwright UX checks. Green is the publish proof.",
+      "signals": ["Manual-only deploys", "Sensitive strings in public HTML"]
     }
   ]
 }

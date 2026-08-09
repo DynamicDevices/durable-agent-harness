@@ -43,6 +43,12 @@
       "what": "Hours spent encoding skills/patterns/gates.",
       "why": "Makes investment visible so it is not mistaken for pure slowdown.",
       "trap": "Endless meta-work with no product outcome."
+    },
+    {
+      "name": "Always-on token tax",
+      "what": "Rough size of rules/skills/MCP catalog paid every turn before the ask.",
+      "why": "Keeps the harness lean; context is rent.",
+      "trap": "Optimising token counts while leaving idle specialty tools loaded."
     }
   ],
   "comparisonBands": [
@@ -82,7 +88,8 @@
     "Add at most three capability-map notes tied to real proof.",
     "Propose or deprecate one pattern — do not let the registry rot.",
     "Log harness tax if you spent a block encoding behaviour.",
-    "Refuse any external “N× productivity” claim without a cited method."
+    "Refuse any external “N× productivity” claim without a cited method.",
+    "If the session felt heavy: note always-on tax and cut or unload one thing."
   ],
   "literatureNote": "METR’s early-2025 RCT is the humbling baseline for familiar OSS tickets. Copilot lab/field studies show gains in other settings. Use both as context; instrument your own work."
 }

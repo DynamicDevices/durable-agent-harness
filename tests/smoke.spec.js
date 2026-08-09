@@ -21,6 +21,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-start")).toContainText("Playbook");
     await expect(page.getByTestId("section-start")).toContainText("Kaizen → TWP");
     await expect(page.getByTestId("section-start")).toContainText("Preloop + OpenRouter");
+    await expect(page.getByTestId("section-start")).toContainText("Channels & lean");
     await expect(page.getByTestId("clock-serious_ai")).toBeVisible();
     await expect(page.getByTestId("clock-cursor")).toBeVisible();
     await expect(page.getByTestId("clock-harness")).toBeVisible();
@@ -32,14 +33,19 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-playbook")).toContainText("Build your own harness");
-    await expect(page.locator("#playbook-steps .step-card")).toHaveCount(10);
+    await expect(page.locator("#playbook-steps .step-card")).toHaveCount(12);
     await expect(page.getByTestId("section-learning")).toContainText("MemPalace");
     await expect(page.getByTestId("section-learning")).toContainText("Toyota Way Practices");
     await expect(page.locator("#learning-flow .flow-card")).toHaveCount(5);
     await expect(page.getByTestId("section-runtime")).toContainText("Preloop");
     await expect(page.getByTestId("section-runtime")).toContainText("OpenRouter");
+    await expect(page.getByTestId("section-channels")).toContainText("Briar");
+    await expect(page.getByTestId("section-channels")).toContainText("WhatsApp");
+    await expect(page.getByTestId("section-channels")).toContainText("Token monitoring");
+    await expect(page.getByTestId("section-channels")).toContainText("Desktop MCQ");
+    await expect(page.getByTestId("section-channels")).toContainText("Privacy gate");
     await expect(page.getByTestId("section-cases")).toContainText("Sanitized case studies");
-    await expect(page.locator("#case-grid .case-card")).toHaveCount(7);
+    await expect(page.locator("#case-grid .case-card")).toHaveCount(10);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
     await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
     await expect(page.locator("#starter-list .starter-card")).toHaveCount(6);
@@ -64,6 +70,8 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-glossary")).toContainText("TWP");
     await expect(page.getByTestId("panel-glossary")).toContainText("Preloop");
     await expect(page.getByTestId("panel-glossary")).toContainText("OpenRouter");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Briar");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Token lean");
     await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");
     await page.getByRole("tab", { name: "Research" }).click();
     await expect(page.getByTestId("panel-literature")).toContainText("METR");

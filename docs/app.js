@@ -76,6 +76,90 @@ function renderStats(data) {
   if (note) note.textContent = data.growthNote || data.disclaimer || "";
 }
 
+function renderMessaging(data) {
+  document.querySelector("#messaging-title").textContent = data.title;
+  document.querySelector("#messaging-intro").textContent = data.intro;
+  document.querySelector("#messaging-stance").textContent = data.stance;
+  document.querySelector("#messaging-caps").replaceChildren(
+    ...data.capabilities.map((c) =>
+      el("article", { className: "case-card" }, [
+        el("h3", { text: c.title }),
+        el("p", { text: c.body }),
+      ]),
+    ),
+  );
+  document.querySelector("#messaging-do").replaceChildren(
+    ...data.practices.map((p) => el("li", { text: p })),
+  );
+  document.querySelector("#messaging-not").replaceChildren(
+    ...data.not.map((p) => el("li", { text: p })),
+  );
+}
+
+function renderIngest(data) {
+  document.querySelector("#ingest-title").textContent = data.title;
+  document.querySelector("#ingest-intro").textContent = data.intro;
+  document.querySelector("#ingest-flows").replaceChildren(
+    ...data.flows.map((f) =>
+      el("article", { className: "case-card" }, [
+        el("h3", { text: f.title }),
+        el("p", { text: f.body }),
+      ]),
+    ),
+  );
+  document.querySelector("#ingest-do").replaceChildren(
+    ...data.practices.map((p) => el("li", { text: p })),
+  );
+  document.querySelector("#ingest-not").replaceChildren(
+    ...data.not.map((p) => el("li", { text: p })),
+  );
+}
+
+function renderTokens(data) {
+  document.querySelector("#tokens-title").textContent = data.title;
+  document.querySelector("#tokens-intro").textContent = data.intro;
+  document.querySelector("#tokens-why").textContent = data.why;
+  document.querySelector("#tokens-practices").replaceChildren(
+    ...data.practices.map((p) =>
+      el("article", { className: "steal-card" }, [
+        el("h3", { text: p.title }),
+        el("p", { text: p.body }),
+      ]),
+    ),
+  );
+  document.querySelector("#tokens-anti").replaceChildren(
+    ...data.antiPatterns.map((p) => el("li", { text: p })),
+  );
+}
+
+function renderSurfaces(data) {
+  document.querySelector("#surfaces-title").textContent = data.title;
+  document.querySelector("#surfaces-intro").textContent = data.intro;
+  document.querySelector("#surfaces-grid").replaceChildren(
+    ...data.surfaces.map((s) =>
+      el("article", { className: "case-card", "data-surface": s.id }, [
+        el("h3", { text: s.title }),
+        el("p", { text: s.body }),
+        el("p", { className: "lesson", text: s.lesson }),
+      ]),
+    ),
+  );
+}
+
+function renderPublish(data) {
+  document.querySelector("#publish-title").textContent = data.title;
+  document.querySelector("#publish-intro").textContent = data.intro;
+  document.querySelector("#publish-grid").replaceChildren(
+    ...data.items.map((item) =>
+      el("article", { className: "band-card", "data-publish": item.id }, [
+        el("h3", { text: item.title }),
+        el("p", { text: item.body }),
+        el("p", { className: "lesson", text: item.lesson }),
+      ]),
+    ),
+  );
+}
+
 function renderRuntime(data) {
   document.querySelector("#runtime-intro").textContent = data.intro;
   document.querySelector("#runtime-stance").textContent = data.stance;
@@ -439,6 +523,11 @@ async function main() {
     playbook,
     learning,
     runtime,
+    messaging,
+    ingest,
+    tokens,
+    surfaces,
+    publish,
     timeline,
     stack,
     capabilities,
@@ -454,6 +543,11 @@ async function main() {
     loadJSON("playbook.json"),
     loadJSON("learning.json"),
     loadJSON("runtime.json"),
+    loadJSON("messaging.json"),
+    loadJSON("ingest.json"),
+    loadJSON("tokens.json"),
+    loadJSON("surfaces.json"),
+    loadJSON("publish.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
@@ -470,6 +564,11 @@ async function main() {
   renderPlaybook(playbook);
   renderLearning(learning);
   renderRuntime(runtime);
+  renderMessaging(messaging);
+  renderIngest(ingest);
+  renderTokens(tokens);
+  renderSurfaces(surfaces);
+  renderPublish(publish);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);

@@ -81,6 +81,28 @@
         "Handoffs are explicit tickets",
         "Do not run two writers on one tree"
       ]
+    },
+    {
+      "id": "channels",
+      "title": "Channels & media",
+      "subtitle": "WhatsApp · ingest · voice",
+      "body": "Messaging (Briar on WhatsApp), voice notes, and purposeful file/image ingest are harness surfaces — same fail-closed outbound and privacy rules as the cockpit.",
+      "tips": [
+        "One watcher per live channel",
+        "Ingest for the task; curate into memory; never public-dump private media",
+        "Voice is a medium, not a privilege escalation"
+      ]
+    },
+    {
+      "id": "token_lean",
+      "title": "Token lean",
+      "subtitle": "Context is rent",
+      "body": "Measure always-on tax. Keep skills thin, rules requestable, specialty tools enable/unload, and parallel lanes instead of mega-prompts.",
+      "tips": [
+        "SKILL.md short; reference.md deep",
+        "Pulse when sessions feel heavy",
+        "Catalog bloat is a bug"
+      ]
     }
   ]
 }

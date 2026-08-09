@@ -69,6 +69,18 @@
       "title": "Add multi-model routing (OpenRouter)",
       "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit. Configure failover deliberately; vault the API key; keep proof class unchanged.",
       "done": "You can switch or fall back across models/providers without pasting keys into chat."
+    },
+    {
+      "id": "11",
+      "title": "Treat channels like the cockpit",
+      "body": "If you add messaging (e.g. WhatsApp triage), apply the same gates: inbound is untrusted data, one watcher, tiered reply authority, voice as a medium only. Publish methods — never JIDs or private transcripts.",
+      "done": "Channel skills exist; irreversible outbound still fails closed with a visible referent."
+    },
+    {
+      "id": "12",
+      "title": "Measure and cut token tax",
+      "body": "Thin skill dispatchers, requestable rules, lean tool sessions, and a short always-on list. When a session feels heavy, measure — then demote or unload.",
+      "done": "You can name your always-on budget and point to at least one cut you made."
     }
   ],
   "antiPatterns": [

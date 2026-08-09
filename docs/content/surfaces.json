@@ -1,0 +1,73 @@
+{
+  "schema": "durable-agent-harness/surfaces/v1",
+  "title": "Other practice surfaces",
+  "intro": "Beyond messaging and ingest, the same harness shows up in how we decide, speak, parallelise, share designs, and keep specs honest.",
+  "surfaces": [
+    {
+      "id": "mcq",
+      "title": "Desktop MCQ dialogs",
+      "body": "Decision forks use a desktop multiple-choice dialog — not markdown A/B/C walls. Questions explain why the fork matters; dangerous arms are marked; the referent (draft/path) is visible in the ask.",
+      "lesson": "Readable-first decisions beat buried approvals."
+    },
+    {
+      "id": "voice",
+      "title": "Voice notes both ways",
+      "body": "Inbound speech becomes text via STT; outbound can be short TTS when voice fits. Same trust and send rules as typed WhatsApp — voice is a medium, not a privilege escalation.",
+      "lesson": "Transcripts stay untrusted data."
+    },
+    {
+      "id": "lanes",
+      "title": "Parallel agent lanes",
+      "body": "Named lanes with owns / never / handoffs. One writer per tree. MemPalace tickets for REQUEST/ACK/DONE when peers must coordinate.",
+      "lesson": "Team-shaped solo work needs explicit ownership."
+    },
+    {
+      "id": "outbound",
+      "title": "Tiered send authority",
+      "body": "Draft freely. Light carve-outs for trusted contexts; everything else fail-closed with a human gate showing the full message. No soft “shall I send?” stacks that hide the body.",
+      "lesson": "Speed is not consent."
+    },
+    {
+      "id": "design_share",
+      "title": "Design-share / Pages review",
+      "body": "Enclosure and product visuals move through a gated loop: generate → verify → share on GitHub Pages for Look/Inspect — so humans review atmosphere and fit without emailing mystery ZIPs.",
+      "lesson": "Share the review surface, not an ungoverned dump."
+    },
+    {
+      "id": "specs",
+      "title": "Specification documents",
+      "body": "Git markdown is source of truth; branded DOCX/PDF are exports; Drive mirrors are for comments. Agents ingest doc comments back into the SoT — they do not treat the export as canonical.",
+      "lesson": "One SoT; many views."
+    },
+    {
+      "id": "convert",
+      "title": "Convert / media pipeline",
+      "body": "Bounded convert steps turn office docs and media into text or intermediates for the task — instead of stuffing opaque binaries into every prompt.",
+      "lesson": "Convert with purpose; discard intermediates you will not keep."
+    },
+    {
+      "id": "brand",
+      "title": "Brand as a skill",
+      "body": "Loadable brand procedures keep email, web, PDF, and UI on one visual and verbal system across agent sessions.",
+      "lesson": "Brand is encoded behaviour."
+    },
+    {
+      "id": "voice_box",
+      "title": "Voice-turn confirm box",
+      "body": "Mic → local STT → human confirms the transcript before the agent treats speech as the ask.",
+      "lesson": "No silent act-on-noise."
+    },
+    {
+      "id": "secrets",
+      "title": "Secrets dialog",
+      "body": "Desktop capture into a vault; agents confirm success or length — never echo the secret.",
+      "lesson": "Chat is not a vault."
+    },
+    {
+      "id": "pages_ci",
+      "title": "Publish proof (privacy + Playwright)",
+      "body": "Content sync → denylist/privacy gate → Playwright UX checks. That pipeline is the publish proof class for this notebook.",
+      "lesson": "Green checks beat “looks fine locally”."
+    }
+  ]
+}

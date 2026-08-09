@@ -64,6 +64,33 @@
       "after": "Preloop layered under P0 for tool audit/policy; OpenRouter for multi-model routing with vaulted keys.",
       "harness": ["Preloop under P0", "OpenRouter failover", "Keys never in chat/git"],
       "lesson": "Runtime and routing support the harness — they do not replace human consent or proof class."
+    },
+    {
+      "id": "whatsapp-triage",
+      "title": "WhatsApp triage without autonomy cosplay",
+      "domain": "Ops / communications",
+      "before": "Either ignore the channel or risk eager auto-replies to the wrong person.",
+      "after": "Briar-style monitor/triage: one watcher, light carve-outs, drafts elsewhere, voice as a medium with the same gates.",
+      "harness": ["Tiered send authority", "Inbound as untrusted data", "Enable/unload messaging tools"],
+      "lesson": "A messaging assistant is a harness surface — publish methods, not the private topology."
+    },
+    {
+      "id": "token-lean",
+      "title": "Token lean as operating discipline",
+      "domain": "Harness engineering",
+      "before": "Always-on essays and idle tool catalogs made every turn expensive before work started.",
+      "after": "Thin skills, requestable rules, lean MCP sessions, and measured always-on budgets keep the cockpit fast.",
+      "harness": ["Always-on diet", "Lean tool sessions", "Encode the second burn"],
+      "lesson": "Optimising tokens is how the working relationship stays affordable — not stinginess."
+    },
+    {
+      "id": "spec-sot",
+      "title": "Specs stay in git; exports are views",
+      "domain": "Documentation",
+      "before": "Branded DOCX copies drifted; comments never returned to the canonical text.",
+      "after": "Markdown SoT in git; branded DOCX/PDF and Drive mirrors for humans; comment ingest back to SoT.",
+      "harness": ["Spec SoT, export views", "Privacy gate before public publish", "Proof: revision table + export check"],
+      "lesson": "One source of truth; many views."
     }
   ]
 }

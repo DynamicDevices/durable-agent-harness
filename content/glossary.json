@@ -69,6 +69,22 @@
     {
       "term": "Cockpit",
       "def": "The primary agentic environment where reading the tree, running tools, and leaving diffs is normal."
+    },
+    {
+      "term": "Briar",
+      "def": "A WhatsApp personal-assistant channel for monitor/triage and tiered replies. Methods are public; JIDs, allowlists, and private chat contents are not."
+    },
+    {
+      "term": "Token lean",
+      "def": "Deliberate reduction of always-on context tax: thin skills, requestable rules, lean MCP sessions, measure and cut catalog bloat."
+    },
+    {
+      "term": "Desktop MCQ",
+      "def": "A desktop multiple-choice dialog for decision forks — preferred over markdown A/B/C walls when a careful human choice is required."
+    },
+    {
+      "term": "Source of truth (SoT)",
+      "def": "The canonical artefact (usually git markdown for specs). Exports (DOCX/PDF) and Drive mirrors are views — not the SoT."
     }
   ],
   "faq": [
@@ -107,6 +123,14 @@
     {
       "q": "Why OpenRouter?",
       "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies."
+    },
+    {
+      "q": "Is WhatsApp part of the harness?",
+      "a": "As a channel, yes — with the same fail-closed outbound rules. Publish the method (triage, tiers, voice as medium); never publish numbers, allowlists, or private transcripts."
+    },
+    {
+      "q": "How do you keep tokens under control?",
+      "a": "Thin skill dispatchers, requestable-by-default rules, enable/unload specialty tools, split parallel lanes, and measure the always-on tax when sessions feel heavy."
     }
   ]
 }

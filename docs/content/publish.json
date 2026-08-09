@@ -1,0 +1,37 @@
+{
+  "schema": "durable-agent-harness/publish/v1",
+  "title": "Publish proof & supporting surfaces",
+  "intro": "Extra harness surfaces that keep media, brand, voice, secrets, and public publish honest.",
+  "items": [
+    {
+      "id": "convert",
+      "title": "Convert / media pipeline",
+      "body": "Thin convert helpers (document and media tooling) turn PDFs, office docs, and audio/video into text or intermediates the agent can reason about. Prefer a bounded convert step over pasting opaque binaries into every turn.",
+      "lesson": "Convert for the task; do not retain every intermediate forever."
+    },
+    {
+      "id": "brand",
+      "title": "Brand production",
+      "body": "Brand rules live as loadable skills for email, web, PDF/print, and UI — so agents stay on voice, colour, and typography without inventing a new look each session.",
+      "lesson": "Brand is a procedure, not a vibe prompt."
+    },
+    {
+      "id": "voice_box",
+      "title": "Desktop voice-turn confirm",
+      "body": "When the human wants to speak a turn: mic → local STT → confirm (use this / edit) before the agent treats it as the ask. Same respect as typed input — no silent act-on-noise.",
+      "lesson": "Confirm the transcript before committing work."
+    },
+    {
+      "id": "secrets",
+      "title": "Secrets via desktop dialog",
+      "body": "Capture secrets through a desktop dialog into a vault. Agents may confirm length or success — never echo the value into chat, logs, or commits.",
+      "lesson": "Chat is not a vault."
+    },
+    {
+      "id": "pages_ci",
+      "title": "Privacy gate + Playwright CI",
+      "body": "Public pages sync from content JSON, run a denylist/privacy gate, then Playwright UX checks (desktop + mobile). Green checks are the proof class for publish — not “looks fine locally”.",
+      "lesson": "Publish is a proof class, not a hope."
+    }
+  ]
+}

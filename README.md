@@ -13,9 +13,10 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 
 | Area | What you get |
 |---|---|
-| **Playbook** | Eight steps to build a thin harness from scratch |
+| **Playbook** | Twelve steps to build a thin harness from scratch |
 | **Learning** | MemPalace memory + Kaizen → Hansei → TWP (Toyota Way Practices) |
 | **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) |
+| **Channels & lean** | WhatsApp/Briar triage, media ingest, token-lean skills, desktop MCQ, voice, publish proof |
 | **Starter kit** | Copy-paste templates for skills, rules, patterns, lanes, clocks, capability maps ([`starters/`](starters/)) |
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
 | **Cases** | Sanitized before/after outcomes (no private or customer detail) |

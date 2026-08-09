@@ -88,6 +88,21 @@
         "label": "OpenRouter docs",
         "href": "https://openrouter.ai/docs"
       }
+    },
+    {
+      "date": "2026-07",
+      "title": "WhatsApp channel (Briar)",
+      "body": "Added a monitor/triage WhatsApp channel with tiered reply authority, one-watcher discipline, and voice notes both ways — still fail-closed on irreversible outbound."
+    },
+    {
+      "date": "2026-07",
+      "title": "Token lean & lightweight skills",
+      "body": "Started measuring context tax and keeping skills thin: short dispatchers, deep detail on demand, lean MCP sessions, always-on diet enforced in practice."
+    },
+    {
+      "date": "2026-08",
+      "title": "Channels, ingest, and practice surfaces",
+      "body": "Documented messaging, purposeful media ingest, desktop MCQs, design-share review loops, and spec SoT + branded export views — methods only."
     }
   ]
 }

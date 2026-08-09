@@ -15,6 +15,8 @@ This repository is **public on purpose**. It describes *methods* for working wit
 
 - High-level timelines (when serious AI / Cursor / harness practice started)
 - Abstract architecture (skills, rules, memory, signed patterns)
+- Public product/method names for channels (e.g. WhatsApp, Briar) without JIDs, allowlists, or transcripts
+- Token-lean and lightweight-skill methods (no private paths or keys)
 - Public research citations (e.g. METR productivity RCT)
 - Sanitized capability classes (“remote board debug with an agent”) without site specifics
 - Lessons about measurement honesty and harness tax
