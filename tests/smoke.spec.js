@@ -112,7 +112,7 @@ test.describe("Durable Agent Harness site", () => {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      /assets\/og-cover\.png$/,
+      /assets\/og-cover\.jpe?g$/,
     );
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
       "content",
