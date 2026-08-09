@@ -33,3 +33,6 @@ Glossary + first mentions: P0 means fail-closed always-on rules (secrets; human 
 
 ### 2026-08-09 — Trash instead of hard delete
 Delete = move to OS/project trash first so agents (and humans) can recover from wrong-path mistakes. Not a third always-on P0.
+
+### 2026-08-09 — Tighten IA + CC + disclaimer
+Fold Start into #hour paths; merge Surfaces+Publish; clocks under Measure. Top disclaimer (AI-assisted, own risk). Content CC BY-SA 4.0; code MIT.

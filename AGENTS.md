@@ -2,6 +2,8 @@
 
 This notebook is for humans **and** coding agents. Do not invent policy from the blog.
 
+**Disclaimer:** AI-assisted. Use at your own risk. Content [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); code MIT — see [LICENSE](LICENSE).
+
 ## Start here (≈60 minutes)
 
 1. Open the public path: <https://chopwoodcarrywater.uk/#hour>

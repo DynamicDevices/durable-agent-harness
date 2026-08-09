@@ -48,8 +48,11 @@ npm run serve     # http://127.0.0.1:4173
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+- **Notebook content:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Site code / scripts / tests:** [MIT](LICENSE-MIT.txt)
+
+See [LICENSE](LICENSE) for the split.
 
 ---
 
-*Site and materials were AI-assisted (Cursor) under Alex’s direction.*
+*AI-assisted (Cursor) under Alex’s direction. Use at your own risk.*

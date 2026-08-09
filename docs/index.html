@@ -103,7 +103,7 @@
           "token lean",
           "Chop Wood Carry Water"
         ],
-        "license": "https://github.com/DynamicDevices/durable-agent-harness/blob/main/LICENSE"
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/"
       },
       {
         "@type": "Person",
@@ -155,7 +155,6 @@
     <nav class="nav" aria-label="Primary">
       <a href="#hour">60 min</a>
       <a href="agents.html">Agents</a>
-      <a href="#start">Start</a>
       <a href="#playbook">Playbook</a>
       <a href="#learning">Learning</a>
       <a href="#runtime">Runtime</a>
@@ -168,6 +167,34 @@
       <a href="#privacy">About</a>
     </nav>
   </header>
+
+  <aside class="site-notice" data-testid="site-notice" role="note">
+    <div class="wrap">
+      <p>
+        <strong>Disclaimer.</strong>
+        This notebook is AI-assisted. Use it at your own risk — no warranty,
+        and no claim it will improve your productivity or suit your situation.
+      </p>
+      <p>
+        Content is
+        <a
+          class="text-link"
+          href="https://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank"
+          rel="noopener noreferrer license"
+          >CC BY-SA 4.0</a
+        >
+        · site code is
+        <a
+          class="text-link"
+          href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/LICENSE-MIT.txt"
+          target="_blank"
+          rel="noopener noreferrer license"
+          >MIT</a
+        >.
+      </p>
+    </div>
+  </aside>
 
   <main id="main">
     <section class="hero" id="top" data-testid="hero" aria-labelledby="hero-headline">
@@ -221,72 +248,52 @@
         <ol class="steps" id="hour-steps" data-testid="hour-steps"></ol>
         <div class="hour-done" id="hour-done" data-testid="hour-done"></div>
         <p class="fineprint" id="hour-next"></p>
-      </div>
-    </section>
 
-    <section class="start" id="start" data-testid="section-start" aria-labelledby="start-title">
-      <div class="wrap">
-        <h2 id="start-title">Start here</h2>
+        <h3 class="subhead" id="start-title">Then pick another door</h3>
         <p class="epigraph" data-epigraph="start" data-testid="epigraph-start"></p>
-        <p class="section-lede">Pick a door. You don’t have to read the whole thing in one go.</p>
-        <div class="path-grid" id="path-grid">
-          <a class="path-card path-card-feature" href="#hour">
-            <span class="path-kicker">Finish line</span>
-            <strong>60 minutes</strong>
-            <span>Timed checklist + downloadable Cursor pack. Leave with something installed.</span>
-          </a>
+        <p class="section-lede">You don’t have to read the whole notebook in one go.</p>
+        <div class="path-grid" id="path-grid" data-testid="hour-paths">
           <a class="path-card" href="#playbook">
             <span class="path-kicker">Do</span>
             <strong>Playbook</strong>
-            <span>Twelve steps I’d use if I were starting from scratch tomorrow.</span>
+            <span>Twelve steps if I were starting from scratch tomorrow.</span>
           </a>
           <a class="path-card" href="#starters">
             <span class="path-kicker">Copy</span>
             <strong>Starter kit</strong>
-            <span>Thin templates — skills, rules, patterns, lanes, clocks. Steal and rename.</span>
-          </a>
-          <a class="path-card" href="#blog">
-            <span class="path-kicker">Notes</span>
-            <strong>Blog</strong>
-            <span>What broke, what we locked, what earned a place on disk.</span>
+            <span>Thin templates — skills, rules, patterns, lanes, clocks.</span>
           </a>
           <a class="path-card" href="#learning">
             <span class="path-kicker">Learn</span>
             <strong>Kaizen → Toyota Way Practices</strong>
-            <span>How we improve on purpose, reflect honestly, and name the practice cluster.</span>
+            <span>Improve on purpose; name the practice that matches the pain.</span>
           </a>
           <a class="path-card" href="#runtime">
             <span class="path-kicker">Run</span>
             <strong>Preloop + OpenRouter</strong>
-            <span>Runtime policy under human gates, and routing across models when it helps.</span>
+            <span>Runtime policy under human gates; route models when it helps.</span>
           </a>
           <a class="path-card" href="#channels">
             <span class="path-kicker">Ops</span>
             <strong>Channels & lean</strong>
-            <span>WhatsApp, ingest, token rent, decision dialogs — same discipline as the rest.</span>
+            <span>Messaging, ingest, token rent, practice surfaces.</span>
           </a>
           <a class="path-card" href="#explore">
             <span class="path-kicker">Browse</span>
             <strong>Explore</strong>
-            <span>Timeline, stack, capability map, patterns, glossary, research links.</span>
+            <span>Timeline, stack, capability, patterns, glossary, research.</span>
           </a>
           <a class="path-card" href="#measure">
             <span class="path-kicker">Track</span>
             <strong>Measure</strong>
-            <span>Clocks and rituals. Avoid inventing a multiplier for a slide deck.</span>
+            <span>Clocks and rituals — no slide-deck multipliers.</span>
+          </a>
+          <a class="path-card" href="#blog">
+            <span class="path-kicker">Notes</span>
+            <strong>Blog</strong>
+            <span>What broke, what locked, what earned a place on disk.</span>
           </a>
         </div>
-      </div>
-    </section>
-
-    <section class="clocks" id="clocks" aria-labelledby="clocks-title">
-      <div class="wrap">
-        <h2 id="clocks-title">Three clocks</h2>
-        <p class="epigraph" data-epigraph="clocks" data-testid="epigraph-clocks"></p>
-        <p class="section-lede" id="clocks-note"></p>
-        <div class="clock-grid" id="clock-grid"></div>
-        <div class="metric-strip" id="stat-strip" data-testid="stat-strip" aria-label="Harness size proxies"></div>
-        <p class="fineprint" id="stats-note"></p>
       </div>
     </section>
 
@@ -354,7 +361,7 @@
       <div class="wrap">
         <h2 id="channels-title">Channels, media &amp; token lean</h2>
         <p class="epigraph" data-epigraph="channels" data-testid="epigraph-channels"></p>
-        <p class="section-lede">Messaging, files, and context tax live in the same operating system. Same human gates as everything else.</p>
+        <p class="section-lede">Messaging, media ingest, token rent, and practice surfaces — one operating system, same human gates.</p>
 
         <h3 class="subhead" id="messaging-title"></h3>
         <p class="section-lede" id="messaging-intro"></p>
@@ -395,10 +402,6 @@
         <h3 class="subhead" id="surfaces-title"></h3>
         <p class="section-lede" id="surfaces-intro"></p>
         <div class="case-grid" id="surfaces-grid"></div>
-
-        <h3 class="subhead" id="publish-title"></h3>
-        <p class="section-lede" id="publish-intro"></p>
-        <div class="band-grid" id="publish-grid"></div>
       </div>
     </section>
 
@@ -442,6 +445,14 @@
         <h2 id="measure-title">Measurement kit</h2>
         <p class="epigraph" data-epigraph="measure" data-testid="epigraph-measure"></p>
         <p class="section-lede" id="measure-intro"></p>
+
+        <h3 class="subhead" id="clocks-title">Three clocks</h3>
+        <p class="epigraph" data-epigraph="clocks" data-testid="epigraph-clocks"></p>
+        <p class="section-lede" id="clocks-note"></p>
+        <div class="clock-grid" id="clock-grid"></div>
+        <div class="metric-strip" id="stat-strip" data-testid="stat-strip" aria-label="Harness size proxies"></div>
+        <p class="fineprint" id="stats-note"></p>
+
         <div class="callout">
           <p><strong>Humbling baseline:</strong> METR’s early-2025 RCT found experienced open-source developers were about <strong>19% slower</strong> on familiar issues when AI tools were allowed — while still believing they were faster. That does not kill the case for agents; it kills lazy multipliers.</p>
         </div>
@@ -475,13 +486,21 @@
       <div class="wrap">
         <h2 id="privacy-title">About</h2>
         <p class="epigraph" data-epigraph="privacy" data-testid="epigraph-privacy"></p>
-        <p class="section-lede">I’m Alex Lennon (<a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a>). This notebook is engineering notes in public — clocks, playbook, patterns, cases, starters, and a short blog. Steal what helps; measure your own results.</p>
+        <p class="section-lede">I’m Alex Lennon (<a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a>). This notebook is engineering notes in public — clocks, playbook, patterns, cases, starters, and a short blog. Steal what helps; measure your own results. AI-assisted; use at your own risk.</p>
         <p class="fineprint" data-testid="about-baseline">
           Public baseline <strong>v1.0.0</strong> (2026-08-09) —
           <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0">release</a>
           ·
           <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/BASELINE.md">what’s locked</a>.
           Updates land in the end-of-week review when the week earned them.
+        </p>
+        <p class="fineprint" data-testid="about-license">
+          Content
+          <a class="text-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license">CC BY-SA 4.0</a>
+          · code
+          <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/LICENSE-MIT.txt" target="_blank" rel="noopener noreferrer license">MIT</a>
+          ·
+          <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/LICENSE">LICENSE</a>
         </p>
         <p><a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness">GitHub</a>
           · <a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a>
@@ -495,7 +514,15 @@
       <div>
         <strong>Durable Agent Harness</strong>
         <p>Alex Lennon · <a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a> · Chop Wood Carry Water</p>
-        <p class="fineprint">v1.0.0 baseline · <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0">release</a></p>
+        <p class="fineprint">
+          v1.0.0 baseline ·
+          <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0">release</a>
+          ·
+          <a class="text-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license">CC BY-SA 4.0</a>
+          content ·
+          <a class="text-link" href="https://github.com/DynamicDevices/durable-agent-harness/blob/main/LICENSE-MIT.txt" target="_blank" rel="noopener noreferrer license">MIT</a>
+          code
+        </p>
       </div>
       <p class="tagline-foot">Chop wood. Carry water.</p>
     </div>

@@ -77,6 +77,32 @@ a {
   margin-inline: auto;
 }
 
+.site-notice {
+  background: color-mix(in srgb, var(--carbon) 92%, #1a2a24);
+  color: #e8efe9;
+  border-bottom: 1px solid color-mix(in srgb, #e8efe9 18%, transparent);
+  padding: 0.65rem 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.site-notice .wrap {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.site-notice p {
+  margin: 0;
+}
+
+.site-notice .text-link {
+  color: #c8e6c9;
+}
+
+.site-notice .text-link:hover {
+  color: #fff;
+}
+
 .top {
   position: sticky;
   top: 0;
