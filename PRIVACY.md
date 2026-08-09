@@ -35,5 +35,5 @@ sensitive strings). Maintainers keep it in a private local path and can point
 
 ## Controllers / contact
 
-Published by **Active-ESL** (Active Edge Solutions Limited), with Dynamic Devices Ltd.  
+Published by **Alex Lennon** under the **Chop Wood Carry Water** brand.  
 Questions: `ajlennon@dynamicdevices.co.uk` (work mailbox).

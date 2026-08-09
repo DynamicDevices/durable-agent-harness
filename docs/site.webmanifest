@@ -1,14 +1,14 @@
 {
-  "name": "Durable Agent Harness",
-  "short_name": "Agent Harness",
-  "description": "Active-ESL public engineering notebook on durable AI agent harnesses",
+  "name": "Chop Wood Carry Water",
+  "short_name": "Chop Wood",
+  "description": "Alex Lennon’s public engineering notebook on durable AI agent harnesses",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#07111F",
-  "theme_color": "#07111F",
+  "background_color": "#0B1210",
+  "theme_color": "#0B1210",
   "icons": [
     {
-      "src": "assets/signal-aperture.svg",
+      "src": "assets/chopwood-mark.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

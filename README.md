@@ -1,15 +1,15 @@
 # Durable Agent Harness
 
-**Public engineering notebook** from [Active-ESL](https://www.active-esl.com/) on building a *durable working relationship* with AI coding agents. Published with [Dynamic Devices](https://www.dynamicdevices.co.uk/).
+**Public engineering notebook** by [Alex Lennon](https://chopwoodcarrywater.uk/) under the **Chop Wood Carry Water** brand — building a *durable working relationship* with AI coding agents.
 
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
-Public notebook in Alex’s first-person voice, plus a short blog. Active-ESL brand stays; brochure-speak does not.
+First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
 
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
-Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Organization`), `robots.txt`, and `sitemap.xml`.
+Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Brand` + `Person`), `robots.txt`, and `sitemap.xml`.
 
 ## What’s inside
 
@@ -23,7 +23,8 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
 | **Cases** | Before/after outcomes that show the harness at work |
 | **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
-| **About** | Short notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
+| **Blog** | Short first-person notes from the work |
+| **About** | Notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
 
 ## Local check
 
@@ -48,4 +49,4 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-*Site and materials were AI-assisted (Cursor) under human direction at Active-ESL / Dynamic Devices.*
+*Site and materials were AI-assisted (Cursor) under Alex’s direction.*
