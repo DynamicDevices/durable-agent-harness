@@ -14,10 +14,13 @@ Repo: <https://github.com/DynamicDevices/durable-agent-harness>
 
 ## What’s inside
 
+**P0** = Priority 0: fail-closed rules that stay **always-on** (`alwaysApply: true`).
+Most other guidance should be requestable — keep this list short.
+
 | Path | Role |
 |---|---|
-| `.cursor/rules/p0-no-secrets-in-chat.mdc` | Always-on: secrets never in chat — capture into Bitwarden (Password Manager / Secrets Manager) |
-| `.cursor/rules/p0-human-gate-irreversible.mdc` | Always-on: human gate before irreversible send/publish |
+| `.cursor/rules/p0-no-secrets-in-chat.mdc` | **P0** always-on: secrets never in chat — capture into Bitwarden (Password Manager / Secrets Manager) |
+| `.cursor/rules/p0-human-gate-irreversible.mdc` | **P0** always-on: human gate before irreversible send/publish |
 | `.cursor/skills/example-domain-task/SKILL.md` | On-demand skill — **rename to your job** |
 | `patterns/WORKING-PATTERNS.md` | Pattern registry with one signed-off starter row |
 | `clocks.json` | Tenure clock stub — set `harness.start` today |

@@ -27,3 +27,6 @@ Quiet Zen / CWCW lines at the start of each notebook section — varied, no attr
 
 ### 2026-08-09 — Bitwarden secrets plane
 Document two-plane vault: Password Manager for humans, Bitwarden Secrets Manager for agent tokens — desktop capture so values never enter the AI conversation.
+
+### 2026-08-09 — Clarify P0 = Priority 0
+Glossary + first mentions: P0 means fail-closed always-on rules (secrets; human gate), not “any important rule”.

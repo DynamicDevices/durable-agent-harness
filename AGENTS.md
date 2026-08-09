@@ -9,7 +9,8 @@ This notebook is for humans **and** coding agents. Do not invent policy from the
    (or browse <https://chopwoodcarrywater.uk/packs/cursor-hour/>)
 3. Copy the pack’s `.cursor/` into the **project** root. Reload the window.
 4. Rename the example skill to the human’s real recurring job.
-5. Keep both always-on P0 rules (`no secrets in chat`, `human gate for irreversible`).
+5. Keep both **Priority 0 (P0)** always-on rules — fail-closed, not optional:
+   `no secrets in chat`, `human gate for irreversible`.
 6. Sign off **one** pattern in `patterns/WORKING-PATTERNS.md` with a real failure line.
 7. Set `harness.start` in `clocks.json` to today (ISO).
 8. Run one real task with the skill’s proof checklist — not a plan alone.

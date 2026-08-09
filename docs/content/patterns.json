@@ -86,7 +86,7 @@
       ]
     },
     {
-      "name": "Preloop under P0",
+      "name": "Preloop under Priority 0 (P0)",
       "problem": "Teams either skip runtime audit or try to replace human consent with a firewall.",
       "move": "Layer Preloop for tool policy/audit under send/secrets/irreversible gates. Keep enrollment config and tokens out of chat.",
       "signals": [
@@ -125,7 +125,7 @@
     {
       "name": "Always-on diet",
       "problem": "Every always-on rule dominates cost and attention.",
-      "move": "Default to requestable. Keep a short P0 list; demote the rest.",
+      "move": "Default to requestable. Keep a short Priority 0 (P0) always-on list; demote the rest.",
       "signals": [
         "Huge rule preamble each turn",
         "Agents ignore rules from overload"

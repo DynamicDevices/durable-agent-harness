@@ -37,10 +37,10 @@
     {
       "id": "4",
       "minutes": 10,
-      "title": "Keep the two P0 rules always-on",
-      "why": "Secrets in chat and silent outbound are the burns that don’t forgive.",
-      "do": "Read both rules. Change the wording if you must, but keep alwaysApply: true. Do not add a third always-on rule today.",
-      "proof": "You can explain each rule in one sentence to a colleague."
+      "title": "Keep the two Priority 0 (P0) rules always-on",
+      "why": "P0 means fail-closed and always loaded. Secrets in chat and silent outbound are the burns that don’t forgive.",
+      "do": "Read both rules (secrets out of chat; human gate before irreversible send/publish). Change the wording if you must, but keep alwaysApply: true. Do not add a third always-on rule today.",
+      "proof": "You can explain what P0 means and each rule in one sentence to a colleague."
     },
     {
       "id": "5",
@@ -80,7 +80,7 @@
     "checks": [
       "Pack installed where Cursor loads it",
       "Skill renamed to your domain",
-      "Two always-on P0 rules still always-on",
+      "Two Priority 0 (P0) rules still always-on (secrets; human gate)",
       "One signed-off pattern with a real problem line",
       "One frozen clock date",
       "One task run with proof — not a plan alone"

@@ -2,7 +2,7 @@
   "schema": "durable-agent-harness/runtime/v1",
   "title": "Runtime layer: Preloop + OpenRouter",
   "intro": "Two layers I added under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter when multi-model routing earns its keep. The same pair also runs checks on PR commits before we burn expensive CI.",
-  "stance": "Runtime controls sit under human P0 gates — send, secrets, irreversible publish. A policy firewall is not consent. A PR review bot is not a merge button.",
+  "stance": "Runtime controls sit under human Priority 0 (P0) gates — send, secrets, irreversible publish. A policy firewall is not consent. A PR review bot is not a merge button.",
   "preloop": {
     "title": "Preloop",
     "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor’s existing fail-closed gates — it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
@@ -14,7 +14,7 @@
       "Keep enrollment tokens and local Preloop config secrets out of skills and chat."
     ],
     "not": [
-      "Not a substitute for P0 send-gates or secrets capture dialogs.",
+      "Not a substitute for Priority 0 (P0) send-gates or secrets capture dialogs.",
       "Not a reason to auto-approve destructive shell or publish actions.",
       "Not a place to store API tokens in the harness tree."
     ]

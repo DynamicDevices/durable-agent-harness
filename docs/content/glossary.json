@@ -12,7 +12,11 @@
     },
     {
       "term": "Rule",
-      "def": "A constraint the agent must honour. Prefer requestable rules; reserve always-on for true fail-closed P0s."
+      "def": "A constraint the agent must honour. Prefer requestable (pull when relevant); reserve always-on for Priority 0 (P0) fail-closed constraints only."
+    },
+    {
+      "term": "P0 (Priority 0)",
+      "def": "The highest-priority, fail-closed constraints that stay always-on in the agent harness. In this notebook’s starter pack there are two: (1) never put secrets in chat — capture into Bitwarden, (2) get explicit human approval before irreversible send/publish/destroy. A “P0 gate” is that human approval step. Not every rule is P0 — most should be requestable."
     },
     {
       "term": "Pattern",
@@ -44,7 +48,7 @@
     },
     {
       "term": "Preloop",
-      "def": "A runtime policy and audit plane for agent tool use. Layer under human P0 gates — do not replace send/secrets/irreversible consent. Docs: docs.preloop.ai"
+      "def": "A runtime policy and audit plane for agent tool use. Layer under human Priority 0 (P0) gates — do not replace send/secrets/irreversible consent. Docs: docs.preloop.ai"
     },
     {
       "term": "OpenRouter",
@@ -129,8 +133,12 @@
       "a": "Kaizen improves and encodes; Hansei reviews honestly; Toyota Way Practices names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
     },
     {
+      "q": "What does P0 mean?",
+      "a": "Priority 0 — the short list of fail-closed, always-on agent rules. The starter pack’s two are: secrets never in chat, and a human gate before irreversible send/publish. Everything else should stay requestable so the always-on tax stays small."
+    },
+    {
       "q": "Does Preloop replace human approval?",
-      "a": "No. Layer it under P0 gates. Humans still own irreversible outbound and secrets. Preloop adds audit/policy on tool runtime."
+      "a": "No. Layer it under Priority 0 (P0) gates. Humans still own irreversible outbound and secrets. Preloop adds audit/policy on tool runtime."
     },
     {
       "q": "Why OpenRouter?",
