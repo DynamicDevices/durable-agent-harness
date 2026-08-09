@@ -139,6 +139,10 @@
     {
       "q": "How do you keep tokens under control?",
       "a": "Thin skill dispatchers, requestable-by-default rules, enable/unload specialty tools, split parallel lanes, and measure the always-on tax when sessions feel heavy."
+    },
+    {
+      "q": "How often is this notebook updated?",
+      "a": "During end-of-week (EOW) reviews — not daily. If the week earned a blog note, pack tweak, or pattern change, ship it then. Skip empty weeks; no filler."
     }
   ]
 }

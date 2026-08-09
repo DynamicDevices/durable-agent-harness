@@ -3,6 +3,16 @@
   "intro": "Short notes from the work. First person. Not a content calendar.",
   "posts": [
     {
+      "id": "notebook-at-eow",
+      "date": "2026-08-09",
+      "title": "We update this at EOW",
+      "body": [
+        "How often should a public notebook move? Daily posts are vanity. Never is rot.",
+        "We’ll update chopwoodcarrywater.uk in the end-of-week review — the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.",
+        "That’s the cadence: weekly with the review, not whenever a chat feels productive."
+      ]
+    },
+    {
       "id": "start-in-60-minutes",
       "date": "2026-08-09",
       "title": "Start in 60 minutes",

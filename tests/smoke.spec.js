@@ -70,6 +70,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-cases")).toContainText("Case studies");
     await expect(page.locator("#case-grid .case-card")).toHaveCount(10);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
+    await expect(page.getByTestId("section-measure")).toContainText("EOW");
     await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
     await expect(page.locator("#starter-list .starter-card")).toHaveCount(6);
     await expect(page.locator("#starter-list .starter-body").first()).toContainText("Example domain task");
@@ -88,6 +89,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.getByRole("tab", { name: "Patterns" }).click();
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
     await expect(page.getByTestId("panel-patterns")).toContainText("Preloop before expensive CI");
+    await expect(page.getByTestId("panel-patterns")).toContainText("Notebook updates at EOW");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
@@ -112,6 +114,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("blog-notebook-at-eow")).toContainText("EOW");
     await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");
     await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(
       "PR commits",
