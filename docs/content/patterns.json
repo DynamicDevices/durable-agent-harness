@@ -1,36 +1,66 @@
 {
   "schema": "durable-agent-harness/patterns/v1",
-  "intro": "A few patterns worth stealing. Names are conceptual; this is not a dump of a private registry.",
+  "intro": "Portable patterns worth stealing. Conceptual names — not a dump of a private registry.",
   "patterns": [
     {
       "name": "Lean tool sessions",
       "problem": "Optional integrations loaded every turn quietly burn context and expand blast radius.",
-      "move": "Keep a tiny always-on core. Enable specialty tools only for the task, then unload."
+      "move": "Keep a tiny always-on core. Enable specialty tools only for the task, then unload.",
+      "signals": ["Context feels “full” before the work starts", "Tools idle but still listed every turn"]
     },
     {
       "name": "Fail-closed outbound",
       "problem": "Agents are eager to “be helpful” by sending, posting, or publishing.",
-      "move": "Draft freely; irreversible outbound needs an explicit human gate with the full referent visible."
+      "move": "Draft freely; irreversible outbound needs an explicit human gate with the full referent visible.",
+      "signals": ["Almost-sent drafts", "Ambiguous “shall I send?” soft prompts"]
     },
     {
       "name": "Secrets out of chat",
-      "problem": "Passwords pasted into transcripts leak into logs and backups.",
-      "move": "Capture secrets through a desktop dialog into a vault. Agents may confirm length — never echo the value."
+      "problem": "Secrets pasted into transcripts leak into logs, backups, and vendor retention.",
+      "move": "Capture through a desktop dialog into a vault. Agents may confirm length — never echo the value.",
+      "signals": ["Passwords in chat history", "Tokens in shell transcripts"]
     },
     {
       "name": "Proof class over vibes",
-      "problem": "Generated confidence outruns hardware and integration reality.",
-      "move": "Define what counts as done (flash, serial, CI, screenshot). Do not celebrate a plan as a fix."
+      "problem": "Generated confidence outruns tests, logs, and hardware reality.",
+      "move": "Define what counts as done before the work. Do not celebrate a plan as a fix.",
+      "signals": ["“Should work now” without evidence", "Repeated reopen of the same bug"]
     },
     {
       "name": "Kaizen with sign-off",
       "problem": "Cross-cutting habits invent themselves differently in every chat.",
-      "move": "Propose a pattern, get a human sign-off, encode it, apply it, review it."
+      "move": "Propose a pattern, get a human sign-off, encode it, apply it, review it.",
+      "signals": ["Same debate weekly", "Contradictory “house style” answers"]
     },
     {
       "name": "Felt ≠ measured",
       "problem": "People feel faster with AI even when wall-clock says otherwise.",
-      "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC."
+      "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC.",
+      "signals": ["Slide multipliers with no method", "Ignoring humbling RCTs"]
+    },
+    {
+      "name": "Always-on diet",
+      "problem": "Every always-on rule dominates cost and attention.",
+      "move": "Default to requestable. Keep a short P0 list; demote the rest.",
+      "signals": ["Huge rule preamble each turn", "Agents ignore rules from overload"]
+    },
+    {
+      "name": "One writer per tree",
+      "problem": "Parallel agents overwrite each other’s work and burn trust.",
+      "move": "Bind a lane to a worktree or declare a single writer. Others hand off.",
+      "signals": ["Mystery diffs", "Lost commits mid-session"]
+    },
+    {
+      "name": "Encode the second burn",
+      "problem": "Teams re-pay for the same mistake because the fix lived only in a chat.",
+      "move": "When a failure repeats once, write or update a skill before moving on.",
+      "signals": ["“We hit this last month”", "Tribal knowledge in one person’s head"]
+    },
+    {
+      "name": "Readable-first decisions",
+      "problem": "Approval dialogs hide the thing being approved.",
+      "move": "Lead with the ask and the referent (draft, path, command). Meta last.",
+      "signals": ["Approved the wrong send", "Humans asking “approve what?”"]
     }
   ]
 }

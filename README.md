@@ -1,31 +1,29 @@
 # Durable Agent Harness
 
-**Public engineering notebook** from [Dynamic Devices](https://www.dynamicdevices.co.uk/) on building a *durable working relationship* with AI coding agents — skills, rules, curated memory, signed patterns, and honest measurement.
+**Public engineering notebook** from [Dynamic Devices](https://www.dynamicdevices.co.uk/) on building a *durable working relationship* with AI coding agents.
 
 🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
-## Why this exists
+## What’s inside
 
-Most AI productivity stories are either hype or a single lab metric. This project shares the **method**: treat the harness like product, fail closed on irreversible actions, and measure **scope** (what became possible) instead of inventing multipliers.
+| Area | What you get |
+|---|---|
+| **Playbook** | Eight steps to build a thin harness from scratch |
+| **Starter kit** | Copy-paste templates for skills, rules, patterns, lanes, clocks, capability maps ([`starters/`](starters/)) |
+| **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
+| **Cases** | Sanitized before/after outcomes (no private or customer detail) |
+| **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
+| **Privacy** | Hard publish boundary — [PRIVACY.md](PRIVACY.md) |
 
-It is intentionally **not** a dump of private chats, customer work, or lab credentials. See [PRIVACY.md](PRIVACY.md).
-
-## Explore locally
+## Local check
 
 ```bash
 npm install
 npx playwright install chromium
-npm test          # sync + privacy denylist + Playwright (desktop + mobile)
+npm test          # sync + privacy gate + Playwright (desktop + mobile)
 npm run serve     # http://127.0.0.1:4173
 ```
-
-| Path | What |
-|---|---|
-| [`docs/`](docs/) | Static site (GitHub Pages) |
-| [`content/`](content/) | Sanitized JSON source of truth |
-| [`PRIVACY.md`](PRIVACY.md) | Publish boundary |
-| [`scripts/privacy-check.sh`](scripts/privacy-check.sh) | Denylist gate |
 
 ## Three clocks (frozen starts)
 

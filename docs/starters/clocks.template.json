@@ -1,0 +1,25 @@
+{
+  "schema": "tenure-clocks/v1",
+  "as_of": "YYYY-MM-DD",
+  "frozen_by": "human decision YYYY-MM-DD",
+  "clocks": [
+    {
+      "id": "serious_ai",
+      "label": "Serious hands-on AI",
+      "start": "YYYY-MM-DD",
+      "blurb": "First real practice — not first curiosity."
+    },
+    {
+      "id": "cockpit",
+      "label": "Agentic cockpit",
+      "start": "YYYY-MM-DD",
+      "blurb": "Primary environment for agentic engineering."
+    },
+    {
+      "id": "harness",
+      "label": "Versioned harness",
+      "start": "YYYY-MM-DD",
+      "blurb": "Skills/rules/patterns in version control."
+    }
+  ]
+}

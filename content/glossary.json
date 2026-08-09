@@ -1,0 +1,68 @@
+{
+  "schema": "durable-agent-harness/glossary/v1",
+  "intro": "Shared language reduces arguments about tools. These are working definitions for this notebook.",
+  "terms": [
+    {
+      "term": "Harness",
+      "def": "The durable layer around a model: skills, rules, memory, patterns, and human gates that make agent work reliable and repeatable."
+    },
+    {
+      "term": "Skill",
+      "def": "A thin, named procedure loaded on demand when a task matches. How to do a job — not an always-on essay."
+    },
+    {
+      "term": "Rule",
+      "def": "A constraint the agent must honour. Prefer requestable rules; reserve always-on for true fail-closed P0s."
+    },
+    {
+      "term": "Pattern",
+      "def": "A cross-cutting way of working with an explicit lifecycle: propose → human sign-off → encode → apply → review."
+    },
+    {
+      "term": "Memory",
+      "def": "Curated durable facts and decisions in a searchable store. Not a raw transcript landfill."
+    },
+    {
+      "term": "Human gate",
+      "def": "An explicit approval step before irreversible action (send, publish, destroy, spend). The referent must be visible."
+    },
+    {
+      "term": "Proof class",
+      "def": "The evidence that counts as done for a task class — tests, logs, screenshots, schema checks — agreed in advance."
+    },
+    {
+      "term": "Lane",
+      "def": "A named agent focus with clear owns / never / handoff rules so parallel work does not collide."
+    },
+    {
+      "term": "Harness tax",
+      "def": "Time spent writing skills, signing patterns, and maintaining gates. Real investment — not pure waste, not free speed."
+    },
+    {
+      "term": "Cockpit",
+      "def": "The primary agentic environment where reading the tree, running tools, and leaving diffs is normal."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is a giant system prompt a harness?",
+      "a": "No. A harness is versioned, selective, and maintained. A giant always-on prompt is usually an unbudgeted tax."
+    },
+    {
+      "q": "Skills vs rules — which first?",
+      "a": "Rules first for fail-closed safety. Then one skill born from a repeated failure. Patterns come once you see the same lesson across domains."
+    },
+    {
+      "q": "Do I need multi-agent lanes on day one?",
+      "a": "No. Earn them. Lanes help when one chat is thrashing across unrelated owns; they hurt when coordination overhead exceeds the work."
+    },
+    {
+      "q": "How do I know the harness is working?",
+      "a": "Fewer repeated failures, faster recovery with the same proof class, and less re-explaining decisions. Not “more tokens used”."
+    },
+    {
+      "q": "Can I publish my harness?",
+      "a": "Publish methods and sanitized templates. Never publish private messages, customer material, credentials, or internal topology."
+    }
+  ]
+}

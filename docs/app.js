@@ -1,9 +1,16 @@
 const BASE = new URL("./content/", import.meta.url);
+const STARTER_BASE = new URL("./starters/", import.meta.url);
 
 async function loadJSON(name) {
   const res = await fetch(new URL(name, BASE));
   if (!res.ok) throw new Error(`Failed to load ${name} (${res.status})`);
   return res.json();
+}
+
+async function loadText(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Failed to load ${url} (${res.status})`);
+  return res.text();
 }
 
 function daysBetween(startIso, asOfIso) {
@@ -49,21 +56,11 @@ function renderClocks(data) {
     ...data.clocks.map((clock) => {
       const days = daysBetween(clock.start, data.as_of);
       const age = formatAge(days);
-      return el(
-        "article",
-        {
-          className: "clock-card",
-          "data-testid": `clock-${clock.id}`,
-        },
-        [
-          el("div", { className: "label", text: clock.label }),
-          el("div", { className: "age" }, [
-            age.primary,
-            el("span", { text: age.secondary }),
-          ]),
-          el("p", { className: "blurb", text: `${clock.blurb} Started ${clock.start}.` }),
-        ],
-      );
+      return el("article", { className: "clock-card", "data-testid": `clock-${clock.id}` }, [
+        el("div", { className: "label", text: clock.label }),
+        el("div", { className: "age" }, [age.primary, el("span", { text: age.secondary })]),
+        el("p", { className: "blurb", text: `${clock.blurb} Started ${clock.start}.` }),
+      ]);
     }),
   );
 }
@@ -71,12 +68,36 @@ function renderClocks(data) {
 function renderStats(data) {
   document.querySelector("#stat-strip").replaceChildren(
     ...data.metrics.map((m) =>
-      el("span", {}, [
-        el("strong", { text: m.label }),
-        document.createTextNode(` ${m.value}`),
-      ]),
+      el("span", {}, [el("strong", { text: m.label }), document.createTextNode(` ${m.value}`)]),
     ),
     el("span", { text: `As of ${data.as_of}` }),
+  );
+  const note = document.querySelector("#stats-note");
+  if (note) note.textContent = data.growthNote || data.disclaimer || "";
+}
+
+function renderPlaybook(data) {
+  document.querySelector("#playbook-intro").textContent = data.intro;
+  document.querySelector("#principle-strip").replaceChildren(
+    ...data.principles.map((p) => el("span", { className: "principle", text: p })),
+  );
+  document.querySelector("#playbook-steps").replaceChildren(
+    ...data.steps.map((step) =>
+      el("li", { className: "step-card" }, [
+        el("div", { className: "step-num", text: `Step ${step.id}` }),
+        el("h3", { text: step.title }),
+        el("p", { text: step.body }),
+        el("p", { className: "done-line" }, [el("strong", { text: "Done when: " }), step.done]),
+      ]),
+    ),
+  );
+  document.querySelector("#anti-grid").replaceChildren(
+    ...data.antiPatterns.map((a) =>
+      el("article", { className: "steal-card" }, [
+        el("h3", { text: a.name }),
+        el("p", { text: a.body }),
+      ]),
+    ),
   );
 }
 
@@ -96,7 +117,7 @@ function renderTimeline(data) {
         ])
       : null;
     list.append(
-      el("li", { style: `animation-delay:${index * 60}ms` }, [
+      el("li", { style: `animation-delay:${Math.min(index, 8) * 50}ms` }, [
         el("time", { text: item.date }),
         el("h3", { text: item.title }),
         el("p", { text: item.body }),
@@ -104,7 +125,10 @@ function renderTimeline(data) {
       ]),
     );
   });
-  panel.replaceChildren(list);
+  panel.replaceChildren(
+    data.intro ? el("p", { className: "panel-intro", text: data.intro }) : null,
+    list,
+  );
 }
 
 function renderStack(data) {
@@ -119,6 +143,13 @@ function renderStack(data) {
           el("h3", { text: layer.title }),
           el("div", { className: "subtitle", text: layer.subtitle }),
           el("p", { text: layer.body }),
+          layer.tips
+            ? el(
+                "ul",
+                { className: "tip-list" },
+                layer.tips.map((t) => el("li", { text: t })),
+              )
+            : null,
         ]),
       ),
     ),
@@ -140,7 +171,10 @@ function renderCapabilities(data) {
         el("strong", { text: row.outcome }),
         el("span", { className: "pill", text: scale[row.before] || row.before }),
         el("span", { className: "pill now", text: scale[row.now] || row.now }),
-        el("span", { text: row.note }),
+        el("span", {}, [
+          row.note,
+          row.band ? el("div", { className: "band", text: row.band }) : null,
+        ]),
       ]),
     ),
   ]);
@@ -159,6 +193,36 @@ function renderPatterns(data) {
           el("h3", { text: p.name }),
           el("p", {}, [el("strong", { text: "Problem. " }), p.problem]),
           el("p", {}, [el("strong", { text: "Move. " }), p.move]),
+          p.signals
+            ? el(
+                "ul",
+                { className: "tip-list" },
+                p.signals.map((s) => el("li", { text: s })),
+              )
+            : null,
+        ]),
+      ),
+    ),
+  );
+}
+
+function renderGlossary(data) {
+  const panel = document.querySelector("#panel-glossary");
+  panel.replaceChildren(
+    el("p", { className: "panel-intro", text: data.intro }),
+    el(
+      "dl",
+      { className: "glossary" },
+      data.terms.flatMap((t) => [el("dt", { text: t.term }), el("dd", { text: t.def })]),
+    ),
+    el("h3", { className: "subhead", text: "FAQ" }),
+    el(
+      "div",
+      { className: "faq" },
+      data.faq.map((item) =>
+        el("details", { className: "faq-item" }, [
+          el("summary", { text: item.q }),
+          el("p", { text: item.a }),
         ]),
       ),
     ),
@@ -181,10 +245,99 @@ function renderLiterature(data) {
             text: `${item.title} (${item.year})`,
           }),
           el("p", { text: item.claim }),
+          item.use ? el("p", { className: "use-line", text: `Use: ${item.use}` }) : null,
         ]),
       ),
     ),
+    data.readingOrder
+      ? el(
+          "ol",
+          { className: "ritual" },
+          data.readingOrder.map((r) => el("li", { text: r })),
+        )
+      : null,
   );
+}
+
+function renderCases(data) {
+  document.querySelector("#cases-intro").textContent = data.intro;
+  document.querySelector("#case-grid").replaceChildren(
+    ...data.cases.map((c) =>
+      el("article", { className: "case-card", "data-case": c.id }, [
+        el("div", { className: "label", text: c.domain }),
+        el("h3", { text: c.title }),
+        el("p", {}, [el("strong", { text: "Before. " }), c.before]),
+        el("p", {}, [el("strong", { text: "After. " }), c.after]),
+        el(
+          "ul",
+          { className: "tip-list" },
+          c.harness.map((h) => el("li", { text: h })),
+        ),
+        el("p", { className: "lesson", text: c.lesson }),
+      ]),
+    ),
+  );
+}
+
+function renderMeasure(data) {
+  document.querySelector("#measure-intro").textContent = data.intro;
+  document.querySelector("#measure-grid").replaceChildren(
+    ...data.metrics.map((m) =>
+      el("article", { className: "measure-card" }, [
+        el("h3", { text: m.name }),
+        el("p", {}, [el("strong", { text: "What. " }), m.what]),
+        el("p", {}, [el("strong", { text: "Why. " }), m.why]),
+        el("p", { className: "trap", text: `Trap: ${m.trap}` }),
+      ]),
+    ),
+  );
+  document.querySelector("#band-grid").replaceChildren(
+    ...data.comparisonBands.map((b) =>
+      el("article", { className: "band-card" }, [
+        el("h3", { text: b.label }),
+        el("p", { text: b.use }),
+      ]),
+    ),
+  );
+  document.querySelector("#ritual-list").replaceChildren(
+    ...data.weeklyRitual.map((r) => el("li", { text: r })),
+  );
+}
+
+async function renderStarters(data) {
+  document.querySelector("#starters-intro").textContent = data.intro;
+  const list = document.querySelector("#starter-list");
+  list.replaceChildren();
+
+  for (const t of data.templates) {
+    const body = await loadText(new URL(t.filename, STARTER_BASE));
+    const pre = el("pre", { className: "starter-body" }, [body]);
+    const btn = el("button", { type: "button", className: "copy-btn", text: "Copy" });
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(body);
+        btn.textContent = "Copied";
+        setTimeout(() => {
+          btn.textContent = "Copy";
+        }, 1500);
+      } catch {
+        btn.textContent = "Select manually";
+      }
+    });
+    list.append(
+      el("article", { className: "starter-card", "data-starter": t.id }, [
+        el("div", { className: "starter-head" }, [
+          el("div", {}, [
+            el("h3", { text: t.title }),
+            el("p", { text: t.blurb }),
+            el("code", { className: "filename", text: t.filename }),
+          ]),
+          btn,
+        ]),
+        pre,
+      ]),
+    );
+  }
 }
 
 function wireTabs() {
@@ -199,29 +352,58 @@ function wireTabs() {
     });
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => activate(tab));
-  });
+  tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab)));
+
+  // Deep-link: #explore?tab=stack or hash panel ids via data
+  const params = new URLSearchParams(location.search);
+  const tabName = params.get("tab");
+  if (tabName) {
+    const match = tabs.find((t) => t.textContent.trim().toLowerCase() === tabName.toLowerCase());
+    if (match) activate(match);
+  }
 }
 
 async function main() {
-  const [clocks, stats, timeline, stack, capabilities, patterns, literature] = await Promise.all([
+  const [
+    clocks,
+    stats,
+    playbook,
+    timeline,
+    stack,
+    capabilities,
+    patterns,
+    glossary,
+    literature,
+    cases,
+    measure,
+    starters,
+  ] = await Promise.all([
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
+    loadJSON("playbook.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
     loadJSON("patterns.json"),
+    loadJSON("glossary.json"),
     loadJSON("literature.json"),
+    loadJSON("cases.json"),
+    loadJSON("measure.json"),
+    loadJSON("starters.json"),
   ]);
 
   renderClocks(clocks);
   renderStats(stats);
+  renderPlaybook(playbook);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);
   renderPatterns(patterns);
+  renderGlossary(glossary);
   renderLiterature(literature);
+  renderCases(cases);
+  renderMeasure(measure);
+  await renderStarters(starters);
   wireTabs();
   document.body.dataset.ready = "true";
 }

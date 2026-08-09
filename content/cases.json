@@ -1,0 +1,60 @@
+{
+  "schema": "durable-agent-harness/cases/v1",
+  "intro": "Sanitized outcomes. No customer names, no private channels, no lab topology — just the shape of the work and what changed.",
+  "cases": [
+    {
+      "id": "prototype-spike",
+      "title": "From brief to reviewable spike",
+      "domain": "Software prototype",
+      "before": "A crisp UI/tool idea waited for “a free weekend” and often never shipped.",
+      "after": "Same brief becomes a public or internal spike in hours to a day, with an engineer still owning taste and production readiness.",
+      "harness": ["Thin skill for scaffold + verify", "Proof: runnable demo + checklist", "Human gate before any public claim"],
+      "lesson": "Agents collapse blank-page cost. They do not replace product judgment."
+    },
+    {
+      "id": "multi-repo",
+      "title": "Agentic work in a real codebase",
+      "domain": "Software engineering",
+      "before": "Copy-paste between chat and editor; context lost every session.",
+      "after": "Cockpit reads the tree, patches, runs tests, opens reviewable diffs; human steers and merges.",
+      "harness": ["Repo hygiene rules", "PR skill with AI disclosure", "CI as proof class"],
+      "lesson": "The unit of progress is a reviewable change with proof — not a confident paragraph."
+    },
+    {
+      "id": "hardware-loop",
+      "title": "Human-in-the-loop target investigation",
+      "domain": "Embedded / devices",
+      "before": "One engineer serial-debugs alone; notes live in a notebook that the next session cannot load.",
+      "after": "Agent runs bounded commands; human judges logs and hardware reality; failures become skills.",
+      "harness": ["Proof class: flash + serial / smoke", "Fail-closed on destructive ops", "Encode repeated bring-up mistakes"],
+      "lesson": "Power without proof class becomes expensive fiction."
+    },
+    {
+      "id": "parallel-lanes",
+      "title": "Team-shaped solo bursts",
+      "domain": "Product loops",
+      "before": "One chat tries to own design, docs, and implementation; thrash increases.",
+      "after": "Named lanes with owns/never/handoffs; humans still approve binding decisions.",
+      "harness": ["Lane declarations", "Handoff tickets in memory", "Kyosei on shared resources"],
+      "lesson": "Parallelism is a multiplier only when ownership is explicit."
+    },
+    {
+      "id": "behaviour-product",
+      "title": "Behaviour as a versioned product",
+      "domain": "Harness engineering",
+      "before": "Good habits died when the chat ended; every new session relearned pain.",
+      "after": "Skills, rules, and signed patterns live in version control and compound for months.",
+      "harness": ["Versioned config", "Pattern registry with sign-off", "Periodic review (Hansei)"],
+      "lesson": "This is the compounding advantage — quieter than demos, larger over time."
+    },
+    {
+      "id": "guarded-ops",
+      "title": "Guarded operational assistance",
+      "domain": "Ops / communications",
+      "before": "Manual drafts and risky “just send it” moments.",
+      "after": "Assistants draft freely; irreversible outbound requires a human gate with the full referent visible.",
+      "harness": ["Fail-closed outbound", "Secrets out of chat", "Least-privilege tool enablement"],
+      "lesson": "Publish the idea of gates — not the private channels."
+    }
+  ]
+}

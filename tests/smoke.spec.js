@@ -3,11 +3,10 @@ const { test, expect } = require("@playwright/test");
 test.describe("Durable Agent Harness site", () => {
   test("hero brands first and primary CTA works", async ({ page }) => {
     await page.goto("/");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true", { timeout: 20000 });
     await expect(page.getByTestId("brand")).toBeVisible();
     await expect(page.getByTestId("hero")).toContainText("Durable Agent Harness");
     const brand = page.locator(".hero-brand");
-    await expect(brand).toBeVisible();
-    // Brand signal should be larger than the supporting headline.
     const brandSize = await brand.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     const h1Size = await page.locator(".hero h1").evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
     expect(brandSize).toBeGreaterThan(h1Size);
@@ -16,8 +15,10 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-explore")).toBeInViewport();
   });
 
-  test("clocks and stats render from content", async ({ page }) => {
+  test("start paths and clocks render", async ({ page }) => {
     await page.goto("/");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("section-start")).toContainText("Playbook");
     await expect(page.getByTestId("clock-serious_ai")).toBeVisible();
     await expect(page.getByTestId("clock-cursor")).toBeVisible();
     await expect(page.getByTestId("clock-harness")).toBeVisible();
@@ -25,8 +26,22 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("stat-strip")).toContainText("69");
   });
 
-  test("explore tabs switch panels", async ({ page }) => {
+  test("playbook, cases, measure, and starters sections load", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
+    await expect(page.getByTestId("section-playbook")).toContainText("Build your own harness");
+    await expect(page.locator("#playbook-steps .step-card")).toHaveCount(8);
+    await expect(page.getByTestId("section-cases")).toContainText("Sanitized case studies");
+    await expect(page.locator("#case-grid .case-card")).toHaveCount(6);
+    await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
+    await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
+    await expect(page.locator("#starter-list .starter-card")).toHaveCount(6);
+    await expect(page.locator("#starter-list .starter-body").first()).toContainText("Example domain task");
+  });
+
+  test("explore tabs switch panels including glossary", async ({ page }) => {
     await page.goto("/#explore");
+    await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("panel-timeline")).toBeVisible();
     await page.getByRole("tab", { name: "Stack" }).click();
     await expect(page.getByTestId("panel-stack")).toBeVisible();
@@ -36,6 +51,9 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-capability")).toContainText("Before AI");
     await page.getByRole("tab", { name: "Patterns" }).click();
     await expect(page.getByTestId("panel-patterns")).toContainText("Lean tool sessions");
+    await page.getByRole("tab", { name: "Glossary" }).click();
+    await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
+    await expect(page.getByTestId("panel-glossary")).toContainText("FAQ");
     await page.getByRole("tab", { name: "Research" }).click();
     await expect(page.getByTestId("panel-literature")).toContainText("METR");
   });

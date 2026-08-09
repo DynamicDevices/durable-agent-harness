@@ -13,37 +13,57 @@
       "outcome": "Fast UI / tool prototype from a crisp brief",
       "before": "uneconomic",
       "now": "solo-easy",
-      "note": "Useful for demos; still needs an engineer’s taste for production."
+      "note": "Useful for demos; still needs an engineer’s taste for production.",
+      "band": "Senior pace"
     },
     {
       "outcome": "Agentic work inside a real multi-repo codebase",
       "before": "impossible",
       "now": "solo-hard",
-      "note": "The IDE becomes a cockpit: read, patch, test, iterate."
+      "note": "Cockpit reads, patches, tests, iterates; human merges.",
+      "band": "~Pair"
     },
     {
       "outcome": "Remote target investigation with a human in the loop",
       "before": "team",
       "now": "solo-hard",
-      "note": "Powerful and easy to over-trust — proof class matters more than chatter."
+      "note": "Powerful and easy to over-trust — proof class matters more than chatter.",
+      "band": "~Pair"
     },
     {
       "outcome": "Parallel agents on one product loop",
       "before": "impossible",
       "now": "team",
-      "note": "Feels like a small squad for short bursts; review load stays on the human."
+      "note": "Feels like a small squad for short bursts; review load stays on the human.",
+      "band": "~Squad burst"
     },
     {
       "outcome": "Durable agent behaviour across months",
       "before": "impossible",
       "now": "solo-hard",
-      "note": "Skills and signed patterns beat “we talked about this in a chat once”."
+      "note": "Skills and signed patterns beat “we talked about this once”.",
+      "band": "Team knowledge base"
+    },
+    {
+      "outcome": "Spec / evidence drafting with human voice ownership",
+      "before": "solo-hard",
+      "now": "solo-easy",
+      "note": "Draft → gate → publish. Claims stay human-owned.",
+      "band": "Senior + editor"
+    },
+    {
+      "outcome": "Guarded operational assistance",
+      "before": "solo-hard",
+      "now": "solo-easy",
+      "note": "Assistants draft; irreversible outbound is gated. Channels stay private.",
+      "band": "PA + engineer"
     },
     {
       "outcome": "Same familiar ticket, wall-clock only",
       "before": "solo-hard",
       "now": "solo-hard",
-      "note": "We do not claim a universal speedup. Measurement is honest — see Measure."
+      "note": "We do not claim a universal speedup. Measure — see the kit.",
+      "band": "Unknown without diary"
     }
   ]
 }

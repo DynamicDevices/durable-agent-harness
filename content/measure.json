@@ -1,0 +1,88 @@
+{
+  "schema": "durable-agent-harness/measure/v1",
+  "title": "Measurement kit",
+  "intro": "Measure so you can learn — not so you can invent a slide multiplier. Public research disagrees; your job is honest local instrumentation.",
+  "clocksAdvice": [
+    "Freeze start dates deliberately (serious practice, cockpit, versioned harness).",
+    "Do not silently move starts to make ages look better.",
+    "Recompute ages from starts; quote the as-of date."
+  ],
+  "metrics": [
+    {
+      "name": "Tenure clocks",
+      "what": "Calendar time since each frozen start.",
+      "why": "Answers “how long have we been doing this?” without mythology.",
+      "trap": "Back-dating to first curiosity instead of first real practice."
+    },
+    {
+      "name": "Harness size proxies",
+      "what": "Counts of skills, rules, signed patterns over time.",
+      "why": "Shows investment in the working relationship.",
+      "trap": "Treating count as quality. Delete and deprecate ruthlessly."
+    },
+    {
+      "name": "Capability map",
+      "what": "Outcomes tagged pre-AI feasibility vs now (solo-easy → impossible).",
+      "why": "Captures scope expansion — the usual real win.",
+      "trap": "Listing aspirations instead of evidenced outcomes."
+    },
+    {
+      "name": "Repeated-failure rate",
+      "what": "How often the same class of waste recurs after a skill exists.",
+      "why": "Skills should earn their keep.",
+      "trap": "Writing skills you never load."
+    },
+    {
+      "name": "Proof pass rate",
+      "what": "Fraction of agent-claimed dones that meet the proof class first time.",
+      "why": "Separates vibes from shipping.",
+      "trap": "Weakening the proof class to improve the score."
+    },
+    {
+      "name": "Harness tax log",
+      "what": "Hours spent encoding skills/patterns/gates.",
+      "why": "Makes investment visible so it is not mistaken for pure slowdown.",
+      "trap": "Endless meta-work with no product outcome."
+    }
+  ],
+  "comparisonBands": [
+    {
+      "id": "mid",
+      "label": "Solo mid (no AI)",
+      "use": "Baseline for routine tickets in a known stack."
+    },
+    {
+      "id": "senior",
+      "label": "Solo senior (no AI)",
+      "use": "Baseline for hard debugging and design judgment."
+    },
+    {
+      "id": "pair",
+      "label": "Two-person team (no AI)",
+      "use": "Compare when agent + human feels like pair pace."
+    },
+    {
+      "id": "squad",
+      "label": "Small squad (no AI)",
+      "use": "Compare short parallel-lane bursts — rarely sustained."
+    },
+    {
+      "id": "copilot",
+      "label": "AI chat/complete, little harness",
+      "use": "Contrast raw assistance vs fail-closed compounding systems."
+    },
+    {
+      "id": "harnessed",
+      "label": "Cockpit + harness",
+      "use": "Your target operating mode."
+    }
+  ],
+  "weeklyRitual": [
+    "Update ages from frozen clocks (30 seconds).",
+    "Add at most three capability-map notes tied to real proof.",
+    "Propose or deprecate one pattern — do not let the registry rot.",
+    "Log harness tax if you spent a block encoding behaviour.",
+    "Refuse any external “N× productivity” claim without a cited method."
+  ],
+  "literatureNote": "METR’s early-2025 RCT is the humbling baseline for familiar OSS tickets. Copilot lab/field studies show gains in other settings. Use both as context; instrument your own work."
+}

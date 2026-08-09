@@ -1,42 +1,72 @@
 {
   "schema": "durable-agent-harness/stack/v1",
-  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, and human gates. The model is powerful; the harness is what makes it reliable.",
+  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes it reliable.",
   "layers": [
     {
       "id": "skills",
       "title": "Skills",
       "subtitle": "How to do a job",
-      "body": "Thin, named procedures the agent loads when a task matches — board bring-up, docs, PR hygiene, brand production. Detail lives on demand so every turn stays cheap."
+      "body": "Thin, named procedures the agent loads when a task matches. Detail lives on demand so every turn stays cheap. A skill earns its place by preventing a repeated failure.",
+      "tips": [
+        "Trigger nouns in the description so the host can select it",
+        "Separate SKILL.md (short) from reference.md (deep)",
+        "Include an explicit proof of done"
+      ]
     },
     {
       "id": "rules",
       "title": "Rules",
       "subtitle": "What must never go wrong",
-      "body": "Fail-closed constraints: secrets stay out of chat, outbound messages need clear approval, scripts must not overwrite source with redirects. Few always-on; most requestable."
+      "body": "Fail-closed constraints: secrets stay out of chat, outbound needs approval, scripts must not clobber source. Few always-on; most requestable.",
+      "tips": [
+        "Always-on budget is sacred",
+        "One symptom → one rule when possible",
+        "Write the incident in one line under Why"
+      ]
     },
     {
       "id": "memory",
       "title": "Memory",
       "subtitle": "Curated, not a transcript dump",
-      "body": "Durable facts and decisions in a searchable store — people stances, project tickets, signed patterns — without pasting private inboxes into the public internet."
+      "body": "Durable facts and decisions in a searchable store — stances, tickets, signed patterns — without pasting private inboxes onto the public internet.",
+      "tips": [
+        "Write with a retention reason",
+        "Prefer structured cards over prose sludge",
+        "Invalidate stale facts instead of stacking contradictions"
+      ]
     },
     {
       "id": "patterns",
       "title": "Patterns",
       "subtitle": "Kaizen with teeth",
-      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic review. The registry is the difference between lore and an operating system."
+      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic review. The registry turns lore into an operating system.",
+      "tips": [
+        "No silent promotion to signed-off",
+        "Deprecate without guilt",
+        "Encode into skills/rules where agents will load them"
+      ]
     },
     {
       "id": "gates",
       "title": "Human gates",
       "subtitle": "Irreversible stays human",
-      "body": "Desktop decisions for forks that matter. Speed is not an excuse to skip consent on send, publish, or destructive ops."
+      "body": "Desktop decisions for forks that matter. The referent (draft, command, path) must be visible in the ask — not implied by chat order.",
+      "tips": [
+        "One gate for irreversible outbound — not soft nag stacks",
+        "Name who acts: human vs agent",
+        "Danger chrome for destructive arms"
+      ]
     },
     {
       "id": "lanes",
       "title": "Parallel lanes",
       "subtitle": "Team-shaped solo work",
-      "body": "Named agent lanes with clear ownership and handoffs. Useful for product loops; dangerous without kyosei (co-prosperity) on shared benches."
+      "body": "Named agent lanes with clear ownership and handoffs. Useful for product loops; dangerous without co-prosperity on shared benches and trees.",
+      "tips": [
+        "Declare owns / never at session start",
+        "Handoffs are explicit tickets",
+        "Do not run two writers on one tree"
+      ]
     }
   ]
 }

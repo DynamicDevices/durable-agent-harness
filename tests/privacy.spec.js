@@ -22,8 +22,12 @@ function loadRules() {
 
 test("rendered page text contains no denylisted personal/ops material", async ({ page }) => {
   await page.goto("/");
+  await expect(page.locator("body")).toHaveAttribute("data-ready", "true", { timeout: 20000 });
   await page.getByRole("tab", { name: "Capability" }).click();
+  await page.getByRole("tab", { name: "Glossary" }).click();
   await page.getByRole("tab", { name: "Research" }).click();
+  await page.locator("#cases").scrollIntoViewIfNeeded();
+  await page.locator("#starters").scrollIntoViewIfNeeded();
   const text = (await page.locator("body").innerText()).toLowerCase();
   const html = (await page.content()).toLowerCase();
   const blob = `${text}\n${html}`;

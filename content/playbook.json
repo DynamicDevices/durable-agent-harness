@@ -1,0 +1,80 @@
+{
+  "schema": "durable-agent-harness/playbook/v1",
+  "title": "Build your own harness",
+  "intro": "You do not need our private tree. You need a small, versioned operating system around the model — then you grow it only when a failure repeats.",
+  "principles": [
+    "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
+    "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
+    "Irreversible actions stay human. Draft freely; send/publish/destroy only with an explicit gate.",
+    "Prefer proof over narrative. Define what “done” looks like before celebrating.",
+    "Sign off cross-cutting habits. Lore in chat is not an operating system."
+  ],
+  "steps": [
+    {
+      "id": "1",
+      "title": "Pick a cockpit",
+      "body": "Choose one agentic environment where the model can read your tree, run commands, and leave reviewable diffs. Consistency beats tool-hopping.",
+      "done": "Same cockpit for a week of real work."
+    },
+    {
+      "id": "2",
+      "title": "Write three fail-closed rules",
+      "body": "Start with: (1) secrets never pasted into chat, (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects. Keep them short.",
+      "done": "Three rules in version control; agents actually obey them."
+    },
+    {
+      "id": "3",
+      "title": "Capture one skill from a repeated failure",
+      "body": "After you burn an hour the same way twice, write a thin skill: when to load it, the steps, the proof of done, and what not to do. Link detail in a reference file if needed.",
+      "done": "One skill that would have prevented last week’s waste."
+    },
+    {
+      "id": "4",
+      "title": "Define proof classes",
+      "body": "For your domain, name what counts: tests green, flash + serial log, screenshot, schema validate, PR checklist. Put the names in the skill — not “looks good”.",
+      "done": "Agents stop declaring victory on plans alone."
+    },
+    {
+      "id": "5",
+      "title": "Add a tiny memory discipline",
+      "body": "Curate durable facts (decisions, people stances, project tickets). Do not dump transcripts. Search with purpose; write with a retention reason.",
+      "done": "You can answer “what did we decide?” without re-litigating a chat."
+    },
+    {
+      "id": "6",
+      "title": "Start a patterns registry",
+      "body": "One markdown table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after a human agrees the lesson is real.",
+      "done": "At least one signed-off pattern that changes default behaviour."
+    },
+    {
+      "id": "7",
+      "title": "Lean the tool surface",
+      "body": "Every always-on integration costs tokens and expands blast radius. Keep a core; enable specialty tools per task; unload when done.",
+      "done": "You know which tools are always-on and why (ideally fewer than five)."
+    },
+    {
+      "id": "8",
+      "title": "Measure scope, not vibes",
+      "body": "Freeze start dates for your practice. Keep a capability map of outcomes that became possible. Resist inventing multipliers for slides.",
+      "done": "You can explain progress without a fake “2×” claim."
+    }
+  ],
+  "antiPatterns": [
+    {
+      "name": "Prompt archaeology",
+      "body": "Past chats are not a harness. If it mattered, encode it."
+    },
+    {
+      "name": "Always-on everything",
+      "body": "Loading every integration “just in case” makes agents slower, costlier, and more dangerous."
+    },
+    {
+      "name": "Autonomy cosplay",
+      "body": "Unattended sends, merges, or flash loops without gates are not productivity — they are incidents waiting to happen."
+    },
+    {
+      "name": "LOC theatre",
+      "body": "Lines generated is a vanity metric. Proof-backed outcomes are the unit of progress."
+    }
+  ]
+}

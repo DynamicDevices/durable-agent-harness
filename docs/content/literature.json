@@ -5,20 +5,35 @@
     {
       "title": "METR — Early-2025 AI on experienced open-source developers",
       "year": "2025",
-      "claim": "In an RCT on real issues in familiar large repos, allowing AI (often Cursor + frontier models) made experienced developers about 19% slower — while they still believed they were faster.",
-      "href": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/"
+      "claim": "RCT on real issues in familiar large repos: allowing AI (often Cursor + frontier models) made experienced developers about 19% slower — while they still believed they were faster.",
+      "href": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "use": "Humbling baseline for wall-clock on familiar tickets."
     },
     {
       "title": "Peng et al. — GitHub Copilot controlled experiment",
       "year": "2023",
       "claim": "On constrained coding tasks, Copilot users finished substantially faster in a lab setting — a different problem class than multi-hour work in mature codebases.",
-      "href": "https://arxiv.org/abs/2302.06590"
+      "href": "https://arxiv.org/abs/2302.06590",
+      "use": "Shows assistance can win on narrow tasks."
     },
     {
       "title": "Enterprise Copilot field experiments (throughput)",
       "year": "2024",
       "claim": "Field studies report higher pull-request throughput for assisted developers — volume is not the same as embedded proof quality.",
-      "href": "https://arxiv.org/abs/2410.12944"
+      "href": "https://arxiv.org/abs/2410.12944",
+      "use": "Throughput ≠ device proof."
+    },
+    {
+      "title": "Cursor adoption DiD (preprint discussion)",
+      "year": "2025",
+      "claim": "Observational work on agentic IDE adoption reports early activity spikes with warnings about complexity/debt if review quality slips.",
+      "href": "https://arxiv.org/pdf/2511.04427",
+      "use": "Do not confuse LOC spikes with sustainable capability."
     }
+  ],
+  "readingOrder": [
+    "Start with METR if you are about to claim a universal speedup.",
+    "Read a Copilot lab/field paper to see where assistance clearly helps.",
+    "Return to your capability map and proof pass rate — local truth beats borrowed multipliers."
   ]
 }
