@@ -1,40 +1,44 @@
 # Durable Agent Harness
 
-Public lab note from **Dynamic Devices** on building a durable operating layer around AI coding agents.
+**Public engineering notebook** from [Dynamic Devices](https://www.dynamicdevices.co.uk/) on building a *durable working relationship* with AI coding agents — skills, rules, curated memory, signed patterns, and honest measurement.
 
-**Live site:** <https://dynamicdevices.github.io/durable-agent-harness/>
+🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
+📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
 
 ## Why this exists
 
-Frontier models are powerful and unreliable in the same breath. A *harness* — skills, rules, curated memory, signed patterns, and human gates — is how engineering work stays fast without becoming careless.
+Most AI productivity stories are either hype or a single lab metric. This project shares the **method**: treat the harness like product, fail closed on irreversible actions, and measure **scope** (what became possible) instead of inventing multipliers.
 
-This repository is a **privacy-safe** map of one team’s journey since serious hands-on AI work began (2025-06-06): tenure clocks, the stack, a capability view, patterns worth stealing, and honesty about measurement.
+It is intentionally **not** a dump of private chats, customer work, or lab credentials. See [PRIVACY.md](PRIVACY.md).
 
-## Explore
-
-| Path | What |
-|---|---|
-| [`docs/`](docs/) | GitHub Pages site |
-| [`content/`](content/) | Source JSON for the site (synced into `docs/content/`) |
-| [`PRIVACY.md`](PRIVACY.md) | Publication bar — what must never ship |
-| [`tests/`](tests/) | Playwright UX + rendered-text privacy checks |
-
-## Develop
+## Explore locally
 
 ```bash
 npm install
 npx playwright install chromium
-npm test          # privacy gate + Playwright (desktop + mobile)
+npm test          # sync + privacy denylist + Playwright (desktop + mobile)
 npm run serve     # http://127.0.0.1:4173
 ```
 
-Edit files under `content/`, then `npm run sync` (also run automatically by `npm run privacy`).
+| Path | What |
+|---|---|
+| [`docs/`](docs/) | Static site (GitHub Pages) |
+| [`content/`](content/) | Sanitized JSON source of truth |
+| [`PRIVACY.md`](PRIVACY.md) | Publish boundary |
+| [`scripts/privacy-check.sh`](scripts/privacy-check.sh) | Denylist gate |
 
-## What you will not find here
+## Three clocks (frozen starts)
 
-Private chats, family details, credentials, lab network data, client identities, or competitive product plans. See [`PRIVACY.md`](PRIVACY.md).
+| Clock | Start |
+|---|---|
+| Serious hands-on AI | 2025-06-06 |
+| Cursor as cockpit | 2025-07-23 |
+| Versioned harness | 2026-05-31 |
 
-## License
+## Licence
 
-Source and site content: [MIT](LICENSE).  
-Dynamic Devices mark: retained by Dynamic Devices Ltd; used here for attribution on an official public lab note.
+MIT — see [LICENSE](LICENSE).
+
+---
+
+*Site and materials were AI-assisted (Cursor) under human direction at Dynamic Devices.*

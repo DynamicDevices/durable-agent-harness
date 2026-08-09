@@ -1,28 +1,29 @@
-const MONTH = 30.44;
-const YEAR = 365.25;
+const BASE = new URL("./content/", import.meta.url);
 
-async function loadJSON(path) {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+async function loadJSON(name) {
+  const res = await fetch(new URL(name, BASE));
+  if (!res.ok) throw new Error(`Failed to load ${name} (${res.status})`);
   return res.json();
 }
 
-function ageParts(startISO, asOfISO) {
-  const start = new Date(`${startISO}T00:00:00Z`);
-  const asOf = new Date(`${asOfISO}T00:00:00Z`);
-  const days = Math.max(0, Math.round((asOf - start) / 86400000));
-  return {
-    days,
-    months: days / MONTH,
-    years: days / YEAR,
-  };
+function daysBetween(startIso, asOfIso) {
+  const start = new Date(`${startIso}T00:00:00Z`);
+  const asOf = new Date(`${asOfIso}T00:00:00Z`);
+  return Math.round((asOf - start) / 86400000);
 }
 
-function formatAge(parts) {
-  if (parts.years >= 1) {
-    return `${parts.years.toFixed(2)} yr`;
+function formatAge(days) {
+  const months = days / 30.44;
+  if (months >= 12) {
+    return {
+      primary: `${(days / 365.25).toFixed(2)} years`,
+      secondary: `${days} days · ~${months.toFixed(1)} months`,
+    };
   }
-  return `${parts.months.toFixed(1)} mo`;
+  return {
+    primary: `~${months.toFixed(1)} months`,
+    secondary: `${days} days`,
+  };
 }
 
 function el(tag, attrs = {}, children = []) {
@@ -31,206 +32,201 @@ function el(tag, attrs = {}, children = []) {
     if (k === "className") node.className = v;
     else if (k === "text") node.textContent = v;
     else if (k === "html") node.innerHTML = v;
+    else if (k === "hidden" && v) node.hidden = true;
     else node.setAttribute(k, v);
   }
-  for (const child of children) {
+  for (const child of [].concat(children)) {
     if (child == null) continue;
-    node.append(child.nodeType ? child : document.createTextNode(String(child)));
+    node.append(typeof child === "string" ? document.createTextNode(child) : child);
   }
   return node;
 }
 
-function renderClocks(clocksDoc, asOf) {
-  const grid = document.getElementById("clock-grid");
-  grid.replaceChildren();
-  for (const clock of clocksDoc.clocks) {
-    const parts = ageParts(clock.start, asOf);
-    const card = el("article", { className: "clock", "data-testid": `clock-${clock.id}` }, [
-      el("h3", { text: clock.label }),
-      el("p", { className: "age", text: formatAge(parts) }),
-      el("p", { className: "start", text: `Since ${clock.start}` }),
-      el("p", { text: clock.blurb }),
-    ]);
-    grid.append(card);
-  }
+function renderClocks(data) {
+  document.querySelector("#clocks-note").textContent = data.note;
+  const grid = document.querySelector("#clock-grid");
+  grid.replaceChildren(
+    ...data.clocks.map((clock) => {
+      const days = daysBetween(clock.start, data.as_of);
+      const age = formatAge(days);
+      return el(
+        "article",
+        {
+          className: "clock-card",
+          "data-testid": `clock-${clock.id}`,
+        },
+        [
+          el("div", { className: "label", text: clock.label }),
+          el("div", { className: "age" }, [
+            age.primary,
+            el("span", { text: age.secondary }),
+          ]),
+          el("p", { className: "blurb", text: `${clock.blurb} Started ${clock.start}.` }),
+        ],
+      );
+    }),
+  );
 }
 
-function renderStats(statsDoc) {
-  const strip = document.getElementById("stat-strip");
-  strip.replaceChildren();
-  for (const metric of statsDoc.metrics) {
-    strip.append(
-      el("div", { className: "stat", title: metric.detail }, [
-        el("strong", { text: metric.value }),
-        el("span", { text: metric.label }),
-      ])
-    );
-  }
+function renderStats(data) {
+  document.querySelector("#stat-strip").replaceChildren(
+    ...data.metrics.map((m) =>
+      el("span", {}, [
+        el("strong", { text: m.label }),
+        document.createTextNode(` ${m.value}`),
+      ]),
+    ),
+    el("span", { text: `As of ${data.as_of}` }),
+  );
 }
 
-function renderTimeline(doc) {
-  const panel = document.getElementById("panel-timeline");
+function renderTimeline(data) {
+  const panel = document.querySelector("#panel-timeline");
   const list = el("ol", { className: "timeline" });
-  for (const event of doc.events) {
-    const link = event.link
+  data.events.forEach((item, index) => {
+    const link = item.link
       ? el("p", {}, [
-          el("a", { href: event.link.href, target: "_blank", rel: "noopener noreferrer", text: event.link.label }),
+          el("a", {
+            className: "text-link",
+            href: item.link.href,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            text: item.link.label,
+          }),
         ])
       : null;
     list.append(
-      el("li", {}, [
-        el("time", { text: event.date }),
-        el("h3", { text: event.title }),
-        el("p", { text: event.body }),
+      el("li", { style: `animation-delay:${index * 60}ms` }, [
+        el("time", { text: item.date }),
+        el("h3", { text: item.title }),
+        el("p", { text: item.body }),
         link,
-      ])
+      ]),
     );
-  }
-  panel.replaceChildren(el("p", { text: "Milestones written for a public audience." }), list);
+  });
+  panel.replaceChildren(list);
 }
 
-function renderStack(doc) {
-  const panel = document.getElementById("panel-stack");
-  const grid = el("div", { className: "stack-grid" });
-  for (const layer of doc.layers) {
-    grid.append(
-      el("article", { className: "stack-card" }, [
-        el("h3", { text: layer.title }),
-        el("p", { className: "sub", text: layer.subtitle }),
-        el("p", { text: layer.body }),
-      ])
-    );
-  }
-  panel.replaceChildren(el("p", { text: doc.intro }), grid);
+function renderStack(data) {
+  const panel = document.querySelector("#panel-stack");
+  panel.replaceChildren(
+    el("p", { className: "panel-intro", text: data.intro }),
+    el(
+      "div",
+      { className: "stack-grid" },
+      data.layers.map((layer) =>
+        el("article", { className: "stack-card" }, [
+          el("h3", { text: layer.title }),
+          el("div", { className: "subtitle", text: layer.subtitle }),
+          el("p", { text: layer.body }),
+        ]),
+      ),
+    ),
+  );
 }
 
-function renderCapability(doc) {
-  const panel = document.getElementById("panel-capability");
-  const table = el("table", { className: "cap-table" });
-  const thead = el("thead", {}, [
-    el("tr", {}, [
-      el("th", { text: "Outcome" }),
-      el("th", { text: "Before AI" }),
-      el("th", { text: "With harness" }),
-      el("th", { text: "Note" }),
+function renderCapabilities(data) {
+  const panel = document.querySelector("#panel-capability");
+  const scale = Object.fromEntries(data.scale.map((s) => [s.id, s.label]));
+  const table = el("div", { className: "cap-table" }, [
+    el("div", { className: "cap-head" }, [
+      el("span", { text: "Outcome" }),
+      el("span", { text: "Before AI" }),
+      el("span", { text: "Now" }),
+      el("span", { text: "Note" }),
     ]),
+    ...data.rows.map((row) =>
+      el("div", { className: "cap-row" }, [
+        el("strong", { text: row.outcome }),
+        el("span", { className: "pill", text: scale[row.before] || row.before }),
+        el("span", { className: "pill now", text: scale[row.now] || row.now }),
+        el("span", { text: row.note }),
+      ]),
+    ),
   ]);
-  const tbody = el("tbody");
-  for (const row of doc.rows) {
-    tbody.append(
-      el("tr", {}, [
-        el("td", { text: row.outcome }),
-        el("td", {}, [el("span", { className: `tag before-${row.before}`, text: row.before })]),
-        el("td", {}, [el("span", { className: `tag now-${row.now}`, text: row.now })]),
-        el("td", { text: row.note }),
-      ])
-    );
-  }
-  table.append(thead, tbody);
-  panel.replaceChildren(el("p", { text: doc.intro }), table);
+  panel.replaceChildren(el("p", { className: "panel-intro", text: data.intro }), table);
 }
 
-function renderPatterns(doc) {
-  const panel = document.getElementById("panel-patterns");
-  const grid = el("div", { className: "pattern-grid" });
-  for (const pattern of doc.patterns) {
-    grid.append(
-      el("article", { className: "pattern-card" }, [
-        el("h3", { text: pattern.name }),
-        el("p", { className: "sub", text: pattern.problem }),
-        el("p", { text: pattern.move }),
-      ])
-    );
-  }
-  panel.replaceChildren(el("p", { text: doc.intro }), grid);
+function renderPatterns(data) {
+  const panel = document.querySelector("#panel-patterns");
+  panel.replaceChildren(
+    el("p", { className: "panel-intro", text: data.intro }),
+    el(
+      "div",
+      { className: "steal-grid" },
+      data.patterns.map((p) =>
+        el("article", { className: "steal-card" }, [
+          el("h3", { text: p.name }),
+          el("p", {}, [el("strong", { text: "Problem. " }), p.problem]),
+          el("p", {}, [el("strong", { text: "Move. " }), p.move]),
+        ]),
+      ),
+    ),
+  );
 }
 
-function renderLiterature(doc) {
-  const panel = document.getElementById("panel-literature");
-  const list = el("div", { className: "lit-list" });
-  for (const item of doc.items) {
-    list.append(
-      el("article", { className: "lit-card" }, [
-        el("h3", {}, [
+function renderLiterature(data) {
+  const panel = document.querySelector("#panel-literature");
+  panel.replaceChildren(
+    el("p", { className: "panel-intro", text: data.intro }),
+    el(
+      "ul",
+      { className: "reading" },
+      data.items.map((item) =>
+        el("li", {}, [
           el("a", {
             href: item.href,
             target: "_blank",
             rel: "noopener noreferrer",
             text: `${item.title} (${item.year})`,
           }),
+          el("p", { text: item.claim }),
         ]),
-        el("p", { text: item.claim }),
-      ])
-    );
-  }
-  panel.replaceChildren(el("p", { text: doc.intro }), list);
+      ),
+    ),
+  );
 }
 
-function setupTabs() {
-  const tabs = [...document.querySelectorAll(".explore-tabs [role='tab']")];
-  const panels = {
-    timeline: document.getElementById("panel-timeline"),
-    stack: document.getElementById("panel-stack"),
-    capability: document.getElementById("panel-capability"),
-    patterns: document.getElementById("panel-patterns"),
-    literature: document.getElementById("panel-literature"),
-  };
+function wireTabs() {
+  const tabs = [...document.querySelectorAll('.tabs [role="tab"]')];
+  const panels = tabs.map((tab) => document.getElementById(tab.getAttribute("aria-controls")));
 
-  function activate(name) {
-    for (const tab of tabs) {
-      const selected = tab.dataset.panel === name;
+  function activate(next) {
+    tabs.forEach((tab, i) => {
+      const selected = tab === next;
       tab.setAttribute("aria-selected", selected ? "true" : "false");
-      tab.tabIndex = selected ? 0 : -1;
-    }
-    for (const [key, panel] of Object.entries(panels)) {
-      const on = key === name;
-      panel.classList.toggle("active", on);
-      panel.hidden = !on;
-    }
-  }
-
-  for (const tab of tabs) {
-    tab.addEventListener("click", () => activate(tab.dataset.panel));
-    tab.addEventListener("keydown", (ev) => {
-      if (ev.key !== "ArrowDown" && ev.key !== "ArrowUp" && ev.key !== "ArrowRight" && ev.key !== "ArrowLeft") {
-        return;
-      }
-      ev.preventDefault();
-      const i = tabs.indexOf(tab);
-      const delta = ev.key === "ArrowDown" || ev.key === "ArrowRight" ? 1 : -1;
-      const next = tabs[(i + delta + tabs.length) % tabs.length];
-      next.focus();
-      activate(next.dataset.panel);
+      panels[i].hidden = !selected;
     });
   }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => activate(tab));
+  });
 }
 
 async function main() {
-  const [clocks, timeline, stack, capabilities, patterns, literature, stats] = await Promise.all([
-    loadJSON("content/clocks.json"),
-    loadJSON("content/timeline.json"),
-    loadJSON("content/stack.json"),
-    loadJSON("content/capabilities.json"),
-    loadJSON("content/patterns.json"),
-    loadJSON("content/literature.json"),
-    loadJSON("content/stats.json"),
+  const [clocks, stats, timeline, stack, capabilities, patterns, literature] = await Promise.all([
+    loadJSON("clocks.json"),
+    loadJSON("stats.json"),
+    loadJSON("timeline.json"),
+    loadJSON("stack.json"),
+    loadJSON("capabilities.json"),
+    loadJSON("patterns.json"),
+    loadJSON("literature.json"),
   ]);
 
-  const asOf = clocks.as_of || stats.as_of || new Date().toISOString().slice(0, 10);
-  renderClocks(clocks, asOf);
+  renderClocks(clocks);
   renderStats(stats);
   renderTimeline(timeline);
   renderStack(stack);
-  renderCapability(capabilities);
+  renderCapabilities(capabilities);
   renderPatterns(patterns);
   renderLiterature(literature);
-  setupTabs();
+  wireTabs();
+  document.body.dataset.ready = "true";
 }
 
 main().catch((err) => {
   console.error(err);
-  const grid = document.getElementById("clock-grid");
-  if (grid) {
-    grid.textContent = "Could not load content. Open this site via a local static server or GitHub Pages.";
-  }
+  document.body.dataset.ready = "error";
 });
