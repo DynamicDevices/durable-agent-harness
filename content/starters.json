@@ -5,13 +5,13 @@
     {
       "id": "skill",
       "title": "Skill template",
-      "filename": "SKILL.template.md",
+      "filename": "skill.template.md",
       "blurb": "Thin on-demand procedure with clear triggers and proof of done."
     },
     {
       "id": "rule",
       "title": "Rule template",
-      "filename": "RULE.template.md",
+      "filename": "rule.template.md",
       "blurb": "Fail-closed constraint. Prefer requestable; always-on only for true P0s."
     },
     {
