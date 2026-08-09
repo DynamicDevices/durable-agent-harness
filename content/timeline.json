@@ -72,6 +72,15 @@
       "body": "Published this map: clocks, stack, playbook, starters, capability view, and measurement honesty."
     },
     {
+      "date": "2026-08-09",
+      "title": "v1.0.0 baseline locked",
+      "body": "Initial release: 60-minute Cursor pack, EOW update cadence, Preloop/OpenRouter PR checks documented, personal brand. Shape frozen; EOW improvements continue.",
+      "link": {
+        "label": "Release v1.0.0",
+        "href": "https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0"
+      }
+    },
+    {
       "date": "2026-08",
       "title": "Start in 60 minutes",
       "body": "Added a timed checklist and downloadable Cursor pack so visitors leave with rules, a skill, a signed pattern, and a clock — not just a read."

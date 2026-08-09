@@ -114,6 +114,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#privacy");
     await expect(page.getByTestId("section-privacy")).toContainText("Alex Lennon");
     await expect(page.getByTestId("section-privacy")).toContainText("@embedded_iot");
+    await expect(page.getByTestId("about-baseline")).toContainText("v1.0.0");
     await expect(page.getByTestId("section-privacy")).not.toContainText("Active-ESL");
   });
 
@@ -121,6 +122,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("blog-v1-baseline")).toContainText("v1.0");
     await expect(page.getByTestId("blog-notebook-at-eow")).toContainText("EOW");
     await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");
     await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(
