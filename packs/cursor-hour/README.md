@@ -16,7 +16,7 @@ Repo: <https://github.com/DynamicDevices/durable-agent-harness>
 
 | Path | Role |
 |---|---|
-| `.cursor/rules/p0-no-secrets-in-chat.mdc` | Always-on: secrets never in chat |
+| `.cursor/rules/p0-no-secrets-in-chat.mdc` | Always-on: secrets never in chat — capture into Bitwarden (Password Manager / Secrets Manager) |
 | `.cursor/rules/p0-human-gate-irreversible.mdc` | Always-on: human gate before irreversible send/publish |
 | `.cursor/skills/example-domain-task/SKILL.md` | On-demand skill — **rename to your job** |
 | `patterns/WORKING-PATTERNS.md` | Pattern registry with one signed-off starter row |

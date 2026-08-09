@@ -24,3 +24,6 @@ Public `agents.html` + repo `AGENTS.md` so coding agents have a single get-going
 
 ### 2026-08-09 — Section epigraphs
 Quiet Zen / CWCW lines at the start of each notebook section — varied, no attribution essay.
+
+### 2026-08-09 — Bitwarden secrets plane
+Document two-plane vault: Password Manager for humans, Bitwarden Secrets Manager for agent tokens — desktop capture so values never enter the AI conversation.

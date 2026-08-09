@@ -22,11 +22,12 @@
     },
     {
       "name": "Secrets out of chat",
-      "problem": "Secrets pasted into transcripts leak into logs, backups, and vendor retention.",
-      "move": "Capture through a desktop dialog into a vault. Agents may confirm length — never echo the value.",
+      "problem": "Secrets pasted into transcripts leak into logs, backups, and vendor retention — and into the model context.",
+      "move": "Capture through a desktop dialog into Bitwarden. Humans use Password Manager; agents pull machine secrets from Bitwarden Secrets Manager. Confirm length or success — never echo the value into chat.",
       "signals": [
         "Passwords in chat history",
-        "Tokens in shell transcripts"
+        "Tokens in shell transcripts",
+        "“Paste the API key here”"
       ]
     },
     {
