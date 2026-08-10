@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/timeline/v1",
-  "intro": "A public method timeline — what changed in the operating system around the model, not who was in the room.",
+  "intro": "A public method timeline \u2014 what changed in the operating system around the model, not who was in the room.",
   "events": [
     {
       "date": "2025-06",
@@ -10,7 +10,7 @@
     {
       "date": "2025-06",
       "title": "Public vibe-coding demo",
-      "body": "Shipped a small public visualiser as a concrete proof that agents can build UI fast — useful, imperfect, instructive.",
+      "body": "Shipped a small public visualiser as a concrete proof that agents can build UI fast \u2014 useful, imperfect, instructive.",
       "link": {
         "label": "inst-visualiser (public)",
         "href": "https://github.com/DynamicDevices/inst-visualiser"
@@ -19,7 +19,7 @@
     {
       "date": "2025-07",
       "title": "Cursor as the cockpit",
-      "body": "Standardised on an agentic IDE: read the tree, run commands, leave diffs — end the copy-paste loop."
+      "body": "Standardised on an agentic IDE: read the tree, run commands, leave diffs \u2014 end the copy-paste loop."
     },
     {
       "date": "2025-08",
@@ -29,7 +29,7 @@
     {
       "date": "2025-11",
       "title": "Tool protocols for systems",
-      "body": "Model-facing tool interfaces stopped being a novelty and became how agents inspect and act on engineering systems — carefully, with least privilege."
+      "body": "Model-facing tool interfaces stopped being a novelty and became how agents inspect and act on engineering systems \u2014 carefully, with least privilege."
     },
     {
       "date": "2026-05",
@@ -39,7 +39,7 @@
     {
       "date": "2026-06",
       "title": "Domain skills compound",
-      "body": "Embedded bring-up, lab workflows, docs, and comms skills accumulated — each encoding a failure we refused to repeat."
+      "body": "Embedded bring-up, lab workflows, docs, and comms skills accumulated \u2014 each encoding a failure we refused to repeat."
     },
     {
       "date": "2026-06",
@@ -54,12 +54,12 @@
     {
       "date": "2026-07",
       "title": "MemPalace as durable memory",
-      "body": "Curated drawers and a light knowledge graph became the memory layer — searchable facts for Kaizen/Hansei, not a dump of every transcript."
+      "body": "Curated drawers and a light knowledge graph became the memory layer \u2014 searchable facts for Kaizen/Hansei, not a dump of every transcript."
     },
     {
       "date": "2026-08",
       "title": "TWP names the learning core",
-      "body": "Toyota Way Practices (TWP) became the umbrella for the lean cluster: Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people — load the member that matches the pain."
+      "body": "Toyota Way Practices (TWP) became the umbrella for the lean cluster: Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people \u2014 load the member that matches the pain."
     },
     {
       "date": "2026-07",
@@ -74,7 +74,7 @@
     {
       "date": "2026-08",
       "title": "Preloop under P0 gates",
-      "body": "Started layering Preloop as a durable runtime policy/audit plane on tool use — under existing human gates, not instead of them.",
+      "body": "Started layering Preloop as a durable runtime policy/audit plane on tool use \u2014 under existing human gates, not instead of them.",
       "link": {
         "label": "Preloop docs",
         "href": "https://docs.preloop.ai"
@@ -92,7 +92,7 @@
     {
       "date": "2026-07",
       "title": "WhatsApp channel (Briar)",
-      "body": "Added a monitor/triage WhatsApp channel with tiered reply authority, one-watcher discipline, and voice notes both ways — still fail-closed on irreversible outbound."
+      "body": "Added a monitor/triage WhatsApp channel with tiered reply authority, one-watcher discipline, and voice notes both ways \u2014 still fail-closed on irreversible outbound."
     },
     {
       "date": "2026-07",
@@ -103,6 +103,15 @@
       "date": "2026-08",
       "title": "Channels, ingest, and practice surfaces",
       "body": "Documented messaging, purposeful media ingest, desktop MCQs, design-share review loops, and spec SoT + branded export views."
+    },
+    {
+      "date": "2026-08-09",
+      "title": "Preloop default model \u2192 openrouter/auto-beta",
+      "body": "Preloop Cloud AI model switched from deepseek/deepseek-v4-flash-0731 to openrouter/auto-beta (Auto Router Beta) via first-class openrouter provider and gateway https://preloop.ai/openai/v1. Cursor bundled Agent/Composer models unchanged. SoT: cursor-config agent-runtime-security reference.",
+      "link": {
+        "label": "OpenRouter Auto Router",
+        "href": "https://openrouter.ai/docs"
+      }
     }
   ]
 }

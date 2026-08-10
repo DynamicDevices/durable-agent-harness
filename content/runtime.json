@@ -5,10 +5,10 @@
   "stance": "Layer runtime controls under human P0 gates (send, secrets, irreversible publish). A policy firewall does not replace consent.",
   "preloop": {
     "title": "Preloop",
-    "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor’s existing fail-closed gates — it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
+    "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor\u2019s existing fail-closed gates \u2014 it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
     "docs": "https://docs.preloop.ai",
     "practices": [
-      "Treat Preloop as a durable runtime companion for MCP/tool audit and approvals UI — not as the only safety system.",
+      "Treat Preloop as a durable runtime companion for MCP/tool audit and approvals UI \u2014 not as the only safety system.",
       "Keep human gates for irreversible outbound and secret handling; Preloop adds another inspection layer.",
       "Prefer lean builtins for approvals; do not let policy tooling become a second always-on essay.",
       "Keep enrollment tokens and local Preloop config secrets out of skills and chat."
@@ -21,19 +21,28 @@
   },
   "openrouter": {
     "title": "OpenRouter",
-    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. Useful when the harness should not be married to a single upstream.",
+    "lede": "OpenRouter is a multi-model API router. On this account, Preloop Cloud\u2019s default LLM is openrouter/auto-beta (Auto Router Beta) via the Preloop OpenAI-compatible gateway \u2014 not Cursor\u2019s bundled Agent/Composer models.",
     "docs": "https://openrouter.ai/docs",
+    "verified": "2026-08-10",
+    "preloop_default": {
+      "model_identifier": "openrouter/auto-beta",
+      "provider_name": "openrouter",
+      "gateway": "https://preloop.ai/openai/v1",
+      "switched_from": "deepseek/deepseek-v4-flash-0731",
+      "switched_at": "2026-08-09",
+      "skill_sot": "cursor-config skills/agent-runtime-security/reference.md \u00a7 OpenRouter"
+    },
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
-      "Use provider failover for uptime; use explicit model fallback lists when you accept a different model answering.",
-      "Keep API keys in a vault — never in chat or skills.",
-      "Measure comfort vs cost: routing flexibility is not an excuse to skip proof class."
+      "Prefer openrouter/auto-beta for Preloop Cloud flows unless a fixed model is required for proof class.",
+      "Keep API keys in Preloop / vault \u2014 never in chat or skills.",
+      "Do not confuse OpenRouter gateway Cost with Cursor bundled-model spend."
     ],
     "not": [
-      "Not a replacement for skills/rules/memory — it is transport for model calls.",
-      "Not “set and forget” for data-retention or ZDR choices; configure deliberately when it matters.",
-      "Not a productivity multiplier claim by itself."
+      "Not a replacement for skills/rules/memory \u2014 it is transport for model calls.",
+      "Not day-to-day Cursor Composer routing unless Models base URL points at Preloop gateway.",
+      "Not \u201cset and forget\u201d for data-retention or ZDR choices; configure deliberately when it matters."
     ]
   },
-  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→TWP) steers behaviour. Preloop audits and gates tool runtime. OpenRouter routes model capacity. Humans still own irreversible actions."
+  "together": "Harness (skills/rules/MemPalace/Kaizen\u2192Hansei\u2192TWP) steers behaviour. Preloop audits and gates tool runtime (laptop) and runs Cloud PR flows (AESL/DD) on openrouter/auto-beta. OpenRouter routes that model capacity. Humans still own irreversible actions."
 }
