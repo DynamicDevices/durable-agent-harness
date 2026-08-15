@@ -27,6 +27,7 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@embedded_iot" />
   <meta name="twitter:title" content="Durable Agent Harness — Chop Wood Carry Water" />
   <meta name="twitter:description" content="A public notebook on durable AI agent harnesses — first person, by Alex Lennon." />
   <meta name="twitter:image" content="https://chopwoodcarrywater.uk/assets/og-cover.jpg" />
@@ -37,10 +38,8 @@
   <link rel="icon" href="assets/chopwood-mark.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/og-cover.jpg" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Chop Wood Carry Water notes" href="feed.xml" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
@@ -145,8 +144,8 @@
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="top">
-    <a class="brand" href="#top" aria-label="Chop Wood Carry Water home">
-      <img src="assets/chopwood-mark.png" alt="" width="40" height="32" />
+    <a class="brand" href="#top" aria-label="Chop Wood Carry Water — Durable Agent Harness home">
+      <img src="assets/chopwood-mark.png" alt="" width="35" height="35" />
       <span class="brand-text">
         <strong>Chop Wood Carry Water</strong>
         <em>Durable Agent Harness</em>
@@ -199,10 +198,15 @@
     <section class="hero" id="top" data-testid="hero" aria-labelledby="hero-headline">
       <div class="hero-bg" aria-hidden="true">
         <picture>
-          <source srcset="assets/chopwood-hero-banner.webp" type="image/webp" />
+          <source
+            srcset="assets/chopwood-hero-banner-768.webp 768w, assets/chopwood-hero-banner-1440.webp 1440w, assets/chopwood-hero-banner.webp 3840w"
+            sizes="100vw"
+            type="image/webp"
+          />
           <img
             class="hero-photo"
             src="assets/chopwood-hero-banner.jpg"
+            srcset="assets/chopwood-hero-banner.jpg 3840w"
             width="3840"
             height="2560"
             alt=""
@@ -477,7 +481,32 @@
         <h2 id="blog-title">Blog</h2>
         <p class="epigraph" data-epigraph="blog" data-testid="epigraph-blog"></p>
         <p class="section-lede" id="blog-intro"></p>
-        <div class="blog-list" id="blog-list"></div>
+        <div class="blog-list" id="blog-list">
+          <article class="blog-card" id="blog-the-log-changed-the-system" data-testid="blog-the-log-changed-the-system">
+            <time datetime="2026-08-15">2026-08-15</time>
+            <h3><a href="notes/the-log-changed-the-system.html">The log changed the system</a></h3>
+            <p>Observability is part of the experiment. Wall time and end-to-end outcomes beat a reassuring dashboard when the measurement path changes the target.</p>
+            <a class="text-link blog-read" href="notes/the-log-changed-the-system.html">Read and share</a>
+          </article>
+          <article class="blog-card" id="blog-review-url-safety-mechanism" data-testid="blog-review-url-safety-mechanism">
+            <time datetime="2026-08-15">2026-08-15</time>
+            <h3><a href="notes/review-url-safety-mechanism.html">A review URL is a safety mechanism</a></h3>
+            <p>A separate review address makes accidental production replacement difficult and gives automated checks a stable target.</p>
+            <a class="text-link blog-read" href="notes/review-url-safety-mechanism.html">Read and share</a>
+          </article>
+          <article class="blog-card" id="blog-preserve-publication-provenance" data-testid="blog-preserve-publication-provenance">
+            <time datetime="2026-08-15">2026-08-15</time>
+            <h3><a href="notes/preserve-publication-provenance.html">Don’t backdate — preserve provenance</a></h3>
+            <p>When older public writing moves to a durable site, keep its original date and link, then state the adaptation date separately.</p>
+            <a class="text-link blog-read" href="notes/preserve-publication-provenance.html">Read and share</a>
+          </article>
+          <article class="blog-card" id="blog-first-eow-empty-inbox" data-testid="blog-first-eow-empty-inbox">
+            <time datetime="2026-08-15">2026-08-15</time>
+            <h3><a href="notes/first-eow-empty-inbox.html">Our first EOW review found an empty inbox</a></h3>
+            <p>The publishing rule existed, but the capture mechanism did not survive a busy week. Hansei means fixing it, not inventing filler.</p>
+            <a class="text-link blog-read" href="notes/first-eow-empty-inbox.html">Read and share</a>
+          </article>
+        </div>
       </div>
     </section>
 

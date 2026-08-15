@@ -36,3 +36,23 @@ Delete = move to OS/project trash first so agents (and humans) can recover from 
 
 ### 2026-08-09 — Tighten IA + CC + disclaimer
 Fold Start into #hour paths; merge Surfaces+Publish; clocks under Measure. Top disclaimer (AI-assisted, own risk). Content CC BY-SA 4.0; code MIT.
+
+## EOW disposition — 2026-08-15
+
+Evidence sweep: inbox + weekly git history + public artefacts.
+
+**Promoted**
+
+- The log changed the system — measurement-path / computational-sensor lesson.
+- A review URL is a safety mechanism — review/production poka-yoke.
+- Don’t backdate — preserve provenance — archive chronology and approved assets.
+- Our first EOW review found an empty inbox — Hansei on the failed capture loop.
+
+**Skipped / reserved**
+
+- Human gates must reach the egress boundary — strong method, but operational
+  YubiKey/Briar detail needs a security scrub before public treatment.
+- Context is still rent — already published; this week’s measurements improve
+  the underlying pattern but do not yet justify a second post.
+- Presentation, client and private communication work — outside this public
+  notebook’s privacy boundary.

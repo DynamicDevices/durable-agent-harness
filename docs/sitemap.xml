@@ -2,68 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chopwoodcarrywater.uk/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chopwoodcarrywater.uk/agents.html</loc>
     <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://chopwoodcarrywater.uk/#hour</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://chopwoodcarrywater.uk/#start</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#playbook</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html</loc>
+    <lastmod>2026-08-15</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#learning</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://chopwoodcarrywater.uk/notes/review-url-safety-mechanism.html</loc>
+    <lastmod>2026-08-15</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#runtime</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://chopwoodcarrywater.uk/notes/preserve-publication-provenance.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#explore</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://chopwoodcarrywater.uk/notes/first-eow-empty-inbox.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#measure</loc>
+    <loc>https://chopwoodcarrywater.uk/notes/v1-baseline.html</loc>
     <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#starters</loc>
+    <loc>https://chopwoodcarrywater.uk/notes/notebook-at-eow.html</loc>
     <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chopwoodcarrywater.uk/#blog</loc>
+    <loc>https://chopwoodcarrywater.uk/notes/start-in-60-minutes.html</loc>
     <lastmod>2026-08-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chopwoodcarrywater.uk/notes/preloop-openrouter-pr-checks.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chopwoodcarrywater.uk/notes/chop-wood-carry-water.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chopwoodcarrywater.uk/notes/context-is-rent.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chopwoodcarrywater.uk/notes/standard-work-not-lore.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <priority>0.9</priority>
   </url>
 </urlset>

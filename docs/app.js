@@ -112,8 +112,18 @@ function renderBlog(data) {
         },
         [
           el("time", { datetime: post.date, text: post.date }),
-          el("h3", { text: post.title }),
-          ...post.body.map((para) => el("p", { text: para })),
+          el("h3", {}, [
+            el("a", {
+              href: `notes/${post.id}.html`,
+              text: post.title,
+            }),
+          ]),
+          el("p", { text: post.summary || post.body[0] }),
+          el("a", {
+            className: "text-link blog-read",
+            href: `notes/${post.id}.html`,
+            text: "Read and share",
+          }),
         ],
       ),
     ),

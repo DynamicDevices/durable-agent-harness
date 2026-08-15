@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("assets/fonts/ibm-plex-sans-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("assets/fonts/ibm-plex-sans-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("assets/fonts/sora-extra-bold.woff2") format("woff2");
+  font-weight: 600 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("assets/fonts/space-grotesk-medium.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --carbon: #0b1210;
   --carbon-deep: #060a09;
@@ -125,8 +157,9 @@ a {
 }
 
 .brand img {
-  width: 44px;
+  width: 35px;
   height: 35px;
+  object-fit: contain;
 }
 
 .brand-text {
@@ -678,7 +711,7 @@ section h2 {
   font-size: 0.9rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: #8a531f;
 }
 
 .path-card {
@@ -738,7 +771,7 @@ section h2 {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: #8a531f;
 }
 
 .path-card strong {
@@ -1010,6 +1043,14 @@ section h2 {
   color: rgba(247, 250, 252, 0.85);
 }
 
+.footer .text-link {
+  color: #d9e7e1;
+}
+
+.footer .fineprint {
+  color: #bdc9c5;
+}
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
@@ -1021,6 +1062,147 @@ section h2 {
   font-family: var(--font-label);
   margin: 0;
   align-self: end;
+}
+
+.blog-card h3 a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--water) 45%, transparent);
+}
+
+.blog-read {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-family: var(--font-label);
+  font-weight: 600;
+}
+
+.note-top {
+  position: static;
+}
+
+.note-top .brand img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.note-article {
+  width: min(52rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.note-header h1 {
+  max-width: 48rem;
+  margin: 0.5rem 0 1rem;
+  color: var(--carbon);
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 7vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+.breadcrumb,
+.note-byline,
+.kicker {
+  font-family: var(--font-label);
+}
+
+.breadcrumb,
+.note-byline {
+  color: var(--graphite);
+}
+
+.breadcrumb a,
+.note-byline a {
+  text-underline-offset: 0.18em;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--water);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-lede {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  color: var(--graphite);
+  font-size: clamp(1.2rem, 2.4vw, 1.48rem);
+  line-height: 1.55;
+}
+
+.note-provenance {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--timber);
+  background: color-mix(in srgb, var(--timber) 10%, white);
+}
+
+.note-provenance a {
+  width: fit-content;
+  text-underline-offset: 0.18em;
+}
+
+.note-hero {
+  margin: 2.5rem 0;
+}
+
+.note-hero img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.note-body {
+  max-width: 46rem;
+  color: #283833;
+  font-size: clamp(1.06rem, 1.8vw, 1.18rem);
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.note-body p {
+  margin: 0 0 1.35rem;
+}
+
+.note-footer {
+  margin-top: 3rem;
+}
+
+.note-share {
+  margin-bottom: 2rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.note-share > p:not(.kicker) {
+  color: var(--graphite);
+}
+
+.note-share .btn.ghost {
+  border-color: color-mix(in srgb, var(--carbon) 28%, transparent);
+  color: var(--carbon);
+}
+
+.copy-link__status {
+  min-height: 1.5em;
+  margin: 0.6rem 0 0;
+  color: var(--water);
+  font-family: var(--font-label);
+  font-weight: 600;
 }
 
 @keyframes hero-drift {

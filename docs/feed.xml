@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chop Wood Carry Water notes</title>
+    <link>https://chopwoodcarrywater.uk/</link>
+    <description>Engineering notes on durable working relationships with AI coding agents.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>The log changed the system</title>
+      <link>https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Observability is part of the experiment. Wall time and end-to-end outcomes beat a reassuring dashboard when the measurement path changes the target.</description>
+      <content:encoded><![CDATA[<p>A busy week on real hardware left me with an uncomfortable reminder: the act of measuring can become the fault. High-rate serial logging consumed enough time to distort the behaviour we were trying to understand. The USB path could then drop or garble some of that output, so the record looked authoritative while being incomplete.</p><p>A second trap was choosing the most attractive number. A CPU percentage from a trace told part of the story, but it did not explain the end-to-end rate. Wall-time counters around the actual transfer path did. Once those existed, the bottleneck moved from a vague system impression to a specific stage we could test.</p><p>That changes how I want agents to work. A dashboard is evidence only when we understand what it measures, what it perturbs, and what it can lose. The useful loop is source event to completed outcome, with counters at the boundaries and a second measurement path when the first one is suspect.</p><p>The wider lesson is not limited to embedded systems. Logs, traces, browser audits and model evaluations are all instruments. If the instrument changes the work or hides part of it, the right response is not a more confident explanation. It is a better sensor.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A review URL is a safety mechanism</title>
+      <link>https://chopwoodcarrywater.uk/notes/review-url-safety-mechanism.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/review-url-safety-mechanism.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A separate review address is more than convenience: it makes accidental production replacement difficult and gives automated checks a stable target.</description>
+      <content:encoded><![CDATA[<p>A website review started with a deployment constraint: GitHub Pages serves one production tip for the repository. Pointing it at a review branch would not create a harmless preview. It would replace the live site.</p><p>The safer shape was simple. Production stayed where it was. A separate review address served the candidate build from the same repository, with an unmistakable review banner. Stakeholders had one stable place to inspect, while the public address remained untouched.</p><p>That separation also made the checks useful. Playwright could crawl the sitemap on desktop and mobile, verify canonical URLs, headings, image alternatives, overflow, browser errors and share controls. Lighthouse could inspect the local static build without a review banner contaminating the result. The checks found ordinary defects — metadata gaps, image weight, fonts and hierarchy — before they became production defects.</p><p>I now see the review URL as poka-yoke: a small design choice that makes the wrong action harder. Review infrastructure is part of product quality when it protects the live surface and gives humans a calm, repeatable place to decide.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Don’t backdate — preserve provenance</title>
+      <link>https://chopwoodcarrywater.uk/notes/preserve-publication-provenance.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/preserve-publication-provenance.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>When older public writing moves to a durable site, keep its original date and link, then state the adaptation date separately.</description>
+      <content:encoded><![CDATA[<p>We recovered several older pieces of public writing this week and adapted them into durable website articles. The tempting shortcut was to use the old date as if the website article had existed all along.</p><p>That would have made the archive look tidier, but it would not have been true. The writing first appeared elsewhere. The site adaptation happened now. Both facts matter.</p><p>The pattern we settled on is explicit: retain the original publication date and exact source link, show the adaptation date on the page, and use that adaptation date as dateModified in the structured data. Keep the substance and first-person stake, but do not pretend the current site hosted the original.</p><p>Good metadata is not only for search engines or preview cards. It is a compact statement of provenance. Honest chronology, clear ownership and approved imagery make an archive more trustworthy than a perfectly smooth history.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Our first EOW review found an empty inbox</title>
+      <link>https://chopwoodcarrywater.uk/notes/first-eow-empty-inbox.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/first-eow-empty-inbox.html</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The end-of-week publishing rule existed, but the capture mechanism did not survive a busy week. Hansei means fixing that mechanism, not inventing filler.</description>
+      <content:encoded><![CDATA[<p>When this notebook launched, we wrote down a sensible rule: collect small sparks during the week, then promote zero or more during the end-of-week review. No daily content calendar. No filler.</p><p>The first proper review found that the inbox stopped on launch day. The week itself had been full: hardware evidence, safer communication boundaries, review infrastructure, accessibility checks and a substantial pass over the agent working relationship. The capture mechanism had recorded none of it.</p><p>That is useful Hansei. A written rule is not yet standard work. It has to survive the week when attention is elsewhere. The correction is not to generate posts from activity counts or dump a transcript into public. It is to sweep the inbox, weekly git history and public artefacts at EOW, then mark each candidate promoted or skipped.</p><p>The empty inbox earned this note because it exposed the gap between intention and operation. Chop wood, carry water: improve the mechanism, publish only what teaches, and leave the rest out.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>v1.0 — locked baseline</title>
+      <link>https://chopwoodcarrywater.uk/notes/v1-baseline.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/v1-baseline.html</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The public notebook reached a deliberate v1.0 baseline: a 60-minute finish line, a starter pack, and an EOW improvement cadence.</description>
+      <content:encoded><![CDATA[<p>Enough shape to ship. The notebook has a finish line (60 minutes + Cursor pack), a brand, a cadence (EOW), and the operating sections that earned their keep.</p><p>v1.0.0 is the lock: don’t casually rewrite the public skeleton mid-week. Improve the pack, patterns, and notes when the week earned it. Cut v1.1 when the shape itself changes.</p><p>Release and baseline note live on GitHub. Steal the pack. Measure your own results.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>We update this at EOW</title>
+      <link>https://chopwoodcarrywater.uk/notes/notebook-at-eow.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/notebook-at-eow.html</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The notebook changes during evidence-led end-of-week review: publish what the week earned, and skip when it earned nothing.</description>
+      <content:encoded><![CDATA[<p>How often should a public notebook move? Daily posts are vanity. Never is rot.</p><p>We’ll update chopwoodcarrywater.uk in the end-of-week review — the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.</p><p>That’s the cadence: weekly with the review, not whenever a chat feels productive.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Start in 60 minutes</title>
+      <link>https://chopwoodcarrywater.uk/notes/start-in-60-minutes.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/start-in-60-minutes.html</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A timed starter path turns agent-harness ideas into a thin, useful configuration on disk in about an hour.</description>
+      <content:encoded><![CDATA[<p>A notebook full of patterns is useless if people only nod and leave. The useful finish line is a thin harness on disk.</p><p>There’s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.</p><p>Come back for Toyota Way Practices and Preloop when the boring basics are already earning rent.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Preloop + OpenRouter on PR commits</title>
+      <link>https://chopwoodcarrywater.uk/notes/preloop-openrouter-pr-checks.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/preloop-openrouter-pr-checks.html</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+      <description>A separate PR review plane can catch semantic misses before expensive CI without becoming merge authority.</description>
+      <content:encoded><![CDATA[<p>Desktop Preloop is one plane: tool policy and audit under Cursor’s human gates. The PR plane is different — and more useful when CI is scarce.</p><p>On product repos I wire a Preloop Cloud pull-request reviewer. OpenRouter is how that reviewer reaches models. Each push gets a GitHub commit status under context `preloop`. Actions can wait on that status before self-hosted jobs start, or leave the review async when I only want the signal.</p><p>It is not merge authority. It is not unit tests. It is shift-left: catch the semantic miss before the runner eats the afternoon. Keys stay vaulted. Humans still merge.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Why this site is called chopwoodcarrywater.uk</title>
+      <link>https://chopwoodcarrywater.uk/notes/chop-wood-carry-water.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/chop-wood-carry-water.html</guid>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The name is a reminder to keep doing ordinary, measurable engineering work after the exciting agent insight.</description>
+      <content:encoded><![CDATA[<p>There’s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.</p><p>The temptation after a good insight is novelty — another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.</p><p>So when we needed a proper domain for this notebook, I didn’t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Context is rent</title>
+      <link>https://chopwoodcarrywater.uk/notes/context-is-rent.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/context-is-rent.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Every always-on rule, skill description and tool server is paid on every turn. Measure the rent, then cut what no longer earns it.</description>
+      <content:encoded><![CDATA[<p>Every always-on rule, fat skill, and optional tool server is paid on every turn. That’s not a metaphor — it’s the invoice.</p><p>We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No “leave it on in case”. Reloading the window is cheaper than carrying last week’s AppSec server forever.</p><p>If a session feels heavy, that’s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Standard work, not lore</title>
+      <link>https://chopwoodcarrywater.uk/notes/standard-work-not-lore.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/standard-work-not-lore.html</guid>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <description>When a way of working succeeds or fails repeatedly, sign it off and put it where the next agent session will actually load it.</description>
+      <content:encoded><![CDATA[<p>Chat is a terrible place to keep how you work. The next session won’t remember the clever aside, and the model will invent a confident substitute.</p><p>What stuck for us: when something actually works — or fails twice the same way — propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.</p><p>That’s why this notebook talks about skills, rules, and signed patterns instead of “prompts”. The model is powerful. The operating system around it is what makes Monday morning repeatable.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

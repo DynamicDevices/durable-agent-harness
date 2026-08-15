@@ -11,7 +11,9 @@ First-person voice, short blog, playbook, patterns, and honest measurement — p
 
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
-Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Brand` + `Person`), `robots.txt`, and `sitemap.xml`.
+Site SEO includes canonical URLs, per-note Open Graph / Twitter cards,
+`BlogPosting` JSON-LD, RSS, `robots.txt`, `llms.txt`, and a real-URL sitemap.
+Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 
 ## What’s inside
 
@@ -34,9 +36,15 @@ Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArtic
 ```bash
 npm install
 npx playwright install chromium
+npm run cards     # regenerate 1200×627 note cards (Pillow)
 npm test          # sync + privacy gate + Playwright (desktop + mobile)
 npm run serve     # http://127.0.0.1:4173
 ```
+
+`content/blog.json` is the note source of truth. `npm run sync` renders static
+`docs/notes/*.html`, `feed.xml`, `sitemap.xml` and `llms.txt`; GitHub Pages
+serves `docs/` from `main`. Review the PR and local Lighthouse results before
+merging. After production publish, run new URLs through LinkedIn Post Inspector.
 
 ## Three clocks (frozen starts)
 

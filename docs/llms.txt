@@ -1,0 +1,21 @@
+# Chop Wood Carry Water
+
+> Alex Lennon's public engineering notebook on durable working relationships with AI coding agents.
+
+## Main pages
+- [Notebook](https://chopwoodcarrywater.uk/)
+- [Agents: start here](https://chopwoodcarrywater.uk/agents.html)
+- [RSS feed](https://chopwoodcarrywater.uk/feed.xml)
+
+## Notes
+- [The log changed the system](https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html)
+- [A review URL is a safety mechanism](https://chopwoodcarrywater.uk/notes/review-url-safety-mechanism.html)
+- [Don’t backdate — preserve provenance](https://chopwoodcarrywater.uk/notes/preserve-publication-provenance.html)
+- [Our first EOW review found an empty inbox](https://chopwoodcarrywater.uk/notes/first-eow-empty-inbox.html)
+- [v1.0 — locked baseline](https://chopwoodcarrywater.uk/notes/v1-baseline.html)
+- [We update this at EOW](https://chopwoodcarrywater.uk/notes/notebook-at-eow.html)
+- [Start in 60 minutes](https://chopwoodcarrywater.uk/notes/start-in-60-minutes.html)
+- [Preloop + OpenRouter on PR commits](https://chopwoodcarrywater.uk/notes/preloop-openrouter-pr-checks.html)
+- [Why this site is called chopwoodcarrywater.uk](https://chopwoodcarrywater.uk/notes/chop-wood-carry-water.html)
+- [Context is rent](https://chopwoodcarrywater.uk/notes/context-is-rent.html)
+- [Standard work, not lore](https://chopwoodcarrywater.uk/notes/standard-work-not-lore.html)

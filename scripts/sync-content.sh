@@ -10,9 +10,10 @@ rsync -a --delete \
   "$ROOT/content/" "$ROOT/docs/content/"
 rsync -a --delete "$ROOT/starters/" "$ROOT/docs/starters/"
 rsync -a --delete "$ROOT/packs/cursor-hour/" "$ROOT/docs/packs/cursor-hour/"
+"$ROOT/scripts/render_notes.py"
 (
   cd "$ROOT/packs"
   rm -f "$ROOT/docs/packs/cursor-hour-starter.zip"
   zip -qr "$ROOT/docs/packs/cursor-hour-starter.zip" cursor-hour
 )
-echo "Synced content/ → docs/content/, starters/ → docs/starters/, packs/ → docs/packs/ (+ zip)"
+echo "Synced content + rendered notes/feed/sitemap; synced starters and packs (+ zip)"
