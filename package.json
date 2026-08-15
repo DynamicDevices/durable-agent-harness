@@ -5,6 +5,7 @@
   "description": "Public notebook on building a durable AI agent harness",
   "scripts": {
     "sync": "bash scripts/sync-content.sh",
+    "cards": "python3 scripts/render_note_social_cards.py",
     "privacy": "bash scripts/privacy-check.sh",
     "serve": "npx --yes serve docs -l 4173",
     "test:e2e": "npx playwright test",
