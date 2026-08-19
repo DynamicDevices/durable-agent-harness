@@ -1,14 +1,39 @@
 {
   "schema": "durable-agent-harness/blog/v1",
-  "intro": "What broke, what we locked, and what earned a place on disk — filed when the week earns it.",
+  "intro": "What broke, what we locked, and what earned a place on disk \u2014 filed when the week earns it.",
   "posts": [
+    {
+      "id": "sensors-cheaper-than-the-work",
+      "date": "2026-08-19",
+      "title": "The sensor must cost less than the work",
+      "summary": "Included usage is not free. Watcher agents that monitor GitHub or spend are the anti-pattern. Timers, caches, and specialist channels keep the meter honest.",
+      "section": "Lean agents",
+      "tags": [
+        "token budget",
+        "Preloop",
+        "Hansei",
+        "AI agents",
+        "local models"
+      ],
+      "body": [
+        "A Cursor invoice line of zero cents on Ultra included usage is settlement, not work. The tokens still burned the allotment. Pricing this chat from tokenUsage.totalCents put it around four dollars, not free. Across the cycle, invoice dollars were about a third of token-cost dollars.",
+        "The expensive failure mode is using the agent as the sensor. In mid-August a CI-watch lane spawned about ninety Task workers and billed on the order of two hundred dollars while the parent chat looked cheap. gh run watch inside Composer re-bills a growing transcript. That is measuring spend by spending.",
+        "The cheap shape is ordinary: a five-minute local timer writing a cache, an hourly tool-I/O summary, a weekly official Usage CSV into Preloop, and a one-line collector. Preloop Cloud Flows stay the async PR judge, not a GitHub watcher. Cursor My Machines run tools; they do not make inference free. Local first-pass lives on the home Ollama box, serialized against CAD on the same GPU.",
+        "Specialist human channels follow the same rule. Julian CNC stays on the Telegram CNC topic with no nested Cursor Tasks. Escalate to a new Composer chat only when blocked. Chop wood, carry water: keep the sensor cheaper than the job."
+      ]
+    },
     {
       "id": "the-log-changed-the-system",
       "date": "2026-08-15",
       "title": "The log changed the system",
       "summary": "Observability is part of the experiment. Wall time and end-to-end outcomes beat a reassuring dashboard when the measurement path changes the target.",
       "section": "Engineering evidence",
-      "tags": ["observability", "embedded systems", "measurement", "AI agents"],
+      "tags": [
+        "observability",
+        "embedded systems",
+        "measurement",
+        "AI agents"
+      ],
       "body": [
         "A busy week on real hardware left me with an uncomfortable reminder: the act of measuring can become the fault. High-rate serial logging consumed enough time to distort the behaviour we were trying to understand. The USB path could then drop or garble some of that output, so the record looked authoritative while being incomplete.",
         "A second trap was choosing the most attractive number. A CPU percentage from a trace told part of the story, but it did not explain the end-to-end rate. Wall-time counters around the actual transfer path did. Once those existed, the bottleneck moved from a vague system impression to a specific stage we could test.",
@@ -22,21 +47,31 @@
       "title": "A review URL is a safety mechanism",
       "summary": "A separate review address is more than convenience: it makes accidental production replacement difficult and gives automated checks a stable target.",
       "section": "Delivery practice",
-      "tags": ["review environments", "poka-yoke", "Playwright", "Lighthouse"],
+      "tags": [
+        "review environments",
+        "poka-yoke",
+        "Playwright",
+        "Lighthouse"
+      ],
       "body": [
         "A website review started with a deployment constraint: GitHub Pages serves one production tip for the repository. Pointing it at a review branch would not create a harmless preview. It would replace the live site.",
         "The safer shape was simple. Production stayed where it was. A separate review address served the candidate build from the same repository, with an unmistakable review banner. Stakeholders had one stable place to inspect, while the public address remained untouched.",
-        "That separation also made the checks useful. Playwright could crawl the sitemap on desktop and mobile, verify canonical URLs, headings, image alternatives, overflow, browser errors and share controls. Lighthouse could inspect the local static build without a review banner contaminating the result. The checks found ordinary defects — metadata gaps, image weight, fonts and hierarchy — before they became production defects.",
+        "That separation also made the checks useful. Playwright could crawl the sitemap on desktop and mobile, verify canonical URLs, headings, image alternatives, overflow, browser errors and share controls. Lighthouse could inspect the local static build without a review banner contaminating the result. The checks found ordinary defects \u2014 metadata gaps, image weight, fonts and hierarchy \u2014 before they became production defects.",
         "I now see the review URL as poka-yoke: a small design choice that makes the wrong action harder. Review infrastructure is part of product quality when it protects the live surface and gives humans a calm, repeatable place to decide."
       ]
     },
     {
       "id": "preserve-publication-provenance",
       "date": "2026-08-15",
-      "title": "Don’t backdate — preserve provenance",
+      "title": "Don\u2019t backdate \u2014 preserve provenance",
       "summary": "When older public writing moves to a durable site, keep its original date and link, then state the adaptation date separately.",
       "section": "Public engineering",
-      "tags": ["content provenance", "engineering writing", "structured data", "trust"],
+      "tags": [
+        "content provenance",
+        "engineering writing",
+        "structured data",
+        "trust"
+      ],
       "body": [
         "We recovered several older pieces of public writing this week and adapted them into durable website articles. The tempting shortcut was to use the old date as if the website article had existed all along.",
         "That would have made the archive look tidier, but it would not have been true. The writing first appeared elsewhere. The site adaptation happened now. Both facts matter.",
@@ -50,7 +85,12 @@
       "title": "Our first EOW review found an empty inbox",
       "summary": "The end-of-week publishing rule existed, but the capture mechanism did not survive a busy week. Hansei means fixing that mechanism, not inventing filler.",
       "section": "Hansei",
-      "tags": ["Hansei", "Toyota Way Practices", "standard work", "engineering notebook"],
+      "tags": [
+        "Hansei",
+        "Toyota Way Practices",
+        "standard work",
+        "engineering notebook"
+      ],
       "body": [
         "When this notebook launched, we wrote down a sensible rule: collect small sparks during the week, then promote zero or more during the end-of-week review. No daily content calendar. No filler.",
         "The first proper review found that the inbox stopped on launch day. The week itself had been full: hardware evidence, safer communication boundaries, review infrastructure, accessibility checks and a substantial pass over the agent working relationship. The capture mechanism had recorded none of it.",
@@ -61,13 +101,17 @@
     {
       "id": "v1-baseline",
       "date": "2026-08-09",
-      "title": "v1.0 — locked baseline",
+      "title": "v1.0 \u2014 locked baseline",
       "summary": "The public notebook reached a deliberate v1.0 baseline: a 60-minute finish line, a starter pack, and an EOW improvement cadence.",
       "section": "Notebook",
-      "tags": ["agent harness", "baseline", "engineering notebook"],
+      "tags": [
+        "agent harness",
+        "baseline",
+        "engineering notebook"
+      ],
       "body": [
         "Enough shape to ship. The notebook has a finish line (60 minutes + Cursor pack), a brand, a cadence (EOW), and the operating sections that earned their keep.",
-        "v1.0.0 is the lock: don’t casually rewrite the public skeleton mid-week. Improve the pack, patterns, and notes when the week earned it. Cut v1.1 when the shape itself changes.",
+        "v1.0.0 is the lock: don\u2019t casually rewrite the public skeleton mid-week. Improve the pack, patterns, and notes when the week earned it. Cut v1.1 when the shape itself changes.",
         "Release and baseline note live on GitHub. Steal the pack. Measure your own results."
       ]
     },
@@ -77,11 +121,15 @@
       "title": "We update this at EOW",
       "summary": "The notebook changes during evidence-led end-of-week review: publish what the week earned, and skip when it earned nothing.",
       "section": "Hansei",
-      "tags": ["Hansei", "EOW", "standard work"],
+      "tags": [
+        "Hansei",
+        "EOW",
+        "standard work"
+      ],
       "body": [
         "How often should a public notebook move? Daily posts are vanity. Never is rot.",
-        "We’ll update chopwoodcarrywater.uk in the end-of-week review — the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.",
-        "That’s the cadence: weekly with the review, not whenever a chat feels productive."
+        "We\u2019ll update chopwoodcarrywater.uk in the end-of-week review \u2014 the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.",
+        "That\u2019s the cadence: weekly with the review, not whenever a chat feels productive."
       ]
     },
     {
@@ -90,10 +138,14 @@
       "title": "Start in 60 minutes",
       "summary": "A timed starter path turns agent-harness ideas into a thin, useful configuration on disk in about an hour.",
       "section": "Getting started",
-      "tags": ["Cursor", "AI agents", "starter pack"],
+      "tags": [
+        "Cursor",
+        "AI agents",
+        "starter pack"
+      ],
       "body": [
         "A notebook full of patterns is useless if people only nod and leave. The useful finish line is a thin harness on disk.",
-        "There’s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.",
+        "There\u2019s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.",
         "Come back for Toyota Way Practices and Preloop when the boring basics are already earning rent."
       ]
     },
@@ -103,9 +155,14 @@
       "title": "Preloop + OpenRouter on PR commits",
       "summary": "A separate PR review plane can catch semantic misses before expensive CI without becoming merge authority.",
       "section": "Review practice",
-      "tags": ["Preloop", "OpenRouter", "pull requests", "CI"],
+      "tags": [
+        "Preloop",
+        "OpenRouter",
+        "pull requests",
+        "CI"
+      ],
       "body": [
-        "Desktop Preloop is one plane: tool policy and audit under Cursor’s human gates. The PR plane is different — and more useful when CI is scarce.",
+        "Desktop Preloop is one plane: tool policy and audit under Cursor\u2019s human gates. The PR plane is different \u2014 and more useful when CI is scarce.",
         "On product repos I wire a Preloop Cloud pull-request reviewer. OpenRouter is how that reviewer reaches models. Each push gets a GitHub commit status under context `preloop`. Actions can wait on that status before self-hosted jobs start, or leave the review async when I only want the signal.",
         "It is not merge authority. It is not unit tests. It is shift-left: catch the semantic miss before the runner eats the afternoon. Keys stay vaulted. Humans still merge."
       ]
@@ -116,11 +173,15 @@
       "title": "Why this site is called chopwoodcarrywater.uk",
       "summary": "The name is a reminder to keep doing ordinary, measurable engineering work after the exciting agent insight.",
       "section": "Notebook",
-      "tags": ["Chop Wood Carry Water", "Samu", "engineering practice"],
+      "tags": [
+        "Chop Wood Carry Water",
+        "Samu",
+        "engineering practice"
+      ],
       "body": [
-        "There’s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.",
-        "The temptation after a good insight is novelty — another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.",
-        "So when we needed a proper domain for this notebook, I didn’t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right."
+        "There\u2019s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.",
+        "The temptation after a good insight is novelty \u2014 another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.",
+        "So when we needed a proper domain for this notebook, I didn\u2019t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right."
       ]
     },
     {
@@ -129,11 +190,16 @@
       "title": "Context is rent",
       "summary": "Every always-on rule, skill description and tool server is paid on every turn. Measure the rent, then cut what no longer earns it.",
       "section": "Lean agents",
-      "tags": ["token budget", "MCP", "context engineering", "AI agents"],
+      "tags": [
+        "token budget",
+        "MCP",
+        "context engineering",
+        "AI agents"
+      ],
       "body": [
-        "Every always-on rule, fat skill, and optional tool server is paid on every turn. That’s not a metaphor — it’s the invoice.",
-        "We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No “leave it on in case”. Reloading the window is cheaper than carrying last week’s AppSec server forever.",
-        "If a session feels heavy, that’s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring."
+        "Every always-on rule, fat skill, and optional tool server is paid on every turn. That\u2019s not a metaphor \u2014 it\u2019s the invoice.",
+        "We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No \u201cleave it on in case\u201d. Reloading the window is cheaper than carrying last week\u2019s AppSec server forever.",
+        "If a session feels heavy, that\u2019s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring."
       ]
     },
     {
@@ -142,11 +208,16 @@
       "title": "Standard work, not lore",
       "summary": "When a way of working succeeds or fails repeatedly, sign it off and put it where the next agent session will actually load it.",
       "section": "Working relationship",
-      "tags": ["standard work", "Kaizen", "Hansei", "AI agents"],
+      "tags": [
+        "standard work",
+        "Kaizen",
+        "Hansei",
+        "AI agents"
+      ],
       "body": [
-        "Chat is a terrible place to keep how you work. The next session won’t remember the clever aside, and the model will invent a confident substitute.",
-        "What stuck for us: when something actually works — or fails twice the same way — propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.",
-        "That’s why this notebook talks about skills, rules, and signed patterns instead of “prompts”. The model is powerful. The operating system around it is what makes Monday morning repeatable."
+        "Chat is a terrible place to keep how you work. The next session won\u2019t remember the clever aside, and the model will invent a confident substitute.",
+        "What stuck for us: when something actually works \u2014 or fails twice the same way \u2014 propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.",
+        "That\u2019s why this notebook talks about skills, rules, and signed patterns instead of \u201cprompts\u201d. The model is powerful. The operating system around it is what makes Monday morning repeatable."
       ]
     }
   ]

@@ -5,7 +5,15 @@
     <link>https://chopwoodcarrywater.uk/</link>
     <description>Engineering notes on durable working relationships with AI coding agents.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>The sensor must cost less than the work</title>
+      <link>https://chopwoodcarrywater.uk/notes/sensors-cheaper-than-the-work.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/sensors-cheaper-than-the-work.html</guid>
+      <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Included usage is not free. Watcher agents that monitor GitHub or spend are the anti-pattern. Timers, caches, and specialist channels keep the meter honest.</description>
+      <content:encoded><![CDATA[<p>A Cursor invoice line of zero cents on Ultra included usage is settlement, not work. The tokens still burned the allotment. Pricing this chat from tokenUsage.totalCents put it around four dollars, not free. Across the cycle, invoice dollars were about a third of token-cost dollars.</p><p>The expensive failure mode is using the agent as the sensor. In mid-August a CI-watch lane spawned about ninety Task workers and billed on the order of two hundred dollars while the parent chat looked cheap. gh run watch inside Composer re-bills a growing transcript. That is measuring spend by spending.</p><p>The cheap shape is ordinary: a five-minute local timer writing a cache, an hourly tool-I/O summary, a weekly official Usage CSV into Preloop, and a one-line collector. Preloop Cloud Flows stay the async PR judge, not a GitHub watcher. Cursor My Machines run tools; they do not make inference free. Local first-pass lives on the home Ollama box, serialized against CAD on the same GPU.</p><p>Specialist human channels follow the same rule. Julian CNC stays on the Telegram CNC topic with no nested Cursor Tasks. Escalate to a new Composer chat only when blocked. Chop wood, carry water: keep the sensor cheaper than the job.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The log changed the system</title>
       <link>https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html</link>

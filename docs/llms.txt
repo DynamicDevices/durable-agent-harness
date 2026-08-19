@@ -8,6 +8,7 @@
 - [RSS feed](https://chopwoodcarrywater.uk/feed.xml)
 
 ## Notes
+- [The sensor must cost less than the work](https://chopwoodcarrywater.uk/notes/sensors-cheaper-than-the-work.html)
 - [The log changed the system](https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html)
 - [A review URL is a safety mechanism](https://chopwoodcarrywater.uk/notes/review-url-safety-mechanism.html)
 - [Don’t backdate — preserve provenance](https://chopwoodcarrywater.uk/notes/preserve-publication-provenance.html)
