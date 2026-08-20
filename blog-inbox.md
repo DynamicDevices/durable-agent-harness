@@ -13,6 +13,10 @@ One or two sentences. Link/PR if useful. Why a reader would care.
 
 ## Inbox
 
+### 2026-08-19 — Sensor cheaper than the work
+Included Ultra ≠ $0 (price tokens). Watcher Tasks / gh run watch are the anti-pattern. Timers + Usage CSV + specialist CNC channel. Promoted same day (Alex asked to update the site).
+
+
 ### 2026-08-09 — v1.0 locked
 Baseline tagged; LinkedIn Chop Wood banner cut; 60-minute pack is the finish line.
 
