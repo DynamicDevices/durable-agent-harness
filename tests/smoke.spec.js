@@ -37,6 +37,10 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("page-agents")).toContainText("Get going");
     await expect(page.getByTestId("agents-pack")).toHaveAttribute(
       "href",
+      /codex-hour-starter\.zip$/,
+    );
+    await expect(page.getByTestId("agents-legacy-pack")).toHaveAttribute(
+      "href",
       /cursor-hour-starter\.zip$/,
     );
     await expect(page.getByTestId("agents-hour")).toHaveAttribute("href", "./#hour");
@@ -58,15 +62,19 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-hour")).toContainText("Start in 60 minutes");
     await expect(page.getByTestId("hour-steps").locator(".step-card")).toHaveCount(8);
-    await expect(page.getByTestId("section-hour")).toContainText("Priority 0 (P0)");
+    await expect(page.getByTestId("section-hour")).toContainText("fail-closed boundaries");
     await expect(page.getByTestId("hour-done")).toContainText("Done when");
     const download = page.getByTestId("hour-download");
-    await expect(download).toHaveAttribute("href", /cursor-hour-starter\.zip$/);
-    const res = await page.request.get("/packs/cursor-hour-starter.zip");
+    await expect(download).toHaveAttribute("href", /codex-hour-starter\.zip$/);
+    const res = await page.request.get("/packs/codex-hour-starter.zip");
     expect(res.ok()).toBeTruthy();
     await expect(page.getByTestId("hour-browse")).toHaveAttribute(
       "href",
-      /packs\/cursor-hour\/README\.md$/,
+      /packs\/codex-hour\/README\.md$/,
+    );
+    await expect(page.getByTestId("hour-alternate-download-1")).toHaveAttribute(
+      "href",
+      /cursor-hour-starter\.zip$/,
     );
   });
 
@@ -83,19 +91,23 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("hour-paths")).toContainText("Channels & lean");
     await expect(page.getByTestId("hour-paths")).not.toContainText("Finish line");
     await page.goto("/#measure");
-    await expect(page.getByTestId("section-measure")).toContainText("Three clocks");
+    await expect(page.getByTestId("section-measure")).toContainText("Four clocks");
     await expect(page.getByTestId("clock-serious_ai")).toBeVisible();
     await expect(page.getByTestId("clock-cursor")).toBeVisible();
+    await expect(page.getByTestId("clock-codex")).toBeVisible();
     await expect(page.getByTestId("clock-harness")).toBeVisible();
     await expect(page.getByTestId("stat-strip")).toContainText("Agent skills");
-    await expect(page.getByTestId("stat-strip")).toContainText("69");
+    await expect(page.getByTestId("stat-strip")).toContainText("86");
   });
 
   test("playbook, cases, measure, and starters sections load", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
-    await expect(page.getByTestId("section-playbook")).toContainText("Build your own harness");
-    await expect(page.locator("#playbook-steps .step-card")).toHaveCount(12);
+    await expect(page.getByTestId("section-playbook")).toContainText("Build your own working relationship");
+    await expect(page.locator("#playbook-steps .step-card")).toHaveCount(15);
+    await expect(page.getByTestId("section-codex")).toContainText("Codex is now the primary cockpit");
+    await expect(page.getByTestId("section-codex")).toContainText("Harness Gauntlet");
+    await expect(page.getByTestId("section-codex")).toContainText("What did not transfer automatically");
     await expect(page.getByTestId("section-learning")).toContainText("MemPalace");
     await expect(page.getByTestId("section-learning")).toContainText("Toyota Way Practices");
     await expect(page.locator("#learning-flow .flow-card")).toHaveCount(5);
@@ -112,9 +124,9 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-channels")).toContainText("CI publish checks");
     await expect(page.getByTestId("section-channels")).not.toContainText("Publish proof & supporting");
     await expect(page.getByTestId("section-cases")).toContainText("Case studies");
-    await expect(page.locator("#case-grid .case-card")).toHaveCount(10);
+    await expect(page.locator("#case-grid .case-card")).toHaveCount(13);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
-    await expect(page.getByTestId("section-measure")).toContainText("Three clocks");
+    await expect(page.getByTestId("section-measure")).toContainText("Four clocks");
     await expect(page.getByTestId("section-measure")).toContainText("EOW");
     await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
     await expect(page.locator("#starter-list .starter-card")).toHaveCount(6);
@@ -140,6 +152,8 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("panel-stack")).toContainText("Bitwarden");
     await page.getByRole("tab", { name: "Glossary" }).click();
     await expect(page.getByTestId("panel-glossary")).toContainText("Harness");
+    await expect(page.getByTestId("panel-glossary")).toContainText("AGENTS.md");
+    await expect(page.getByTestId("panel-glossary")).toContainText("Worktree");
     await expect(page.getByTestId("panel-glossary")).toContainText("P0 (Priority 0)");
     await expect(page.getByTestId("panel-glossary")).toContainText("Trash delete");
     await expect(page.getByTestId("panel-glossary")).toContainText("MemPalace");
@@ -160,7 +174,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#privacy");
     await expect(page.getByTestId("section-privacy")).toContainText("Alex Lennon");
     await expect(page.getByTestId("section-privacy")).toContainText("@embedded_iot");
-    await expect(page.getByTestId("about-baseline")).toContainText("v1.0.0");
+    await expect(page.getByTestId("about-baseline")).toContainText("v1.1.0");
     await expect(page.getByTestId("about-license")).toContainText("CC BY-SA 4.0");
     await expect(page.getByTestId("section-privacy")).not.toContainText("Active-ESL");
   });
@@ -172,6 +186,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-blog")).toContainText("What broke");
     await expect(page.getByTestId("section-blog")).not.toContainText("Not a content calendar");
     await expect(page.getByTestId("blog-v1-baseline")).toContainText("v1.0");
+    await expect(page.getByTestId("blog-the-cockpit-changed-the-work-did-not")).toContainText("Codex");
     await expect(page.getByTestId("blog-notebook-at-eow")).toContainText("EOW");
     await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");
     await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(
@@ -214,4 +229,3 @@ test.describe("Durable Agent Harness site", () => {
     expect(ld).not.toContain("Active-ESL");
   });
 });
-

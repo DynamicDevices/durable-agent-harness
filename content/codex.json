@@ -1,0 +1,61 @@
+{
+  "schema": "durable-agent-harness/codex/v1",
+  "title": "The cockpit changed. The work did not.",
+  "intro": "At the end of August 2026 I moved the daily cockpit from Cursor to Codex. The useful surprise was how much of the working relationship survived: skills, proof classes, signed patterns, memory discipline and human gates. The tool-specific plumbing did not — and that distinction is now part of the method.",
+  "stance": "Codex is now the primary cockpit. Cursor remains part of the history and still works with the same canonical personal skills. Port the durable practice; keep host policy native; judge both by completed work with evidence.",
+  "moved": [
+    {
+      "title": "Portable skills, one source of truth",
+      "body": "Personal workflows moved to the open Agent Skills format. One reviewed manifest projects only approved skills into Codex’s user skill directory, with tests that reject occupied targets, broken links, drift and secret-shaped files.",
+      "lesson": "Portability is an architecture decision, not a copy operation."
+    },
+    {
+      "title": "Tasks and worktrees became the lane surface",
+      "body": "Codex tasks make parallel work visible, and managed Git worktrees isolate repository state. Handoff can move a task between background and local work. We still keep one writer per tree and name ownership explicitly.",
+      "lesson": "Isolation helps coordination; it does not replace it."
+    },
+    {
+      "title": "Project guidance became layered",
+      "body": "Codex reads AGENTS.md from global and project scopes while skills remain on demand. Repository guidance now holds local expectations; reusable procedures stay in skills; permissions stay in the host’s own security controls.",
+      "lesson": "Put each kind of knowledge in the layer that owns it."
+    },
+    {
+      "title": "The app became a working surface",
+      "body": "Files, reviews, terminals, browser previews and long-running tasks can sit beside the conversation. That reduced hand-off friction, but also made visible artefacts and bounded tool output part of the context budget.",
+      "lesson": "A richer cockpit still needs lean instrumentation."
+    }
+  ],
+  "earned": [
+    "Shared skills are canonical across Cursor and Codex; host-specific rules are not forced into a fake common format.",
+    "Harness Gauntlet now red-teams gates with a versioned corpus instead of assuming model quality equals harness safety.",
+    "Tool results are bounded before they enter context; one measured task had 17 oversized results contributing 95% of 2.26 MB.",
+    "MemPalace writes gained provenance enrichment and later-retrieval proof, so filing is judged by whether it helps future work.",
+    "Embedded development gained fast layer, signed-DTB and OTA loops while full Foundries/CI builds remain the trust proof.",
+    "Circuit breakers and Jidoka rules stop repeated tool/error loops instead of rewarding persistence theatre."
+  ],
+  "didNotTransfer": [
+    "Cursor .mdc metadata and alwaysApply semantics are Cursor-specific. Codex uses AGENTS.md, skills, sandboxing and permissions; translate the intent, not the file extension.",
+    "A new task is not durable memory. Decisions and handoffs still need versioned artefacts or curated memory before context is summarized or a task ends.",
+    "More parallel tasks are not automatically faster. Review load, shared benches, disk, GPUs and self-hosted runners remain scarce resources.",
+    "A model or cockpit switch does not weaken the proof class. Hardware still needs hardware evidence; publishing still needs a checked build; consequential writes still need a human decision."
+  ],
+  "links": [
+    {
+      "label": "Official Codex: Agent Skills",
+      "href": "https://learn.chatgpt.com/docs/build-skills"
+    },
+    {
+      "label": "Official Codex: AGENTS.md",
+      "href": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+    },
+    {
+      "label": "Official Codex: worktrees",
+      "href": "https://learn.chatgpt.com/docs/environments/git-worktrees"
+    },
+    {
+      "label": "Shared-skills implementation",
+      "href": "https://github.com/DynamicDevices/cursor-config/pull/169"
+    }
+  ],
+  "close": "The move made the durable boundary clearer: models and cockpits will change. A working relationship lasts when its procedures are portable, its policy is explicit, its memory is retrievable, and its proof remains close to the real work."
+}

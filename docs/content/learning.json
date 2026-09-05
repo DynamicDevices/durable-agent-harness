@@ -67,6 +67,8 @@
       "Write with a retention reason (decision, stance, ticket, signed pattern).",
       "Prefer structured cards over prose sludge; invalidate stale facts.",
       "Use wings/rooms as a filing discipline so agents can find the right shelf.",
+      "Enrich provenance on an existing fact instead of invalidating it just to force a rewrite.",
+      "Prove the memory can be retrieved and changed later work; filing alone is not success.",
       "Memory supports Kaizen/Hansei: proposals and reviews cite drawers instead of re-litigating chat."
     ],
     "not": [

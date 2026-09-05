@@ -1,13 +1,23 @@
 {
   "schema": "durable-agent-harness/hour/v1",
   "title": "Start in 60 minutes",
-  "intro": "Don’t read the whole notebook. Get a thin harness into Cursor in about an hour — then come back for the philosophy.",
-  "promise": "When you finish you have: two fail-closed rules, one on-demand skill, one signed pattern, and a tenure clock. That’s enough to stop the next stupid burn.",
+  "intro": "Don’t read the whole notebook. Get a thin working relationship into Codex in about an hour — or take the original Cursor pack if that is still your cockpit.",
+  "promise": "When you finish you have: two fail-closed boundaries, one on-demand skill, one signed pattern, and two tenure clocks. That’s enough to stop the next stupid burn.",
   "pack": {
-    "zip": "packs/cursor-hour-starter.zip",
-    "browse": "packs/cursor-hour/README.md",
-    "label": "Download Cursor pack (.zip)",
-    "browseLabel": "Read pack README"
+    "zip": "packs/codex-hour-starter.zip",
+    "browse": "packs/codex-hour/README.md",
+    "download": "codex-hour-starter.zip",
+    "label": "Download Codex pack (.zip)",
+    "browseLabel": "Read Codex README",
+    "alternates": [
+      {
+        "zip": "packs/cursor-hour-starter.zip",
+        "browse": "packs/cursor-hour/README.md",
+        "download": "cursor-hour-starter.zip",
+        "label": "Download Cursor pack",
+        "browseLabel": "Read Cursor README"
+      }
+    ]
   },
   "steps": [
     {
@@ -16,15 +26,15 @@
       "title": "Download the pack",
       "why": "Empty templates invite dithering. This pack is already named and filled with boring defaults you can rename.",
       "do": "Download the zip (or browse the files). Unzip next to a scratch project — or into a small git repo you control.",
-      "proof": "You can see README.md and a .cursor/ tree on disk."
+      "proof": "You can see README.md, AGENTS.md and a .agents/skills tree on disk."
     },
     {
       "id": "2",
       "minutes": 10,
-      "title": "Drop files where Cursor loads them",
+      "title": "Drop files where Codex loads them",
       "why": "A harness that lives only in chat dies when the chat dies.",
-      "do": "Copy the pack’s `.cursor` folder into your project root (prefer project-local). Open the folder in Cursor and Reload Window if rules don’t show yet.",
-      "proof": "Cursor sees the two .mdc rules and the example-domain-task skill."
+      "do": "Copy `AGENTS.md` and `.agents/` into your project root. Start a new Codex task so project guidance is read from the beginning and the skill is discovered.",
+      "proof": "Codex can name the project guidance and the example-domain-task skill."
     },
     {
       "id": "3",
@@ -37,10 +47,10 @@
     {
       "id": "4",
       "minutes": 10,
-      "title": "Keep the two Priority 0 (P0) rules always-on",
-      "why": "P0 means fail-closed and always loaded. Secrets in chat and silent outbound are the burns that don’t forgive.",
-      "do": "Read both rules (secrets out of chat; human gate before irreversible send/publish). Change the wording if you must, but keep alwaysApply: true. Do not add a third always-on rule today.",
-      "proof": "You can explain what P0 means and each rule in one sentence to a colleague."
+      "title": "Keep two fail-closed boundaries",
+      "why": "Secrets in chat and silent consequential writes are the burns that don’t forgive. The host mechanism may change; the boundary must not.",
+      "do": "Read the two boundaries in AGENTS.md: secrets stay out of chat, and consequential writes need a visible human decision. Keep the file short. Use Codex sandboxing and permissions as separate host controls.",
+      "proof": "You can explain each boundary, its decision point, and what the host enforces separately."
     },
     {
       "id": "5",
@@ -55,8 +65,8 @@
       "minutes": 5,
       "title": "Freeze a tenure clock",
       "why": "Without a start date, every demo invents a heroic timeline.",
-      "do": "Edit clocks.json: set harness.start to today’s date (ISO). Leave the other clocks or delete them.",
-      "proof": "A date you trust is on disk — not only in a slide."
+      "do": "Edit clocks.json: set harness.start to today and codex.start to the first day you used Codex on real project work.",
+      "proof": "Two dates you trust are on disk — not only in a slide."
     },
     {
       "id": "7",
@@ -78,13 +88,13 @@
   "done": {
     "title": "Done when",
     "checks": [
-      "Pack installed where Cursor loads it",
+      "Pack installed where Codex loads it",
       "Skill renamed to your domain",
-      "Two Priority 0 (P0) rules still always-on (secrets; human gate)",
+      "Two fail-closed boundaries understood (secrets; consequential writes)",
       "At least one signed-off pattern with a real problem line",
-      "One frozen clock date",
+      "Two frozen clock dates",
       "One task run with proof — not a plan alone"
     ]
   },
-  "next": "When this feels boring (good), read the Playbook or Learning sections. Skip what you don’t need."
+  "next": "When this feels boring (good), read the Codex migration note, Playbook or Learning sections. Skip what you don’t need."
 }

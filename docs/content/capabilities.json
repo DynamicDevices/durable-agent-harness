@@ -60,6 +60,20 @@
       "band": "Team knowledge base"
     },
     {
+      "outcome": "Move the working relationship between agent hosts",
+      "before": "impossible",
+      "now": "solo-hard",
+      "note": "Portable Agent Skills moved; project guidance and permissions stayed host-native; a drift sensor guards the boundary.",
+      "band": "Platform engineering"
+    },
+    {
+      "outcome": "Parallel repository tasks with isolated state",
+      "before": "team",
+      "now": "solo-hard",
+      "note": "Codex worktrees reduce collisions, but one-writer ownership and human review load remain binding.",
+      "band": "~Squad burst"
+    },
+    {
       "outcome": "Spec / evidence drafting with human voice ownership",
       "before": "solo-hard",
       "now": "solo-easy",
@@ -79,6 +93,13 @@
       "now": "solo-hard",
       "note": "We do not claim a universal speedup. Measure — see the kit.",
       "band": "Unknown without diary"
+    },
+    {
+      "outcome": "Regression-test agent safety boundaries",
+      "before": "uneconomic",
+      "now": "solo-hard",
+      "note": "A versioned adversarial corpus tests high-risk harness behavior; it complements rather than replaces code and hardware proof.",
+      "band": "Safety engineering"
     }
   ]
 }

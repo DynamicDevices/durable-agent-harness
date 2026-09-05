@@ -29,6 +29,20 @@
       "lesson": "The unit of progress is a reviewable change with proof — not a confident paragraph."
     },
     {
+      "id": "codex-migration",
+      "title": "A cockpit migration without a second harness",
+      "domain": "Harness engineering",
+      "before": "Cursor-specific files risked becoming the identity of the harness; copying them into Codex would create drift and false equivalence.",
+      "after": "One canonical Agent Skills tree serves both hosts through a reviewed, fail-closed projector. Codex uses AGENTS.md and native permissions; Cursor keeps its own rule mechanics.",
+      "harness": [
+        "Open Agent Skills format",
+        "Manifest + projection drift sensor",
+        "Host-native policy and permissions",
+        "Gauntlet regression corpus"
+      ],
+      "lesson": "The working relationship is portable when procedure, policy, memory and proof have separate owners."
+    },
+    {
       "id": "hardware-loop",
       "title": "Human-in-the-loop target investigation",
       "domain": "Embedded / devices",
@@ -119,6 +133,32 @@
         "Encode the second burn"
       ],
       "lesson": "Optimising tokens is how the working relationship stays affordable — not stinginess."
+    },
+    {
+      "id": "bounded-tool-results",
+      "title": "The tool result became the bottleneck",
+      "domain": "Context engineering",
+      "before": "Commands and media calls returned whatever they could; one task accumulated 2.26 MB and 17 results accounted for 95% of it.",
+      "after": "Commands filter and cap before the call, images use intentional detail, and large evidence remains as an artefact rather than a conversation payload.",
+      "harness": [
+        "Tool-result payload measurement",
+        "Pre-call filters and output caps",
+        "Durable artefact paths"
+      ],
+      "lesson": "Context discipline applies to results, not only prompts and skill descriptions."
+    },
+    {
+      "id": "embedded-fast-feedback",
+      "title": "Faster embedded loops without weaker proof",
+      "domain": "Embedded / devices",
+      "before": "A small device-tree or layer change paid for a 30–45 minute full platform build, inviting parallel thrash and premature claims.",
+      "after": "Layer-sized, kernel, signed-DTB and OTA loops provide development feedback; the full image, CI and hardware evidence remain the release gate.",
+      "harness": [
+        "Poka-yoke stage ladder",
+        "Immutable source and layer pins",
+        "Full CI as trust proof"
+      ],
+      "lesson": "Shorten the feedback loop, not the definition of done."
     },
     {
       "id": "spec-sot",

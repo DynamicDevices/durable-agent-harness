@@ -1,14 +1,14 @@
 {
   "schema": "durable-agent-harness/runtime/v1",
-  "title": "Runtime layer: Preloop + OpenRouter",
-  "intro": "Two layers I added under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter when multi-model routing earns its keep. The same pair also runs checks on PR commits before we burn expensive CI.",
+  "title": "Runtime layers beyond the cockpit",
+  "intro": "Preloop and OpenRouter remain useful separate planes, not the Codex runtime itself: Preloop for policy/audit and PR review flows, OpenRouter when an external workflow needs deliberate multi-model routing. The cockpit migration made that boundary clearer.",
   "stance": "Runtime controls sit under human Priority 0 (P0) gates — send, secrets, irreversible publish. A policy firewall is not consent. A PR review bot is not a merge button.",
   "preloop": {
     "title": "Preloop",
-    "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor’s existing fail-closed gates — it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
+    "lede": "Preloop is an optional policy and audit plane for agent tool use and Cloud review flows. It layers under host controls and human gates — it does not replace Codex sandboxing/permissions, send approval, secrets-out-of-chat, or git fail-closed.",
     "docs": "https://docs.preloop.ai",
     "practices": [
-      "Treat Preloop as a durable runtime companion for MCP/tool audit and approvals UI — not as the only safety system.",
+      "Treat Preloop as a runtime companion for selected MCP/tool audit and Cloud flows — not as the only safety system.",
       "Keep human gates for irreversible outbound and secret handling; Preloop adds another inspection layer.",
       "Prefer lean builtins for approvals; do not let policy tooling become a second always-on essay.",
       "Keep enrollment tokens and local Preloop config secrets out of skills and chat."
@@ -21,7 +21,7 @@
   },
   "openrouter": {
     "title": "OpenRouter",
-    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. Useful when the harness — and Preloop’s reviewer — should not be married to a single upstream.",
+    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. It serves external model workflows and Preloop review flows when routing earns its keep; it is not how the Codex app reaches its models.",
     "docs": "https://openrouter.ai/docs",
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
@@ -31,6 +31,7 @@
     ],
     "not": [
       "Not a replacement for skills/rules/memory — it is transport for model calls.",
+      "Not the model path for the Codex app.",
       "Not “set and forget” for data-retention or ZDR choices; configure deliberately when it matters.",
       "Not a productivity multiplier claim by itself."
     ]
@@ -61,7 +62,7 @@
       "Keep OpenRouter keys in Bitwarden Secrets Manager (or the vault Preloop Cloud uses); never in workflow YAML or chat.",
       "Prefer async review by default; make CI wait only when runner time is scarce or the failure mode is expensive.",
       "When the gate is on, fix or skip with an explicit, rare bypass — do not normalise “ignore Preloop”.",
-      "Keep Cursor’s Preloop MCP firewall (desktop tool audit) and the GitHub PR-reviewer flow mentally separate — same vendor, different planes."
+      "Keep desktop tool audit, Codex host controls, and the GitHub PR-reviewer flow mentally separate — related safeguards, different planes."
     ],
     "not": [
       "Not a replacement for unit tests, hardware proof, or Bugbot / human review.",
@@ -69,5 +70,5 @@
       "Not the same thing as Preloop’s desktop MCP approvals in Cursor."
     ]
   },
-  "together": "Harness (skills/rules/MemPalace/Kaizen→Hansei→Toyota Way Practices) steers behaviour. Preloop audits tool runtime and can review PR commits. OpenRouter routes model capacity for both. CI may wait on the Preloop commit status. Humans still own irreversible actions and merges."
+  "together": "The durable working relationship — skills, guidance, memory, signed patterns and proof — steers behaviour. Codex owns its model path, sandbox and permissions. Preloop can audit selected tool flows and review PR commits; OpenRouter routes external model capacity for those workflows. CI may wait on the review signal. Humans still own consequential actions and merges."
 }

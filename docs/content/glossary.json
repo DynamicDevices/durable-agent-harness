@@ -4,7 +4,23 @@
   "terms": [
     {
       "term": "Harness",
-      "def": "The durable layer around a model: skills, rules, memory, patterns, and human gates that make agent work reliable and repeatable."
+      "def": "The durable layer around a model and cockpit: skills, project guidance, memory, signed patterns, sensors, proof classes, host controls, and human gates that make agent work reliable and repeatable. In human-facing prose, I usually call this the working relationship."
+    },
+    {
+      "term": "Codex",
+      "def": "The primary cockpit in this notebook since 2026-08-30: tasks, managed worktrees, files, terminals, reviews and app tools around the code. It hosts the working relationship; it is not the whole working relationship."
+    },
+    {
+      "term": "Agent Skill",
+      "def": "A portable directory containing SKILL.md plus optional scripts, references and assets. Codex discovers skills by scope and loads the full instructions on demand through progressive disclosure."
+    },
+    {
+      "term": "AGENTS.md",
+      "def": "Codex project guidance loaded from global and repository scopes at task start. Use it for concise working agreements and local expectations; keep reusable job procedure in skills and security enforcement in host controls."
+    },
+    {
+      "term": "Worktree",
+      "def": "An isolated Git checkout used by a Codex task so repository state can change without disturbing the local checkout. It reduces collisions but does not remove one-writer ownership, branch constraints, review load or shared-resource limits."
     },
     {
       "term": "Skill",
@@ -96,7 +112,7 @@
     },
     {
       "term": "Token lean",
-      "def": "Deliberate reduction of always-on context tax: thin skills, requestable rules, lean MCP sessions, measure and cut catalog bloat."
+      "def": "Deliberate reduction of context tax: thin skills, requestable guidance, task-scoped tools, bounded results, and measurement of both the stable prefix and what enters during work."
     },
     {
       "term": "Desktop MCQ",
@@ -108,6 +124,18 @@
     }
   ],
   "faq": [
+    {
+      "q": "Why move from Cursor to Codex?",
+      "a": "Codex tasks, managed worktrees, app surfaces and handoff fit the current work better. The important result was architectural: portable Agent Skills survived, while project guidance and permissions stayed host-native. Cursor remains compatible rather than being erased from the history."
+    },
+    {
+      "q": "Can I copy Cursor .mdc rules into Codex?",
+      "a": "Not as enforcement. Translate the intent: use AGENTS.md for concise Codex project guidance, Codex sandboxing and permissions for host controls, and a visible human decision for consequential actions. Keep reusable procedures in Agent Skills."
+    },
+    {
+      "q": "Do Codex worktrees make parallel agents safe?",
+      "a": "They isolate repository state and reduce collisions. They do not budget human review, hardware benches, GPUs, runners or branch ownership. Keep one writer per tree and make handoffs explicit."
+    },
     {
       "q": "Is a giant system prompt a harness?",
       "a": "No. A harness is versioned, selective, and maintained. A giant always-on prompt is usually an unbudgeted tax."

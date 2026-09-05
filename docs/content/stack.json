@@ -3,6 +3,17 @@
   "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes Monday morning repeatable.",
   "layers": [
     {
+      "id": "cockpit",
+      "title": "Cockpit",
+      "subtitle": "Codex primary · Cursor compatible",
+      "body": "Codex is now the daily task, worktree and review surface. Cursor remains supported. Neither owns the working relationship: portable skills and proof classes outlive the host; guidance and permissions stay native to it.",
+      "tips": [
+        "Codex project guidance in AGENTS.md",
+        "Portable procedures in Agent Skills",
+        "Worktrees isolate state; one writer still owns each tree"
+      ]
+    },
+    {
       "id": "skills",
       "title": "Skills",
       "subtitle": "How to do a job",
@@ -44,7 +55,8 @@
         "Write with a retention reason",
         "File by wing/room so agents can find the shelf",
         "Invalidate stale facts instead of stacking contradictions",
-        "Cite memory in Kaizen/Hansei — do not re-litigate whole chats"
+        "Enrich provenance instead of invalidate-first rewrites",
+        "Prove later retrieval helped before calling a memory durable"
       ]
     },
     {
@@ -90,7 +102,8 @@
       "tips": [
         "Declare owns / never at session start",
         "Handoffs are explicit tickets",
-        "Do not run two writers on one tree"
+        "Do not run two writers on one tree",
+        "Budget review load and scarce host/bench resources"
       ]
     },
     {
@@ -108,11 +121,23 @@
       "id": "token_lean",
       "title": "Token lean",
       "subtitle": "Context is rent",
-      "body": "Measure always-on tax. Keep skills thin, rules requestable, specialty tools enable/unload, and parallel lanes instead of mega-prompts.",
+      "body": "Measure always-on tax and tool-result payloads. Keep skills thin, rules requestable, specialty tools task-scoped, and parallel lanes bounded instead of growing one mega-context.",
       "tips": [
         "SKILL.md short; reference.md deep",
         "Pulse when sessions feel heavy",
-        "Catalog bloat is a bug"
+        "Catalog bloat is a bug",
+        "Bound tool output before it enters the conversation"
+      ]
+    },
+    {
+      "id": "evals",
+      "title": "Harness self-evals",
+      "subtitle": "Test the guardrails, not only the code",
+      "body": "A versioned adversarial corpus exercises secrets, consequential writes, prompt injection and tool-loop behavior. Sensors and circuit breakers catch drift before confidence becomes policy.",
+      "tips": [
+        "Keep a known-answer corpus and thresholds",
+        "Add real failures after privacy review",
+        "Stop repeated tool/error loops explicitly"
       ]
     }
   ]
