@@ -4,7 +4,7 @@
 
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>  
-🏷️ **Release:** [v1.0.0](https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0) · baseline locked in [BASELINE.md](BASELINE.md)  
+🏷️ **Baseline:** v1.1 (2026-09-05) in [BASELINE-v1.1.md](BASELINE-v1.1.md) · historical [v1.0.0](https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0)
 🤖 **Agents:** [AGENTS.md](AGENTS.md) · <https://chopwoodcarrywater.uk/agents.html>
 
 First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
@@ -19,7 +19,8 @@ Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 
 | Area | What you get |
 |---|---|
-| **60 minutes** | Timed checklist + [Cursor starter pack](packs/cursor-hour/) (zip on the site) |
+| **60 minutes** | Timed checklist + [Codex starter pack](packs/codex-hour/) (Cursor pack retained) |
+| **Codex migration** | Portable Agent Skills, `AGENTS.md`, worktrees/handoff, host-native controls, self-evals |
 | **Playbook** | Twelve steps to build a thin harness from scratch |
 | **Learning** | MemPalace memory + Kaizen → Hansei → Toyota Way Practices |
 | **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) + PR commit checks (`preloop` status) |
@@ -46,12 +47,13 @@ npm run serve     # http://127.0.0.1:4173
 serves `docs/` from `main`. Review the PR and local Lighthouse results before
 merging. After production publish, run new URLs through LinkedIn Post Inspector.
 
-## Three clocks (frozen starts)
+## Four clocks (frozen starts)
 
 | Clock | Start |
 |---|---|
 | Serious hands-on AI | 2025-06-06 |
 | Cursor as cockpit | 2025-07-23 |
+| Codex as cockpit | 2026-08-30 |
 | Versioned harness | 2026-05-31 |
 
 ## Licence

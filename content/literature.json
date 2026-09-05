@@ -29,6 +29,27 @@
       "claim": "Observational work on agentic IDE adoption reports early activity spikes with warnings about complexity/debt if review quality slips.",
       "href": "https://arxiv.org/pdf/2511.04427",
       "use": "Do not confuse LOC spikes with sustainable capability."
+    },
+    {
+      "title": "OpenAI — Build Skills",
+      "year": "2026",
+      "claim": "Codex uses the open Agent Skills format with progressive disclosure, supports user and repository scopes, and follows symlinked skill folders.",
+      "href": "https://learn.chatgpt.com/docs/build-skills",
+      "use": "Primary source for the portable-skill boundary in the Codex migration."
+    },
+    {
+      "title": "OpenAI — Custom instructions with AGENTS.md",
+      "year": "2026",
+      "claim": "Codex layers global and project guidance through AGENTS.md and closer-directory overrides, with a bounded project-instruction budget.",
+      "href": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "use": "Primary source for keeping repository guidance separate from reusable skills."
+    },
+    {
+      "title": "OpenAI — Worktrees",
+      "year": "2026",
+      "claim": "Managed Git worktrees isolate Codex tasks and support handoff between background work and the local checkout, while Git still permits a branch in only one worktree at a time.",
+      "href": "https://learn.chatgpt.com/docs/environments/git-worktrees",
+      "use": "Primary source for the isolation mechanics; local one-writer discipline remains our own operating pattern."
     }
   ],
   "readingOrder": [

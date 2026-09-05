@@ -13,6 +13,11 @@ One or two sentences. Link/PR if useful. Why a reader would care.
 
 ## Inbox
 
+### 2026-09-05 — The cockpit changed; the work did not
+Cursor → Codex was a portability test: shared Agent Skills travelled, host
+policy stayed native, and worktrees improved isolation without replacing
+one-writer ownership. Promoted in the v1.1 EOW review.
+
 ### 2026-08-19 — Sensor cheaper than the work
 Included Ultra ≠ $0 (price tokens). Watcher Tasks / gh run watch are the anti-pattern. Timers + Usage CSV + specialist CNC channel. Promoted same day (Alex asked to update the site).
 
@@ -60,3 +65,26 @@ Evidence sweep: inbox + weekly git history + public artefacts.
   the underlying pattern but do not yet justify a second post.
 - Presentation, client and private communication work — outside this public
   notebook’s privacy boundary.
+
+## EOW disposition — 2026-09-05
+
+Evidence sweep: site history since 20 August, live pattern registry, current
+personal skill tree, Codex task history, shared-skills PR, TWP feedback-loop PR,
+and official Codex Skills / AGENTS.md / worktree documentation.
+
+**Promoted**
+
+- The cockpit changed. The work did not. — Cursor → Codex migration and the
+  boundary between portable practice, host-native policy, memory and proof.
+- Codex-first 60-minute pack — project `AGENTS.md`, `.agents/skills/`, signed
+  patterns and frozen clocks.
+- Self-testing harness — adversarial gate corpus, tool-result bounds, circuit
+  breakers, retrieval/provenance proof, and faster embedded feedback loops.
+
+**Skipped / reserved**
+
+- Product-specific Jaguar Screen, Waydroid, enclosure and client outcomes —
+  useful evidence for the harness but outside this public notebook’s privacy
+  and commercial boundary.
+- Raw commit and task counts — duplicated across worktrees and poor proxies for
+  quality; only scoped skill/pattern counts are published.

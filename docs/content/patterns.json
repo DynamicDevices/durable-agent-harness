@@ -141,6 +141,61 @@
       ]
     },
     {
+      "name": "Portable skills, native host policy",
+      "problem": "A cockpit migration either duplicates every procedure or pretends different hosts enforce policy the same way.",
+      "move": "Keep reusable job procedures in the open Agent Skills format with one canonical source. Express guidance, sandboxing and permissions through each host’s native mechanisms, then test the projection boundary.",
+      "signals": [
+        "Two hand-edited copies of one skill",
+        "Cursor metadata presented as Codex enforcement",
+        "Broken or occupied skill symlinks"
+      ]
+    },
+    {
+      "name": "Harness self-evals",
+      "problem": "A stronger model can still route around weak harness wording, stale gates or untested exceptions.",
+      "move": "Run a versioned adversarial corpus against high-risk boundaries. Keep known-answer thresholds and add privacy-scrubbed real failures after Hansei.",
+      "signals": [
+        "Safety claimed from model reputation",
+        "No regression test for prompt injection or secret handling"
+      ]
+    },
+    {
+      "name": "Bound tool results before context",
+      "problem": "A few unfiltered logs or media results crowd out the task and are re-billed on later turns.",
+      "move": "Filter before calling, cap output, request only the image detail needed, and return a compact result plus a durable artefact path when detail must remain available.",
+      "signals": [
+        "Megabytes of command output in chat",
+        "One tool result dominates the whole task payload"
+      ]
+    },
+    {
+      "name": "Memory needs retrieval proof",
+      "problem": "Filing feels productive even when the next task cannot find or trust the record.",
+      "move": "Store a retention reason and provenance, then test that a later query retrieves the fact and changes the work. Enrich provenance in place instead of invalidate-first rewrites.",
+      "signals": [
+        "Large memory store with repeated re-decisions",
+        "Facts without source or retrieval evidence"
+      ]
+    },
+    {
+      "name": "Fast feedback, unchanged trust proof",
+      "problem": "Thirty-to-forty-five-minute platform builds make every embedded edit slow, so teams either thrash or weaken verification.",
+      "move": "Use the smallest valid local loop — layer, kernel, signed DTB or OTA — for development. Keep the full image/CI/hardware path as the release trust proof.",
+      "signals": [
+        "Full platform rebuild for a one-file change",
+        "Fast-path success reported as release proof"
+      ]
+    },
+    {
+      "name": "Stop repeated tool loops",
+      "problem": "Agent persistence turns into repeated calls against the same error, wasting time and context.",
+      "move": "Set a circuit breaker: after the same blocking condition repeats, stop the line, preserve evidence, change the method or ask for the missing input.",
+      "signals": [
+        "Same command and same error three times",
+        "Polling without a state change"
+      ]
+    },
+    {
       "name": "Trash instead of hard delete",
       "problem": "Agents (and humans) hard-delete files when “cleaning up,” then cannot recover from a wrong path or a rushed rm.",
       "move": "Treat delete as move-to-trash: send files into the OS trash or a project trash folder first. Recover if wrong; empty trash only as a separate, deliberate step. Prefer this over rm for project data.",

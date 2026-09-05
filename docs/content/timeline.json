@@ -132,6 +132,25 @@
       "date": "2026-08",
       "title": "Channels, ingest, and practice surfaces",
       "body": "Documented messaging, purposeful media ingest, desktop MCQs, design-share review loops, and spec SoT + branded export views."
+    },
+    {
+      "date": "2026-08-30",
+      "title": "Codex becomes the primary cockpit",
+      "body": "Moved daily work into Codex tasks and worktrees. The migration separated portable Agent Skills and proof classes from host-specific policy and UI plumbing. Cursor remained a supported surface, not the source of truth."
+    },
+    {
+      "date": "2026-08-31",
+      "title": "One skill source for Cursor and Codex",
+      "body": "Shipped a fail-closed shared-skill projector: reviewed manifest, symlink support, drift checks, secret-shaped-file rejection, and Harness Gauntlet coverage.",
+      "link": {
+        "label": "Implementation PR #169",
+        "href": "https://github.com/DynamicDevices/cursor-config/pull/169"
+      }
+    },
+    {
+      "date": "2026-09",
+      "title": "The harness starts testing itself",
+      "body": "Added adversarial gate evals, tool-result bounds, loop circuit breakers, memory provenance and retrieval proof, plus faster embedded feedback loops that preserve full CI as trust evidence."
     }
   ]
 }

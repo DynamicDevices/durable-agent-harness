@@ -1,27 +1,28 @@
 {
   "schema": "durable-agent-harness/playbook/v1",
-  "title": "Build your own harness",
-  "intro": "If I were starting again tomorrow: a small, versioned operating system around the model — then grow it only when the same failure shows up twice.",
+  "title": "Build your own working relationship",
+  "intro": "If I were starting again tomorrow: a small, versioned working relationship around the model — portable where it should be, host-native where it must be — then grow it only when the work earns the change.",
   "principles": [
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
     "Irreversible actions stay human. Draft freely; send/publish/destroy only with an explicit gate.",
     "Prefer trash over hard delete. Move files to a trash folder first so mistakes stay recoverable.",
     "Prefer proof over narrative. Define what “done” looks like before celebrating.",
-    "Sign off cross-cutting habits. Lore in chat is not an operating system."
+    "Sign off cross-cutting habits. Lore in chat is not an operating system.",
+    "Test the harness itself. A capable model does not prove the gates are sound."
   ],
   "steps": [
     {
       "id": "1",
       "title": "Pick a cockpit",
-      "body": "Choose one agentic environment where the model can read your tree, run commands, and leave reviewable diffs. Consistency beats tool-hopping.",
+      "body": "Choose one agentic environment where the model can read your tree, run commands, and leave reviewable diffs. I now use Codex as the primary cockpit and keep Cursor compatible. Consistency beats tool-hopping; portable skills make later migration possible.",
       "done": "Same cockpit for a week of real work."
     },
     {
       "id": "2",
-      "title": "Write three fail-closed rules",
-      "body": "Start with: (1) secrets never pasted into chat — capture via desktop dialog into Bitwarden (Password Manager for humans; Bitwarden Secrets Manager for agent tokens), (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects, (4) delete by moving to trash — not hard rm — so mistakes stay recoverable. Keep them short; only the first two need to be always-on Priority 0 (P0).",
-      "done": "Fail-closed rules in version control; agents actually obey them; tokens stay out of the conversation; deletes are recoverable."
+      "title": "Write two fail-closed boundaries",
+      "body": "Start with: (1) secrets never pasted into chat — use an approved secret store or capture flow, (2) no consequential write without a human decision that shows the full referent. Add recoverable-delete and source-editing practice in the appropriate project guidance or skill. Keep host enforcement separate: Codex sandbox/permissions, Cursor rules, or the equivalent for your cockpit.",
+      "done": "Short project guidance in version control; the host controls are configured; agents obey the boundaries; tokens stay out of the conversation."
     },
     {
       "id": "3",
@@ -82,6 +83,24 @@
       "title": "Measure and cut token tax",
       "body": "Thin skill dispatchers, requestable rules, lean tool sessions, and a short always-on list. When a session feels heavy, measure — then demote or unload.",
       "done": "You can name your always-on budget and point to at least one cut you made."
+    },
+    {
+      "id": "13",
+      "title": "Separate portable practice from host policy",
+      "body": "Put reusable procedures in Agent Skills. Put repository expectations in AGENTS.md or the host’s native project-guidance file. Keep sandboxing, permissions and credentials in the host control plane. Maintain one canonical skill source and test any projection or symlink layer.",
+      "done": "A skill can move hosts without pretending the old host’s policy file still enforces anything."
+    },
+    {
+      "id": "14",
+      "title": "Red-team the harness",
+      "body": "Create a small known-answer corpus for the boundaries that matter: secret requests, prompt injection, consequential writes, destructive paths and repeated tool failures. Run it when guidance, skills or models change.",
+      "done": "A regression test can fail when the harness weakens — before a real task pays for it."
+    },
+    {
+      "id": "15",
+      "title": "Add circuit breakers and retrieval proof",
+      "body": "Stop repeated tool/error loops after a named threshold. For durable memory, keep provenance and test later retrieval. A filed record and a busy agent are not outcomes by themselves.",
+      "done": "The agent stops abnormal loops, and a later task can retrieve one decision and use it correctly."
     }
   ],
   "antiPatterns": [

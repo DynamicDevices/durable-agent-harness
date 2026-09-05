@@ -1,18 +1,18 @@
 {
   "schema": "durable-agent-harness/stats/v1",
-  "as_of": "2026-08-08",
+  "as_of": "2026-09-05",
   "disclaimer": "Aggregates only — proxies for harness size, not quality.",
   "metrics": [
     {
       "id": "skills",
       "label": "Agent skills",
-      "value": "69",
-      "detail": "From 2 versioned skills at harness start to dozens of domain procedures."
+      "value": "86",
+      "detail": "Canonical personal skills shared between Cursor and Codex; installed product and plugin skills are excluded."
     },
     {
       "id": "patterns",
       "label": "Signed patterns",
-      "value": "95",
+      "value": "166",
       "detail": "Cross-cutting ways of working with an explicit sign-off state."
     },
     {
@@ -22,5 +22,5 @@
       "detail": "Fail-closed memories agents can load — most requestable, few always-on."
     }
   ],
-  "growthNote": "Skill additions clustered hard once the harness was versioned — evidence that encoding becomes habit, not that count equals quality. Deprecate freely."
+  "growthNote": "Counts are size proxies, not quality. The useful September change is portability and stronger sensors: shared skills, 166 signed patterns, three deprecated patterns, and one proposed pattern still waiting for evidence."
 }

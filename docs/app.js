@@ -253,6 +253,42 @@ function renderRuntime(data) {
   }
 }
 
+function renderCodex(data) {
+  document.querySelector("#codex-title").textContent = data.title;
+  document.querySelector("#codex-intro").textContent = data.intro;
+  document.querySelector("#codex-stance").textContent = data.stance;
+  document.querySelector("#codex-moved").replaceChildren(
+    ...data.moved.map((item) =>
+      el("article", { className: "case-card" }, [
+        el("h3", { text: item.title }),
+        el("p", { text: item.body }),
+        el("p", { className: "lesson", text: item.lesson }),
+      ]),
+    ),
+  );
+  document.querySelector("#codex-earned").replaceChildren(
+    ...data.earned.map((item) => el("li", { text: item })),
+  );
+  document.querySelector("#codex-not-transfer").replaceChildren(
+    ...data.didNotTransfer.map((item) => el("li", { text: item })),
+  );
+  document.querySelector("#codex-links").replaceChildren(
+    ...data.links.map((link, index) =>
+      el("span", {}, [
+        index ? document.createTextNode(" · ") : null,
+        el("a", {
+          className: "text-link",
+          href: link.href,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: link.label,
+        }),
+      ]),
+    ),
+  );
+  document.querySelector("#codex-close").textContent = data.close;
+}
+
 function renderLearning(data) {
   document.querySelector("#learning-intro").textContent = data.intro;
   document.querySelector("#learning-loop-line").textContent = data.loopOneLiner;
@@ -516,11 +552,11 @@ function renderHour(data) {
   document.querySelector("#hour-next").textContent = data.next;
 
   const pack = data.pack;
-  document.querySelector("#hour-actions").replaceChildren(
+  const actions = [
     el("a", {
       className: "btn primary",
       href: pack.zip,
-      download: "cursor-hour-starter.zip",
+      download: pack.download,
       "data-testid": "hour-download",
       text: pack.label,
     }),
@@ -530,7 +566,25 @@ function renderHour(data) {
       "data-testid": "hour-browse",
       text: pack.browseLabel,
     }),
-  );
+  ];
+  for (const [index, alternate] of (pack.alternates || []).entries()) {
+    actions.push(
+      el("a", {
+        className: "btn ghost",
+        href: alternate.zip,
+        download: alternate.download,
+        "data-testid": `hour-alternate-download-${index + 1}`,
+        text: alternate.label,
+      }),
+      el("a", {
+        className: "text-link pack-readme-link",
+        href: alternate.browse,
+        "data-testid": `hour-alternate-browse-${index + 1}`,
+        text: alternate.browseLabel,
+      }),
+    );
+  }
+  document.querySelector("#hour-actions").replaceChildren(...actions);
 
   document.querySelector("#hour-steps").replaceChildren(
     ...data.steps.map((step) =>
@@ -619,6 +673,7 @@ async function main() {
     stats,
     playbook,
     learning,
+    codex,
     runtime,
     messaging,
     ingest,
@@ -641,6 +696,7 @@ async function main() {
     loadJSON("stats.json"),
     loadJSON("playbook.json"),
     loadJSON("learning.json"),
+    loadJSON("codex.json"),
     loadJSON("runtime.json"),
     loadJSON("messaging.json"),
     loadJSON("ingest.json"),
@@ -666,6 +722,7 @@ async function main() {
   renderStats(stats);
   renderPlaybook(playbook);
   renderLearning(learning);
+  renderCodex(codex);
   renderRuntime(runtime);
   renderMessaging(messaging);
   renderIngest(ingest);
