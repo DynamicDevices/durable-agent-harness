@@ -51,10 +51,6 @@
     {
       "label": "Official Codex: worktrees",
       "href": "https://learn.chatgpt.com/docs/environments/git-worktrees"
-    },
-    {
-      "label": "Shared-skills implementation",
-      "href": "https://github.com/DynamicDevices/cursor-config/pull/169"
     }
   ],
   "close": "The move made the durable boundary clearer: models and cockpits will change. A working relationship lasts when its procedures are portable, its policy is explicit, its memory is retrievable, and its proof remains close to the real work."
