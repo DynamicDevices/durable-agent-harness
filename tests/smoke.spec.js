@@ -214,7 +214,7 @@ test.describe("Durable Agent Harness site", () => {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      /assets\/og-cover\.jpe?g$/,
+      "https://chopwoodcarrywater.uk/assets/og-cover-v2.png",
     );
     await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
       "content",

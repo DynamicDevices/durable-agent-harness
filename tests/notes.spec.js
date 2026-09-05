@@ -43,10 +43,16 @@ test.describe("shareable notes", () => {
       await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", canonical);
       await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute("content", "1200");
       await expect(page.locator('meta[property="og:image:height"]')).toHaveAttribute("content", "627");
+      await expect(page.locator('meta[property="og:image:secure_url"]')).toHaveAttribute(
+        "content",
+        `${ORIGIN}/assets/notes/${post.id}-og.png`,
+      );
+      await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute("content", "image/png");
       await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
         "content",
         "summary_large_image",
       );
+      await expect(page.locator('meta[name="twitter:site"]')).toHaveAttribute("content", "@embedded_iot");
 
       const jsonLd = JSON.parse(
         await page.locator('script[type="application/ld+json"]').textContent(),
