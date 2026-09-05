@@ -131,6 +131,7 @@ def render_note(post: dict) -> str:
   <meta property="article:section" content="{html.escape(post.get("section", "Engineering practice"))}">
 {tags_meta}
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@embedded_iot">
   <meta name="twitter:creator" content="@embedded_iot">
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{summary}">
@@ -244,7 +245,7 @@ def render_feed(posts: list[dict]) -> str:
 def render_sitemap(posts: list[dict]) -> str:
     urls = [
         ("/", max(post.get("dateModified", post["date"]) for post in posts), "1.0"),
-        ("/agents.html", "2026-08-09", "0.8"),
+        ("/agents.html", "2026-09-05", "0.8"),
     ]
     urls.extend(
         (f"/notes/{post['id']}.html", post.get("dateModified", post["date"]), "0.9")

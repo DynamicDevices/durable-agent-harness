@@ -1,6 +1,6 @@
 # Notes social-sharing contract
 
-Checked: 2026-08-15
+Checked: 2026-09-05
 
 Each published note has a stable page under
 `https://chopwoodcarrywater.uk/notes/`. The page owns the title, summary,
@@ -13,6 +13,7 @@ networks.
 - `robots=index,follow,max-image-preview:large`
 - `og:type=article` with URL, title, description and image metadata
 - exact 1200 × 627 PNG Open Graph card, sRGB, below 5 MB, with alt text
+- absolute HTTPS `og:image` and `og:image:secure_url` values
 - publication/modification dates, author, section and tags
 - `twitter:card=summary_large_image`
 - one `BlogPosting` JSON-LD object with a 1200 × 627 `ImageObject`
