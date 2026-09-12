@@ -18,5 +18,11 @@ Keep this file short. Codex reads it before project work.
 - Preserve unrelated user changes and keep one writer per working tree.
 - Prefer recoverable changes; move material files to trash instead of hard
   deleting them when practical.
+- Do not use model turns as background sensors. Run no proactive status, token,
+  CI, progress, or readiness polling unless the human explicitly asks for
+  monitoring.
+- For an explicitly requested diagnostic, gather the minimum evidence in one
+  bounded pass, answer from it, and stop. Keep reviews read-only; cleanup is a
+  separate request.
 - If the same failure repeats, propose a small skill or working-pattern change.
   Do not silently add cross-cutting policy.

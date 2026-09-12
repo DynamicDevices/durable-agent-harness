@@ -126,8 +126,12 @@ def draw_card(post: dict, index: int) -> None:
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     data = json.loads((ROOT / "content" / "blog.json").read_text())
-    for index, post in enumerate(data["posts"]):
-        draw_card(post, index)
+    auto_seed = 0
+    for post in data["posts"]:
+        seed = post.get("cardSeed", auto_seed)
+        draw_card(post, seed)
+        if "cardSeed" not in post:
+            auto_seed += 1
 
 
 if __name__ == "__main__":
