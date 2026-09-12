@@ -31,13 +31,15 @@
     "Tool results are bounded before they enter context; one measured task had 17 oversized results contributing 95% of 2.26 MB.",
     "MemPalace writes gained provenance enrichment and later-retrieval proof, so filing is judged by whether it helps future work.",
     "Embedded development gained fast layer, signed-DTB and OTA loops while full Foundries/CI builds remain the trust proof.",
-    "Circuit breakers and Jidoka rules stop repeated tool/error loops instead of rewarding persistence theatre."
+    "Circuit breakers and Jidoka rules stop repeated tool/error loops instead of rewarding persistence theatre.",
+    "Token-discipline traces reject unrequested automated checks and preserve one explicitly requested bounded diagnostic pass."
   ],
   "didNotTransfer": [
     "Cursor .mdc metadata and alwaysApply semantics are Cursor-specific. Codex uses AGENTS.md, skills, sandboxing and permissions; translate the intent, not the file extension.",
     "A new task is not durable memory. Decisions and handoffs still need versioned artefacts or curated memory before context is summarized or a task ends.",
     "More parallel tasks are not automatically faster. Review load, shared benches, disk, GPUs and self-hosted runners remain scarce resources.",
-    "A model or cockpit switch does not weaken the proof class. Hardware still needs hardware evidence; publishing still needs a checked build; consequential writes still need a human decision."
+    "A model or cockpit switch does not weaken the proof class. Hardware still needs hardware evidence; publishing still needs a checked build; consequential writes still need a human decision.",
+    "A quick cached check is not free monitoring. Quota-window, task-lifetime and cache-volume ledgers stay separate; reviews stay read-only."
   ],
   "links": [
     {

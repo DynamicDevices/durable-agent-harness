@@ -125,14 +125,15 @@
       "id": "token-lean",
       "title": "Token lean as operating discipline",
       "domain": "Harness engineering",
-      "before": "Always-on essays and idle tool catalogs made every turn expensive before work started.",
-      "after": "Thin skills, requestable rules, lean MCP sessions, and measured always-on budgets keep the cockpit fast.",
+      "before": "Always-on essays, idle tool catalogs, and repeated quick checks made every turn reread more context than the work required.",
+      "after": "Thin skills, requestable rules, one bounded diagnostic pass, and explicit no-model-as-sensor guidance keep the cockpit accountable.",
       "harness": [
         "Always-on diet",
         "Lean tool sessions",
-        "Encode the second burn"
+        "One bounded diagnostic pass",
+        "Token-discipline regression traces"
       ],
-      "lesson": "Optimising tokens is how the working relationship stays affordable — not stinginess."
+      "lesson": "Cached context and quick checks still consume allowance. Measure once, keep unlike ledgers separate, and never mutate during an audit."
     },
     {
       "id": "bounded-tool-results",
