@@ -13,6 +13,9 @@ One or two sentences. Link/PR if useful. Why a reader would care.
 
 ## Inbox
 
+### 2026-09-14 — Borrow the lifecycle, not the harness
+We evaluated a preview agent runtime behind a tagged rollback baseline, a disposable environment, and a no-production-credentials boundary instead of adopting it on reputation. The part that earned its keep was **spatiotemporal composability**—consumers wait for providers, recompose when providers change, and own their cleanup—so we ported that small primitive into the existing harness and made zero-resource teardown a critical regression gate; the second runtime did not earn its build, disk, and duplicated-control-plane tax.
+
 ### 2026-08-19 — Sensor cheaper than the work
 Included Ultra ≠ $0 (price tokens). Watcher Tasks / gh run watch are the anti-pattern. Timers + Usage CSV + specialist CNC channel. Promoted same day (Alex asked to update the site).
 
