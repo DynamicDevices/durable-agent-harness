@@ -28,7 +28,7 @@ Done when those eight are true. Then stop for the day.
 - Fail closed on secrets and irreversible send/publish. Capture secrets via desktop dialog into **Bitwarden** (Password Manager for humans; **Bitwarden Secrets Manager** for machine tokens) — never into chat.
 - Prefer **trash over hard delete**: move files to the OS/project trash so mistakes stay recoverable (not a third always-on P0 — still do it).
 - Capture sparks for the public blog in [`blog-inbox.md`](blog-inbox.md) — do **not** publish the inbox. Promote at EOW or skip.
-- Public site shape is locked at **v1.1** — see [`BASELINE-v1.1.md`](BASELINE-v1.1.md). Improve pack/notes at EOW; don’t casually rewrite the IA mid-week.
+- Public site shape is locked at **v1.2** — see [`BASELINE-v1.2.md`](BASELINE-v1.2.md). Improve pack/notes at EOW; don’t casually rewrite the IA mid-week.
 
 ## Canonical URLs
 

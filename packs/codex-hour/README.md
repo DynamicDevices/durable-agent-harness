@@ -19,7 +19,7 @@ Repo: <https://github.com/DynamicDevices/durable-agent-harness>
 
 | Path | Role |
 |---|---|
-| `AGENTS.md` | Two fail-closed project boundaries plus proof-first working agreements |
+| `AGENTS.md` | Two fail-closed boundaries plus proof-first and bounded-diagnostic working agreements |
 | `.agents/skills/example-domain-task/SKILL.md` | On-demand Agent Skill — **rename to your job** |
 | `patterns/WORKING-PATTERNS.md` | Pattern registry with signed-off examples |
 | `clocks.json` | Tenure clock stub — set `harness.start` today |
@@ -34,6 +34,8 @@ irreversible action.
 
 - Paste API keys or passwords into chat “just this once”
 - Turn `AGENTS.md` into an essay paid on every task
+- Use model turns for unrequested polling or repeated quick checks
+- Let a read-only audit perform cleanup
 - Treat worktree isolation as permission for two agents to edit the same tree
 - Declare victory because the agent wrote a plan
 

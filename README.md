@@ -4,7 +4,7 @@
 
 🌐 **Site:** <https://chopwoodcarrywater.uk/>  
 📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>  
-🏷️ **Baseline:** v1.1 (2026-09-05) in [BASELINE-v1.1.md](BASELINE-v1.1.md) · historical [v1.0.0](https://github.com/DynamicDevices/durable-agent-harness/releases/tag/v1.0.0)
+🏷️ **Baseline:** v1.2 (2026-09-12) in [BASELINE-v1.2.md](BASELINE-v1.2.md) · previous [v1.1](BASELINE-v1.1.md)
 🤖 **Agents:** [AGENTS.md](AGENTS.md) · <https://chopwoodcarrywater.uk/agents.html>
 
 First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
@@ -77,4 +77,4 @@ See [LICENSE](LICENSE) for the split.
 
 ---
 
-*AI-assisted (Cursor) under Alex’s direction. Use at your own risk.*
+*AI-assisted (Codex) under Alex’s direction. Use at your own risk.*

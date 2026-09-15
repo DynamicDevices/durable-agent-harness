@@ -1,7 +1,7 @@
 {
   "name": "durable-agent-harness",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Public notebook on building a durable AI agent harness",
   "scripts": {
     "insight:new": "python3 scripts/new_insight.py",

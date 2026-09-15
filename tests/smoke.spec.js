@@ -1,6 +1,21 @@
 const { test, expect } = require("@playwright/test");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const ROOT = path.resolve(__dirname, "..");
 
 test.describe("Durable Agent Harness site", () => {
+  test("Codex pack retains bounded diagnostic guidance", async () => {
+    const guidance = fs.readFileSync(
+      path.join(ROOT, "packs", "codex-hour", "AGENTS.md"),
+      "utf8",
+    );
+    const compact = guidance.replace(/\s+/g, " ");
+    expect(compact).toContain("Do not use model turns as background sensors");
+    expect(compact).toContain("one bounded pass");
+    expect(compact).toContain("cleanup is a separate request");
+  });
+
   test("hero brands first and primary CTA works", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true", { timeout: 20000 });
@@ -45,6 +60,8 @@ test.describe("Durable Agent Harness site", () => {
     );
     await expect(page.getByTestId("agents-hour")).toHaveAttribute("href", "./#hour");
     await expect(page.getByTestId("agents-steps").locator(".step-card")).toHaveCount(6);
+    await expect(page.getByTestId("page-agents")).toContainText("background sensors");
+    await expect(page.getByTestId("page-agents")).toContainText("one bounded evidence pass");
   });
 
   test("section Zen epigraphs render", async ({ page }) => {
@@ -174,7 +191,7 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#privacy");
     await expect(page.getByTestId("section-privacy")).toContainText("Alex Lennon");
     await expect(page.getByTestId("section-privacy")).toContainText("@embedded_iot");
-    await expect(page.getByTestId("about-baseline")).toContainText("v1.1.0");
+    await expect(page.getByTestId("about-baseline")).toContainText("v1.2.0");
     await expect(page.getByTestId("about-license")).toContainText("CC BY-SA 4.0");
     await expect(page.getByTestId("section-privacy")).not.toContainText("Active-ESL");
   });
@@ -187,6 +204,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("section-blog")).not.toContainText("Not a content calendar");
     await expect(page.getByTestId("blog-v1-baseline")).toContainText("v1.0");
     await expect(page.getByTestId("blog-the-cockpit-changed-the-work-did-not")).toContainText("Codex");
+    await expect(page.getByTestId("blog-quick-check-is-still-a-model-turn")).toContainText("model turn");
     await expect(page.getByTestId("blog-notebook-at-eow")).toContainText("EOW");
     await expect(page.getByTestId("blog-start-in-60-minutes")).toContainText("60 minutes");
     await expect(page.getByTestId("blog-preloop-openrouter-pr-checks")).toContainText(

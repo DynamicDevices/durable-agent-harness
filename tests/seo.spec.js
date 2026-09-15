@@ -73,7 +73,7 @@ test.describe("search and social discovery", () => {
     expect(robots).toContain(`Sitemap: ${ORIGIN}/sitemap.xml`);
     expect(sitemap).toContain(`<loc>${ORIGIN}/</loc>`);
     expect(sitemap).toContain(`<loc>${ORIGIN}/agents.html</loc>`);
-    expect(sitemap).toContain("<lastmod>2026-09-05</lastmod>");
+    expect(sitemap).toContain("<lastmod>2026-09-12</lastmod>");
     expect(feed).toContain(`<link>${ORIGIN}/</link>`);
   });
 });
