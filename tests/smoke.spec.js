@@ -85,7 +85,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.getByTestId("site-notice")).toContainText("own risk");
     await expect(page.getByTestId("site-notice")).toContainText("CC BY-SA 4.0");
     await expect(page.getByTestId("hour-paths")).toContainText("Playbook");
-    await expect(page.getByTestId("hour-paths")).toContainText("Blog");
+    await expect(page.getByTestId("hour-paths")).toContainText("Insights");
     await expect(page.getByTestId("hour-paths")).toContainText("Kaizen → Toyota Way Practices");
     await expect(page.getByTestId("hour-paths")).toContainText("Preloop + OpenRouter");
     await expect(page.getByTestId("hour-paths")).toContainText("Channels & lean");
@@ -182,7 +182,7 @@ test.describe("Durable Agent Harness site", () => {
   test("blog posts render in first person", async ({ page }) => {
     await page.goto("/#blog");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
-    await expect(page.getByTestId("section-blog")).toContainText("Blog");
+    await expect(page.getByTestId("section-blog")).toContainText("Insights");
     await expect(page.getByTestId("section-blog")).toContainText("What broke");
     await expect(page.getByTestId("section-blog")).not.toContainText("Not a content calendar");
     await expect(page.getByTestId("blog-v1-baseline")).toContainText("v1.0");

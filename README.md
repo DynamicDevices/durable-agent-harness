@@ -11,7 +11,7 @@ First-person voice, short blog, playbook, patterns, and honest measurement — p
 
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
-Site SEO includes canonical URLs, per-note Open Graph / Twitter cards,
+Site SEO includes canonical URLs, per-insight Open Graph / Twitter cards,
 `BlogPosting` JSON-LD, RSS, `robots.txt`, `llms.txt`, and a real-URL sitemap.
 Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 
@@ -29,7 +29,7 @@ Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
 | **Cases** | Before/after outcomes that show the harness at work |
 | **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
-| **Blog** | What broke / locked / earned a place on disk — sparks in [`blog-inbox.md`](blog-inbox.md), published at EOW |
+| **Insights** | What broke / locked / earned a place on disk — sparks in [`blog-inbox.md`](blog-inbox.md), published at EOW |
 | **About** | Notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
 
 ## Local check
@@ -37,12 +37,24 @@ Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 ```bash
 npm install
 npx playwright install chromium
-npm run cards     # regenerate 1200×627 note cards (Pillow)
+npm run cards     # regenerate 1200×627 insight cards (Pillow)
 npm test          # sync + privacy gate + Playwright (desktop + mobile)
 npm run serve     # http://127.0.0.1:4173
 ```
 
-`content/blog.json` is the note source of truth. `npm run sync` renders static
+Start a private insight package from a rough thought or UTF-8 transcript:
+
+```bash
+npm run insight:new -- --title "The working title" --text "The first thought"
+npm run insight:new -- --title "The working title" --input ~/Downloads/transcript.txt
+```
+
+Drafts default to a private directory outside this public repository and are
+not published automatically. Use `--output-root` to select another private
+location. After publishing the associated LinkedIn post, add its HTTPS URL as
+`discussionUrl` so the article invites readers to join that conversation.
+
+`content/blog.json` is the insight source of truth. `npm run sync` renders static
 `docs/notes/*.html`, `feed.xml`, `sitemap.xml` and `llms.txt`; GitHub Pages
 serves `docs/` from `main`. Review the PR and local Lighthouse results before
 merging. After production publish, run new URLs through LinkedIn Post Inspector.

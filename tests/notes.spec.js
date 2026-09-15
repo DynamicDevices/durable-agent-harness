@@ -35,6 +35,8 @@ test.describe("shareable notes", () => {
 
       await expect(page.locator("main h1")).toHaveCount(1);
       await expect(page.locator("main h1")).toHaveText(post.title);
+      await expect(page.locator("nav a", { hasText: "Insights" })).toHaveCount(1);
+      await expect(page.getByText("Share this insight", { exact: true })).toBeVisible();
       await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", canonical);
       await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", post.summary);
       expect(post.summary.length).toBeGreaterThanOrEqual(50);
@@ -65,11 +67,21 @@ test.describe("shareable notes", () => {
       const card = page.locator(".note-hero img");
       await expect(card).toHaveJSProperty("naturalWidth", 1200);
       await expect(card).toHaveJSProperty("naturalHeight", 627);
-      await expect(card).toHaveAttribute("alt", /Illustrated title card/);
-      await expect(page.locator('a[href*="linkedin.com/sharing/share-offsite/"]')).toHaveAttribute(
-        "href",
-        new RegExp(encodeURIComponent(canonical).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+      await expect(card).toHaveAttribute(
+        "alt",
+        post.imageAlt || `Illustrated title card for ${post.title}`,
       );
+      if (post.discussionUrl) {
+        await expect(page.getByRole("link", { name: "Join the discussion on LinkedIn" })).toHaveAttribute(
+          "href",
+          post.discussionUrl,
+        );
+      } else {
+        await expect(page.locator('a[href*="linkedin.com/sharing/share-offsite/"]')).toHaveAttribute(
+          "href",
+          new RegExp(encodeURIComponent(canonical).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+        );
+      }
 
       const copy = page.locator(".copy-link");
       await expect(copy).toHaveAttribute("data-copy-url", canonical);

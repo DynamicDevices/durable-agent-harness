@@ -1163,6 +1163,13 @@ section h2 {
   box-shadow: var(--shadow);
 }
 
+.note-hero figcaption {
+  margin-top: 0.7rem;
+  color: var(--graphite);
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+}
+
 .note-body {
   max-width: 46rem;
   color: #283833;
@@ -1173,6 +1180,34 @@ section h2 {
 
 .note-body p {
   margin: 0 0 1.35rem;
+}
+
+.note-sources {
+  max-width: 46rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.note-sources h2 {
+  margin: 0 0 0.8rem;
+  color: var(--carbon);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.note-sources ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.note-sources li {
+  margin-bottom: 0.55rem;
+}
+
+.note-sources a {
+  color: var(--water);
+  text-underline-offset: 0.18em;
 }
 
 .note-footer {

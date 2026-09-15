@@ -74,6 +74,16 @@ def fit_lines(draw: ImageDraw.ImageDraw, text: str, max_width: int) -> tuple[lis
 
 
 def draw_card(post: dict, index: int) -> None:
+    path = OUT / f"{post['id']}-og.png"
+    if post.get("customCard"):
+        if not path.exists():
+            raise FileNotFoundError(f"Custom card is missing: {path}")
+        with Image.open(path) as custom:
+            if custom.size != (W, H):
+                raise ValueError(f"Custom card must be {W}x{H}: {path} is {custom.size}")
+        print(f"{path.relative_to(ROOT)} custom card preserved")
+        return
+
     image = background(index)
     draw = ImageDraw.Draw(image)
     draw.text((64, 44), "CHOP WOOD CARRY WATER", font=font(SPACE, 23), fill=CLOUD)
@@ -118,7 +128,6 @@ def draw_card(post: dict, index: int) -> None:
     draw.ellipse((905, 245, 1085, 425), outline=LIME, width=3)
     draw.rectangle((935, 275, 1055, 395), outline=TIMBER, width=6)
 
-    path = OUT / f"{post['id']}-og.png"
     image.save(path, optimize=True)
     print(f"{path.relative_to(ROOT)} {W}×{H} {path.stat().st_size} bytes")
 

@@ -1,11 +1,11 @@
-# Notes social-sharing contract
+# Insights social-sharing contract
 
 Checked: 2026-09-05
 
-Each published note has a stable page under
-`https://chopwoodcarrywater.uk/notes/`. The page owns the title, summary,
-preview image, dates and structured data used by search engines and social
-networks.
+Each published insight has a stable page under the legacy
+`https://chopwoodcarrywater.uk/notes/` path. The URL remains stable, while the
+public editorial label is **Insights**. The page owns the title, summary,
+preview image, dates and structured data used by search engines and social networks.
 
 ## Required page contract
 
@@ -19,6 +19,8 @@ networks.
 - one `BlogPosting` JSON-LD object with a 1200 × 627 `ImageObject`
 - LinkedIn share-offsite link using the canonical URL
 - Copy link button with an accessible live-region confirmation
+- optional `discussionUrl` pointing to the published LinkedIn post; when set,
+  this becomes the primary "Join the discussion" action
 - entry in `sitemap.xml`, `feed.xml` and `llms.txt`
 
 LinkedIn's composer supplies the reader's post text. Do not prefill it.
@@ -41,7 +43,7 @@ npm run sync
 npm test
 ```
 
-Run local mobile Lighthouse on the homepage and representative notes. A
+Run local mobile Lighthouse on the homepage and representative insights. A
 Lighthouse SEO score of 100 confirms the audited checks, not search ranking.
 After production publication, inspect each new canonical in LinkedIn Post
 Inspector to refresh and verify its cached preview.
