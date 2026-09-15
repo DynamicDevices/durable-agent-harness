@@ -1,10 +1,26 @@
 {
   "schema": "durable-agent-harness/glossary/v1",
-  "intro": "Shared language reduces arguments about tools. These are working definitions for this notebook.",
+  "intro": "Shared language reduces arguments about tools. Working definitions for this notebook — not a standards body.",
   "terms": [
     {
       "term": "Harness",
-      "def": "The durable layer around a model: skills, rules, memory, patterns, and human gates that make agent work reliable and repeatable."
+      "def": "The durable layer around a model and cockpit: skills, project guidance, memory, signed patterns, sensors, proof classes, host controls, and human gates that make agent work reliable and repeatable. In human-facing prose, I usually call this the working relationship."
+    },
+    {
+      "term": "Codex",
+      "def": "The primary cockpit in this notebook since 2026-08-30: tasks, managed worktrees, files, terminals, reviews and app tools around the code. It hosts the working relationship; it is not the whole working relationship."
+    },
+    {
+      "term": "Agent Skill",
+      "def": "A portable directory containing SKILL.md plus optional scripts, references and assets. Codex discovers skills by scope and loads the full instructions on demand through progressive disclosure."
+    },
+    {
+      "term": "AGENTS.md",
+      "def": "Codex project guidance loaded from global and repository scopes at task start. Use it for concise working agreements and local expectations; keep reusable job procedure in skills and security enforcement in host controls."
+    },
+    {
+      "term": "Worktree",
+      "def": "An isolated Git checkout used by a Codex task so repository state can change without disturbing the local checkout. It reduces collisions but does not remove one-writer ownership, branch constraints, review load or shared-resource limits."
     },
     {
       "term": "Skill",
@@ -12,7 +28,15 @@
     },
     {
       "term": "Rule",
-      "def": "A constraint the agent must honour. Prefer requestable rules; reserve always-on for true fail-closed P0s."
+      "def": "A constraint the agent must honour. Prefer requestable (pull when relevant); reserve always-on for Priority 0 (P0) fail-closed constraints only."
+    },
+    {
+      "term": "P0 (Priority 0)",
+      "def": "The highest-priority, fail-closed constraints that stay always-on in the agent harness. In this notebook’s starter pack there are two: (1) never put secrets in chat — capture into Bitwarden, (2) get explicit human approval before irreversible send/publish/destroy. A “P0 gate” is that human approval step. Not every rule is P0 — most should be requestable."
+    },
+    {
+      "term": "Trash delete",
+      "def": "Prefer moving files to the OS trash or a project trash folder over hard delete (rm). Recovery stays possible until trash is emptied on purpose. A signed pattern — not a third always-on P0 in the starter pack."
     },
     {
       "term": "Pattern",
@@ -35,8 +59,8 @@
       "def": "Honest reflection after work or on a cadence: what worked, what failed, keep / amend / retire. Feeds the next Kaizen."
     },
     {
-      "term": "TWP",
-      "def": "Toyota Way Practices — umbrella name for the lean learning cluster (Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people). Map to the member practice that matches the pain."
+      "term": "Toyota Way Practices",
+      "def": "Umbrella name for the lean learning cluster (Kaizen/Hansei, poka-yoke, muda/jidoka, shoshin, kyosei, respect for people). Map to the member practice that matches the pain."
     },
     {
       "term": "Gemba",
@@ -44,11 +68,23 @@
     },
     {
       "term": "Preloop",
-      "def": "A runtime policy and audit plane for agent tool use. Layer under human P0 gates — do not replace send/secrets/irreversible consent. Docs: docs.preloop.ai"
+      "def": "A runtime policy and audit plane for agent tool use. Layer under human Priority 0 (P0) gates — do not replace send/secrets/irreversible consent. Docs: docs.preloop.ai"
     },
     {
       "term": "OpenRouter",
       "def": "A multi-model API router across providers, with provider failover and optional model fallbacks. Transport for model calls — not a substitute for skills, rules, or proof class."
+    },
+    {
+      "term": "Preloop commit status",
+      "def": "A GitHub commit status (context `preloop`) posted by a Preloop Cloud pull-request reviewer after it looks at a PR SHA. CI can optionally wait on that status before burning self-hosted runners. Separate plane from Preloop’s desktop MCP firewall in Cursor."
+    },
+    {
+      "term": "Bitwarden Password Manager",
+      "def": "Human credential vault. Logins and passwords live here — captured via desktop dialog, never pasted into the AI chat."
+    },
+    {
+      "term": "Bitwarden Secrets Manager",
+      "def": "Machine-secret plane for API tokens and agent-resolvable keys. Isolates captured tokens from the conversation and from the human Password Manager vault."
     },
     {
       "term": "Human gate",
@@ -76,7 +112,7 @@
     },
     {
       "term": "Token lean",
-      "def": "Deliberate reduction of always-on context tax: thin skills, requestable rules, lean MCP sessions, measure and cut catalog bloat."
+      "def": "Deliberate reduction of context tax: thin skills, requestable guidance, task-scoped tools, bounded results, and measurement of both the stable prefix and what enters during work."
     },
     {
       "term": "Desktop MCQ",
@@ -88,6 +124,18 @@
     }
   ],
   "faq": [
+    {
+      "q": "Why move from Cursor to Codex?",
+      "a": "Codex tasks, managed worktrees, app surfaces and handoff fit the current work better. The important result was architectural: portable Agent Skills survived, while project guidance and permissions stayed host-native. Cursor remains compatible rather than being erased from the history."
+    },
+    {
+      "q": "Can I copy Cursor .mdc rules into Codex?",
+      "a": "Not as enforcement. Translate the intent: use AGENTS.md for concise Codex project guidance, Codex sandboxing and permissions for host controls, and a visible human decision for consequential actions. Keep reusable procedures in Agent Skills."
+    },
+    {
+      "q": "Do Codex worktrees make parallel agents safe?",
+      "a": "They isolate repository state and reduce collisions. They do not budget human review, hardware benches, GPUs, runners or branch ownership. Keep one writer per tree and make handoffs explicit."
+    },
     {
       "q": "Is a giant system prompt a harness?",
       "a": "No. A harness is versioned, selective, and maintained. A giant always-on prompt is usually an unbudgeted tax."
@@ -113,16 +161,24 @@
       "a": "Skills/rules are procedures and constraints. MemPalace holds durable facts the loop needs (decisions, stances, tickets). Both compound; neither replaces the other."
     },
     {
-      "q": "What is Kaizen → Hansei → TWP?",
-      "a": "Kaizen improves and encodes; Hansei reviews honestly; TWP names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
+      "q": "What is Kaizen → Hansei → Toyota Way Practices?",
+      "a": "Kaizen improves and encodes; Hansei reviews honestly; Toyota Way Practices names the lean practice cluster so agents pick the right lens. Sequence: Gemba → Kaizen → Apply → Hansei → repeat."
+    },
+    {
+      "q": "What does P0 mean?",
+      "a": "Priority 0 — the short list of fail-closed, always-on agent rules. The starter pack’s two are: secrets never in chat, and a human gate before irreversible send/publish. Everything else should stay requestable so the always-on tax stays small."
     },
     {
       "q": "Does Preloop replace human approval?",
-      "a": "No. Layer it under P0 gates. Humans still own irreversible outbound and secrets. Preloop adds audit/policy on tool runtime."
+      "a": "No. Layer it under Priority 0 (P0) gates. Humans still own irreversible outbound and secrets. Preloop adds audit/policy on tool runtime."
     },
     {
       "q": "Why OpenRouter?",
-      "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies."
+      "a": "To avoid single-upstream lock-in: route across providers, fail over, and optionally fall back across models — while keys stay in a vault and proof class still applies. Same transport can serve Preloop’s PR reviewer."
+    },
+    {
+      "q": "How do Preloop and OpenRouter check PR commits?",
+      "a": "Preloop Cloud runs a pull-request reviewer on the push; OpenRouter is the model path. Preloop posts a GitHub commit status (`preloop`). Actions can wait on that status before expensive jobs, or leave reviews async. Humans still merge."
     },
     {
       "q": "Is WhatsApp part of the harness?",
@@ -131,6 +187,14 @@
     {
       "q": "How do you keep tokens under control?",
       "a": "Thin skill dispatchers, requestable-by-default rules, enable/unload specialty tools, split parallel lanes, and measure the always-on tax when sessions feel heavy."
+    },
+    {
+      "q": "Where do API keys and passwords go?",
+      "a": "Not into chat. Desktop capture into Bitwarden — Password Manager for human logins, Bitwarden Secrets Manager for machine/agent secrets — so values never enter the model context or transcript."
+    },
+    {
+      "q": "How often is this notebook updated?",
+      "a": "During end-of-week (EOW) reviews — not daily. If the week earned a blog note, pack tweak, or pattern change, ship it then. Skip empty weeks; no filler."
     }
   ]
 }

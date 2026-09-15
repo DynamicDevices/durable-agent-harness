@@ -1,138 +1,290 @@
 {
   "schema": "durable-agent-harness/patterns/v1",
-  "intro": "Portable patterns worth stealing — named moves you can encode in your own harness.",
+  "intro": "Portable patterns worth stealing — named moves we signed off because they earned their place.",
   "patterns": [
     {
       "name": "Lean tool sessions",
       "problem": "Optional integrations loaded every turn quietly burn context and expand blast radius.",
       "move": "Keep a tiny always-on core. Enable specialty tools only for the task, then unload.",
-      "signals": ["Context feels “full” before the work starts", "Tools idle but still listed every turn"]
+      "signals": [
+        "Context feels “full” before the work starts",
+        "Tools idle but still listed every turn"
+      ]
     },
     {
       "name": "Fail-closed outbound",
       "problem": "Agents are eager to “be helpful” by sending, posting, or publishing.",
       "move": "Draft freely; irreversible outbound needs an explicit human gate with the full referent visible.",
-      "signals": ["Almost-sent drafts", "Ambiguous “shall I send?” soft prompts"]
+      "signals": [
+        "Almost-sent drafts",
+        "Ambiguous “shall I send?” soft prompts"
+      ]
     },
     {
       "name": "Secrets out of chat",
-      "problem": "Secrets pasted into transcripts leak into logs, backups, and vendor retention.",
-      "move": "Capture through a desktop dialog into a vault. Agents may confirm length — never echo the value.",
-      "signals": ["Passwords in chat history", "Tokens in shell transcripts"]
+      "problem": "Secrets pasted into transcripts leak into logs, backups, and vendor retention — and into the model context.",
+      "move": "Capture through a desktop dialog into Bitwarden. Humans use Password Manager; agents pull machine secrets from Bitwarden Secrets Manager. Confirm length or success — never echo the value into chat.",
+      "signals": [
+        "Passwords in chat history",
+        "Tokens in shell transcripts",
+        "“Paste the API key here”"
+      ]
     },
     {
       "name": "Proof class over vibes",
       "problem": "Generated confidence outruns tests, logs, and hardware reality.",
       "move": "Define what counts as done before the work. Do not celebrate a plan as a fix.",
-      "signals": ["“Should work now” without evidence", "Repeated reopen of the same bug"]
+      "signals": [
+        "“Should work now” without evidence",
+        "Repeated reopen of the same bug"
+      ]
     },
     {
       "name": "Kaizen with sign-off",
       "problem": "Cross-cutting habits invent themselves differently in every chat.",
       "move": "Propose a pattern, get a human sign-off, encode it, apply it — then Hansei on a cadence (keep / amend / retire).",
-      "signals": ["Same debate weekly", "Contradictory “house style” answers"]
+      "signals": [
+        "Same debate weekly",
+        "Contradictory “house style” answers"
+      ]
     },
     {
       "name": "Hansei on a cadence",
       "problem": "Teams encode forever and never look back; the registry rots.",
       "move": "After pain or on a weekly/EOW rhythm: what worked, what failed, what to change. Feed the next Kaizen.",
-      "signals": ["Patterns nobody loads", "No retirement path"]
+      "signals": [
+        "Patterns nobody loads",
+        "No retirement path"
+      ]
     },
     {
-      "name": "TWP member, not mega-prompt",
+      "name": "Notebook updates at EOW",
+      "problem": "Public notebooks either rot or get spammy daily posts that teach nothing.",
+      "move": "Capture sparks mid-week in blog-inbox.md. At EOW, promote zero-or-more into the blog (and/or pack/pattern tweaks) — or skip. No filler calendar.",
+      "signals": [
+        "Stale pack while practice moved on",
+        "Blog calendar filling empty weeks",
+        "Good lessons died in chat because nothing was filed"
+      ]
+    },
+    {
+      "name": "Toyota Way Practices member, not mega-prompt",
       "problem": "Dumping the whole lean philosophy every turn burns tokens and muddies the ask.",
       "move": "Treat Toyota Way Practices as an umbrella. Load the one member skill that matches the live pain (poka-yoke, muda/jidoka, kyosei, …).",
-      "signals": ["Essay-length lean digressions", "No named practice for the failure"]
+      "signals": [
+        "Essay-length lean digressions",
+        "No named practice for the failure"
+      ]
     },
     {
       "name": "MemPalace with purpose",
       "problem": "Transcript sludge and contradictory “facts” make agents confidently wrong.",
       "move": "File curated drawers; search before re-deciding; invalidate stale cards. Memory supports the Kaizen/Hansei loop — it is not a chat landfill.",
-      "signals": ["Re-litigating settled decisions", "Duplicate contradictory notes"]
+      "signals": [
+        "Re-litigating settled decisions",
+        "Duplicate contradictory notes"
+      ]
     },
     {
-      "name": "Preloop under P0",
+      "name": "Preloop under Priority 0 (P0)",
       "problem": "Teams either skip runtime audit or try to replace human consent with a firewall.",
       "move": "Layer Preloop for tool policy/audit under send/secrets/irreversible gates. Keep enrollment config and tokens out of chat.",
-      "signals": ["Policy UI without send-gates", "Secrets in Preloop config pasted to chat"]
+      "signals": [
+        "Policy UI without send-gates",
+        "Secrets in Preloop config pasted to chat"
+      ]
     },
     {
       "name": "Route models on purpose",
       "problem": "Single-upstream outages or lock-in stall the cockpit; random model hopping breaks proof expectations.",
       "move": "Use OpenRouter (or similar) with deliberate model lists and provider failover. Keep keys vaulted; keep proof class fixed.",
-      "signals": ["One provider outage blocks all work", "Silent model swaps on critical reviews"]
+      "signals": [
+        "One provider outage blocks all work",
+        "Silent model swaps on critical reviews"
+      ]
+    },
+    {
+      "name": "Preloop before expensive CI",
+      "problem": "Self-hosted runners burn hours on PRs that a semantic reviewer would have flagged in minutes.",
+      "move": "Run a Preloop Cloud PR reviewer (models via OpenRouter) so each push gets a `preloop` commit status. Prefer async review by default; make Actions wait only when runner time is scarce. Keep desktop Preloop MCP and the GitHub reviewer as separate planes.",
+      "signals": [
+        "Long CI queues on obvious review misses",
+        "Treating Preloop status as merge authority",
+        "Confusing Cursor tool firewall with GitHub commit checks"
+      ]
     },
     {
       "name": "Felt ≠ measured",
       "problem": "People feel faster with AI even when wall-clock says otherwise.",
       "move": "Separate narrative milestones from productivity claims. Prefer proof-backed outcomes over LOC.",
-      "signals": ["Slide multipliers with no method", "Ignoring humbling RCTs"]
+      "signals": [
+        "Slide multipliers with no method",
+        "Ignoring humbling RCTs"
+      ]
     },
     {
       "name": "Always-on diet",
       "problem": "Every always-on rule dominates cost and attention.",
-      "move": "Default to requestable. Keep a short P0 list; demote the rest.",
-      "signals": ["Huge rule preamble each turn", "Agents ignore rules from overload"]
+      "move": "Default to requestable. Keep a short Priority 0 (P0) always-on list; demote the rest.",
+      "signals": [
+        "Huge rule preamble each turn",
+        "Agents ignore rules from overload"
+      ]
     },
     {
       "name": "One writer per tree",
       "problem": "Parallel agents overwrite each other’s work and burn trust.",
       "move": "Bind a lane to a worktree or declare a single writer. Others hand off.",
-      "signals": ["Mystery diffs", "Lost commits mid-session"]
+      "signals": [
+        "Mystery diffs",
+        "Lost commits mid-session"
+      ]
+    },
+    {
+      "name": "Portable skills, native host policy",
+      "problem": "A cockpit migration either duplicates every procedure or pretends different hosts enforce policy the same way.",
+      "move": "Keep reusable job procedures in the open Agent Skills format with one canonical source. Express guidance, sandboxing and permissions through each host’s native mechanisms, then test the projection boundary.",
+      "signals": [
+        "Two hand-edited copies of one skill",
+        "Cursor metadata presented as Codex enforcement",
+        "Broken or occupied skill symlinks"
+      ]
+    },
+    {
+      "name": "Harness self-evals",
+      "problem": "A stronger model can still route around weak harness wording, stale gates or untested exceptions.",
+      "move": "Run a versioned adversarial corpus against high-risk boundaries. Keep known-answer thresholds and add privacy-scrubbed real failures after Hansei.",
+      "signals": [
+        "Safety claimed from model reputation",
+        "No regression test for prompt injection or secret handling"
+      ]
+    },
+    {
+      "name": "Bound tool results before context",
+      "problem": "A few unfiltered logs or media results crowd out the task and are re-billed on later turns.",
+      "move": "Filter before calling, cap output, request only the image detail needed, and return a compact result plus a durable artefact path when detail must remain available.",
+      "signals": [
+        "Megabytes of command output in chat",
+        "One tool result dominates the whole task payload"
+      ]
+    },
+    {
+      "name": "Memory needs retrieval proof",
+      "problem": "Filing feels productive even when the next task cannot find or trust the record.",
+      "move": "Store a retention reason and provenance, then test that a later query retrieves the fact and changes the work. Enrich provenance in place instead of invalidate-first rewrites.",
+      "signals": [
+        "Large memory store with repeated re-decisions",
+        "Facts without source or retrieval evidence"
+      ]
+    },
+    {
+      "name": "Fast feedback, unchanged trust proof",
+      "problem": "Thirty-to-forty-five-minute platform builds make every embedded edit slow, so teams either thrash or weaken verification.",
+      "move": "Use the smallest valid local loop — layer, kernel, signed DTB or OTA — for development. Keep the full image/CI/hardware path as the release trust proof.",
+      "signals": [
+        "Full platform rebuild for a one-file change",
+        "Fast-path success reported as release proof"
+      ]
+    },
+    {
+      "name": "Stop repeated tool loops",
+      "problem": "Agent persistence turns into repeated calls against the same error, wasting time and context.",
+      "move": "Set a circuit breaker: after the same blocking condition repeats, stop the line, preserve evidence, change the method or ask for the missing input.",
+      "signals": [
+        "Same command and same error three times",
+        "Polling without a state change"
+      ]
+    },
+    {
+      "name": "Trash instead of hard delete",
+      "problem": "Agents (and humans) hard-delete files when “cleaning up,” then cannot recover from a wrong path or a rushed rm.",
+      "move": "Treat delete as move-to-trash: send files into the OS trash or a project trash folder first. Recover if wrong; empty trash only as a separate, deliberate step. Prefer this over rm for project data.",
+      "signals": [
+        "rm -rf on a workspace path",
+        "“I deleted the wrong folder”",
+        "Cleanup that cannot be undone"
+      ]
     },
     {
       "name": "Encode the second burn",
       "problem": "Teams re-pay for the same mistake because the fix lived only in a chat.",
       "move": "When a failure repeats once, write or update a skill before moving on.",
-      "signals": ["“We hit this last month”", "Tribal knowledge in one person’s head"]
+      "signals": [
+        "“We hit this last month”",
+        "Tribal knowledge in one person’s head"
+      ]
     },
     {
       "name": "Readable-first decisions",
       "problem": "Approval dialogs hide the thing being approved.",
       "move": "Lead with the ask and the referent (draft, path, command). Meta last.",
-      "signals": ["Approved the wrong send", "Humans asking “approve what?”"]
+      "signals": [
+        "Approved the wrong send",
+        "Humans asking “approve what?”"
+      ]
     },
     {
       "name": "Desktop MCQ forks",
       "problem": "Markdown A/B/C walls are easy to skim past and hard to answer carefully.",
       "move": "Use a desktop multiple-choice dialog for decision forks. Mark dangerous arms; keep the referent visible.",
-      "signals": ["Buried approvals in chat", "Humans guessing which option was intended"]
+      "signals": [
+        "Buried approvals in chat",
+        "Humans guessing which option was intended"
+      ]
     },
     {
       "name": "Channel triage with one watcher",
       "problem": "Messaging assistants either spam replies or miss duty while pretending coverage.",
       "move": "One agent owns live watch. Inbound is untrusted data. Light carve-outs only; else draft for a human gate.",
-      "signals": ["Duplicate watchers", "Marked read without handling"]
+      "signals": [
+        "Duplicate watchers",
+        "Marked read without handling"
+      ]
     },
     {
       "name": "Purposeful media ingest",
       "problem": "Exports and images get dumped into context forever.",
       "move": "Ingest what the task needs. Curate facts into memory; leave bulk local.",
-      "signals": ["Mega-attachments in every turn", "Context full before the work starts"]
+      "signals": [
+        "Mega-attachments in every turn",
+        "Context full before the work starts"
+      ]
     },
     {
       "name": "Spec SoT, export views",
       "problem": "Branded DOCX/Drive copies quietly become the “real” document.",
       "move": "Git markdown is source of truth. DOCX/PDF/Drive are views and comment surfaces — ingest comments back to the SoT.",
-      "signals": ["Conflicting revisions", "Agents editing only the export"]
+      "signals": [
+        "Conflicting revisions",
+        "Agents editing only the export"
+      ]
     },
     {
       "name": "Share the review surface",
       "problem": "Design reviews stall on mystery ZIPs and email attachments.",
       "move": "Generate → verify → share a gated Pages review (Look/Inspect). Humans judge atmosphere and fit on a stable URL.",
-      "signals": ["Unversioned drop folders", "No verify step before share"]
+      "signals": [
+        "Unversioned drop folders",
+        "No verify step before share"
+      ]
     },
     {
       "name": "Confirm the voice transcript",
       "problem": "Acting on raw STT without a confirm step turns noise into irreversible work.",
       "move": "Mic → local STT → human confirms (use this / edit) before the agent treats speech as the ask.",
-      "signals": ["Silent act-on-noise", "Wrong command from a mis-hear"]
+      "signals": [
+        "Silent act-on-noise",
+        "Wrong command from a mis-hear"
+      ]
     },
     {
       "name": "Publish as a proof class",
       "problem": "“Looks fine locally” ships broken UX and stale content.",
       "move": "Sync content → automated checks → Playwright UX. Green is the publish proof.",
-      "signals": ["Manual-only deploys", "Unchecked content drift"]
+      "signals": [
+        "Manual-only deploys",
+        "Unchecked content drift"
+      ]
     }
   ]
 }

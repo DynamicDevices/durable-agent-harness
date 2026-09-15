@@ -1,7 +1,18 @@
 {
   "schema": "durable-agent-harness/stack/v1",
-  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes it reliable.",
+  "intro": "A harness is the durable layer around a model: procedures, constraints, memory, patterns, and human gates. The model is powerful; the harness is what makes Monday morning repeatable.",
   "layers": [
+    {
+      "id": "cockpit",
+      "title": "Cockpit",
+      "subtitle": "Codex primary · Cursor compatible",
+      "body": "Codex is now the daily task, worktree and review surface. Cursor remains supported. Neither owns the working relationship: portable skills and proof classes outlive the host; guidance and permissions stay native to it.",
+      "tips": [
+        "Codex project guidance in AGENTS.md",
+        "Portable procedures in Agent Skills",
+        "Worktrees isolate state; one writer still owns each tree"
+      ]
+    },
     {
       "id": "skills",
       "title": "Skills",
@@ -25,6 +36,17 @@
       ]
     },
     {
+      "id": "vault",
+      "title": "Secrets vault (Bitwarden)",
+      "subtitle": "Two planes — humans vs agents",
+      "body": "Captured passwords and API tokens must never enter the AI conversation. We use Bitwarden Password Manager for human logins and Bitwarden Secrets Manager for machine secrets agents resolve — filled through desktop dialogs, not chat paste.",
+      "tips": [
+        "Desktop capture → vault; agent confirms length only",
+        "Password Manager ≠ Secrets Manager — keep the planes separate",
+        "Never put vault tokens or secret values in skills, git, or chat"
+      ]
+    },
+    {
       "id": "memory",
       "title": "Memory (MemPalace)",
       "subtitle": "Curated palace, not a transcript dump",
@@ -33,18 +55,19 @@
         "Write with a retention reason",
         "File by wing/room so agents can find the shelf",
         "Invalidate stale facts instead of stacking contradictions",
-        "Cite memory in Kaizen/Hansei — do not re-litigate whole chats"
+        "Enrich provenance instead of invalidate-first rewrites",
+        "Prove later retrieval helped before calling a memory durable"
       ]
     },
     {
       "id": "patterns",
       "title": "Patterns",
-      "subtitle": "Kaizen → Hansei → TWP",
-      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices (TWP); patterns are the registry that makes Kaizen real.",
+      "subtitle": "Kaizen → Hansei → Toyota Way Practices",
+      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices; patterns are the registry that makes Kaizen real.",
       "tips": [
         "No silent promotion to signed-off",
         "Hansei keeps / amends / retires — on a cadence",
-        "TWP names the cluster; load the member practice for the live pain",
+        "Toyota Way Practices names the cluster; load the member practice for the live pain",
         "Encode into skills/rules where agents will load them"
       ]
     },
@@ -64,7 +87,7 @@
       "id": "runtime",
       "title": "Runtime + routing",
       "subtitle": "Preloop · OpenRouter",
-      "body": "Preloop adds a durable policy/audit plane on tool use. OpenRouter adds multi-model routing with provider failover and optional model fallbacks. Both serve the harness; neither is the harness.",
+      "body": "Preloop adds a durable policy/audit plane on tool use — and a Cloud PR reviewer that posts a `preloop` commit status. OpenRouter routes models for the cockpit and that reviewer. Both serve the harness; neither is the harness.",
       "tips": [
         "Keep keys in a vault",
         "Document methods, not enrollment secrets",
@@ -79,7 +102,8 @@
       "tips": [
         "Declare owns / never at session start",
         "Handoffs are explicit tickets",
-        "Do not run two writers on one tree"
+        "Do not run two writers on one tree",
+        "Budget review load and scarce host/bench resources"
       ]
     },
     {
@@ -97,11 +121,23 @@
       "id": "token_lean",
       "title": "Token lean",
       "subtitle": "Context is rent",
-      "body": "Measure always-on tax. Keep skills thin, rules requestable, specialty tools enable/unload, and parallel lanes instead of mega-prompts.",
+      "body": "Measure always-on tax and tool-result payloads. Keep skills thin, rules requestable, specialty tools task-scoped, and parallel lanes bounded instead of growing one mega-context.",
       "tips": [
         "SKILL.md short; reference.md deep",
         "Pulse when sessions feel heavy",
-        "Catalog bloat is a bug"
+        "Catalog bloat is a bug",
+        "Bound tool output before it enters the conversation"
+      ]
+    },
+    {
+      "id": "evals",
+      "title": "Harness self-evals",
+      "subtitle": "Test the guardrails, not only the code",
+      "body": "A versioned adversarial corpus exercises secrets, consequential writes, prompt injection and tool-loop behavior. Sensors and circuit breakers catch drift before confidence becomes policy.",
+      "tips": [
+        "Keep a known-answer corpus and thresholds",
+        "Add real failures after privacy review",
+        "Stop repeated tool/error loops explicitly"
       ]
     }
   ]

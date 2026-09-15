@@ -1,48 +1,81 @@
 {
   "schema": "durable-agent-harness/runtime/v1",
-  "title": "Runtime layer: Preloop + OpenRouter",
-  "intro": "Two recent additions sit under the harness, not instead of it: Preloop for runtime policy/audit on tool use, and OpenRouter for multi-model routing.",
-  "stance": "Layer runtime controls under human P0 gates (send, secrets, irreversible publish). A policy firewall does not replace consent.",
+  "title": "Runtime layers beyond the cockpit",
+  "intro": "Preloop and OpenRouter remain useful separate planes, not the Codex runtime itself: Preloop for policy/audit and PR review flows, OpenRouter when an external workflow needs deliberate multi-model routing. The cockpit migration made that boundary clearer.",
+  "stance": "Runtime controls sit under human Priority 0 (P0) gates — send, secrets, irreversible publish. A policy firewall is not consent. A PR review bot is not a merge button.",
   "preloop": {
     "title": "Preloop",
-    "lede": "Preloop is a runtime policy and audit plane for agent tool use. We layer it under Cursor\u2019s existing fail-closed gates \u2014 it does not replace human send approval, secrets-out-of-chat, or git fail-closed.",
+    "lede": "Preloop is an optional policy and audit plane for agent tool use and Cloud review flows. It layers under host controls and human gates — it does not replace Codex sandboxing/permissions, send approval, secrets-out-of-chat, or git fail-closed.",
     "docs": "https://docs.preloop.ai",
     "practices": [
-      "Treat Preloop as a durable runtime companion for MCP/tool audit and approvals UI \u2014 not as the only safety system.",
+      "Treat Preloop as a runtime companion for selected MCP/tool audit and Cloud flows — not as the only safety system.",
       "Keep human gates for irreversible outbound and secret handling; Preloop adds another inspection layer.",
       "Prefer lean builtins for approvals; do not let policy tooling become a second always-on essay.",
       "Keep enrollment tokens and local Preloop config secrets out of skills and chat."
     ],
     "not": [
-      "Not a substitute for P0 send-gates or secrets capture dialogs.",
+      "Not a substitute for Priority 0 (P0) send-gates or secrets capture dialogs.",
       "Not a reason to auto-approve destructive shell or publish actions.",
       "Not a place to store API tokens in the harness tree."
     ]
   },
   "openrouter": {
     "title": "OpenRouter",
-    "lede": "OpenRouter is a multi-model API router. On this account, Preloop Cloud\u2019s default LLM is openrouter/auto-beta (Auto Router Beta) via the Preloop OpenAI-compatible gateway \u2014 not Cursor\u2019s bundled Agent/Composer models.",
+    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. It serves external model workflows and Preloop review flows when routing earns its keep; it is not how the Codex app reaches its models.",
     "docs": "https://openrouter.ai/docs",
-    "verified": "2026-08-10",
-    "preloop_default": {
-      "model_identifier": "openrouter/auto-beta",
-      "provider_name": "openrouter",
-      "gateway": "https://preloop.ai/openai/v1",
-      "switched_from": "deepseek/deepseek-v4-flash-0731",
-      "switched_at": "2026-08-09",
-      "skill_sot": "cursor-config skills/agent-runtime-security/reference.md \u00a7 OpenRouter"
+    "verified": "2026-09-15",
+    "preloopReviewRoute": {
+      "agent": "Codex",
+      "model": "openrouter/auto",
+      "scope": "Public, repository-bound, on-demand PR reviews"
     },
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
-      "Prefer openrouter/auto-beta for Preloop Cloud flows unless a fixed model is required for proof class.",
-      "Keep API keys in Preloop / vault \u2014 never in chat or skills.",
-      "Do not confuse OpenRouter gateway Cost with Cursor bundled-model spend."
+      "Choose a model available to the execution credential, then prove repository checkout, tool execution, and structured result capture end to end.",
+      "Use provider failover for uptime; use explicit model fallback lists when you accept a different model answering.",
+      "Keep API keys in Bitwarden Secrets Manager — never in chat or skills.",
+      "Measure comfort vs cost: routing flexibility is not an excuse to skip proof class."
     ],
     "not": [
-      "Not a replacement for skills/rules/memory \u2014 it is transport for model calls.",
-      "Not day-to-day Cursor Composer routing unless Models base URL points at Preloop gateway.",
-      "Not \u201cset and forget\u201d for data-retention or ZDR choices; configure deliberately when it matters."
+      "Not a replacement for skills/rules/memory — it is transport for model calls.",
+      "Not the model path for the Codex app.",
+      "Not “set and forget” for data-retention or ZDR choices; configure deliberately when it matters.",
+      "Not a productivity multiplier claim by itself."
     ]
   },
-  "together": "Harness (skills/rules/MemPalace/Kaizen\u2192Hansei\u2192TWP) steers behaviour. Preloop audits and gates tool runtime (laptop) and runs Cloud PR flows (AESL/DD) on openrouter/auto-beta. OpenRouter routes that model capacity. Humans still own irreversible actions."
+  "prChecks": {
+    "title": "PR / commit checks",
+    "lede": "On product repos I wire Preloop Cloud as a pull-request reviewer and OpenRouter as the model path behind it. The point is shift-left: catch semantic issues on the commit before self-hosted CI eats the afternoon.",
+    "steps": [
+      {
+        "title": "Push the PR commit",
+        "body": "Ordinary git push. No special local ritual — the check lives in Cloud + GitHub, not in a fat always-on prompt."
+      },
+      {
+        "title": "Preloop reviewer runs",
+        "body": "A Preloop Cloud pull-request reviewer flow looks at the change set. Models are reached through OpenRouter (first-class routing on the Preloop gateway — not a one-off script in the repo)."
+      },
+      {
+        "title": "Commit status posts",
+        "body": "Preloop posts a GitHub commit status (context `preloop`) — pass / fail / pending — against that SHA. Comments or findings can land on the PR as well."
+      },
+      {
+        "title": "CI can wait (optional gate)",
+        "body": "GitHub Actions that burn self-hosted runners can wait for that `preloop` status before starting. Flip the gate on when you want ordering; leave reviews async when you only want the signal."
+      }
+    ],
+    "practices": [
+      "Treat the Preloop status as a review signal, not as merge authority — humans still merge.",
+      "Keep OpenRouter keys in Bitwarden Secrets Manager (or the vault Preloop Cloud uses); never in workflow YAML or chat.",
+      "Prefer async review by default; make CI wait only when runner time is scarce or the failure mode is expensive.",
+      "When the gate is on, fix or skip with an explicit, rare bypass — do not normalise “ignore Preloop”.",
+      "Keep desktop tool audit, Codex host controls, and the GitHub PR-reviewer flow mentally separate — related safeguards, different planes."
+    ],
+    "not": [
+      "Not a replacement for unit tests, hardware proof, or Bugbot / human review.",
+      "Not a reason to paste secrets into GitHub Actions logs “so the reviewer can see them”.",
+      "Not the same thing as Preloop’s desktop MCP approvals in Cursor."
+    ]
+  },
+  "together": "The durable working relationship — skills, guidance, memory, signed patterns and proof — steers behaviour. Codex owns its model path, sandbox and permissions. Preloop can audit selected tool flows and review PR commits; OpenRouter routes external model capacity for those workflows. CI may wait on the review signal. Humans still own consequential actions and merges."
 }

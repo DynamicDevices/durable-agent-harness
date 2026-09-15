@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/clocks/v1",
-  "as_of": "2026-08-08",
-  "note": "Public tenure clocks for the engineering narrative. Starts are intentional; they are not a claim about first-ever LLM curiosity.",
+  "as_of": "2026-09-05",
+  "note": "Public tenure clocks for the engineering story. The start dates are intentional; they’re not a claim about the first time I ever touched an LLM.",
   "clocks": [
     {
       "id": "serious_ai",
@@ -13,7 +13,13 @@
       "id": "cursor",
       "label": "Cursor",
       "start": "2025-07-23",
-      "blurb": "Agentic IDE work as the daily cockpit: repos, tools, and proof loops in one place."
+      "blurb": "The first daily agentic cockpit: repos, tools, and proof loops in one place."
+    },
+    {
+      "id": "codex",
+      "label": "Codex as cockpit",
+      "start": "2026-08-30",
+      "blurb": "Daily work moved into Codex tasks, worktrees, app surfaces, and shared Agent Skills."
     },
     {
       "id": "harness",

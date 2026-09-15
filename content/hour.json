@@ -1,0 +1,100 @@
+{
+  "schema": "durable-agent-harness/hour/v1",
+  "title": "Start in 60 minutes",
+  "intro": "Don’t read the whole notebook. Get a thin working relationship into Codex in about an hour — or take the original Cursor pack if that is still your cockpit.",
+  "promise": "When you finish you have: two fail-closed boundaries, one on-demand skill, one signed pattern, and two tenure clocks. That’s enough to stop the next stupid burn.",
+  "pack": {
+    "zip": "packs/codex-hour-starter.zip",
+    "browse": "packs/codex-hour/README.md",
+    "download": "codex-hour-starter.zip",
+    "label": "Download Codex pack (.zip)",
+    "browseLabel": "Read Codex README",
+    "alternates": [
+      {
+        "zip": "packs/cursor-hour-starter.zip",
+        "browse": "packs/cursor-hour/README.md",
+        "download": "cursor-hour-starter.zip",
+        "label": "Download Cursor pack",
+        "browseLabel": "Read Cursor README"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "id": "1",
+      "minutes": 5,
+      "title": "Download the pack",
+      "why": "Empty templates invite dithering. This pack is already named and filled with boring defaults you can rename.",
+      "do": "Download the zip (or browse the files). Unzip next to a scratch project — or into a small git repo you control.",
+      "proof": "You can see README.md, AGENTS.md and a .agents/skills tree on disk."
+    },
+    {
+      "id": "2",
+      "minutes": 10,
+      "title": "Drop files where Codex loads them",
+      "why": "A harness that lives only in chat dies when the chat dies.",
+      "do": "Copy `AGENTS.md` and `.agents/` into your project root. Start a new Codex task so project guidance is read from the beginning and the skill is discovered.",
+      "proof": "Codex can name the project guidance and the example-domain-task skill."
+    },
+    {
+      "id": "3",
+      "minutes": 10,
+      "title": "Rename the skill to your real job",
+      "why": "Generic skills don’t fire. Trigger nouns must match how you talk.",
+      "do": "Edit skills/example-domain-task/SKILL.md: change the name, description triggers, When/Do steps, and Proof of done to one task you do weekly.",
+      "proof": "You can say the trigger phrase out loud and it matches the description."
+    },
+    {
+      "id": "4",
+      "minutes": 10,
+      "title": "Keep two fail-closed boundaries",
+      "why": "Secrets in chat and silent consequential writes are the burns that don’t forgive. The host mechanism may change; the boundary must not.",
+      "do": "Read the two boundaries in AGENTS.md: secrets stay out of chat, and consequential writes need a visible human decision. Keep the file short. Use Codex sandboxing and permissions as separate host controls.",
+      "proof": "You can explain each boundary, its decision point, and what the host enforces separately."
+    },
+    {
+      "id": "5",
+      "minutes": 10,
+      "title": "Sign off one pattern",
+      "why": "Unsigned patterns are just opinions. Sign-off is what makes Kaizen real.",
+      "do": "Open patterns/WORKING-PATTERNS.md. Keep a signed-off row that matches a real failure (the pack ships lean-tool-sessions and trash-instead-of-hard-delete as examples), or replace with one of yours. Write the problem in one line.",
+      "proof": "The table has at least one signed-off row that matches a real incident."
+    },
+    {
+      "id": "6",
+      "minutes": 5,
+      "title": "Freeze a tenure clock",
+      "why": "Without a start date, every demo invents a heroic timeline.",
+      "do": "Edit clocks.json: set harness.start to today and codex.start to the first day you used Codex on real project work.",
+      "proof": "Two dates you trust are on disk — not only in a slide."
+    },
+    {
+      "id": "7",
+      "minutes": 5,
+      "title": "Run one real task",
+      "why": "The harness is only real under load.",
+      "do": "Ask the agent to do the skill’s task. Require the proof checklist. If it skips a gate, stop and tighten the rule — don’t shrug.",
+      "proof": "You have a short note of what changed and how you verified it."
+    },
+    {
+      "id": "8",
+      "minutes": 5,
+      "title": "Schedule a tiny Hansei",
+      "why": "Without reflection the pack becomes folklore in a week.",
+      "do": "Put a 15-minute calendar block in seven days: keep / amend / retire on the pattern and skill. Link this site’s Learning section if you want the longer loop.",
+      "proof": "The calendar (or ticket) exists. You are done for today."
+    }
+  ],
+  "done": {
+    "title": "Done when",
+    "checks": [
+      "Pack installed where Codex loads it",
+      "Skill renamed to your domain",
+      "Two fail-closed boundaries understood (secrets; consequential writes)",
+      "At least one signed-off pattern with a real problem line",
+      "Two frozen clock dates",
+      "One task run with proof — not a plan alone"
+    ]
+  },
+  "next": "When this feels boring (good), read the Codex migration note, Playbook or Learning sections. Skip what you don’t need."
+}

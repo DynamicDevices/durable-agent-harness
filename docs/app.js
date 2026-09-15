@@ -96,6 +96,51 @@ function renderMessaging(data) {
   );
 }
 
+function renderBlog(data) {
+  const intro = document.querySelector("#blog-intro");
+  if (intro) intro.textContent = data.intro || "";
+  const list = document.querySelector("#blog-list");
+  if (!list) return;
+  list.replaceChildren(
+    ...data.posts.map((post) =>
+      el(
+        "article",
+        {
+          className: "blog-card",
+          id: `blog-${post.id}`,
+          "data-testid": `blog-${post.id}`,
+        },
+        [
+          el("time", { datetime: post.date, text: post.date }),
+          el("h3", {}, [
+            el("a", {
+              href: `notes/${post.id}.html`,
+              text: post.title,
+            }),
+          ]),
+          el("p", { text: post.summary || post.body[0] }),
+          el("a", {
+            className: "text-link blog-read",
+            href: `notes/${post.id}.html`,
+            text: "Read and share",
+          }),
+        ],
+      ),
+    ),
+  );
+}
+
+function renderEpigraphs(data) {
+  const quotes = data.quotes || {};
+  document.querySelectorAll("[data-epigraph]").forEach((node) => {
+    const key = node.getAttribute("data-epigraph");
+    const quote = quotes[key];
+    if (!quote) return;
+    node.textContent = quote;
+    node.hidden = false;
+  });
+}
+
 function renderIngest(data) {
   document.querySelector("#ingest-title").textContent = data.title;
   document.querySelector("#ingest-intro").textContent = data.intro;
@@ -146,20 +191,6 @@ function renderSurfaces(data) {
   );
 }
 
-function renderPublish(data) {
-  document.querySelector("#publish-title").textContent = data.title;
-  document.querySelector("#publish-intro").textContent = data.intro;
-  document.querySelector("#publish-grid").replaceChildren(
-    ...data.items.map((item) =>
-      el("article", { className: "band-card", "data-publish": item.id }, [
-        el("h3", { text: item.title }),
-        el("p", { text: item.body }),
-        el("p", { className: "lesson", text: item.lesson }),
-      ]),
-    ),
-  );
-}
-
 function renderRuntime(data) {
   document.querySelector("#runtime-intro").textContent = data.intro;
   document.querySelector("#runtime-stance").textContent = data.stance;
@@ -198,6 +229,64 @@ function renderRuntime(data) {
     block("preloop", data.preloop),
     block("openrouter", data.openrouter),
   );
+
+  const pr = data.prChecks;
+  if (pr) {
+    const title = document.querySelector("#runtime-pr-title");
+    if (title) title.textContent = pr.title;
+    document.querySelector("#runtime-pr-lede").textContent = pr.lede;
+    document.querySelector("#runtime-pr-steps").replaceChildren(
+      ...pr.steps.map((step, index) =>
+        el("li", { className: "step-card" }, [
+          el("div", { className: "step-num", text: `Step ${index + 1}` }),
+          el("h3", { text: step.title }),
+          el("p", { text: step.body }),
+        ]),
+      ),
+    );
+    document.querySelector("#runtime-pr-do").replaceChildren(
+      ...pr.practices.map((p) => el("li", { text: p })),
+    );
+    document.querySelector("#runtime-pr-not").replaceChildren(
+      ...pr.not.map((p) => el("li", { text: p })),
+    );
+  }
+}
+
+function renderCodex(data) {
+  document.querySelector("#codex-title").textContent = data.title;
+  document.querySelector("#codex-intro").textContent = data.intro;
+  document.querySelector("#codex-stance").textContent = data.stance;
+  document.querySelector("#codex-moved").replaceChildren(
+    ...data.moved.map((item) =>
+      el("article", { className: "case-card" }, [
+        el("h3", { text: item.title }),
+        el("p", { text: item.body }),
+        el("p", { className: "lesson", text: item.lesson }),
+      ]),
+    ),
+  );
+  document.querySelector("#codex-earned").replaceChildren(
+    ...data.earned.map((item) => el("li", { text: item })),
+  );
+  document.querySelector("#codex-not-transfer").replaceChildren(
+    ...data.didNotTransfer.map((item) => el("li", { text: item })),
+  );
+  document.querySelector("#codex-links").replaceChildren(
+    ...data.links.map((link, index) =>
+      el("span", {}, [
+        index ? document.createTextNode(" · ") : null,
+        el("a", {
+          className: "text-link",
+          href: link.href,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: link.label,
+        }),
+      ]),
+    ),
+  );
+  document.querySelector("#codex-close").textContent = data.close;
 }
 
 function renderLearning(data) {
@@ -457,6 +546,68 @@ function renderMeasure(data) {
   );
 }
 
+function renderHour(data) {
+  document.querySelector("#hour-intro").textContent = data.intro;
+  document.querySelector("#hour-promise").textContent = data.promise;
+  document.querySelector("#hour-next").textContent = data.next;
+
+  const pack = data.pack;
+  const actions = [
+    el("a", {
+      className: "btn primary",
+      href: pack.zip,
+      download: pack.download,
+      "data-testid": "hour-download",
+      text: pack.label,
+    }),
+    el("a", {
+      className: "btn ghost",
+      href: pack.browse,
+      "data-testid": "hour-browse",
+      text: pack.browseLabel,
+    }),
+  ];
+  for (const [index, alternate] of (pack.alternates || []).entries()) {
+    actions.push(
+      el("a", {
+        className: "btn ghost",
+        href: alternate.zip,
+        download: alternate.download,
+        "data-testid": `hour-alternate-download-${index + 1}`,
+        text: alternate.label,
+      }),
+      el("a", {
+        className: "text-link pack-readme-link",
+        href: alternate.browse,
+        "data-testid": `hour-alternate-browse-${index + 1}`,
+        text: alternate.browseLabel,
+      }),
+    );
+  }
+  document.querySelector("#hour-actions").replaceChildren(...actions);
+
+  document.querySelector("#hour-steps").replaceChildren(
+    ...data.steps.map((step) =>
+      el("li", { className: "step-card", "data-hour-step": step.id }, [
+        el("div", { className: "step-num", text: `Step ${step.id} · ~${step.minutes} min` }),
+        el("h3", { text: step.title }),
+        el("p", { className: "hour-why", text: step.why }),
+        el("p", {}, [el("strong", { text: "Do: " }), step.do]),
+        el("p", { className: "done-line" }, [el("strong", { text: "Proof: " }), step.proof]),
+      ]),
+    ),
+  );
+
+  document.querySelector("#hour-done").replaceChildren(
+    el("h3", { className: "subhead", text: data.done.title }),
+    el(
+      "ul",
+      { className: "tip-list hour-done-list" },
+      data.done.checks.map((c) => el("li", { text: c })),
+    ),
+  );
+}
+
 async function renderStarters(data) {
   document.querySelector("#starters-intro").textContent = data.intro;
   const list = document.querySelector("#starter-list");
@@ -522,12 +673,12 @@ async function main() {
     stats,
     playbook,
     learning,
+    codex,
     runtime,
     messaging,
     ingest,
     tokens,
     surfaces,
-    publish,
     timeline,
     stack,
     capabilities,
@@ -537,17 +688,20 @@ async function main() {
     cases,
     measure,
     starters,
+    blog,
+    hour,
+    epigraphs,
   ] = await Promise.all([
     loadJSON("clocks.json"),
     loadJSON("stats.json"),
     loadJSON("playbook.json"),
     loadJSON("learning.json"),
+    loadJSON("codex.json"),
     loadJSON("runtime.json"),
     loadJSON("messaging.json"),
     loadJSON("ingest.json"),
     loadJSON("tokens.json"),
     loadJSON("surfaces.json"),
-    loadJSON("publish.json"),
     loadJSON("timeline.json"),
     loadJSON("stack.json"),
     loadJSON("capabilities.json"),
@@ -557,18 +711,23 @@ async function main() {
     loadJSON("cases.json"),
     loadJSON("measure.json"),
     loadJSON("starters.json"),
+    loadJSON("blog.json"),
+    loadJSON("hour.json"),
+    loadJSON("epigraphs.json"),
   ]);
 
+  renderEpigraphs(epigraphs);
+  renderHour(hour);
   renderClocks(clocks);
   renderStats(stats);
   renderPlaybook(playbook);
   renderLearning(learning);
+  renderCodex(codex);
   renderRuntime(runtime);
   renderMessaging(messaging);
   renderIngest(ingest);
   renderTokens(tokens);
   renderSurfaces(surfaces);
-  renderPublish(publish);
   renderTimeline(timeline);
   renderStack(stack);
   renderCapabilities(capabilities);
@@ -578,6 +737,7 @@ async function main() {
   renderCases(cases);
   renderMeasure(measure);
   await renderStarters(starters);
+  renderBlog(blog);
   wireTabs();
   document.body.dataset.ready = "true";
 }

@@ -1,26 +1,28 @@
 {
   "schema": "durable-agent-harness/playbook/v1",
-  "title": "Build your own harness",
-  "intro": "You need a small, versioned operating system around the model — then you grow it only when a failure repeats.",
+  "title": "Build your own working relationship",
+  "intro": "If I were starting again tomorrow: a small, versioned working relationship around the model — portable where it should be, host-native where it must be — then grow it only when the work earns the change.",
   "principles": [
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
     "Irreversible actions stay human. Draft freely; send/publish/destroy only with an explicit gate.",
+    "Prefer trash over hard delete. Move files to a trash folder first so mistakes stay recoverable.",
     "Prefer proof over narrative. Define what “done” looks like before celebrating.",
-    "Sign off cross-cutting habits. Lore in chat is not an operating system."
+    "Sign off cross-cutting habits. Lore in chat is not an operating system.",
+    "Test the harness itself. A capable model does not prove the gates are sound."
   ],
   "steps": [
     {
       "id": "1",
       "title": "Pick a cockpit",
-      "body": "Choose one agentic environment where the model can read your tree, run commands, and leave reviewable diffs. Consistency beats tool-hopping.",
+      "body": "Choose one agentic environment where the model can read your tree, run commands, and leave reviewable diffs. I now use Codex as the primary cockpit and keep Cursor compatible. Consistency beats tool-hopping; portable skills make later migration possible.",
       "done": "Same cockpit for a week of real work."
     },
     {
       "id": "2",
-      "title": "Write three fail-closed rules",
-      "body": "Start with: (1) secrets never pasted into chat, (2) no irreversible outbound without a human gate that shows the full referent, (3) never overwrite source with shell redirects. Keep them short.",
-      "done": "Three rules in version control; agents actually obey them."
+      "title": "Write two fail-closed boundaries",
+      "body": "Start with: (1) secrets never pasted into chat — use an approved secret store or capture flow, (2) no consequential write without a human decision that shows the full referent. Add recoverable-delete and source-editing practice in the appropriate project guidance or skill. Keep host enforcement separate: Codex sandbox/permissions, Cursor rules, or the equivalent for your cockpit.",
+      "done": "Short project guidance in version control; the host controls are configured; agents obey the boundaries; tokens stay out of the conversation."
     },
     {
       "id": "3",
@@ -42,9 +44,9 @@
     },
     {
       "id": "6",
-      "title": "Start Kaizen → Hansei (patterns + TWP)",
-      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say TWP) so agents load the right member practice.",
-      "done": "At least one signed-off pattern, one Hansei note, and a clear TWP/member map."
+      "title": "Start Kaizen → Hansei (patterns + Toyota Way Practices)",
+      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say Toyota Way Practices) so agents load the right member practice.",
+      "done": "At least one signed-off pattern, one Hansei note, and a clear Toyota Way Practices / member map."
     },
     {
       "id": "7",
@@ -61,14 +63,14 @@
     {
       "id": "9",
       "title": "Layer runtime policy (Preloop)",
-      "body": "Add a durable runtime audit/policy plane under your human P0 gates. Do not replace send/secrets consent with a firewall. Keep enrollment tokens out of git and chat.",
-      "done": "Tool use is auditable; irreversible actions still need a human gate with a visible referent."
+      "body": "Add a durable runtime audit/policy plane under your human P0 gates. Do not replace send/secrets consent with a firewall. Keep enrollment tokens out of git and chat. On product repos, wire Preloop Cloud as a PR reviewer so each push can post a `preloop` commit status.",
+      "done": "Tool use is auditable; irreversible actions still need a human gate; PR commits can get a Preloop status without treating it as merge authority."
     },
     {
       "id": "10",
       "title": "Add multi-model routing (OpenRouter)",
-      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit. Configure failover deliberately; vault the API key; keep proof class unchanged.",
-      "done": "You can switch or fall back across models/providers without pasting keys into chat."
+      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit — and so Preloop’s PR reviewer has a deliberate model path. Configure failover deliberately; vault the API key; keep proof class unchanged.",
+      "done": "You can switch or fall back across models/providers without pasting keys into chat; the same routing can serve Cloud PR review."
     },
     {
       "id": "11",
@@ -81,6 +83,24 @@
       "title": "Measure and cut token tax",
       "body": "Thin skill dispatchers, requestable rules, lean tool sessions, and a short always-on list. When a session feels heavy, measure — then demote or unload.",
       "done": "You can name your always-on budget and point to at least one cut you made."
+    },
+    {
+      "id": "13",
+      "title": "Separate portable practice from host policy",
+      "body": "Put reusable procedures in Agent Skills. Put repository expectations in AGENTS.md or the host’s native project-guidance file. Keep sandboxing, permissions and credentials in the host control plane. Maintain one canonical skill source and test any projection or symlink layer.",
+      "done": "A skill can move hosts without pretending the old host’s policy file still enforces anything."
+    },
+    {
+      "id": "14",
+      "title": "Red-team the harness",
+      "body": "Create a small known-answer corpus for the boundaries that matter: secret requests, prompt injection, consequential writes, destructive paths and repeated tool failures. Run it when guidance, skills or models change.",
+      "done": "A regression test can fail when the harness weakens — before a real task pays for it."
+    },
+    {
+      "id": "15",
+      "title": "Add circuit breakers and retrieval proof",
+      "body": "Stop repeated tool/error loops after a named threshold. For durable memory, keep provenance and test later retrieval. A filed record and a busy agent are not outcomes by themselves.",
+      "done": "The agent stops abnormal loops, and a later task can retrieve one decision and use it correctly."
     }
   ],
   "antiPatterns": [

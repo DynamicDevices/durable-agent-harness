@@ -1,49 +1,68 @@
 # Durable Agent Harness
 
-**Public engineering notebook** from [Active-ESL](https://www.active-esl.com/) on building a *durable working relationship* with AI coding agents. Published with [Dynamic Devices](https://www.dynamicdevices.co.uk/).
+**Public engineering notebook** by [Alex Lennon](https://chopwoodcarrywater.uk/) ([@embedded_iot](https://x.com/embedded_iot)) under the **Chop Wood Carry Water** brand — building a *durable working relationship* with AI coding agents.
 
-🌐 **Site:** <https://dynamicdevices.github.io/durable-agent-harness/>  
-📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>
+🌐 **Site:** <https://chopwoodcarrywater.uk/>  
+📦 **Repo:** <https://github.com/DynamicDevices/durable-agent-harness>  
+🏷️ **Baseline:** v1.2 (2026-09-12) in [BASELINE-v1.2.md](BASELINE-v1.2.md) · previous [v1.1](BASELINE-v1.1.md)
+🤖 **Agents:** [AGENTS.md](AGENTS.md) · <https://chopwoodcarrywater.uk/agents.html>
+
+First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
 
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
-Site SEO includes canonical URL, Open Graph / Twitter cards, JSON-LD (`TechArticle` + `Organization`), `robots.txt`, and `sitemap.xml`.
+Site SEO includes canonical URLs, per-note Open Graph / Twitter cards,
+`BlogPosting` JSON-LD, RSS, `robots.txt`, `llms.txt`, and a real-URL sitemap.
+Contract: [`docs/NOTES-SOCIAL-SHARING.md`](docs/NOTES-SOCIAL-SHARING.md).
 
 ## What’s inside
 
 | Area | What you get |
 |---|---|
+| **60 minutes** | Timed checklist + [Codex starter pack](packs/codex-hour/) (Cursor pack retained) |
+| **Codex migration** | Portable Agent Skills, `AGENTS.md`, worktrees/handoff, host-native controls, self-evals |
 | **Playbook** | Twelve steps to build a thin harness from scratch |
-| **Learning** | MemPalace memory + Kaizen → Hansei → TWP (Toyota Way Practices) |
-| **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) |
+| **Learning** | MemPalace memory + Kaizen → Hansei → Toyota Way Practices |
+| **Runtime** | Preloop (policy/audit under P0) + OpenRouter (multi-model routing) + PR commit checks (`preloop` status) |
 | **Channels & lean** | WhatsApp/Briar triage, media ingest, token-lean skills, desktop MCQ, voice, CI checks |
 | **Starter kit** | Copy-paste templates for skills, rules, patterns, lanes, clocks, capability maps ([`starters/`](starters/)) |
 | **Explore** | Timeline, stack, capability map, patterns, glossary/FAQ, research |
 | **Cases** | Before/after outcomes that show the harness at work |
 | **Measure** | Tenure clocks, metrics that aren’t fake multipliers, weekly ritual |
-| **About** | Short notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
+| **Blog** | What broke / locked / earned a place on disk — sparks in [`blog-inbox.md`](blog-inbox.md), published at EOW |
+| **About** | Notebook blurb; contributor notes in [PRIVACY.md](PRIVACY.md) |
 
 ## Local check
 
 ```bash
 npm install
 npx playwright install chromium
+npm run cards     # regenerate 1200×627 note cards (Pillow)
 npm test          # sync + privacy gate + Playwright (desktop + mobile)
 npm run serve     # http://127.0.0.1:4173
 ```
 
-## Three clocks (frozen starts)
+`content/blog.json` is the note source of truth. `npm run sync` renders static
+`docs/notes/*.html`, `feed.xml`, `sitemap.xml` and `llms.txt`; GitHub Pages
+serves `docs/` from `main`. Review the PR and local Lighthouse results before
+merging. After production publish, run new URLs through LinkedIn Post Inspector.
+
+## Four clocks (frozen starts)
 
 | Clock | Start |
 |---|---|
 | Serious hands-on AI | 2025-06-06 |
 | Cursor as cockpit | 2025-07-23 |
+| Codex as cockpit | 2026-08-30 |
 | Versioned harness | 2026-05-31 |
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+- **Notebook content:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Site code / scripts / tests:** [MIT](LICENSE-MIT.txt)
+
+See [LICENSE](LICENSE) for the split.
 
 ---
 
-*Site and materials were AI-assisted (Cursor) under human direction at Active-ESL / Dynamic Devices.*
+*AI-assisted (Codex) under Alex’s direction. Use at your own risk.*
