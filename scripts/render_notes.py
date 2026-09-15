@@ -8,13 +8,15 @@ import html
 import json
 from datetime import date, datetime, timezone
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "blog.json"
 DOCS = ROOT / "docs"
 NOTES = DOCS / "notes"
 ORIGIN = "https://chopwoodcarrywater.uk"
+INSIGHTS_START = "<!-- CWCW_INSIGHTS_FALLBACK_START -->"
+INSIGHTS_END = "<!-- CWCW_INSIGHTS_FALLBACK_END -->"
 
 
 def ordinal(day: int) -> str:
@@ -38,11 +40,54 @@ def image_url(post: dict) -> str:
     return f"{ORIGIN}/assets/notes/{post['id']}-og.png"
 
 
+def linkedin_discussion_url(post: dict) -> str | None:
+    value = post.get("discussionUrl", "").strip()
+    if not value:
+        return None
+    parsed = urlparse(value)
+    hostname = parsed.hostname or ""
+    if parsed.scheme != "https" or not (
+        hostname == "linkedin.com" or hostname.endswith(".linkedin.com")
+    ):
+        raise ValueError(f"discussionUrl must be an HTTPS LinkedIn URL: {value}")
+    return value
+
+
+def render_homepage_insights(posts: list[dict], limit: int = 6) -> None:
+    path = DOCS / "index.html"
+    document = path.read_text()
+    if document.count(INSIGHTS_START) != 1 or document.count(INSIGHTS_END) != 1:
+        raise ValueError("Homepage insight fallback markers are missing or duplicated")
+    cards = []
+    for post in posts[:limit]:
+        post_id = html.escape(post["id"])
+        title = html.escape(post["title"])
+        summary = html.escape(post["summary"])
+        published = html.escape(post["date"])
+        cards.append(f"""          <article class="blog-card" id="blog-{post_id}" data-testid="blog-{post_id}">
+            <time datetime="{published}">{published}</time>
+            <h3><a href="notes/{post_id}.html">{title}</a></h3>
+            <p>{summary}</p>
+            <a class="text-link blog-read" href="notes/{post_id}.html">Read and share</a>
+          </article>""")
+    before, remainder = document.split(INSIGHTS_START, 1)
+    _, after = remainder.split(INSIGHTS_END, 1)
+    rendered = f"{before}{INSIGHTS_START}\n{chr(10).join(cards)}\n          {INSIGHTS_END}{after}"
+    path.write_text(rendered)
+
+
 def render_note(post: dict) -> str:
     url = canonical(post)
     image = image_url(post)
     title = html.escape(post["title"])
+    seo_title = html.escape(post.get("seoTitle", post["title"]))
     summary = html.escape(post["summary"])
+    social_image_alt = html.escape(
+        post.get("imageAlt", f"Chop Wood Carry Water insight: {post['title']}")
+    )
+    hero_image_alt = html.escape(
+        post.get("imageAlt", f"Illustrated title card for {post['title']}")
+    )
     published = post["date"]
     modified = post.get("dateModified", published)
     tags = post.get("tags", ["AI agents", "engineering practice"])
@@ -50,6 +95,22 @@ def render_note(post: dict) -> str:
         f'  <meta property="article:tag" content="{html.escape(tag)}">' for tag in tags
     )
     paragraphs = "\n".join(f"        <p>{html.escape(p)}</p>" for p in post["body"])
+    sources = ""
+    if post.get("sources"):
+        source_items = "\n".join(
+            f'          <li><a href="{html.escape(source["url"])}" target="_blank" rel="noopener noreferrer">{html.escape(source["label"])}</a></li>'
+            for source in post["sources"]
+        )
+        sources = f"""
+      <aside class="note-sources" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sources and further reading</h2>
+        <ul>
+{source_items}
+        </ul>
+      </aside>"""
+    disclosure = ""
+    if post.get("imageDisclosure"):
+        disclosure = f'\n        <figcaption>{html.escape(post["imageDisclosure"])}</figcaption>'
     provenance = ""
     if post.get("sourceUrl"):
         provenance = f"""
@@ -96,35 +157,44 @@ def render_note(post: dict) -> str:
         "mainEntityOfPage": url,
         "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     }
-    linkedin = (
+    linkedin_share = (
         "https://www.linkedin.com/sharing/share-offsite/?url=" + quote(url, safe="")
     )
+    discussion_url = linkedin_discussion_url(post)
+    if discussion_url:
+        share_prompt = "Continue the conversation around this insight on LinkedIn."
+        primary_href = html.escape(discussion_url)
+        primary_label = "Join the discussion on LinkedIn"
+    else:
+        share_prompt = "Share the canonical article link with its Chop Wood Carry Water preview card."
+        primary_href = linkedin_share
+        primary_label = "Share on LinkedIn"
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Chop Wood Carry Water</title>
+  <title>{seo_title} — Chop Wood Carry Water</title>
   <meta name="description" content="{summary}">
   <meta name="author" content="Alex Lennon">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#0B1210">
   <link rel="canonical" href="{url}">
-  <link rel="alternate" type="application/rss+xml" title="Chop Wood Carry Water notes" href="{ORIGIN}/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Chop Wood Carry Water insights" href="{ORIGIN}/feed.xml">
   <link rel="icon" href="../assets/chopwood-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Chop Wood Carry Water">
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="{url}">
-  <meta property="og:title" content="{title}">
+  <meta property="og:title" content="{seo_title}">
   <meta property="og:description" content="{summary}">
   <meta property="og:image" content="{image}">
   <meta property="og:image:secure_url" content="{image}">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
-  <meta property="og:image:alt" content="Chop Wood Carry Water note: {title}">
+  <meta property="og:image:alt" content="{social_image_alt}">
   <meta property="article:published_time" content="{published}">
   <meta property="article:modified_time" content="{modified}">
   <meta property="article:author" content="Alex Lennon">
@@ -133,10 +203,10 @@ def render_note(post: dict) -> str:
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@embedded_iot">
   <meta name="twitter:creator" content="@embedded_iot">
-  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:title" content="{seo_title}">
   <meta name="twitter:description" content="{summary}">
   <meta name="twitter:image" content="{image}">
-  <meta name="twitter:image:alt" content="Chop Wood Carry Water note: {title}">
+  <meta name="twitter:image:alt" content="{social_image_alt}">
   <script type="application/ld+json">
 {json.dumps(json_ld, indent=2, ensure_ascii=False)}
   </script>
@@ -148,12 +218,12 @@ def render_note(post: dict) -> str:
       <img src="../assets/chopwood-mark.png" alt="" width="35" height="35">
       <span class="brand-text"><strong>Chop Wood Carry Water</strong><em>Durable Agent Harness</em></span>
     </a>
-    <nav class="nav" aria-label="Primary"><a href="../index.html">Notebook</a><a href="../index.html#blog">Notes</a></nav>
+    <nav class="nav" aria-label="Primary"><a href="../index.html">Notebook</a><a href="../index.html#blog">Insights</a></nav>
   </header>
   <main id="main">
     <article class="note-article">
       <header class="note-header">
-        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#blog">Notes</a></p>
+        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#blog">Insights</a></p>
         <p class="kicker">{html.escape(post.get("section", "Engineering practice"))} · {display_date(published)}</p>
         <h1>{title}</h1>
         <p class="note-byline">Alex Lennon · <a href="https://x.com/embedded_iot" rel="me">@embedded_iot</a></p>
@@ -162,22 +232,22 @@ def render_note(post: dict) -> str:
       </header>
       <figure class="note-hero">
         <img src="../assets/notes/{post['id']}-og.png" width="1200" height="627"
-             alt="Illustrated title card for {title}" fetchpriority="high">
+             alt="{hero_image_alt}" fetchpriority="high">{disclosure}
       </figure>
       <div class="note-body">
 {paragraphs}
-      </div>
+      </div>{sources}
       <footer class="note-footer">
         <div class="note-share" aria-labelledby="share-heading">
-          <p class="kicker" id="share-heading">Share this note</p>
-          <p>Share the canonical article link with its Chop Wood Carry Water preview card.</p>
+          <p class="kicker" id="share-heading">Share this insight</p>
+          <p>{share_prompt}</p>
           <div class="cta-row">
-            <a class="btn primary" href="{linkedin}" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+            <a class="btn primary" href="{primary_href}" target="_blank" rel="noopener noreferrer">{primary_label}</a>
             <button class="btn ghost copy-link" type="button" data-copy-url="{url}">Copy link</button>
           </div>
           <p class="copy-link__status" role="status" aria-live="polite"></p>
         </div>
-        <p><a class="text-link" href="../index.html#blog">All notes</a></p>
+        <p><a class="text-link" href="../index.html#blog">All insights</a></p>
       </footer>
     </article>
   </main>
@@ -231,9 +301,9 @@ def render_feed(posts: list[dict]) -> str:
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Chop Wood Carry Water notes</title>
+    <title>Chop Wood Carry Water insights</title>
     <link>{ORIGIN}/</link>
-    <description>Engineering notes on durable working relationships with AI coding agents.</description>
+    <description>Engineering insights on durable working relationships with AI coding agents.</description>
     <language>en-gb</language>
     <lastBuildDate>{email.utils.format_datetime(build_date)}</lastBuildDate>
 {chr(10).join(items)}
@@ -277,7 +347,7 @@ def render_llms(posts: list[dict]) -> str:
 - [Agents: start here]({ORIGIN}/agents.html)
 - [RSS feed]({ORIGIN}/feed.xml)
 
-## Notes
+## Insights
 {links}
 """
 
@@ -297,7 +367,8 @@ def main() -> None:
     (DOCS / "feed.xml").write_text(render_feed(posts))
     (DOCS / "sitemap.xml").write_text(render_sitemap(posts))
     (DOCS / "llms.txt").write_text(render_llms(posts))
-    print(f"Rendered {len(posts)} notes, feed.xml, sitemap.xml and llms.txt")
+    render_homepage_insights(posts)
+    print(f"Rendered {len(posts)} insights, feed.xml, sitemap.xml and llms.txt")
 
 
 if __name__ == "__main__":

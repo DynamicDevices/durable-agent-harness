@@ -4,12 +4,14 @@
   "version": "1.2.0",
   "description": "Public notebook on building a durable AI agent harness",
   "scripts": {
+    "insight:new": "python3 scripts/new_insight.py",
     "sync": "bash scripts/sync-content.sh",
     "cards": "python3 scripts/render_home_social_card.py && python3 scripts/render_note_social_cards.py",
     "privacy": "bash scripts/privacy-check.sh",
     "serve": "npx --yes serve docs -l 4173",
     "test:e2e": "npx playwright test",
-    "test": "npm run sync && npm run privacy && npm run test:e2e",
+    "test:insight": "python3 tests/test_insight_tools.py",
+    "test": "npm run sync && npm run privacy && npm run test:insight && npm run test:e2e",
     "check": "npm test"
   },
   "devDependencies": {
