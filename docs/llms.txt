@@ -8,6 +8,7 @@
 - [RSS feed](https://chopwoodcarrywater.uk/feed.xml)
 
 ## Insights
+- [What I mean by an agent harness](https://chopwoodcarrywater.uk/notes/what-i-mean-by-an-agent-harness.html)
 - [When answers are cheap, judgement matters more](https://chopwoodcarrywater.uk/notes/when-answers-are-cheap-judgement-matters-more.html)
 - [A quick check is still a model turn](https://chopwoodcarrywater.uk/notes/quick-check-is-still-a-model-turn.html)
 - [The cockpit changed. The work did not.](https://chopwoodcarrywater.uk/notes/the-cockpit-changed-the-work-did-not.html)

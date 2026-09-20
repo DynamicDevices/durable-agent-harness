@@ -9,6 +9,18 @@
 
 First-person voice, short blog, playbook, patterns, and honest measurement — personal brand, not a company brochure.
 
+Here, the **working relationship** is the human experience and the **durable
+agent harness** is the versioned, tested mechanism that makes it repeatable.
+Portable skills are its core; product-specific guidance and controls are host
+adapters; Codex and Cursor are the cockpits in which it runs.
+
+| Layer | Meaning in this notebook |
+|---|---|
+| Working relationship | The human experience: purpose, judgement, collaboration and learning |
+| Durable harness | Skills, policy, memory, tools, gates, tests and feedback that should survive a host change |
+| Host adapter | Codex- or Cursor-specific guidance, hooks, permissions and task integration |
+| Cockpit / host | Codex or Cursor: the agent runtime and interface supplying native controls |
+
 **Topics:** `ai` · `agents` · `cursor` · `developer-tools` · `llm` · `engineering` · `documentation` · `productivity`
 
 Site SEO includes canonical URLs, per-insight Open Graph / Twitter cards,
