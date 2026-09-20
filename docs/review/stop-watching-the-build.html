@@ -96,6 +96,7 @@
         <p>The aim is narrower and more defensible: do not spend reasoning tokens on waiting.</p>
         <h2>When we can call it truly event-driven</h2>
         <p>At the time of this draft, the Foundries kiosk and Android FRDM lanes provide the reference implementation. A real Foundries failure has already traversed the webhook, durable outbox, private tunnel and exact-task continuation path. That is useful evidence, but it is not yet a claim that every external wait in the harness is event-driven.</p>
+        <p>The scale of the old pattern is now easier to see. Before we paused the kiosk heartbeat, its task had recorded 811 completed turns and 668,928,917 locally counted tokens. The Android task had recorded 797 completed turns and 831,302,773 tokens. In both cases 98.9% of input was cached. Those are whole-task counters, not a measure of polling alone, and they are not an invoice. They are a baseline for the before-and-after comparison, not a cost-saving claim.</p>
         <p>Before publishing this as a completed journey, I want evidence that:</p>
         <ul>
           <li>every material CI and long-running build lane uses a provider callback or an equivalent completion event;</li>
