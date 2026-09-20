@@ -96,13 +96,14 @@
         <p>The aim is narrower and more defensible: do not spend reasoning tokens on waiting.</p>
         <h2>When we can call it truly event-driven</h2>
         <p>At the time of this draft, the Foundries kiosk and Android FRDM lanes provide the reference implementation. A real Foundries failure has already traversed the webhook, durable outbox, private tunnel and exact-task continuation path. That is useful evidence, but it is not yet a claim that every external wait in the harness is event-driven.</p>
+        <p>The disconnected path is no longer theoretical. We stopped the private tunnel, registered an exact wait and retained a synthetic success event on the origin without a delivery receipt. Reconnecting ran one bounded replay, wrote the receipt and resumed the owning task once. A later reconnect accepted no new event and created no second turn. That proves the transport behaviour; it does not turn a synthetic event into evidence of a real successful build.</p>
+        <p>The exercise also found a less glamorous fault. Nine old remote replay helpers had survived earlier tunnel disconnects. They were not spending model tokens, but they were still accumulating watchers in a design intended to avoid them. We changed the helper to terminate with its owning SSH process and proved the live count moved from one while connected, to zero on disconnect, and back to one after recovery. Event-driven design includes cleaning up the transport that waits for events.</p>
         <p>The scale of the old pattern is now easier to see. Before we paused the kiosk heartbeat, its task had recorded 811 completed turns and 668,928,917 locally counted tokens. The Android task had recorded 797 completed turns and 831,302,773 tokens. In both cases 98.9% of input was cached. Those are whole-task counters, not a measure of polling alone, and they are not an invoice. They are a baseline for the before-and-after comparison, not a cost-saving claim.</p>
         <p>Before publishing this as a completed journey, I want evidence that:</p>
         <ul>
           <li>every material CI and long-running build lane uses a provider callback or an equivalent completion event;</li>
           <li>superseded scheduled status heartbeats remain disabled;</li>
-          <li>success and failure both resume the correct task;</li>
-          <li>offline delivery and restart recovery have been exercised in practice;</li>
+          <li>natural success and failure both resume the correct task in each material build lane;</li>
           <li>duplicate, late and event-first delivery do not create a second turn;</li>
           <li>before-and-after usage data shows fewer model turns and lower charged or cost-equivalent usage for comparable waits.</li>
         </ul>
