@@ -24,6 +24,16 @@ test.describe("unlisted insight reviews", () => {
       await expect(page.locator('meta[property^="og:"]')).toHaveCount(0);
       await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(0);
       await expect(page.getByText("Share this insight", { exact: true })).toHaveCount(0);
+      if (review.reviewImage) {
+        const image = page.locator(".review-hero img");
+        await expect(image).toHaveAttribute("src", review.reviewImage);
+        await expect(image).toHaveAttribute("alt", review.imageAlt);
+        await expect(image).toHaveJSProperty("naturalWidth", 1200);
+        await expect(image).toHaveJSProperty("naturalHeight", 627);
+        await expect(page.locator(".review-hero figcaption")).toHaveText(
+          review.imageDisclosure,
+        );
+      }
 
       const overflow = await page.evaluate(
         () => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
