@@ -80,7 +80,12 @@ research notes, raw material and social copy stay in the private package. Review
 pages are visibly marked as drafts, carry `noindex,nofollow`, and are excluded
 from Insights, RSS, the sitemap, `llms.txt` and social-card generation. They are
 unlisted, not confidential: anyone with the URL or repository access can read
-them. Publishing remains a separate, deliberate edit to `content/blog.json`.
+them. Every review requires a newly generated, post-specific 1200×627 editorial
+image derived from that draft's image brief; reusable generic cards are not an
+acceptable substitute. The generated-image disclosure, meaningful alt text and
+the exact `../assets/review/<slug>.png` path must be present in the manifest
+before `insight:review` will promote it. Publishing remains a separate,
+deliberate edit to `content/blog.json`.
 
 `content/blog.json` is the insight source of truth. `npm run sync` renders static
 `docs/notes/*.html`, `feed.xml`, `sitemap.xml` and `llms.txt`; GitHub Pages

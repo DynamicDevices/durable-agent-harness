@@ -41,6 +41,7 @@ def create_package(
         "customCard": False,
         "imageAlt": "",
         "imageDisclosure": "",
+        "reviewImage": "",
         "body": [],
         "sources": [],
         "discussionUrl": "",

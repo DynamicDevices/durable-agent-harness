@@ -84,6 +84,9 @@ class InsightToolsTest(unittest.TestCase):
                         "title": "Safe review",
                         "summary": "A review summary.",
                         "section": "Working practice",
+                        "reviewImage": "../assets/review/safe-review.png",
+                        "imageAlt": "A safe review image.",
+                        "imageDisclosure": "Generated image disclosure.",
                     }
                 )
             )
@@ -93,6 +96,10 @@ class InsightToolsTest(unittest.TestCase):
 ## CWCW insight draft
 
 The public article with `code`.
+
+## Image brief
+
+A newly generated scene specific to this article.
 
 ## Research and caveats
 
@@ -107,8 +114,39 @@ PRIVATE RAW MATERIAL
             review = json.loads(target.read_text())
             self.assertEqual(review["status"], "review")
             self.assertIn("The public article", review["bodyMarkdown"])
+            self.assertEqual(review["reviewImage"], "../assets/review/safe-review.png")
+            self.assertIn("specific to this article", review["imageBrief"])
             self.assertNotIn("PRIVATE CORRESPONDENCE", target.read_text())
             self.assertNotIn("PRIVATE RAW MATERIAL", target.read_text())
+
+    def test_review_import_requires_post_specific_image_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            package = root / "incomplete-package"
+            package.mkdir()
+            (package / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "id": "incomplete-review",
+                        "created": "2026-09-20",
+                        "title": "Incomplete review",
+                        "summary": "A review without its own image.",
+                        "section": "Working practice",
+                    }
+                )
+            )
+            (package / "draft-package.md").write_text(
+                """## CWCW insight draft
+
+Article text.
+
+## Image brief
+
+A scene made specifically for this post.
+"""
+            )
+            with self.assertRaisesRegex(ValueError, "reviewImage"):
+                publish_review.prepare_review(package, root / "reviews")
 
     def test_review_page_is_unlisted_and_escapes_html(self):
         rendered = render_reviews.render_review(
@@ -119,6 +157,9 @@ PRIVATE RAW MATERIAL
                 "title": "Safe review",
                 "summary": "A review summary.",
                 "section": "Working practice",
+                "reviewImage": "../assets/review/safe-review.png",
+                "imageAlt": "A safe review image.",
+                "imageDisclosure": "Generated image disclosure.",
                 "bodyMarkdown": "### Heading\n\n<script>alert(1)</script>",
             }
         )
@@ -129,6 +170,8 @@ PRIVATE RAW MATERIAL
         self.assertNotIn('property="og:', rendered)
         self.assertNotIn("application/ld+json", rendered)
         self.assertNotIn("Share this insight", rendered)
+        self.assertIn('../assets/review/safe-review.png', rendered)
+        self.assertIn("Generated image disclosure.", rendered)
 
     def test_review_markdown_keeps_wrapped_list_items_together(self):
         rendered = render_reviews.render_markdown(

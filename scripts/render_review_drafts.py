@@ -83,6 +83,24 @@ def render_review(draft: dict) -> str:
     section = html.escape(draft["section"])
     created = html.escape(draft["created"])
     body = render_markdown(draft["bodyMarkdown"])
+    hero = ""
+    review_image = draft.get("reviewImage", "").strip()
+    if review_image:
+        expected_image = f"../assets/review/{draft['id']}.png"
+        if review_image != expected_image:
+            raise ValueError(
+                f"Review image must use the draft asset path {expected_image}: {review_image}"
+            )
+        if not draft.get("imageAlt", "").strip():
+            raise ValueError("Review image requires imageAlt")
+        if not draft.get("imageDisclosure", "").strip():
+            raise ValueError("Review image requires imageDisclosure")
+        hero = f"""
+      <figure class="note-hero review-hero">
+        <img src="{html.escape(review_image)}" width="1200" height="627"
+             alt="{html.escape(draft['imageAlt'])}" fetchpriority="high">
+        <figcaption>{html.escape(draft['imageDisclosure'])}</figcaption>
+      </figure>"""
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -116,6 +134,7 @@ def render_review(draft: dict) -> str:
         <p class="note-byline">Alex Lennon</p>
         <p class="note-lede">{summary}</p>
       </header>
+{hero}
       <div class="note-body review-body">
 {body}
       </div>
