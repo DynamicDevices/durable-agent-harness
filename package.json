@@ -5,6 +5,7 @@
   "description": "Public notebook on building a durable AI agent harness",
   "scripts": {
     "insight:new": "python3 scripts/new_insight.py",
+    "insight:review": "python3 scripts/publish_insight_review.py",
     "sync": "bash scripts/sync-content.sh",
     "cards": "python3 scripts/render_home_social_card.py && python3 scripts/render_note_social_cards.py",
     "privacy": "bash scripts/privacy-check.sh",

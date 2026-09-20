@@ -66,6 +66,22 @@ not published automatically. Use `--output-root` to select another private
 location. After publishing the associated LinkedIn post, add its HTTPS URL as
 `discussionUrl` so the article invites readers to join that conversation.
 
+Create or refresh a public-but-unlisted review page from a private package:
+
+```bash
+npm run insight:review -- --package /path/to/private-package
+npm run insight:review -- --package /path/to/private-package --replace
+npm run sync
+```
+
+The review URL is `/review/the-working-title.html`. Only the `CWCW insight
+draft` section and publication metadata are copied into this public repository;
+research notes, raw material and social copy stay in the private package. Review
+pages are visibly marked as drafts, carry `noindex,nofollow`, and are excluded
+from Insights, RSS, the sitemap, `llms.txt` and social-card generation. They are
+unlisted, not confidential: anyone with the URL or repository access can read
+them. Publishing remains a separate, deliberate edit to `content/blog.json`.
+
 `content/blog.json` is the insight source of truth. `npm run sync` renders static
 `docs/notes/*.html`, `feed.xml`, `sitemap.xml` and `llms.txt`; GitHub Pages
 serves `docs/` from `main`. Review the PR and local Lighthouse results before
