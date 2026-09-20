@@ -82,6 +82,7 @@
         <p>It is deliberately not in the critical wake path.</p>
         <p>The deterministic event and bounded failure envelope are stored and routed first. Jev is supplemental. It cannot mark CI green, authorise a change, retry a build or weaken compiler, test, hash or human approval gates. If Jev or Preloop is unavailable, the task still wakes. A later explicit event may make one deferred advisory attempt; there is no watcher checking when the watcher is available.</p>
         <p>This distinction matters. Event-driven should not mean handing control to a probabilistic component. It means using deterministic events to decide when reasoning is worth paying for.</p>
+        <p>The real Foundries failure gave us a useful example. The retained advisory was 2,713 bytes, including the deterministic envelope, rather than a raw build log. Jev used 1,133 input and 206 output tokens. It confidently classified the failure lane, but marked the question of whether the first error was actionable as ambiguous. That is useful advice precisely because it stayed advice. The task had already been routed, the CI result remained failed and every execution authority flag remained false.</p>
         <h2>What this should change about cost</h2>
         <p>The expected saving is not mysterious:</p>
         <ul>
