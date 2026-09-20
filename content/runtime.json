@@ -23,8 +23,15 @@
     "title": "OpenRouter",
     "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. It serves external model workflows and Preloop review flows when routing earns its keep; it is not how the Codex app reaches its models.",
     "docs": "https://openrouter.ai/docs",
+    "verified": "2026-09-15",
+    "preloopReviewRoute": {
+      "agent": "Codex",
+      "model": "openrouter/auto",
+      "scope": "Public, repository-bound, on-demand PR reviews"
+    },
     "practices": [
       "Separate model choice (which model answers) from provider choice (who serves it).",
+      "Choose a model available to the execution credential, then prove repository checkout, tool execution, and structured result capture end to end.",
       "Use provider failover for uptime; use explicit model fallback lists when you accept a different model answering.",
       "Keep API keys in Bitwarden Secrets Manager — never in chat or skills.",
       "Measure comfort vs cost: routing flexibility is not an excuse to skip proof class."

@@ -151,6 +151,15 @@
       "date": "2026-09",
       "title": "The harness starts testing itself",
       "body": "Added adversarial gate evals, tool-result bounds, loop circuit breakers, memory provenance and retrieval proof, plus faster embedded feedback loops that preserve full CI as trust evidence."
+    },
+    {
+      "date": "2026-09-15",
+      "title": "Repository-bound Preloop reviews prove their result",
+      "body": "Moved on-demand PR review onto repository-bound Preloop flows using the Codex agent and OpenRouter Auto. Exact-head checkout, merge-base review, and a structured result contract distinguish a completed review from a clean process exit.",
+      "link": {
+        "label": "Preloop docs",
+        "href": "https://docs.preloop.ai"
+      }
     }
   ]
 }
