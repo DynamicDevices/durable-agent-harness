@@ -3,6 +3,52 @@
   "intro": "What broke, what we locked, and what earned a place on disk \u2014 filed when the week earns it.",
   "posts": [
     {
+      "id": "what-i-mean-by-an-agent-harness",
+      "date": "2026-09-20",
+      "title": "What I mean by an agent harness",
+      "seoTitle": "What I mean by an agent harness",
+      "summary": "Cursor and Codex are the cockpits. The durable harness is the portable, tested system of skills, policy, memory, gates and feedback that survives between them.",
+      "section": "Working relationship",
+      "tags": [
+        "agent harness",
+        "Codex",
+        "Cursor",
+        "Agent Skills",
+        "working relationship",
+        "agent engineering"
+      ],
+      "cardSeed": 14,
+      "customCard": true,
+      "imageAlt": "An engineer moves a compact tool roll between two laptop workstations in a real electronics lab.",
+      "imageDisclosure": "The documentary-style lab image was generated with OpenAI under Alex Lennon's direction, then cropped and typeset as a CWCW social card.",
+      "body": [
+        "I have been using the word harness for the system we are building around coding agents. That sounds clear to me because I can see the pieces: skills, rules, tools, memory, human gates, tests and a feedback loop. It is less clear to somebody who hears ‘harness’ and points at Cursor or Codex. They may call the product itself the harness.",
+        "They are not being careless. The term is genuinely overloaded. Anthropic describes the Claude Agent SDK as a general-purpose agent harness, including its tool use and context management. OpenAI uses harness engineering for the wider environment around Codex: repository structure, legible knowledge, tools, tests and mechanically enforced boundaries. One meaning starts with the runtime. The other starts with the system that enables useful work.",
+        "When I say my harness, I mean the second thing. It is the versioned and tested layer that makes my way of working with an agent repeatable across changing hosts. The working relationship is the human experience. The harness is the engineered mechanism that supports it. Cursor or Codex is the cockpit in which it runs.",
+        "Moving from Cursor to Codex made that boundary visible. I wrote about the migration separately because it was useful in its own right. Here, the important point is narrower: the procedures travelled, while the policy plumbing had to be translated. Our Agent Skills could share one reviewed source of truth. Cursor rules did not become Codex policy by changing a file extension; Codex had its own guidance, sandbox, permissions, task model and worktrees. Human judgement remained at the consequential edge.",
+        "That also showed why the skills base is not the whole harness. Skills are its portable core: named procedures, supporting scripts and references that teach an agent how to do recurring work. Around them sit project guidance, memory practices, tool connections, approval boundaries, regression cases and proof of done. A directory full of SKILL.md files is a useful library. It becomes part of a harness when the surrounding system can select, constrain, exercise and improve it.",
+        "Nor do I own every layer. Cursor and Codex provide the agent loop, user interface, context handling and native controls. Models provide capabilities and limitations that change underneath us. Git, CI, external services and physical lab equipment provide the environment in which claims are tested. My harness is therefore not a replacement runtime. It is a portable overlay with host-specific adapters, built on capabilities supplied by each cockpit.",
+        "The vocabulary I now find useful is simple. The working relationship is what it feels like to work together. The harness is the durable mechanism. Skills are its portable core. Rules, hooks and guidance that depend on one product are host adapters. Cursor and Codex are agent hosts or cockpits. The model is not the harness, and neither is the chat window.",
+        "This distinction is practical, not taxonomic. If changing from Cursor to Codex means starting again, I did not own a harness; I had configured a product. If a safety rule exists only as something I remember to say, it is not a reliable boundary. If a procedure cannot be tested or retired when models improve, it will become permanent scaffolding. Portability, verification and the ability to remove obsolete parts are what make the layer durable.",
+        "The word will remain overloaded, so I do not think the answer is to declare everybody else wrong. The answer is to state the boundary. I am building a durable working relationship with agents. The harness is the versioned machinery that lets that relationship survive a new model, a new cockpit and a fresh Monday morning.",
+        "(Codex helped draft this)"
+      ],
+      "sources": [
+        {
+          "label": "Anthropic: Effective harnesses for long-running agents",
+          "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+        },
+        {
+          "label": "OpenAI: Harness engineering",
+          "url": "https://openai.com/index/harness-engineering/"
+        },
+        {
+          "label": "Cursor: Agent Skills",
+          "url": "https://cursor.com/docs/skills"
+        }
+      ]
+    },
+    {
       "id": "when-answers-are-cheap-judgement-matters-more",
       "date": "2026-09-15",
       "title": "When answers are cheap, judgement matters more",

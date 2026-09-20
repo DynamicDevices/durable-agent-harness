@@ -4,11 +4,23 @@
   "terms": [
     {
       "term": "Harness",
-      "def": "The durable layer around a model and cockpit: skills, project guidance, memory, signed patterns, sensors, proof classes, host controls, and human gates that make agent work reliable and repeatable. In human-facing prose, I usually call this the working relationship."
+      "def": "The versioned and tested mechanism that makes a working relationship with agents repeatable across changing hosts: portable skills, explicit policy, memory practices, tools, human gates, sensors, proof classes and feedback. Product-specific guidance and controls are host adapters rather than the portable core. This is the notebook’s working definition, not a claim that the industry uses the word at one fixed boundary."
+    },
+    {
+      "term": "Working relationship",
+      "def": "The human experience of working with agents: purpose, judgement, collaboration, trust and learning. The harness is the engineered mechanism that supports this relationship; the two terms are related but not interchangeable."
+    },
+    {
+      "term": "Host adapter",
+      "def": "The product-specific mapping between the portable harness and an agent host: for example Codex AGENTS.md, sandbox and task conventions, or Cursor rules, hooks and permissions. An adapter should preserve intent without pretending unlike host mechanisms are the same."
+    },
+    {
+      "term": "Cockpit / agent host",
+      "def": "The product and runtime in which the work runs. Codex and Cursor supply the agent loop, interface, context handling, native tools and controls. They can themselves be called harnesses in broader industry usage; this notebook calls them hosts when distinguishing them from Alex’s portable layer."
     },
     {
       "term": "Codex",
-      "def": "The primary cockpit in this notebook since 2026-08-30: tasks, managed worktrees, files, terminals, reviews and app tools around the code. It hosts the working relationship; it is not the whole working relationship."
+      "def": "The primary cockpit in this notebook since 2026-08-30: tasks, managed worktrees, files, terminals, reviews and app tools around the code. It hosts the durable harness and working relationship; it is not identical to either."
     },
     {
       "term": "Agent Skill",
