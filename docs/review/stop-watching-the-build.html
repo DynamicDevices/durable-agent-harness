@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review draft: Stop Watching the Build: An Event-Driven Agent Harness — Chop Wood Carry Water</title>
+  <meta name="description" content="How costly CI polling led us from constant checking, through slower scheduled heartbeats, to signed webhooks and exact agent continuation.">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+  <meta name="theme-color" content="#0B1210">
+  <link rel="icon" href="../assets/chopwood-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="review-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top note-top">
+    <a class="brand" href="../index.html" aria-label="Chop Wood Carry Water — Durable Agent Harness home">
+      <img src="../assets/chopwood-mark.png" alt="" width="35" height="35">
+      <span class="brand-text"><strong>Chop Wood Carry Water</strong><em>Durable Agent Harness</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="../index.html">Notebook</a></nav>
+  </header>
+  <main id="main">
+    <article class="note-article">
+      <aside class="review-banner" aria-label="Publication status">
+        <strong>Review draft — not published</strong>
+        <span>This public, unlisted page is for editorial review. It may change or be withdrawn.</span>
+      </aside>
+      <header class="note-header">
+        <p class="kicker">Working practice · draft 2026-09-20</p>
+        <h1>Stop Watching the Build</h1>
+        <p class="note-byline">Alex Lennon</p>
+        <p class="note-lede">How costly CI polling led us from constant checking, through slower scheduled heartbeats, to signed webhooks and exact agent continuation.</p>
+      </header>
+      <div class="note-body review-body">
+        <p>On 16th August, one of our CI and bench chats generated 92 Task workers. When we added the parent conversation and those workers together, the cost-equivalent usage came to about $183.</p>
+        <p>Call it roughly $200 for one chat.</p>
+        <p>That needs a qualification. It was a combined usage estimate, not necessarily a $183 charge landing on a card. Some of the work sat within bundled product usage. Nor was every dollar caused by CI polling alone. The thread mixed build monitoring, bench work, Task fan-out and large tool results.</p>
+        <p>But the shape of the waste was clear. We had made a reasoning system behave like a sensor.</p>
+        <p>The agent would ask GitHub whether a workflow had finished. It had not. A later turn would ask again. The same thing happened with embedded Linux builds that could run for hours. Each check looked small in isolation, but the chat kept growing. Tool results were added to context and could be carried into later turns. Worker conversations accumulated outside the parent total. We were paying an increasingly capable model to discover that nothing had happened.</p>
+        <p>The build was doing useful work. The agent was mostly watching it do that work.</p>
+        <h2>First response: poll less often</h2>
+        <p>Our first improvement was straightforward. We stopped continuous checking and moved long waits to scheduled heartbeats.</p>
+        <p>Instead of keeping an agent running, a heartbeat woke at a slower interval, made one bounded observation and went quiet again when the state had not changed. That was materially better. It removed frantic status loops and made the cost visible as a deliberate schedule rather than an accidental habit.</p>
+        <p>It also helped us establish some important disciplines:</p>
+        <ul>
+          <li>one bounded status read per scheduled run;</li>
+          <li>no full CI logs unless a failure required them;</li>
+          <li>no <code>gh run watch</code> inside an agent chat;</li>
+          <li>no repeated progress narration when the external state was unchanged.</li>
+        </ul>
+        <p>This was a useful intermediate design. It was not the final one.</p>
+        <p>A fifteen-minute heartbeat still wakes up every fifteen minutes. Most of those wake-ups may say nothing more interesting than &quot;still running&quot;. Slower polling reduces waste, but it does not remove the underlying mistake. Time is still driving the reasoning system when an event should be driving it.</p>
+        <h2>The change in question</h2>
+        <p>The better question was not &quot;how often should the agent check?&quot;</p>
+        <p>It was &quot;who already knows that the state changed?&quot;</p>
+        <p>GitHub knows when a workflow completes. Foundries knows when an embedded Linux build succeeds or fails. Those systems should emit an event. The harness should retain it durably, correlate it with the exact waiting task and wake that task once.</p>
+        <p>That led us towards a genuinely event-driven continuation path:</p>
+        <ol>
+          <li>The task launching a build registers the immutable provider and build ID, its own task ID and an expiry.</li>
+          <li>The task stops. There is no model waiting in the background.</li>
+          <li>CI sends a signed success or failure webhook.</li>
+          <li>A small gateway stores the event before trying to deliver it.</li>
+          <li>A private tunnel carries it back to the workstation when available.</li>
+          <li>A local dispatcher matches the exact correlation and resumes only the task that launched that build.</li>
+          <li>The task receives bounded evidence and continues with the next useful test or a targeted diagnosis.</li>
+        </ol>
+        <p>Either side can arrive first. A very short build may complete before its wait registration reaches the dispatcher. A laptop may be asleep when the webhook arrives. A task may still be active when its event is delivered. Those are transport and concurrency problems, not reasons to make an agent poll. The event is retained and reconciled when the other side becomes available.</p>
+        <p>Success events matter as much as failures. A successful image build often unblocks the next physical-board or runtime test. If success does not wake the task, someone still has to watch the build.</p>
+        <h2>Do not wake the model with a whole log</h2>
+        <p>Event-driven delivery solved when to wake the agent. It did not by itself solve what to put into context.</p>
+        <p>A raw BitBake, Soong or Ninja log can contain megabytes of routine progress. Pulling all of it into a chat recreates much of the cost in a different form. It can also bury the useful failure line.</p>
+        <p>The harness now reduces logs programmatically before model reasoning begins. For BitBake, the first <code>ERROR:</code> record is significant even when unrelated tasks continue afterwards. For Android, we look for bounded, actionable Ninja, Soong, compiler, <code>lpmake</code> or <code>avbtool</code> failures. The extractor sanitises the first useful signal and leaves the ordinary log outside model context.</p>
+        <p>Where we control the build process, the same rules can fail fast. There is little value in allowing hours of dependent work to continue after a decisive failure if the harness can stop safely, wake the task and begin a repair.</p>
+        <h2>Where Jev and Preloop fit</h2>
+        <p>We are also testing Jev through a Preloop adapter as an observe-only semantic sensor. It can help classify a failure, judge whether the first error appears actionable and suggest the cheapest next proof.</p>
+        <p>It is deliberately not in the critical wake path.</p>
+        <p>The deterministic event and bounded failure envelope are stored and routed first. Jev is supplemental. It cannot mark CI green, authorise a change, retry a build or weaken compiler, test, hash or human approval gates. If Jev or Preloop is unavailable, the task still wakes. A later explicit event may make one deferred advisory attempt; there is no watcher checking when the watcher is available.</p>
+        <p>This distinction matters. Event-driven should not mean handing control to a probabilistic component. It means using deterministic events to decide when reasoning is worth paying for.</p>
+        <h2>What this should change about cost</h2>
+        <p>The expected saving is not mysterious:</p>
+        <ul>
+          <li>unchanged external state should cost zero model turns;</li>
+          <li>success should carry a small typed event, not a log or an LLM summary;</li>
+          <li>failure should carry the earliest bounded evidence needed for diagnosis;</li>
+          <li>disconnected infrastructure should queue events rather than provoke retries from an agent;</li>
+          <li>duplicate delivery should be absorbed by idempotent transport;</li>
+          <li>one task should wake once for the build it actually owns.</li>
+        </ul>
+        <p>This does not make CI free. Builds still consume runner time, storage and network traffic. Webhooks, durable storage and private delivery have an engineering cost. A difficult failure may still justify substantial model work.</p>
+        <p>The aim is narrower and more defensible: do not spend reasoning tokens on waiting.</p>
+        <h2>When we can call it truly event-driven</h2>
+        <p>At the time of this draft, the Foundries kiosk and Android FRDM lanes provide the reference implementation. A real Foundries failure has already traversed the webhook, durable outbox, private tunnel and exact-task continuation path. That is useful evidence, but it is not yet a claim that every external wait in the harness is event-driven.</p>
+        <p>Before publishing this as a completed journey, I want evidence that:</p>
+        <ul>
+          <li>every material CI and long-running build lane uses a provider callback or an equivalent completion event;</li>
+          <li>superseded scheduled status heartbeats remain disabled;</li>
+          <li>success and failure both resume the correct task;</li>
+          <li>offline delivery and restart recovery have been exercised in practice;</li>
+          <li>duplicate, late and event-first delivery do not create a second turn;</li>
+          <li>before-and-after usage data shows fewer model turns and lower charged or cost-equivalent usage for comparable waits.</li>
+        </ul>
+        <p>The most important design principle is already clear, though.</p>
+        <p>The agent should reason when there is something to reason about. The transport should do the waiting.</p>
+        <p>Chop wood. Carry water.</p>
+      </div>
+      <footer class="note-footer review-footer">
+        <p><strong>End of review draft.</strong> This page is deliberately absent from Insights, RSS, the sitemap and <code>llms.txt</code>.</p>
+      </footer>
+    </article>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><p>Alex Lennon · Chop Wood Carry Water</p><p class="tagline-foot">Chop wood. Carry water.</p></div></footer>
+</body>
+</html>
