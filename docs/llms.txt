@@ -8,6 +8,7 @@
 - [RSS feed](https://chopwoodcarrywater.uk/feed.xml)
 
 ## Insights
+- [The Model Is Only Part of the Machine](https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html)
 - [What I mean by an agent harness](https://chopwoodcarrywater.uk/notes/what-i-mean-by-an-agent-harness.html)
 - [When answers are cheap, judgement matters more](https://chopwoodcarrywater.uk/notes/when-answers-are-cheap-judgement-matters-more.html)
 - [A quick check is still a model turn](https://chopwoodcarrywater.uk/notes/quick-check-is-still-a-model-turn.html)

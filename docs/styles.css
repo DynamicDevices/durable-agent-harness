@@ -1182,6 +1182,15 @@ section h2 {
   margin: 0 0 1.35rem;
 }
 
+.note-diagram { margin: 2rem 0; }
+.note-diagram img { display: block; width: 100%; height: auto; }
+.note-diagram figcaption, .note-diagram > a, .note-diagram details { font-size: .9em; }
+.note-diagram figcaption { margin-top: .75rem; }
+.note-diagram > a { display: block; margin-top: .75rem; }
+.note-diagram details { margin-top: .75rem; }
+.note-diagram summary { cursor: pointer; }
+.note-body blockquote { margin: 1.5rem 0; padding: .25rem 1.25rem; border-left: 4px solid var(--timber, #C48A4A); }
+
 .note-body h2 {
   margin: 2.4rem 0 0.8rem;
   color: var(--carbon);

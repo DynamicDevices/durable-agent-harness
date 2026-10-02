@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Model Is Only Part of the Machine: LLM Harnesses for Embedded Engineering — Chop Wood Carry Water</title>
+  <meta name="description" content="Follow a Yocto build failure through an LLM harness and its tools: what runs, what enters context, and what we still need to check on the board.">
+  <meta name="author" content="Alex Lennon">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0B1210">
+  <link rel="canonical" href="https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html">
+  <link rel="alternate" type="application/rss+xml" title="Chop Wood Carry Water insights" href="https://chopwoodcarrywater.uk/feed.xml">
+  <link rel="icon" href="../assets/chopwood-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Chop Wood Carry Water">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html">
+  <meta property="og:title" content="The Model Is Only Part of the Machine: LLM Harnesses for Embedded Engineering">
+  <meta property="og:description" content="Follow a Yocto build failure through an LLM harness and its tools: what runs, what enters context, and what we still need to check on the board.">
+  <meta property="og:image" content="https://chopwoodcarrywater.uk/assets/notes/the-model-is-only-part-of-the-machine-og.png">
+  <meta property="og:image:secure_url" content="https://chopwoodcarrywater.uk/assets/notes/the-model-is-only-part-of-the-machine-og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="The Model Is Only Part of the Machine: an overhead view of hands sketching a diagram beside an embedded board, debug probe and laptop.">
+  <meta property="article:published_time" content="2026-10-02">
+  <meta property="article:modified_time" content="2026-10-02">
+  <meta property="article:author" content="Alex Lennon">
+  <meta property="article:section" content="Working practice">
+  <meta property="article:tag" content="embedded systems">
+  <meta property="article:tag" content="Yocto">
+  <meta property="article:tag" content="LLM harnesses">
+  <meta property="article:tag" content="MCP">
+  <meta property="article:tag" content="engineering evidence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@embedded_iot">
+  <meta name="twitter:creator" content="@embedded_iot">
+  <meta name="twitter:title" content="The Model Is Only Part of the Machine: LLM Harnesses for Embedded Engineering">
+  <meta name="twitter:description" content="Follow a Yocto build failure through an LLM harness and its tools: what runs, what enters context, and what we still need to check on the board.">
+  <meta name="twitter:image" content="https://chopwoodcarrywater.uk/assets/notes/the-model-is-only-part-of-the-machine-og.png">
+  <meta name="twitter:image:alt" content="The Model Is Only Part of the Machine: an overhead view of hands sketching a diagram beside an embedded board, debug probe and laptop.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html#article",
+  "url": "https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html",
+  "headline": "The Model Is Only Part of the Machine",
+  "description": "Follow a Yocto build failure through an LLM harness and its tools: what runs, what enters context, and what we still need to check on the board.",
+  "datePublished": "2026-10-02",
+  "dateModified": "2026-10-02",
+  "inLanguage": "en-GB",
+  "articleSection": "Working practice",
+  "keywords": [
+    "embedded systems",
+    "Yocto",
+    "LLM harnesses",
+    "MCP",
+    "engineering evidence"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Alex Lennon",
+    "url": "https://chopwoodcarrywater.uk",
+    "sameAs": [
+      "https://x.com/embedded_iot"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chop Wood Carry Water",
+    "url": "https://chopwoodcarrywater.uk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chopwoodcarrywater.uk/assets/chopwood-mark.png"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://chopwoodcarrywater.uk/assets/notes/the-model-is-only-part-of-the-machine-og.png",
+    "width": 1200,
+    "height": 627
+  },
+  "mainEntityOfPage": "https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/"
+}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top note-top">
+    <a class="brand" href="../index.html" aria-label="Chop Wood Carry Water — Durable Agent Harness home">
+      <img src="../assets/chopwood-mark.png" alt="" width="35" height="35">
+      <span class="brand-text"><strong>Chop Wood Carry Water</strong><em>Durable Agent Harness</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="../index.html">Notebook</a><a href="../index.html#blog">Insights</a></nav>
+  </header>
+  <main id="main">
+    <article class="note-article">
+      <header class="note-header">
+        <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#blog">Insights</a></p>
+        <p class="kicker">Working practice · 2nd October 2026</p>
+        <h1>The Model Is Only Part of the Machine</h1>
+        <p class="note-byline">Alex Lennon · <a href="https://x.com/embedded_iot" rel="me">@embedded_iot</a></p>
+        <p class="note-lede">Follow a Yocto build failure through an LLM harness and its tools: what runs, what enters context, and what we still need to check on the board.</p>
+
+      </header>
+      <figure class="note-hero">
+        <img src="../assets/notes/the-model-is-only-part-of-the-machine-og.png" width="1200" height="627"
+             alt="The Model Is Only Part of the Machine: an overhead view of hands sketching a diagram beside an embedded board, debug probe and laptop." fetchpriority="high">
+      </figure>
+      <div class="note-body">
+<p>A Yocto build has failed. The last screenful tells us which task stopped, but not necessarily why. Somewhere behind it are a compiler diagnostic, a recipe, a sysroot and the configuration that joined them together.</p>
+<p>We can paste the error into a chatbot and ask for suggestions. With the right tools connected, we can also ask the assistant to read the task log and inspect the recipe. Before letting it loose on a project, I want to understand what happens between that request and a command running on our machine.</p>
+<p>We spend plenty of time choosing processors, but a board&#x27;s behaviour depends on the software and peripherals around them too. An LLM isn&#x27;t deterministic in the way we usually expect. Still, looking at the surrounding system helps explain why the same model can be useful in one setup and frustrating in another.</p>
+<h2>What happens after we press Enter?</h2>
+<p>Our words reach an application first. It assembles a request containing our message, instructions, relevant conversation history and descriptions of the tools it has made available. It may also include selected files or earlier tool results.</p>
+<p>Text is encoded as tokens: numbered units that can represent words, parts of words, punctuation or whitespace. The model processes that context and generates output incrementally. The service decodes the output; the application renders it, often in streamed chunks. Those chunks are not necessarily individual tokens.</p>
+<p>That output might be an explanation. It might instead be a structured request to use a tool. Writing that request does not execute it.</p>
+<p>The software around the model receives the request, checks it and performs an allowed operation. It then supplies the result to the model, which can answer or request another operation. One instruction from us can therefore lead to several model calls, with real tool executions between them.</p>
+<h2>The harness is part of the engineering</h2>
+<p>That surrounding software is often called the harness. It puts together the model&#x27;s input, handles tool requests and decides what can run. It also keeps track of the conversation. Some of it may run on our desktop and some in a remote service.</p>
+<p>When the model asks to read a file or run a build, the harness passes the permitted request to a tool. The result comes back through the harness for the model to interpret.</p>
+<figure class="note-diagram"><img src="../assets/notes/the-model-is-only-part-of-the-machine-01-engineering-system.png" alt="The engineer supplies a bounded task to the harness. The harness exchanges context and requests with the model and routes permitted operations to repository, build and bench tools." width="1600" height="1160" loading="lazy"><figcaption>The engineer supplies a bounded task to the harness. The harness exchanges context and requests with the model and routes permitted operations to repository, build and bench tools.</figcaption><a href="../assets/notes/the-model-is-only-part-of-the-machine-01-engineering-system.png" target="_blank" rel="noopener">Open diagram full-size</a><details><summary>Read this diagram as text</summary><ol><li>The engineer gives the harness a task, its scope, permissions and required evidence.</li><li>The harness sends context to the LLM and receives generated text or a tool request.</li><li>The harness checks requests before passing them to repository, build or bench tools.</li><li>Tool results return to the harness and can enter the next model request.</li><li>Bench commands go to the board; readings come back through the bench tools. The model does not measure the board directly.</li><li>MCP is an optional connection between the harness and tools. Direct APIs or shell calls are alternatives; the connection does not grant permission.</li></ol></details></figure>
+<p>Writing “do not flash the board” in a prompt tells the model what we want. A harness that blocks flashing can enforce it. For anything that might damage hardware or change a live system, I want more than a sentence in the prompt.</p>
+<p>MCP, the Model Context Protocol, gives the application a standard way to connect to tools and information sources. An MCP server might offer repository searches or access to a build service. The model sees descriptions of the available tools; the application handles the connection and calls.</p>
+<p>Direct APIs and shell integrations work too. MCP makes the connection more consistent; we still need to decide which tools to expose and how much access to give them.</p>
+<h2>Follow one failed build</h2>
+<p>Let&#x27;s take a simplified example, using made-up recipe names.</p>
+<p>Suppose <code>sensor-app</code> fails in <code>do_compile</code>, reporting that <code>sensor_api.h</code> cannot be found. Our initial instruction could be:</p>
+<blockquote><p>Find out why sensor-app failed in this build and checkout. Read the relevant task log, inspect the recipe and check where the missing header should come from. Don&#x27;t change files or start another build yet. Tell me what you&#x27;ve found and what you would check next if the cause is still unclear.</p></blockquote>
+<p>First, a local tool extracts the relevant error and enough surrounding context to understand it, keeping track of which build and task it came from. Sending a whole Yocto build log can burn a lot of tokens on successful tasks and repeated progress messages. If the harness keeps that log in the conversation, the same bulk can be carried into later requests too. We want the useful evidence, not every line the build produced.</p>
+<p>The compiler couldn&#x27;t find the header. That doesn&#x27;t tell us whether a dependency is missing, the include path is wrong or the provider failed to install it. The assistant needs to inspect those possibilities rather than jump straight to a patch.</p>
+<p>The next tool calls can check the effective recipe metadata and the provider&#x27;s installed and staged files. This needs the actual build configuration: finding a similarly named recipe in another layer isn&#x27;t enough. We also need to check that we&#x27;re looking at the target sysroot, not host-native tools.</p>
+<p>Suppose we find that <code>libsensor</code> supplies the header but is missing from <code>sensor-app</code>&#x27;s build dependencies. In Yocto, <code>DEPENDS</code> gets the dependency&#x27;s headers and libraries into the appropriate recipe sysroot. Adding an absolute include path into a work directory would miss the underlying problem.</p>
+<p>Now the assistant has a reason to propose adding <code>libsensor</code> to the recipe metadata, perhaps through a <code>.bbappend</code> in our own layer. <code>DEPENDS</code> takes recipe-provider names, not a <code>libsensor-dev</code> package name. We can review the suggested edit against the files we&#x27;ve just inspected.</p>
+<p>Once we&#x27;ve agreed the change and rebuild, the assistant can apply the edit and rebuild the recipe. If that passes, we still need to test it on the board.</p>
+<figure class="note-diagram"><img src="../assets/notes/the-model-is-only-part-of-the-machine-02-yocto-investigation.png" alt="An illustrative Yocto investigation moves from a bounded instruction through log reduction, recipe inspection and a hypothesis. Approval separates diagnosis from editing and rebuilding; compilation proof remains distinct from hardware proof." width="1600" height="1360" loading="lazy"><figcaption>An illustrative Yocto investigation moves from a bounded instruction through log reduction, recipe inspection and a hypothesis. Approval separates diagnosis from editing and rebuilding; compilation proof remains distinct from hardware proof.</figcaption><a href="../assets/notes/the-model-is-only-part-of-the-machine-02-yocto-investigation.png" target="_blank" rel="noopener">Open diagram full-size</a><details><summary>Read this diagram as text</summary><ol><li>Ask for a read-only investigation of the failed build.</li><li>A local tool extracts the sensor-app do_compile error with the build, task and source details.</li><li>The compiler cannot find sensor_api.h. A missing dependency is one possible explanation.</li><li>Tools inspect the effective recipe, selected header provider and sysroot. In this made-up example, libsensor supplies the header but is absent from DEPENDS.</li><li>The assistant proposes a recipe or owned-layer .bbappend change. Without approval, it stops there.</li><li>Approve the edit and targeted rebuild separately. A pass means the configuration compiles; the board still needs testing.</li></ol></details></figure>
+<h2>Our prompt is not the whole prompt</h2>
+<p>Tool access uses tokens before any tool runs. The model needs descriptions and argument formats to know what it can call. With a large tool catalogue, that can be a sizeable part of the prompt. Some harnesses send the whole catalogue; others load the tools as they&#x27;re needed.</p>
+<p>Tool results add to that input. An entire log or a huge JSON response can stay in the conversation and be sent again on later requests. A collapsed log panel may still contain thousands of lines that the model receives.</p>
+<p>Choosing what to keep takes care. A few lines around the first error may explain far more than the final screenful. We need enough context to follow the failure, and a record of where those lines came from.</p>
+<figure class="note-diagram"><img src="../assets/notes/the-model-is-only-part-of-the-machine-03-context-admission.png" alt="Two illustrative input bundles contrast a broad tool catalogue and raw retained outputs with selected definitions and bounded evidence. The diagram does not represent measured token counts." width="1600" height="1120" loading="lazy"><figcaption>Two illustrative input bundles contrast a broad tool catalogue and raw retained outputs with selected definitions and bounded evidence. The diagram does not represent measured token counts.</figcaption><a href="../assets/notes/the-model-is-only-part-of-the-machine-03-context-admission.png" target="_blank" rel="noopener">Open diagram full-size</a><details><summary>Read this diagram as text</summary><ol><li>Both requests include instructions and the user&#x27;s task.</li><li>A broad request also includes a large tool catalogue, retained conversation and oversized tool results.</li><li>A focused request selects relevant tool definitions, useful state and evidence that explains the failure, with its source and any extraction limits.</li><li>The comparison shows contents, not measured token counts or guaranteed savings.</li><li>Tool definitions use context when included; results use context when admitted and retained. Hiding a UI panel or caching input does not remove that context.</li></ol></details></figure>
+<p>Our log-analysis guidance starts with a local parser or filter before asking the model to interpret the result. It keeps related task messages together and asks us to test for interleaved output, multiline errors and redaction. If it finds no useful diagnostic, the result should say so rather than imply the build was fine.</p>
+<p>Longer prompts can cost more and take longer to process, although caching may reduce the cost of repeated input. They also leave less room for the information we need next. Eventually the harness has to drop or summarise older material.</p>
+<h2>Bring-up and measurements follow the same pattern</h2>
+<p>For peripheral bring-up, we can ask the assistant to inspect device-tree configuration, pin assignments and driver settings. A build checks whether that configuration compiles. Boot logs and captured bus transactions help us find out what the board actually does. The source files won&#x27;t tell us whether a pull-up was fitted.</p>
+<p>For low-power debugging, a tool connected to an instrument can supply current readings. The assistant can compare them with wake sources and peripheral state, provided we tell it which board, firmware and operating conditions produced them. It is interpreting a measurement, not measuring current itself.</p>
+<p>Our earlier CWCW Insight, <a href="https://chopwoodcarrywater.uk/notes/the-log-changed-the-system.html">The log changed the system</a>, described how logging and its transport can distort the behaviour we&#x27;re trying to measure. Having an assistant request the capture doesn&#x27;t remove that problem. We still need to understand the instrument and its limitations.</p>
+<h2>Give it an engineering task</h2>
+<p>It helps to say what we&#x27;re trying to find out, which build or board we&#x27;re working on, what the assistant may change and when it should stop. “Find out why this build failed; do not change it” is a useful starting point. We can ask it to apply a patch and rebuild once we&#x27;ve looked at the diagnosis.</p>
+<p>Logs and files are information for the investigation. Text inside them shouldn&#x27;t be treated as instructions to change the job or grant more access.</p>
+<p>For a long build, let ordinary software handle waiting and completion events. Bring the model back when there is something to interpret, rather than paying it repeatedly to discover that the build is still running.</p>
+<p>Take a build failure you already understand and ask the assistant to investigate it read-only. Compare its diagnosis with yours, and look at the tool output the harness sent to the model. Then choose the next engineering task you&#x27;re willing to let it take on.</p>
+<p>(Codex helped draft this)</p>
+      </div>
+      <aside class="note-sources" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sources and further reading</h2>
+        <ul>
+          <li><a href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noopener noreferrer">OpenAI: Function calling</a></li>
+          <li><a href="https://modelcontextprotocol.io/docs/learn/architecture" target="_blank" rel="noopener noreferrer">MCP: Architecture</a></li>
+          <li><a href="https://docs.yoctoproject.org/ref-manual/variables.html#term-DEPENDS" target="_blank" rel="noopener noreferrer">Yocto: DEPENDS</a></li>
+          <li><a href="https://docs.yoctoproject.org/ref-manual/tasks.html" target="_blank" rel="noopener noreferrer">Yocto: Tasks</a></li>
+        </ul>
+      </aside>
+      <footer class="note-footer">
+        <div class="note-share" aria-labelledby="share-heading">
+          <p class="kicker" id="share-heading">Share this insight</p>
+          <p>Share the canonical article link with its Chop Wood Carry Water preview card.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fchopwoodcarrywater.uk%2Fnotes%2Fthe-model-is-only-part-of-the-machine.html" target="_blank" rel="noopener noreferrer">Share on LinkedIn</a>
+            <button class="btn ghost copy-link" type="button" data-copy-url="https://chopwoodcarrywater.uk/notes/the-model-is-only-part-of-the-machine.html">Copy link</button>
+          </div>
+          <p class="copy-link__status" role="status" aria-live="polite"></p>
+        </div>
+        <p><a class="text-link" href="../index.html#blog">All insights</a></p>
+      </footer>
+    </article>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><p>Alex Lennon · Chop Wood Carry Water</p><p class="tagline-foot">Chop wood. Carry water.</p></div></footer>
+  <script>
+  (() => {
+    const button = document.querySelector(".copy-link");
+    const status = document.querySelector(".copy-link__status");
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copyUrl;
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch (_) {
+        const input = document.createElement("textarea");
+        input.value = value;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        input.remove();
+      }
+      status.textContent = "Link copied.";
+    });
+  })();
+  </script>
+</body>
+</html>

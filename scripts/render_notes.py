@@ -6,6 +6,7 @@ from __future__ import annotations
 import email.utils
 import html
 import json
+import re
 from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import quote, urlparse
@@ -38,6 +39,47 @@ def canonical(post: dict) -> str:
 
 def image_url(post: dict) -> str:
     return f"{ORIGIN}/assets/notes/{post['id']}-og.png"
+
+
+def render_inline(value: str) -> str:
+    """Render the small inline subset used by illustrated Insights; escape HTML."""
+    parts = re.split(r"(`[^`]+`|\[[^\]]+\]\(https://[^\s)]+\))", value)
+    output = []
+    for part in parts:
+        if part.startswith("`") and part.endswith("`"):
+            output.append(f"<code>{html.escape(part[1:-1])}</code>")
+        elif re.fullmatch(r"\[[^\]]+\]\(https://[^\s)]+\)", part):
+            label, url = part[1:].split("](", 1)
+            output.append(f'<a href="{html.escape(url[:-1], quote=True)}">{html.escape(label)}</a>')
+        else:
+            output.append(html.escape(part))
+    return "".join(output)
+
+
+def render_body(post: dict, *, feed: bool = False) -> str:
+    if not post.get("bodyBlocks"):
+        if feed:
+            return "".join(f"<p>{html.escape(p)}</p>" for p in post["body"])
+        return "\n".join(f"        <p>{html.escape(p)}</p>" for p in post["body"])
+    blocks = []
+    for block in post["bodyBlocks"]:
+        kind = block["type"]
+        if kind in {"paragraph", "heading", "quote"}:
+            text = render_inline(block["text"])
+            tag = "h2" if kind == "heading" else "p"
+            rendered = f"<{tag}>{text}</{tag}>"
+            blocks.append(f"<blockquote>{rendered}</blockquote>" if kind == "quote" else rendered)
+        elif kind == "figure":
+            filename = block["file"]
+            if not re.fullmatch(r"[a-z0-9-]+\.png", filename):
+                raise ValueError("Illustration must be a local PNG filename")
+            source = f"{ORIGIN}/assets/notes/{filename}" if feed else f"../assets/notes/{filename}"
+            caption = html.escape(block["caption"])
+            items = "".join(f"<li>{html.escape(line)}</li>" for line in block["description"])
+            blocks.append(f'<figure class="note-diagram"><img src="{source}" alt="{caption}" width="{int(block["width"])}" height="{int(block["height"])}" loading="lazy"><figcaption>{caption}</figcaption><a href="{source}" target="_blank" rel="noopener">Open diagram full-size</a><details><summary>Read this diagram as text</summary><ol>{items}</ol></details></figure>')
+        else:
+            raise ValueError(f"Unsupported article block: {kind}")
+    return "\n".join(blocks)
 
 
 def linkedin_discussion_url(post: dict) -> str | None:
@@ -94,7 +136,7 @@ def render_note(post: dict) -> str:
     tags_meta = "\n".join(
         f'  <meta property="article:tag" content="{html.escape(tag)}">' for tag in tags
     )
-    paragraphs = "\n".join(f"        <p>{html.escape(p)}</p>" for p in post["body"])
+    paragraphs = render_body(post)
     sources = ""
     if post.get("sources"):
         source_items = "\n".join(
@@ -109,7 +151,7 @@ def render_note(post: dict) -> str:
         </ul>
       </aside>"""
     disclosure = ""
-    if post.get("imageDisclosure"):
+    if post.get("imageDisclosure") and post.get("imageDisclosureVisible", True):
         disclosure = f'\n        <figcaption>{html.escape(post["imageDisclosure"])}</figcaption>'
     provenance = ""
     if post.get("sourceUrl"):
@@ -287,7 +329,7 @@ def render_feed(posts: list[dict]) -> str:
     for post in posts:
         url = canonical(post)
         published = datetime.fromisoformat(post["date"]).replace(tzinfo=timezone.utc)
-        body = "".join(f"<p>{html.escape(p)}</p>" for p in post["body"])
+        body = render_body(post, feed=True)
         items.append(
             f"""    <item>
       <title>{html.escape(post["title"])}</title>

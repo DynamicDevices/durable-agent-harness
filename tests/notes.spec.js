@@ -7,6 +7,22 @@ const ORIGIN = "https://chopwoodcarrywater.uk";
 const blog = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "blog.json"), "utf8"));
 
 test.describe("shareable notes", () => {
+  test("illustrated harness insight retains diagrams and accessible text without the cover flag", async ({ page }) => {
+    await page.goto("/notes/the-model-is-only-part-of-the-machine.html");
+    await expect(page.locator(".note-hero figcaption")).toHaveCount(0);
+    await expect(page.locator(".note-body h2")).toHaveCount(6);
+    await expect(page.locator(".note-diagram")).toHaveCount(3);
+    for (const image of await page.locator(".note-diagram img").all()) {
+      await image.scrollIntoViewIfNeeded();
+      await expect(image).toHaveJSProperty("naturalWidth", 1600);
+    }
+    for (const detail of await page.locator(".note-diagram details").all()) {
+      await detail.locator("summary").click();
+      await expect(detail.locator("ol")).toBeVisible();
+    }
+    await expect(page.locator(".note-body")).toContainText("An LLM isn't deterministic in the way we usually expect.");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)).toBeFalsy();
+  });
   test("homepage contains crawlable note links before JavaScript", async ({ request }) => {
     const response = await request.get("/");
     expect(response.ok()).toBeTruthy();
