@@ -1,30 +1,15 @@
-# Licensing
+# Worked exercise licence
 
-This repository uses two licences.
-
-## Site content (notebook)
-
-The public notebook content — including files under `content/`, `docs/` pages
-and assets that present that notebook, `blog-inbox.md`, `AGENTS.md`,
-`BASELINE.md`, and the Cursor hour pack’s prose — is licensed under
-
-**Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**
-
+The README and explanatory prose in this exercise are licensed under Creative
+Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0):
 https://creativecommons.org/licenses/by-sa/4.0/
 
 Copyright © 2026 Alex Lennon (Chop Wood Carry Water).
+Credit the author, indicate changes, link to the licence, and share adaptations
+of that prose under the same licence. The linked licence contains the terms.
 
-You are free to share and adapt the material for any purpose, even commercially,
-provided you give appropriate credit, indicate if changes were made, and
-distribute your contributions under the same licence.
-
-## Code (site machinery)
-
-Build/test scripts, Playwright tests, and the small amount of site JavaScript /
-CSS plumbing are licensed under the **MIT License** — see [LICENSE-MIT.txt](LICENSE-MIT.txt).
-
-Copyright © 2026 Dynamic Devices Ltd / Alex Lennon.
-
+The JavaScript files (buggy.cjs, attempt.cjs, fixed.cjs and test.cjs) are
+licensed under the MIT License reproduced below.
 
 MIT License
 
