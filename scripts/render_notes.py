@@ -357,7 +357,10 @@ def render_feed(posts: list[dict]) -> str:
 def render_sitemap(posts: list[dict]) -> str:
     urls = [
         ("/", max(post.get("dateModified", post["date"]) for post in posts), "1.0"),
-        ("/agents.html", "2026-09-05", "0.8"),
+        ("/agents.html", "2026-10-15", "0.8"),
+        ("/worked-example.html", "2026-10-15", "0.8"),
+        ("/downloads.html", "2026-10-15", "0.7"),
+        ("/feedback.html", "2026-10-15", "0.6"),
     ]
     urls.extend(
         (f"/notes/{post['id']}.html", post.get("dateModified", post["date"]), "0.9")
@@ -387,6 +390,9 @@ def render_llms(posts: list[dict]) -> str:
 ## Main pages
 - [Notebook]({ORIGIN}/)
 - [Agents: start here]({ORIGIN}/agents.html)
+- [Worked exercise]({ORIGIN}/worked-example.html)
+- [Download verification]({ORIGIN}/downloads.html)
+- [Feedback]({ORIGIN}/feedback.html)
 - [RSS feed]({ORIGIN}/feed.xml)
 
 ## Insights

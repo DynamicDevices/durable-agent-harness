@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Check your starter download · Chop Wood Carry Water</title>
+  <meta name="description" content="Download the Codex or Cursor starter pack or runnable exercise, inspect file manifests and verify SHA-256 checksums before using the files." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chopwoodcarrywater.uk/downloads.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Check your starter download" />
+  <meta property="og:description" content="Download the Codex or Cursor starter pack or runnable exercise, inspect file manifests and verify SHA-256 checksums before using the files." />
+  <meta property="og:url" content="https://chopwoodcarrywater.uk/downloads.html" />
+  <meta property="og:image" content="https://chopwoodcarrywater.uk/assets/og-cover-v2.png" />
+  <meta property="og:image:alt" content="Chop Wood Carry Water engineering notebook" />
+  <link rel="icon" href="assets/chopwood-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="guides.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://chopwoodcarrywater.uk/downloads.html", "name": "Check your starter download", "dateModified": "2026-10-15", "inLanguage": "en-GB"}</script>
+</head>
+<body data-ready="true">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top note-top">
+    <a class="brand" href="./" aria-label="Chop Wood Carry Water — Durable Agent Harness home">
+      <img src="assets/chopwood-mark.png" alt="" width="35" height="35" />
+      <span class="brand-text">
+        <strong>Chop Wood Carry Water</strong>
+        <em>Durable Agent Harness</em>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./#hour">60 min</a>
+      <a href="agents.html">Agents</a>
+      <a href="./#blog">Insights</a>
+      <a href="./#privacy">About</a>
+    </nav>
+  </header>
+
+  <aside class="site-notice" data-testid="site-notice" role="note">
+    <div class="wrap">
+      <p>
+        <strong>Disclaimer.</strong>
+        AI-assisted notebook — use at your own risk.
+        Content
+        <a class="text-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </aside>
+
+
+  <main id="main" class="note-article">
+    <header class="note-header">
+      <p class="breadcrumb"><a href="./">Home</a> / Evergreen guidance</p>
+      <p class="kicker">Guide</p>
+      <h1>Check your starter download</h1>
+      <p class="note-byline">Reviewed <time datetime="2026-10-15">15th October 2026</time>.</p>
+    </header>
+    <div class="note-body">
+      <p>Each ZIP is built from the source files with a fixed file order, timestamp and permissions. The adjacent manifest lists every file’s relative path, byte size and SHA-256. ZIPs include hidden guidance folders.</p>
+      <ul>
+<li><a class="text-link" href="packs/codex-hour-starter.zip" download>Codex pack ZIP</a> · <a class="text-link" href="packs/codex-hour/README.md">Browse guide</a> · <a class="text-link" href="packs/codex-hour-starter-manifest.json">File manifest</a></li>
+<li><a class="text-link" href="packs/cursor-hour-starter.zip" download>Cursor pack ZIP</a> · <a class="text-link" href="packs/cursor-hour/README.md">Browse guide</a> · <a class="text-link" href="packs/cursor-hour-starter-manifest.json">File manifest</a></li>
+<li><a class="text-link" href="packs/worked-example.zip" download>Worked exercise ZIP</a> · <a class="text-link" href="examples/array-limit/README.md">Browse guide</a> · <a class="text-link" href="packs/worked-example-manifest.json">File manifest</a></li>
+      </ul>
+      <h2 id="verify">Verify a download</h2>
+      <p>Save <a class="text-link" href="packs/SHA256SUMS" download>SHA256SUMS</a>, the ZIP and its manifest in the same directory. For the Codex pack on Linux, compare these locally computed hashes with the two matching lines in SHA256SUMS:</p>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Linux checksum commands"><code>sha256sum codex-hour-starter.zip codex-hour-starter-manifest.json</code></pre>
+      <p>On macOS use <code>shasum -a 256</code> in place of <code>sha256sum</code>. On Windows PowerShell use:</p>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Windows checksum commands"><code>Get-FileHash .\codex-hour-starter.zip -Algorithm SHA256
+Get-FileHash .\codex-hour-starter-manifest.json -Algorithm SHA256</code></pre>
+      <p>Use the corresponding names for Cursor or the exercise. If either hash differs, stop and download again from the intended source. These hashes check that files agree with the published checksum list. They are not signatures: a compromised download source could replace the ZIP, manifest and list together.</p>
+      <h2>Check individual files</h2>
+      <p>After extraction, paths in the manifest are relative to the folder named by its <code>root</code> field, such as <code>codex-hour/</code>. Hash any file you want to check and compare its size and SHA-256 with that entry. Include hidden folders when comparing the complete file list; an extra or missing file means it is not the same package.</p>
+      <h2>Rebuild from the repository</h2>
+      <p>From a repository checkout with Python 3, run the standard-library builder. It needs no npm package, external service or credentials.</p>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Rebuild command"><code>python3 scripts/build_downloads.py</code></pre>
+      <p>The output goes to <code>docs/packs/</code>. ZIP entries use 1st January 1980, regular-file mode 0644, sorted paths and no compression. Source modification times, permissions and creation order do not affect the bytes. Manifests sit outside the ZIP; SHA256SUMS covers ZIPs and manifests and never hashes itself. No generated timestamp or build counter is added.</p>
+      <p><code>npm test</code> runs the normal sync and verifies source/browse/archive parity, manifest hashes, extracted execution and reproducibility after changing source times, modes and creation order. Checksums describe the files in this candidate, not the date of a historical site snapshot.</p>
+      <p><a class="text-link" href="worked-example.html">Run the worked example</a> · <a class="text-link" href="./#hour">First-hour setup</a> · <a class="text-link" href="feedback.html">Report a download problem</a></p>
+      <p class="fineprint">(Briar helped draft this)</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Durable Agent Harness</strong>
+        <p>Alex Lennon · <a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a> · Chop Wood Carry Water</p>
+      </div>
+      <p class="tagline-foot">Chop wood. Carry water.</p>
+    </div>
+  </footer>
+</body>
+</html>

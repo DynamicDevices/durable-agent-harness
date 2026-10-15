@@ -416,6 +416,7 @@ function renderCapabilities(data) {
         el("span", {}, [
           row.note,
           row.evidence ? el("a", { className: "text-link", href: row.evidence.url, text: row.evidence.label }) : null,
+          row.evidence?.limit ? el("p", { className: "fineprint", text: row.evidence.limit }) : null,
           row.band ? el("div", { className: "band", text: row.band }) : null,
         ]),
       ]),

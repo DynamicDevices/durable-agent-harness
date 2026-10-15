@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>When zero is a valid limit · Chop Wood Carry Water</title>
+  <meta name="description" content="Reproduce a failing JavaScript test, an attempted correction that still fails and a verified fix. A small exercise with source and an offline download." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chopwoodcarrywater.uk/worked-example.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="When zero is a valid limit" />
+  <meta property="og:description" content="Reproduce a failing JavaScript test, an attempted correction that still fails and a verified fix. A small exercise with source and an offline download." />
+  <meta property="og:url" content="https://chopwoodcarrywater.uk/worked-example.html" />
+  <meta property="og:image" content="https://chopwoodcarrywater.uk/assets/og-cover-v2.png" />
+  <meta property="og:image:alt" content="Chop Wood Carry Water engineering notebook" />
+  <link rel="icon" href="assets/chopwood-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="guides.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://chopwoodcarrywater.uk/worked-example.html", "name": "When zero is a valid limit", "dateModified": "2026-10-15", "inLanguage": "en-GB"}</script>
+</head>
+<body data-ready="true">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top note-top">
+    <a class="brand" href="./" aria-label="Chop Wood Carry Water — Durable Agent Harness home">
+      <img src="assets/chopwood-mark.png" alt="" width="35" height="35" />
+      <span class="brand-text">
+        <strong>Chop Wood Carry Water</strong>
+        <em>Durable Agent Harness</em>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./#hour">60 min</a>
+      <a href="agents.html">Agents</a>
+      <a href="./#blog">Insights</a>
+      <a href="./#privacy">About</a>
+    </nav>
+  </header>
+
+  <aside class="site-notice" data-testid="site-notice" role="note">
+    <div class="wrap">
+      <p>
+        <strong>Disclaimer.</strong>
+        AI-assisted notebook — use at your own risk.
+        Content
+        <a class="text-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer license">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </aside>
+
+
+  <main id="main" class="note-article">
+    <header class="note-header">
+      <p class="breadcrumb"><a href="./">Home</a> / Evergreen guidance</p>
+      <p class="kicker">Guide</p>
+      <h1>When zero is a valid limit</h1>
+      <p class="note-byline">Reviewed <time datetime="2026-10-15">15th October 2026</time>.</p>
+    </header>
+    <div class="note-body">
+      <p>A default can hide a valid value. Here, a caller asks for zero items and gets three. Run the failing test, try a correction that still fails, then check the fix against the same tests.</p>
+      <p>This is a deliberately small exercise run for this guide, not a historical project incident. You can reproduce it by hand or use it to practise checking an assistant’s diagnosis.</p>
+      <h2>Get the exercise</h2>
+      <p>You need Node.js 24 and a terminal. No dependencies to install, service, account or paid model is needed.</p>
+      <p><a class="text-link" href="packs/worked-example.zip" download>Download the exercise ZIP</a> · <a class="text-link" href="examples/array-limit/README.md">Browse the offline guide</a> · <a class="text-link" href="downloads.html#verify">Verify the download</a></p>
+      <p>Unzip it into a new folder, then open a terminal in <code>worked-example/</code>. If you already have the repository, use <code>examples/array-limit/</code>.</p>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Exercise commands"><code>node --version
+node --test-reporter=tap test.cjs buggy
+node --test-reporter=tap test.cjs attempt
+node --test-reporter=tap test.cjs fixed</code></pre>
+      <p>Run each stage separately. The first two commands deliberately exit with code 1. Do not chain them with <code>&amp;&amp;</code>, which would stop at the first failure. The fixed stage should exit with code 0.</p>
+      <h2>1. Make the failure visible</h2>
+      <p>The contract is small: an omitted or <code>null</code> limit means three; zero means none; a positive integer caps the result. The function returns a new array.</p>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Original implementation"><code>// Contract: null/undefined use 3; zero returns no items; positive integers cap results.
+module.exports = function take(items, limit) {
+  return items.slice(0, limit || 3);
+};</code></pre>
+      <p><a class="text-link" href="examples/array-limit/test.cjs">The same six tests</a> run against every stage. With <code>["oak", "ash", "elm", "beech"]</code> and a limit of zero, the test expects <code>[]</code> but the original returns <code>["oak", "ash", "elm"]</code>. <code>||</code> treats zero as false and selects the default.</p>
+      <h2>2. Check the attempted correction</h2>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Attempted correction"><code>// Attempt: move the default into a variable. Zero is still treated as false.
+module.exports = function take(items, limit) {
+  const count = limit ? limit : 3;
+  return items.slice(0, count);
+};</code></pre>
+      <p>Moving the default into a variable looks plausible. The condition still treats zero as false, so the zero test still fails. A changed implementation is not enough to show that the problem is fixed.</p>
+      <h2>3. Preserve zero and verify</h2>
+<pre class="guide-code" tabindex="0" role="region" aria-label="Correct implementation"><code>module.exports = function take(items, limit) {
+  const count = limit ?? 3;
+  return items.slice(0, count);
+};</code></pre>
+      <p><code>??</code> selects the default only for <code>null</code> or <code>undefined</code>. Zero reaches <code>slice</code> unchanged. The other tests check the defaults, positive and large limits, empty input and that the input stays unchanged.</p>
+      <h2>Actual run</h2>
+      <p>Run for this guide on 15th October 2026 with Node 24.21.0. These are the test counts and exit codes from that run; timings and stack paths depend on your machine.</p>
+      <table><caption>Same six tests for all three stages</caption><thead><tr><th scope="col">Stage</th><th scope="col">Pass</th><th scope="col">Fail</th><th scope="col">Exit</th></tr></thead><tbody><tr><th scope="row">buggy</th><td>5</td><td>1</td><td>1</td></tr><tr><th scope="row">attempt</th><td>5</td><td>1</td><td>1</td></tr><tr><th scope="row">fixed</th><td>6</td><td>0</td><td>0</td></tr></tbody></table>
+      <h2>What this proves</h2>
+      <p>You can reproduce a specific failure, see why an attempted correction leaves it in place, and verify a fix against a stated contract. The six tests cover this function. A real API also needs a policy for invalid limits, such as negative numbers, fractions or strings, and checks in the project where it will run.</p>
+      <h2>Try the diagnosis with your host</h2>
+      <p>Ask: “Read <code>test.cjs</code> and <code>buggy.cjs</code>. Explain why zero fails, cite the relevant lines and suggest a focused check. Do not edit files.” Check the answer against the source. If you then want to practise editing, explicitly ask for a local correction and rerun the tests.</p>
+      <p><a class="text-link" href="./#hour">Try the first-hour setup</a> · <a class="text-link" href="agents.html">Agents: get going</a> · <a class="text-link" href="./#blog">Read the engineering stories</a></p>
+      <p>If a step does not work, <a class="text-link" href="feedback.html">tell us which step and what happened</a>.</p>
+      <p class="fineprint">(Briar helped draft this)</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>Durable Agent Harness</strong>
+        <p>Alex Lennon · <a class="text-link" href="https://x.com/embedded_iot" target="_blank" rel="noopener noreferrer me">@embedded_iot</a> · Chop Wood Carry Water</p>
+      </div>
+      <p class="tagline-foot">Chop wood. Carry water.</p>
+    </div>
+  </footer>
+</body>
+</html>

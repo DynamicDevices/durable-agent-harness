@@ -2,6 +2,8 @@
 
 Start with a small piece of work in a project you control. Use Codex or Cursor; the packs share the same boundaries but use different project paths.
 
+Guidance reviewed 15th October 2026. Need a self-contained task? The [worked exercise](https://chopwoodcarrywater.uk/worked-example.html) includes an offline guide and runnable source. [Download verification](https://chopwoodcarrywater.uk/downloads.html) and [feedback](https://chopwoodcarrywater.uk/feedback.html) use the same public routes. For feedback include host/version, step, expected/actual and a reference; remove private details.
+
 ## 5 min - Choose a small task and your host
 
 Download the Codex or Cursor pack. Start with a read-only job: explain one failing test, naming the file, likely cause and one way to check it.
