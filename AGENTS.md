@@ -25,6 +25,10 @@ This notebook is for humans **and** coding agents. Do not invent policy from the
 
 Done when one useful task has a checked result. No routine reflection record is required.
 
+## Reproducible exercise and feedback
+
+Guidance reviewed 15th October 2026. Try the [worked exercise](https://chopwoodcarrywater.uk/worked-example.html) or run `examples/array-limit/test.cjs` as described in its README. [Verify downloads](https://chopwoodcarrywater.uk/downloads.html) with the public manifests/checksums. [Feedback](https://chopwoodcarrywater.uk/feedback.html) should include host/version, exact step, expected/actual and a reference, with private project details removed.
+
 ## While you work
 
 - Prefer skills/rules/patterns on disk over chat folklore.

@@ -12,7 +12,8 @@
     "serve": "npx --yes serve docs -l 4173",
     "test:e2e": "npx playwright test",
     "test:insight": "python3 tests/test_insight_tools.py",
-    "test": "npm run sync && npm run privacy && npm run test:insight && npm run test:e2e",
+    "test:downloads": "python3 tests/test_downloads.py",
+    "test": "npm run sync && npm run privacy && npm run test:insight && npm run test:downloads && npm run test:e2e",
     "check": "npm test"
   },
   "devDependencies": {

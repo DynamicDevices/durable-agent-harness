@@ -1,0 +1,37 @@
+{
+  "schema": "cwcw/download-manifest/v1",
+  "archive": "codex-hour-starter.zip",
+  "root": "codex-hour",
+  "files": [
+    {
+      "path": ".agents/skills/example-domain-task/SKILL.md",
+      "bytes": 1051,
+      "sha256": "2eb885769f820263ded8d459b47b84130166d33d30c94234bb5a23594669161b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2090,
+      "sha256": "8294201cd006fb8a676c7f16c114d91b0b5430ec02afa761ccc624bf020d9145"
+    },
+    {
+      "path": "CHECKLIST.md",
+      "bytes": 3577,
+      "sha256": "3d95e56fec3cea7155dc51354908122087d0754618e91b6fe17c7405f97c99eb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3621,
+      "sha256": "74ea0e1da43991c16b6418900ea9b1b960acd1725d1dab09fb23a85f8d77a13f"
+    },
+    {
+      "path": "clocks.json",
+      "bytes": 385,
+      "sha256": "2785c238f93ce8236a13ac0f020cb0f18b5d28c4bc7554946909c1b1754c338a"
+    },
+    {
+      "path": "patterns/WORKING-PATTERNS.md",
+      "bytes": 1854,
+      "sha256": "37851836bd711125ac23d42b1d5519825923bf5c0ecf83ff12fbc208894edd37"
+    }
+  ]
+}

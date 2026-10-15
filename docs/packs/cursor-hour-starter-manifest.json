@@ -1,0 +1,47 @@
+{
+  "schema": "cwcw/download-manifest/v1",
+  "archive": "cursor-hour-starter.zip",
+  "root": "cursor-hour",
+  "files": [
+    {
+      "path": ".cursor/rules/p0-human-gate-irreversible.mdc",
+      "bytes": 1251,
+      "sha256": "9048328ca80fcafd8bb0b94160b19fa75d1bc9cf3c2d65b70d14d9ac59efec1a"
+    },
+    {
+      "path": ".cursor/rules/p0-no-secrets-in-chat.mdc",
+      "bytes": 996,
+      "sha256": "5b4325309d1e187803eb8e929e77854f1115ecae0f16643d59c7a5ba88dde437"
+    },
+    {
+      "path": ".cursor/rules/working-agreements.mdc",
+      "bytes": 1234,
+      "sha256": "c80571f7aca8dd8b505f78dcc8762e88f9630cf0aeddf9fc78285e2eb4b6d24a"
+    },
+    {
+      "path": ".cursor/skills/example-domain-task/SKILL.md",
+      "bytes": 1029,
+      "sha256": "4a4a8a2bd9b8ac0e11a80d2bf74538526a6129b136d68ad7cdc97fed66d6c0b7"
+    },
+    {
+      "path": "CHECKLIST.md",
+      "bytes": 3578,
+      "sha256": "a66919fb12621dd4d7cc22422da08a95b812d21eb309c8409c53c134accd5082"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3691,
+      "sha256": "8655f459f1d99c218338d665d07ab9dba961d8f10f19e3a079121659d9bc31ed"
+    },
+    {
+      "path": "clocks.json",
+      "bytes": 233,
+      "sha256": "1ed33fb8408281d096a164540c19b3dd1793d01c191f2c1f6b880928420852cf"
+    },
+    {
+      "path": "patterns/WORKING-PATTERNS.md",
+      "bytes": 1457,
+      "sha256": "1358a39d6871c5747f7d920465184bfe433cfc65e72befadf8b9995710c9ffa0"
+    }
+  ]
+}

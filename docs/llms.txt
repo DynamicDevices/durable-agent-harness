@@ -5,6 +5,9 @@
 ## Main pages
 - [Notebook](https://chopwoodcarrywater.uk/)
 - [Agents: start here](https://chopwoodcarrywater.uk/agents.html)
+- [Worked exercise](https://chopwoodcarrywater.uk/worked-example.html)
+- [Download verification](https://chopwoodcarrywater.uk/downloads.html)
+- [Feedback](https://chopwoodcarrywater.uk/feedback.html)
 - [RSS feed](https://chopwoodcarrywater.uk/feed.xml)
 
 ## Insights

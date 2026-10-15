@@ -1,0 +1,14 @@
+/* Evergreen guides reuse the notebook shell, typography and colour tokens. */
+.guide-code {
+  max-width: 100%;
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  font-size: .85em;
+  line-height: 1.6;
+}
+.guide-code:focus-visible { outline: 3px solid var(--water); outline-offset: 3px; }
+.note-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.note-body th, .note-body td { text-align: left; padding: .5rem; border-bottom: 1px solid var(--line); }

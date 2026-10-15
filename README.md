@@ -111,3 +111,9 @@ See [LICENSE](LICENSE) for the split.
 ---
 
 *AI-assisted (Codex) under Alex’s direction. Use at your own risk.*
+
+## Try one checked result
+
+Guidance reviewed 15th October 2026. [Run the evergreen worked example](https://chopwoodcarrywater.uk/worked-example.html), or use [the local offline guide](examples/array-limit/README.md). It deliberately shows a failed correction before a passing fix, with the same tests throughout.
+
+[Verify starter downloads and file manifests](https://chopwoodcarrywater.uk/downloads.html). [Share feedback](https://chopwoodcarrywater.uk/feedback.html) with host/version, exact step, expected/actual result and a reference; remove secrets and private project details first.

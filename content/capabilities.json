@@ -60,7 +60,8 @@
       "band": "Team knowledge base",
       "evidence": {
         "url": "notes/the-token-bonfire.html",
-        "label": "Token Bonfire: failures and limits"
+        "label": "Token Bonfire: failures and limits",
+        "limit": "A reported failure and its lessons; no controlled comparison or general productivity result."
       }
     },
     {
@@ -71,7 +72,8 @@
       "band": "Platform engineering",
       "evidence": {
         "url": "notes/the-cockpit-changed-the-work-did-not.html",
-        "label": "Host migration account"
+        "label": "Host migration account",
+        "limit": "One host migration account; host versions and permissions vary. It does not validate the other capability estimates."
       }
     },
     {

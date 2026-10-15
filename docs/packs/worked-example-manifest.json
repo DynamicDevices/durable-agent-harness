@@ -1,0 +1,37 @@
+{
+  "schema": "cwcw/download-manifest/v1",
+  "archive": "worked-example.zip",
+  "root": "worked-example",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "bytes": 2039,
+      "sha256": "3e8a9fdbbe7af384798e42018c6b82dd70dc7dba1633e6bae1ee8619f1eca371"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2833,
+      "sha256": "2fd77641b5f25245559dfbe237d791414261c9a244a8c9feebb179b09f761928"
+    },
+    {
+      "path": "attempt.cjs",
+      "bytes": 195,
+      "sha256": "47bd56c78c7235a0f534c560a8f6c513eb93c88e0de133f34b402be4b701250c"
+    },
+    {
+      "path": "buggy.cjs",
+      "bytes": 176,
+      "sha256": "c59dfca3dba7306b4e608e567972be956083611f9a971be3ece208ee1faad40b"
+    },
+    {
+      "path": "fixed.cjs",
+      "bytes": 110,
+      "sha256": "1cfcf1ce25beb16a99ccc169f3daf7f652518cb9b3191f6392821d38bff9f5b4"
+    },
+    {
+      "path": "test.cjs",
+      "bytes": 1164,
+      "sha256": "7766fab424b8d9dc33f2bbe7585030f2a7e1f5f04db27a76b39ae6976a64870f"
+    }
+  ]
+}
