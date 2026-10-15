@@ -3,7 +3,7 @@
   "clocks": {
     "harness": {
       "label": "Harness practice",
-      "start": "YYYY-MM-DD",
+      "start": null,
       "hint": "Set to the day you installed this pack."
     }
   }

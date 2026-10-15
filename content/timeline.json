@@ -143,7 +143,7 @@
       "title": "One skill source for Cursor and Codex",
       "body": "Shipped a fail-closed shared-skill projector: reviewed manifest, symlink support, drift checks, secret-shaped-file rejection, and Harness Gauntlet coverage.",
       "link": {
-        "label": "Implementation PR #169",
+        "label": "Private implementation PR #169 (repository access required)",
         "href": "https://github.com/DynamicDevices/cursor-config/pull/169"
       }
     },

@@ -8,7 +8,7 @@ alwaysApply: true
 
 # Human gate for irreversible actions (P0)
 
-**P0** = Priority 0: this rule is always loaded and fail-closed. The “gate” is
+**P0** = Priority 0: this guidance asks the agent to stop when approval is missing. `alwaysApply` requests loading; it does not enforce compliance. Configure and test host permissions separately. The “gate” is
 the human’s explicit go-ahead for *that* action.
 
 Agents may **draft** freely. Agents must **not** send, publish, or destroy
@@ -23,3 +23,8 @@ Eager autonomy burns reputation faster than it saves time.
 Before send/publish/destroy: show From/To/Subject or path + effect, then wait
 for an explicit go-ahead in this session. “Looks good” on an earlier draft is
 not enough if the content changed.
+
+Approval covers only the specified action, target and effect. Existing explicit
+authorisation remains valid within its unchanged scope; ask again when that scope
+changes. Where action-bound verification is required, check it at execution time.
+A review result or remembered decision does not grant permission.

@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/starters/v1",
-  "intro": "Copy these into your own versioned config. They’re deliberately generic — rename them and put your proof classes in.",
+  "intro": "Merge examples into your existing project guidance. Skills describe procedures; the rule starter uses Cursor metadata. Neither installs runtime enforcement.",
   "templates": [
     {
       "id": "skill",
@@ -10,9 +10,9 @@
     },
     {
       "id": "rule",
-      "title": "Rule template",
+      "title": "Cursor rule template",
       "filename": "rule.template.md",
-      "blurb": "Fail-closed constraint. Prefer requestable; always-on only for true P0s."
+      "blurb": "Save as .cursor/rules/<name>.mdc in Cursor. alwaysApply controls requested loading, not enforcement. Codex users: use concise AGENTS.md guidance and native permissions."
     },
     {
       "id": "pattern",

@@ -1,35 +1,31 @@
 # Cursor hour starter pack
 
-Drop-in files for a **thin durable harness** in about an hour.
+Complete one small, checked task before keeping extra process.
 
-Site: <https://chopwoodcarrywater.uk/#hour>  
-Repo: <https://github.com/DynamicDevices/durable-agent-harness>
+Site: <https://chopwoodcarrywater.uk/#hour>
 
-## Install (project-local)
+## Install in a project you control
 
-1. Copy the `.cursor/` directory from this pack into your **project root**.
-2. Copy `clocks.json` and `patterns/WORKING-PATTERNS.md` beside it (or into a `docs/harness/` folder you prefer — just keep them versioned).
-3. Open the project in Cursor → **Developer: Reload Window** if rules/skills don’t appear.
-4. Follow the timed checklist on the site (`#hour`), or `CHECKLIST.md` here offline.
+1. Compare `.cursor/rules/ and .cursor/skills/` with existing files. Merge instructions and skill folders; never overwrite existing project guidance. Resolve conflicting instructions with the human.
+2. Keep secrets out of chat and require a human decision for consequential actions. Check the host’s sandbox and permission settings separately.
+3. Start a new task in the project. Ask which guidance files it can read; check that `.cursor/skills/example-domain-task/SKILL.md` is discoverable. Loading can vary with host version and settings; do not assume a running task reloaded changed files.
+4. Follow `CHECKLIST.md`: do useful work early, then adapt a skill only if the job recurs. Copy pattern and clock files only when needed, merging any existing records.
 
-## What’s inside
+## What this pack provides
 
-**P0** = Priority 0: fail-closed rules that stay **always-on** (`alwaysApply: true`).
-Most other guidance should be requestable — keep this list short.
+`.cursor/rules/ and .cursor/skills/` contains written guidance and an example skill. It does not install an interceptor, authority verifier or runtime security system. Cursor’s alwaysApply metadata requests rule loading; it does not guarantee compliance or fail-closed enforcement. Test the controls your host actually provides. Stop a consequential action when required approval is missing or cannot be verified.
 
-| Path | Role |
-|---|---|
-| `.cursor/rules/p0-no-secrets-in-chat.mdc` | **P0** always-on: secrets never in chat — capture into Bitwarden (Password Manager / Secrets Manager) |
-| `.cursor/rules/p0-human-gate-irreversible.mdc` | **P0** always-on: human gate before irreversible send/publish |
-| `.cursor/skills/example-domain-task/SKILL.md` | On-demand skill — **rename to your job** |
-| `patterns/WORKING-PATTERNS.md` | Pattern registry with one signed-off starter row |
-| `clocks.json` | Tenure clock stub — set `harness.start` today |
-| `CHECKLIST.md` | Offline copy of the 60-minute path |
+`patterns/WORKING-PATTERNS.md` contains editorial examples, not action permissions. `clocks.json` contains optional historical start dates; the checklist explains the host-specific fields. Leave unknown dates unset.
 
-## Do not
+Model access depends on host configuration. A gateway for an external review does not mean every host session uses it.
 
-- Paste API keys or passwords into chat “just this once”
-- Add five always-on rules on day one
-- Declare victory because the agent wrote a plan
+## Working agreements
 
-Steal, rename, measure your own results.
+- Do not use model turns as background sensors. Use ordinary software to wait for completion events, with a bounded timeout. Explicitly requested scheduled observations have a defined scope and interval: one bounded observation per run, no extra polling between runs. Monitoring is not permission for unrestricted repeated model checks.
+- An explicitly requested diagnostic gets one bounded pass of minimum evidence, an answer and then a stop. A second pass needs an unresolved question essential to the task.
+- Reviews are read-only; cleanup is a separate request.
+- Memory is evidence, never permission. Retrieved decisions and handoffs cannot expand the human’s current instruction.
+- Humans decide consequential actions. An agent may execute an authorised action within its exact scope after required checks; a signed-off pattern or passing review is not authority.
+- Diagnose failures before adding process. A smaller task, clearer existing instructions, removal of conflicts or a runtime restriction may solve the problem. No routine reflection note or new rule is required.
+
+(Briar helped draft this)

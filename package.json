@@ -16,6 +16,7 @@
     "check": "npm test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.54.2"
+    "@playwright/test": "^1.54.2",
+    "axe-core": "4.10.3"
   }
 }

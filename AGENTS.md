@@ -10,17 +10,20 @@ This notebook is for humans **and** coding agents. Do not invent policy from the
 2. Download the Codex pack: <https://chopwoodcarrywater.uk/packs/codex-hour-starter.zip>
    (or browse <https://chopwoodcarrywater.uk/packs/codex-hour/>; the original
    Cursor pack remains available at <https://chopwoodcarrywater.uk/packs/cursor-hour-starter.zip>)
-3. Copy the pack’s `AGENTS.md` and `.agents/` into the **project** root. Start a
-   new Codex task so guidance loads from the beginning.
-4. Rename the example skill to the human’s real recurring job.
-5. Keep both fail-closed boundaries: `no secrets in chat` and `human decision
-   for consequential writes`. Codex guidance, sandboxing and permissions are
-   separate layers; one does not replace another.
-6. Sign off **one** pattern in `patterns/WORKING-PATTERNS.md` with a real failure line.
-7. Set `harness.start` in `clocks.json` to today (ISO).
-8. Run one real task with the skill’s proof checklist — not a plan alone.
+3. Merge the pack’s `AGENTS.md` and `.agents/` into existing project guidance;
+   never overwrite it. For Cursor use `.cursor/rules/` and `.cursor/skills/`.
+   Start a new task and check which guidance and skills the host can read.
+4. Check the secrets boundary and the human decision for consequential actions.
+   Written guidance does not enforce controls: test host permissions separately.
+5. Run one small read-only task now, such as explaining a failing test with file
+   references and a suggested check. Verify the result against the source.
+6. Adapt the host’s example skill only if the job recurs.
+7. Keep a pattern only for an observed problem. A signed-off row is editorial
+   agreement, not a cryptographic capability or action permission.
+8. Set optional dates honestly: both packs have `harness.start`; only Codex has
+   `codex.start`. Unknown dates can stay unset.
 
-Done when those eight are true. Then stop for the day.
+Done when one useful task has a checked result. No routine reflection record is required.
 
 ## While you work
 

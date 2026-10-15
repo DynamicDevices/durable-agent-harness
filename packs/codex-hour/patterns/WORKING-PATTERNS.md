@@ -36,3 +36,7 @@ When a human explicitly requests a diagnostic, batch the minimum evidence into
 one bounded pass, answer from it, and stop. Do not use model turns as background
 sensors. A second pass needs a real unresolved blocker; cleanup remains a
 separate request from review.
+
+## Meaning of sign-off
+
+These starter rows record editorial agreement with guidance. They are not cryptographic capabilities and do not authorise future actions. Retain or adapt them only for an observed problem. Review when requested or warranted, not to produce a routine record.

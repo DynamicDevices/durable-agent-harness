@@ -415,6 +415,7 @@ function renderCapabilities(data) {
         el("span", { className: "pill now", text: scale[row.now] || row.now }),
         el("span", {}, [
           row.note,
+          row.evidence ? el("a", { className: "text-link", href: row.evidence.url, text: row.evidence.label }) : null,
           row.band ? el("div", { className: "band", text: row.band }) : null,
         ]),
       ]),
@@ -615,7 +616,7 @@ async function renderStarters(data) {
 
   for (const t of data.templates) {
     const body = await loadText(new URL(t.filename, STARTER_BASE));
-    const pre = el("pre", { className: "starter-body" }, [body]);
+    const pre = el("pre", { className: "starter-body", tabindex: "0", role: "region", "aria-label": `${t.title} code sample` }, [body]);
     const btn = el("button", { type: "button", className: "copy-btn", text: "Copy" });
     btn.addEventListener("click", async () => {
       try {
@@ -745,4 +746,13 @@ async function main() {
 main().catch((err) => {
   console.error(err);
   document.body.dataset.ready = "error";
+});
+
+ document.querySelectorAll('.mobile-contents a').forEach((link) => {
+  link.addEventListener('click', () => {
+    const contents = link.closest('details');
+    contents.open = false;
+    const target = link.hash && document.getElementById(link.hash.slice(1));
+    if (target) { target.setAttribute('tabindex', '-1'); target.focus({ preventScroll: true }); }
+  });
 });

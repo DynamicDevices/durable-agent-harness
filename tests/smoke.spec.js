@@ -78,8 +78,8 @@ test.describe("Durable Agent Harness site", () => {
     await page.goto("/#hour");
     await expect(page.locator("body")).toHaveAttribute("data-ready", "true");
     await expect(page.getByTestId("section-hour")).toContainText("Start in 60 minutes");
-    await expect(page.getByTestId("hour-steps").locator(".step-card")).toHaveCount(8);
-    await expect(page.getByTestId("section-hour")).toContainText("fail-closed boundaries");
+    await expect(page.getByTestId("hour-steps").locator(".step-card")).toHaveCount(7);
+    await expect(page.getByTestId("section-hour")).toContainText("human decision");
     await expect(page.getByTestId("hour-done")).toContainText("Done when");
     const download = page.getByTestId("hour-download");
     await expect(download).toHaveAttribute("href", /codex-hour-starter\.zip$/);
@@ -144,7 +144,7 @@ test.describe("Durable Agent Harness site", () => {
     await expect(page.locator("#case-grid .case-card")).toHaveCount(13);
     await expect(page.getByTestId("section-measure")).toContainText("Measurement kit");
     await expect(page.getByTestId("section-measure")).toContainText("Four clocks");
-    await expect(page.getByTestId("section-measure")).toContainText("EOW");
+    await expect(page.getByTestId("section-measure")).toContainText("no routine reflection record is required");
     await expect(page.getByTestId("section-starters")).toContainText("Starter kit");
     await expect(page.locator("#starter-list .starter-card")).toHaveCount(6);
     await expect(page.locator("#starter-list .starter-body").first()).toContainText("Example domain task");

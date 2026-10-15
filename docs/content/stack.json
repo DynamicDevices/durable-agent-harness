@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/stack/v1",
-  "intro": "The working relationship is the human experience. The harness is the versioned and tested mechanism that makes it repeatable: portable procedures, explicit policy, memory, tools, human gates and feedback. Codex and Cursor are cockpits; product-specific mechanisms are host adapters.",
+  "intro": "Briar is the name of my agent setup across editors, models and messaging surfaces. This notebook describes what we tried, where it failed and what helped us finish useful work. Skills and project instructions guide the agent; host permissions and runtime controls enforce only the boundaries they are configured to cover.",
   "layers": [
     {
       "id": "cockpit",
@@ -63,12 +63,12 @@
       "id": "patterns",
       "title": "Patterns",
       "subtitle": "Kaizen → Hansei → Toyota Way Practices",
-      "body": "Cross-cutting ways of working: propose → human sign-off → encode → apply → periodic Hansei. The learning core is named Toyota Way Practices; patterns are the registry that makes Kaizen real.",
+      "body": "Keep guidance that addresses an observed problem. A human can agree a correction, then test it on real work. Review it when requested or when it stops helping; a signed-off entry is not action permission.",
       "tips": [
         "No silent promotion to signed-off",
-        "Hansei keeps / amends / retires — on a cadence",
-        "Toyota Way Practices names the cluster; load the member practice for the live pain",
-        "Encode into skills/rules where agents will load them"
+        "Review when requested or warranted by a problem",
+        "Load the practice that helps with the actual failure",
+        "Guidance needs separate runtime controls where enforcement matters"
       ]
     },
     {
@@ -87,7 +87,7 @@
       "id": "runtime",
       "title": "Runtime + routing",
       "subtitle": "Preloop · OpenRouter",
-      "body": "Preloop adds a durable policy/audit plane on tool use — and a Cloud PR reviewer that posts a `preloop` commit status. OpenRouter routes models for the cockpit and that reviewer. Both serve the harness; neither is the harness.",
+      "body": "Preloop adds a durable policy/audit plane on tool use — and a Cloud PR reviewer that posts a `preloop` commit status. Model routing depends on host configuration: native/default access for the host, or a deliberately configured gateway for selected external workflows and reviews. Both serve the harness; neither is the harness.",
       "tips": [
         "Keep keys in a vault",
         "Document methods, not enrollment secrets",

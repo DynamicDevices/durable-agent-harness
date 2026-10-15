@@ -5,7 +5,12 @@ description: >-
 alwaysApply: false
 ---
 
-# Example fail-closed rule
+# Cursor rule template
+
+Save this as `.cursor/rules/<name>.mdc`. `alwaysApply: false` makes this
+requestable Cursor guidance, not runtime enforcement. Codex readers should use
+concise project `AGENTS.md` instructions and configure native permissions
+separately; copying Cursor metadata does not configure Codex.
 
 Agents must <HARD CONSTRAINT>.
 
