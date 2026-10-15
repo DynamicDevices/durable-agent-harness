@@ -225,7 +225,9 @@
             sizes="100vw"
           />
         </picture>
+        <video class="hero-video" muted loop playsinline preload="none" tabindex="-1" data-src="assets/chopwood-hero-loop.mp4"></video>
       </div>
+      <button class="hero-motion" type="button" aria-label="Pause background animation" hidden>Pause background</button>
       <div class="hero-inner">
         <p class="hero-brand" data-testid="brand">Chop Wood Carry Water</p>
         <h1 id="hero-headline">Durable Agent Harness</h1>
@@ -608,5 +610,6 @@
   </footer>
 
   <script type="module" src="app.js"></script>
+  <script type="module" src="hero-motion.js"></script>
 </body>
 </html>
