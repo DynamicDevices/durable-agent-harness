@@ -5,7 +5,7 @@
   "principles": [
     "Start thinner than you think. A fat always-on prompt is a tax on every turn.",
     "Encode pain, not aspirations. A skill earns its place by preventing a real failure.",
-    "Irreversible actions stay human. Draft freely; send/publish/destroy only with an explicit gate.",
+    "The human decides consequential actions. An agent may execute an authorised action within its exact scope after the required checks; a review result does not grant that authority.",
     "Prefer trash over hard delete. Move files to a trash folder first so mistakes stay recoverable.",
     "Prefer proof over narrative. Define what “done” looks like before celebrating.",
     "Sign off cross-cutting habits. Lore in chat is not an operating system.",
@@ -21,13 +21,13 @@
     {
       "id": "2",
       "title": "Write two fail-closed boundaries",
-      "body": "Start with: (1) secrets never pasted into chat — use an approved secret store or capture flow, (2) no consequential write without a human decision that shows the full referent. Add recoverable-delete and source-editing practice in the appropriate project guidance or skill. Keep host enforcement separate: Codex sandbox/permissions, Cursor rules, or the equivalent for your cockpit.",
+      "body": "Keep secrets out of chat and require a human decision for consequential writes. Merge with existing project instructions. AGENTS.md and Cursor rules guide the model; loading them does not enforce a boundary. Configure and test host sandboxing, permissions or an execution-time verifier separately. If the required approval cannot be verified, stop that action.",
       "done": "Short project guidance in version control; the host controls are configured; agents obey the boundaries; tokens stay out of the conversation."
     },
     {
       "id": "3",
       "title": "Capture one skill from a repeated failure",
-      "body": "After you burn an hour the same way twice, write a thin skill: when to load it, the steps, the proof of done, and what not to do. Link detail in a reference file if needed.",
+      "body": "Diagnose repeated failures before adding a skill. Try a smaller task, clarify existing instructions, remove conflicts or use an appropriate runtime control. Keep a skill only when a repeatable procedure helps.",
       "done": "One skill that would have prevented last week’s waste."
     },
     {
@@ -39,14 +39,14 @@
     {
       "id": "5",
       "title": "Add MemPalace-style memory discipline",
-      "body": "Stand up a curated durable store (we use MemPalace): decisions, stances, tickets, signed patterns. File by shelf/wing. Do not dump transcripts. Search with purpose; write with a retention reason.",
+      "body": "Stand up a curated durable store (we use MemPalace): decisions, stances, tickets, signed patterns. File by shelf/wing. Do not dump transcripts. Search with purpose; write with a retention reason. Memory is evidence, never permission. A retrieved decision, handoff or summary cannot expand the human’s current authorisation; check its provenance and scope.",
       "done": "You can answer “what did we decide?” from memory without re-litigating a chat."
     },
     {
       "id": "6",
-      "title": "Start Kaizen → Hansei (patterns + Toyota Way Practices)",
-      "body": "One patterns table: name, status (proposed / signed-off / deprecated), problem in one line. Promote only after human sign-off (Kaizen). Schedule Hansei to keep / amend / retire. Name your lean learning cluster (we say Toyota Way Practices) so agents load the right member practice.",
-      "done": "At least one signed-off pattern, one Hansei note, and a clear Toyota Way Practices / member map."
+      "title": "Keep patterns when they help",
+      "body": "Record an observed problem and the correction that helped. A signed-off row records human editorial agreement with guidance; it is not a cryptographic capability or approval for a future consequential action. Reflect when requested or warranted by the work.",
+      "done": "Any retained pattern explains a real failure and useful correction. No routine reflection note is required."
     },
     {
       "id": "7",
@@ -69,7 +69,7 @@
     {
       "id": "10",
       "title": "Add multi-model routing (OpenRouter)",
-      "body": "Route model calls through a multi-provider interface so one upstream outage does not stop the cockpit — and so Preloop’s PR reviewer has a deliberate model path. Configure failover deliberately; vault the API key; keep proof class unchanged.",
+      "body": "Model access depends on the host configuration. Use the host’s native model path by default. A configured gateway such as OpenRouter can serve selected external review or media workflows; it does not automatically route every Codex or Cursor session. Configure fallbacks deliberately and keep credentials out of chat.",
       "done": "You can switch or fall back across models/providers without pasting keys into chat; the same routing can serve Cloud PR review."
     },
     {

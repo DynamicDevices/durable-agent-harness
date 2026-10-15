@@ -29,3 +29,7 @@ the window is cheaper than carrying last week’s server forever.
 When removing project files, move them to the OS trash or a project trash
 folder first. Recover if wrong; empty trash only as a separate, deliberate
 step. Prefer this over `rm` for workspace data.
+
+## Meaning of sign-off
+
+These starter rows record editorial agreement with guidance. They are not cryptographic capabilities and do not authorise future actions. Retain or adapt them only for an observed problem. Review when requested or warranted, not to produce a routine record.

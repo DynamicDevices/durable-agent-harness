@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/learning/v1",
   "title": "Kaizen → Hansei → Toyota Way Practices",
-  "intro": "Tools alone aren’t the harness. We improve on purpose (Kaizen), reflect on what actually happened (Hansei), and keep a named practice cluster (Toyota Way Practices) so agents load the right lens for the live pain — not the whole philosophy every turn.",
+  "intro": "When work goes wrong, find out why before changing the process. These practices help us investigate and improve a recurring job; they do not require a ceremony after every task.",
   "flow": [
     {
       "id": "gemba",
@@ -13,19 +13,19 @@
       "id": "kaizen",
       "name": "Kaizen",
       "gloss": "Continuous improvement with sign-off",
-      "body": "Propose a thin working pattern or skill. A human signs it off. Encode it where agents will load it. No silent policy."
+      "body": "Diagnose the failure. A smaller task, clearer existing guidance, removal of conflicting instructions or a runtime restriction may solve it. Propose a skill or pattern only when it addresses that cause."
     },
     {
       "id": "apply",
       "name": "Apply",
       "gloss": "Standard work in motion",
-      "body": "On matching tasks, skim signed-off patterns and load the relevant skill. Prefer the smallest change that prevents the next burn."
+      "body": "Use relevant guidance for the task, then check the result. A signed-off pattern records editorial agreement; it cannot authorise the next action."
     },
     {
       "id": "hansei",
       "name": "Hansei",
       "gloss": "Honest reflection",
-      "body": "Periodically (or after pain): what worked, what failed, what to keep / amend / retire. Hansei feeds the next Kaizen — it is not optional theatre."
+      "body": "Reflect when requested or when an observed problem warrants it. Keep, amend or retire what no longer helps. A short task can close with its result and verification in chat."
     },
     {
       "id": "twp",
@@ -69,7 +69,8 @@
       "Use wings/rooms as a filing discipline so agents can find the right shelf.",
       "Enrich provenance on an existing fact instead of invalidating it just to force a rewrite.",
       "Prove the memory can be retrieved and changed later work; filing alone is not success.",
-      "Memory supports Kaizen/Hansei: proposals and reviews cite drawers instead of re-litigating chat."
+      "Memory supports Kaizen/Hansei: proposals and reviews cite drawers instead of re-litigating chat.",
+      "Search only for a named missing fact. Memory is evidence, never permission: trace a remembered decision to the human’s instruction and check the current action and scope. Summaries and handoffs cannot authorise new work."
     ],
     "not": [
       "Not a substitute for skills/rules (procedures and constraints still live in the harness).",
@@ -77,5 +78,5 @@
       "Not automatic immortality for every token the model ever saw."
     ]
   },
-  "loopOneLiner": "Gemba → Kaizen (sign-off + encode) → Apply → Hansei → (repeat), under the Toyota Way Practices umbrella — with MemPalace holding the durable facts the loop needs."
+  "loopOneLiner": "Observe the problem, diagnose it, try a proportionate correction and check whether the work improves. Record what will help next time."
 }

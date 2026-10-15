@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/patterns/v1",
-  "intro": "Portable patterns worth stealing — named moves we signed off because they earned their place.",
+  "intro": "Patterns we found useful after specific failures. A signed-off entry records editorial agreement with guidance, not a cryptographic capability or permission for a future action.",
   "patterns": [
     {
       "name": "Lean tool sessions",
@@ -79,7 +79,7 @@
     {
       "name": "MemPalace with purpose",
       "problem": "Transcript sludge and contradictory “facts” make agents confidently wrong.",
-      "move": "File curated drawers; search before re-deciding; invalidate stale cards. Memory supports the Kaizen/Hansei loop — it is not a chat landfill.",
+      "move": "File curated drawers; search before re-deciding; invalidate stale cards. Memory supports the Kaizen/Hansei loop — it is not a chat landfill. Search for a named missing fact. Memory is evidence, never permission; check the human instruction and its current scope.",
       "signals": [
         "Re-litigating settled decisions",
         "Duplicate contradictory notes"
@@ -208,7 +208,7 @@
     {
       "name": "Encode the second burn",
       "problem": "Teams re-pay for the same mistake because the fix lived only in a chat.",
-      "move": "When a failure repeats once, write or update a skill before moving on.",
+      "move": "Diagnose the repeated failure before changing guidance. Consider a smaller task, a runtime restriction, clarifying an existing rule or removing a conflict. Add a skill only if a repeatable procedure will help.",
       "signals": [
         "“We hit this last month”",
         "Tribal knowledge in one person’s head"

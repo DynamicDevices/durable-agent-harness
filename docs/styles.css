@@ -1404,3 +1404,19 @@ section h2 {
 @media (prefers-reduced-motion: reduce) {
   .hero-video, .hero-motion { display: none; }
 }
+
+/* Reuse the notebook colours for keyboard focus and compact contents. */
+.starter-body:focus-visible { outline: 3px solid var(--timber); outline-offset: 3px; }
+.cap-row .text-link { display: block; margin-top: .5rem; }
+.mobile-contents { display: none; }
+@media (max-width: 960px) {
+  .mobile-contents { display: block; position: relative; }
+  .mobile-contents summary { cursor: pointer; padding: .65rem; }
+  .mobile-contents summary:focus-visible, .mobile-contents a:focus-visible {
+    outline: 3px solid var(--timber); outline-offset: 2px;
+  }
+  .mobile-contents nav { position: absolute; right: 0; z-index: 20; width: min(18rem, 85vw);
+    max-height: 70vh; overflow-y: auto; background: var(--carbon); padding: .75rem;
+    border: 1px solid var(--timber); border-radius: .5rem; }
+  .mobile-contents a { display: block; color: var(--cloud); padding: .55rem; }
+}

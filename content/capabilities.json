@@ -1,6 +1,6 @@
 {
   "schema": "durable-agent-harness/capabilities/v1",
-  "intro": "Productivity here is mostly scope: work that was uneconomic or impossible solo becomes routine — with proof and review still required.",
+  "intro": "These bands are Alex’s qualitative personal estimates of scope and effort, not benchmark results or measured productivity multipliers. The linked accounts show particular experiences and their limits; they do not validate every row. Where no public evidence is linked, support is not available here.",
   "scale": [
     {
       "id": "solo-easy",
@@ -57,14 +57,22 @@
       "before": "impossible",
       "now": "solo-hard",
       "note": "Skills and signed patterns beat “we talked about this once”.",
-      "band": "Team knowledge base"
+      "band": "Team knowledge base",
+      "evidence": {
+        "url": "notes/the-token-bonfire.html",
+        "label": "Token Bonfire: failures and limits"
+      }
     },
     {
       "outcome": "Move the working relationship between agent hosts",
       "before": "impossible",
       "now": "solo-hard",
       "note": "Portable Agent Skills moved; project guidance and permissions stayed host-native; a drift sensor guards the boundary.",
-      "band": "Platform engineering"
+      "band": "Platform engineering",
+      "evidence": {
+        "url": "notes/the-cockpit-changed-the-work-did-not.html",
+        "label": "Host migration account"
+      }
     },
     {
       "outcome": "Parallel repository tasks with isolated state",

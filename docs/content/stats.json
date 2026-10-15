@@ -1,7 +1,7 @@
 {
   "schema": "durable-agent-harness/stats/v1",
   "as_of": "2026-09-05",
-  "disclaimer": "Aggregates only — proxies for harness size, not quality.",
+  "disclaimer": "Snapshot as of 5 September 2026. These historical counts have not been recounted; they describe size, not quality.",
   "metrics": [
     {
       "id": "skills",

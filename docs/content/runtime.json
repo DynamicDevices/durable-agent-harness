@@ -21,7 +21,7 @@
   },
   "openrouter": {
     "title": "OpenRouter",
-    "lede": "OpenRouter is a multi-model API router: one interface across providers, with provider failover and optional model fallbacks. It serves external model workflows and Preloop review flows when routing earns its keep; it is not how the Codex app reaches its models.",
+    "lede": "Model access depends on the host configuration. Codex and Cursor can use their native/default model access; a separately configured gateway can serve selected external workflows. OpenRouter provides multi-provider routing and fallbacks where deliberately configured, including some review workflows. It is not a universal path for the cockpit.",
     "docs": "https://openrouter.ai/docs",
     "verified": "2026-09-15",
     "preloopReviewRoute": {
@@ -38,7 +38,7 @@
     ],
     "not": [
       "Not a replacement for skills/rules/memory — it is transport for model calls.",
-      "Not the model path for the Codex app.",
+      "Not proof that a host session uses this route; check that host’s configuration.",
       "Not “set and forget” for data-retention or ZDR choices; configure deliberately when it matters.",
       "Not a productivity multiplier claim by itself."
     ]
@@ -49,7 +49,7 @@
     "steps": [
       {
         "title": "Push the PR commit",
-        "body": "Ordinary git push. No special local ritual — the check lives in Cloud + GitHub, not in a fat always-on prompt."
+        "body": "Before a push, confirm the human has authorised that repository, content and action and that required checks pass. Where action-bound verification is required, the executor must verify it at execution time. A review pass alone is not permission."
       },
       {
         "title": "Preloop reviewer runs",
@@ -65,7 +65,7 @@
       }
     ],
     "practices": [
-      "Treat the Preloop status as a review signal, not as merge authority — humans still merge.",
+      "The human owns the merge decision. An agent can execute a specifically authorised merge within scope after the required checks. A Preloop status supplies review evidence, not merge authority.",
       "Keep OpenRouter keys in Bitwarden Secrets Manager (or the vault Preloop Cloud uses); never in workflow YAML or chat.",
       "Prefer async review by default; make CI wait only when runner time is scarce or the failure mode is expensive.",
       "When the gate is on, fix or skip with an explicit, rare bypass — do not normalise “ignore Preloop”.",
@@ -77,5 +77,6 @@
       "Not the same thing as Preloop’s desktop MCP approvals in Cursor."
     ]
   },
-  "together": "The durable harness — portable skills, explicit policy, memory, signed patterns, gates and proof — supports the working relationship. Codex owns its model path, sandbox and permissions; those host-native mechanisms are dependencies and adapters, not portable assets. Preloop can audit selected tool flows and review PR commits; OpenRouter routes external model capacity for those workflows. CI may wait on the review signal. Humans still own consequential actions and merges."
+  "together": "The durable harness — portable skills, explicit policy, memory, signed patterns, gates and proof — supports the working relationship. Codex owns its model path, sandbox and permissions; those host-native mechanisms are dependencies and adapters, not portable assets. Preloop can audit selected tool flows and review PR commits; OpenRouter routes external model capacity for those workflows. CI may wait on the review signal. Humans still own consequential actions and merges.",
+  "summary": "The harness supports the work through procedures, evidence and controls. Guidance files do not install enforcement. Host configuration determines model access and permissions; optional services cover only their configured flows. Human decisions remain necessary for consequential actions, even when an agent performs the authorised execution."
 }

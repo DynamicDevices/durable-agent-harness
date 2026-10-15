@@ -102,16 +102,13 @@
     }
   ],
   "weeklyRitual": [
-    "Update ages from frozen clocks (30 seconds).",
-    "Add at most three capability-map notes tied to real proof.",
-    "Propose or deprecate one pattern — do not let the registry rot.",
-    "Log harness tax if you spent a block encoding behaviour.",
-    "Refuse any external “N× productivity” claim without a cited method.",
-    "If the session felt heavy: note always-on tax and cut or unload one thing.",
-    "Check whether one tool result dominated the task; move detail into a durable artefact and bound the next call.",
-    "Sample one filed decision for provenance and later retrieval.",
-    "Run the small harness eval corpus after changing high-risk guidance or models.",
-    "EOW (with the weekly review): skim blog-inbox.md, promote zero-or-more notes into the blog, and/or tweak pack/checklist/patterns if the week earned it. Skip rather than ship filler."
+    "Review these measures when requested or when a real problem warrants it; no routine reflection record is required.",
+    "Keep original start dates; label the date used to calculate ages.",
+    "Add capability examples only when there is a useful result and inspectable evidence; label private evidence.",
+    "Change a pattern only after diagnosing a failure; leaving the registry unchanged is fine.",
+    "Investigate cost only for a named question, using bounded evidence. Source size alone is not runtime or billing savings.",
+    "After changing high-risk guidance or models, run the relevant safety checks.",
+    "At an editorial review, promote zero or more inbox ideas. Skip rather than ship filler."
   ],
   "literatureNote": "METR’s early-2025 RCT is the humbling baseline for familiar OSS tickets. Copilot lab/field studies show gains in other settings. Use both as context; instrument your own work."
 }

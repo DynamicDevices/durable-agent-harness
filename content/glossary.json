@@ -120,7 +120,7 @@
     },
     {
       "term": "Briar",
-      "def": "A WhatsApp personal-assistant channel for monitor/triage and tiered replies, with the same fail-closed outbound rules as the cockpit."
+      "def": "Alex’s agent setup: project guidance, skills, tools, memory and runtime controls used across hosts. Messaging is one surface; Briar is not a particular editor or model."
     },
     {
       "term": "Token lean",
