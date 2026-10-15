@@ -3,6 +3,165 @@
   "intro": "What broke, what we locked, and what earned a place on disk \u2014 filed when the week earns it.",
   "posts": [
     {
+      "id": "the-token-bonfire",
+      "date": "2026-10-15",
+      "title": "The Token Bonfire - when things get out of control",
+      "seoTitle": "The Token Bonfire - when things get out of control",
+      "summary": "Three free ChatGPT resets and another £75 gone within hours. How our coding agents complicated our work, and what we changed in Briar.",
+      "section": "Working practice",
+      "tags": [
+        "AI agents",
+        "Briar",
+        "software engineering",
+        "Quality"
+      ],
+      "customCard": true,
+      "imageAlt": "The Token Bonfire: generated photographic artwork of paper logs and receipt strips burning on a steel tray.",
+      "imageDisclosure": "AI-generated editorial image created with Briar using Gemini 3 Pro Image; CWCW typography added separately. This is a visual metaphor, not a photograph of an actual incident.",
+      "imageDisclosureVisible": true,
+      "body": [
+        "We've had mayhem here for the past week or so, and I wanted to share what we've been through. We've been trying to get useful engineering work out of our coding agents while they’ve been finding ever more ways to complicate it.",
+        "Between 6 and 8 October, we burned through all three free ChatGPT allowance resets. I also put another £75 into the account to keep our work moving, but that only bought us a few hours. By the 9th, the weekly allowance was exhausted and there were no resets left.",
+        "I was spending too much time asking where the capacity had gone when I wanted to be getting on with our work. The agents were busy, with checks running, logs being read and progress updates arriving. But I was having to supervise more and more of that activity without getting the finished results I needed.",
+        "We call our setup Briar. It's the instructions, tools and checks we use to guide our coding agents as they investigate problems, change code and test their work.",
+        "A lot of it grew out of mistakes. An agent would miss something, or claim a job was finished before it had properly checked. I wanted the problem corrected and some confidence it wouldn't happen again. The agents would respond by adding guidance, another check or more notes to help them recover their place in a long conversation.",
+        "Over time, those additions made even small jobs more involved. An agent could read a lot of instructions before starting, collect far more evidence than the question needed, then return to checks it had already completed. I was asking for better results and getting more process to supervise.",
+        "Some of the checks were useful. I still want an agent to test a change rather than confidently tell me it works. What frustrated me was seeing checks repeated when nothing relevant had changed, or watching an agent spend more time describing its progress than making it.",
+        "Every extra round consumed some of the allowance we needed for our work. As the conversations grew, agents were also being sent more old material to read again, including the output from their previous checks.",
+        "On 9 October, I asked for an explanation of the spending. The usage reports couldn't give me a reliable answer: one was tracking a different allowance, while another cost estimate didn't account for the credits disappearing from the account. I had to piece together what the agents had been doing from their conversation records.",
+        "Those records showed agents repeatedly returning to evidence they already had. Long-running jobs attracted check after check when they mostly needed time to finish. Conversations became so large that agents had to keep summarising them and recovering their place, creating still more material to carry forward.",
+        "While investigating this, we ran a small comparison and had an agent supervise it. Afterwards, I found that the supervising conversation had processed roughly ten times as much input as one side of the test. The agent had been checking progress and rereading material around the experiment.",
+        "Most of that repeated input benefited from cheaper cached processing, so it wasn't ten times the bill. Even so, I could see the behaviour I was trying to stop happening inside the investigation itself. I needed an answer from the test, and the agent was creating more work around it.",
+        "I'd already told the agents to stop wasting tokens, but those instructions hadn't stopped the repeated work. I needed to see whether an agent could finish a job with fewer steps and still give me an answer I could trust.",
+        "One investigation had dragged through nine responses without getting us the answer. The evidence was already saved. When we returned to it on 11 October, the agent used that material and pulled out the parts that answered the question. One response was enough.",
+        "It had a head start from the earlier work, so that wasn't a fair test of how much faster every job could become. It did show us a practical way to improve: use the evidence already available instead of repeatedly gathering it again.",
+        "We applied that to checks too. If a check had passed and nothing relevant had changed, the agent could carry the result forward. If an operation failed, it needed to keep the failure details and fix the cause before trying again. For a job that needed time to run, a completion signal or an agreed scheduled check could replace the constant visits to see whether it had finished.",
+        "On 14–15 October, we cut back the instructions themselves. The files changed in that pass became about half their previous size. Specialist guidance stayed available for the jobs that needed it, without weighing down every ordinary task.",
+        "We also moved routine accounting out of every tool call and stopped expecting coordination and reflection exercises from jobs that didn't need them. Detailed logs could stay in files, with the useful finding brought into the conversation. Simple tasks could use simple commands instead of the agent writing another script around them.",
+        "I want to spend my time reviewing useful work: seeing the change, understanding why it solves the problem and checking the evidence that it works. I shouldn't have to excavate a long conversation to do that.",
+        "Security, permissions and required reviews still matter. The aim is to remove repeated work that doesn't help us judge the result, while keeping the checks that catch real problems.",
+        "The lighter harness is installed and pushed, and the relevant tests passed. We have examples of investigations completed with much less overhead. Whether that holds up across our day-to-day work, and reduces the bill over time, is something we still need to demonstrate.",
+        "If you're using coding agents, I'd be interested in what happens between giving them a job and getting a result you can use. Which checks have caught something important? Which ones do the agents keep repeating? Those are the questions we're putting to our own setup as we use it.",
+        "I'd love to hear how this is going for you, particularly if you've had to rein in agents that keep making their own jobs more complicated. Get in touch if you'd like to compare notes on what has helped.",
+        "(Briar helped draft this)"
+      ],
+      "bodyBlocks": [
+        {
+          "type": "paragraph",
+          "text": "We've had mayhem here for the past week or so, and I wanted to share what we've been through. We've been trying to get useful engineering work out of our coding agents while they’ve been finding ever more ways to complicate it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Between 6 and 8 October, we burned through all three free ChatGPT allowance resets. I also put another £75 into the account to keep our work moving, but that only bought us a few hours. By the 9th, the weekly allowance was exhausted and there were no resets left."
+        },
+        {
+          "type": "paragraph",
+          "text": "I was spending too much time asking where the capacity had gone when I wanted to be getting on with our work. The agents were busy, with checks running, logs being read and progress updates arriving. But I was having to supervise more and more of that activity without getting the finished results I needed."
+        },
+        {
+          "type": "heading",
+          "text": "How the agents made more work for themselves"
+        },
+        {
+          "type": "paragraph",
+          "text": "We call our setup Briar. It's the instructions, tools and checks we use to guide our coding agents as they investigate problems, change code and test their work."
+        },
+        {
+          "type": "paragraph",
+          "text": "A lot of it grew out of mistakes. An agent would miss something, or claim a job was finished before it had properly checked. I wanted the problem corrected and some confidence it wouldn't happen again. The agents would respond by adding guidance, another check or more notes to help them recover their place in a long conversation."
+        },
+        {
+          "type": "paragraph",
+          "text": "Over time, those additions made even small jobs more involved. An agent could read a lot of instructions before starting, collect far more evidence than the question needed, then return to checks it had already completed. I was asking for better results and getting more process to supervise."
+        },
+        {
+          "type": "paragraph",
+          "text": "Some of the checks were useful. I still want an agent to test a change rather than confidently tell me it works. What frustrated me was seeing checks repeated when nothing relevant had changed, or watching an agent spend more time describing its progress than making it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Every extra round consumed some of the allowance we needed for our work. As the conversations grew, agents were also being sent more old material to read again, including the output from their previous checks."
+        },
+        {
+          "type": "heading",
+          "text": "Finding out where it was going"
+        },
+        {
+          "type": "paragraph",
+          "text": "On 9 October, I asked for an explanation of the spending. The usage reports couldn't give me a reliable answer: one was tracking a different allowance, while another cost estimate didn't account for the credits disappearing from the account. I had to piece together what the agents had been doing from their conversation records."
+        },
+        {
+          "type": "paragraph",
+          "text": "Those records showed agents repeatedly returning to evidence they already had. Long-running jobs attracted check after check when they mostly needed time to finish. Conversations became so large that agents had to keep summarising them and recovering their place, creating still more material to carry forward."
+        },
+        {
+          "type": "paragraph",
+          "text": "While investigating this, we ran a small comparison and had an agent supervise it. Afterwards, I found that the supervising conversation had processed roughly ten times as much input as one side of the test. The agent had been checking progress and rereading material around the experiment."
+        },
+        {
+          "type": "paragraph",
+          "text": "Most of that repeated input benefited from cheaper cached processing, so it wasn't ten times the bill. Even so, I could see the behaviour I was trying to stop happening inside the investigation itself. I needed an answer from the test, and the agent was creating more work around it."
+        },
+        {
+          "type": "heading",
+          "text": "Getting the agents back to the job"
+        },
+        {
+          "type": "paragraph",
+          "text": "I'd already told the agents to stop wasting tokens, but those instructions hadn't stopped the repeated work. I needed to see whether an agent could finish a job with fewer steps and still give me an answer I could trust."
+        },
+        {
+          "type": "paragraph",
+          "text": "One investigation had dragged through nine responses without getting us the answer. The evidence was already saved. When we returned to it on 11 October, the agent used that material and pulled out the parts that answered the question. One response was enough."
+        },
+        {
+          "type": "paragraph",
+          "text": "It had a head start from the earlier work, so that wasn't a fair test of how much faster every job could become. It did show us a practical way to improve: use the evidence already available instead of repeatedly gathering it again."
+        },
+        {
+          "type": "paragraph",
+          "text": "We applied that to checks too. If a check had passed and nothing relevant had changed, the agent could carry the result forward. If an operation failed, it needed to keep the failure details and fix the cause before trying again. For a job that needed time to run, a completion signal or an agreed scheduled check could replace the constant visits to see whether it had finished."
+        },
+        {
+          "type": "paragraph",
+          "text": "On 14–15 October, we cut back the instructions themselves. The files changed in that pass became about half their previous size. Specialist guidance stayed available for the jobs that needed it, without weighing down every ordinary task."
+        },
+        {
+          "type": "paragraph",
+          "text": "We also moved routine accounting out of every tool call and stopped expecting coordination and reflection exercises from jobs that didn't need them. Detailed logs could stay in files, with the useful finding brought into the conversation. Simple tasks could use simple commands instead of the agent writing another script around them."
+        },
+        {
+          "type": "heading",
+          "text": "What I want to see from Briar now"
+        },
+        {
+          "type": "paragraph",
+          "text": "I want to spend my time reviewing useful work: seeing the change, understanding why it solves the problem and checking the evidence that it works. I shouldn't have to excavate a long conversation to do that."
+        },
+        {
+          "type": "paragraph",
+          "text": "Security, permissions and required reviews still matter. The aim is to remove repeated work that doesn't help us judge the result, while keeping the checks that catch real problems."
+        },
+        {
+          "type": "paragraph",
+          "text": "The lighter harness is installed and pushed, and the relevant tests passed. We have examples of investigations completed with much less overhead. Whether that holds up across our day-to-day work, and reduces the bill over time, is something we still need to demonstrate."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you're using coding agents, I'd be interested in what happens between giving them a job and getting a result you can use. Which checks have caught something important? Which ones do the agents keep repeating? Those are the questions we're putting to our own setup as we use it."
+        },
+        {
+          "type": "paragraph",
+          "text": "I'd love to hear how this is going for you, particularly if you've had to rein in agents that keep making their own jobs more complicated. Get in touch if you'd like to compare notes on what has helped."
+        },
+        {
+          "type": "paragraph",
+          "text": "(Briar helped draft this)"
+        }
+      ],
+      "sources": []
+    },
+    {
       "id": "the-model-is-only-part-of-the-machine",
       "date": "2026-10-02",
       "title": "The Model Is Only Part of the Machine",
