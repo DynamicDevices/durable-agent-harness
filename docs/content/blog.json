@@ -7,7 +7,7 @@
       "date": "2026-10-16",
       "title": "Remember loving Napster?",
       "seoTitle": "Remember loving Napster?",
-      "summary": "I knew where my music was when I had my tapes and CDs. Now I have millions of tracks to choose from, and I’ve asked Briar to help me find what I fancy hearing.",
+      "summary": "I shared an article with Briar on Telegram and asked for the music in Spotify. About twelve minutes later, I had 15 albums ready to play.",
       "section": "Music and everyday life",
       "tags": [
         "music",
@@ -43,13 +43,15 @@
         "The article I’d shared with Briar was [“These 15 albums are basically flawless from start to finish”](https://www.classical-music.com/rock/albums-with-no-weak-tracks).",
         "Pink Floyd, Guns N’ Roses, Steely Dan, Slayer, Fleetwood Mac and plenty more. The sort of list that makes you want to revisit half your record collection and discover what you missed in the other half.",
         "Later, in my desktop chat, I asked:",
-        "I didn’t send the article again, type out the album names or explain which buttons to press.",
-        "Briar found the message, read the article and put the albums into Spotify in the order they appeared. It selected standard editions without the extra tracks you get on deluxe releases, so I could listen to the albums themselves from start to finish.",
-        "Getting into Spotify took a little sorting out, which Briar handled too. I didn’t have to interrupt what I was doing to get the playlist made.",
-        "The result was 15 albums, 173 tracks and about 13 hours of music, ready to play in my Spotify account.",
+        "Briar went back to our Telegram conversation, found the link and read the article. It pulled out the 15 albums and started finding them in Spotify. I didn’t have to send the article again or type out a list of album names.",
+        "There was a bit of fiddling to get into Spotify. Briar wasn’t signed in where it first tried, so it found the browser where I was already signed in and carried on. It dealt with that too, rather than leaving me another job to sort out.",
+        "It found the standard album releases, avoiding the extra tracks on deluxe editions where possible, and added them in the article’s order. Then it checked the finished sequence. I wanted to hear each album from start to finish, and that’s how Briar put them together.",
+        "From my request to the finished playlist took about twelve minutes: 15 albums, 173 tracks and about 13 hours of music, ready to play in my Spotify account.",
         "You can listen here: [15 Flawless Albums - Start to Finish](https://open.spotify.com/playlist/2Aa8l6fFblrnyu0RK4vsVo). Leave shuffle off if you want to hear the albums in sequence.",
         "That is what I mean by an agentic harness being useful.",
-        "I’d already sent Briar the article. Later I asked for a playlist, and it sorted it out. I now have thirteen hours of music I fancy listening to, without spending the evening putting it together myself.",
+        "We’ve been building Briar so we can work together like this. I share something I’ve spotted in the Guardian on Telegram, then later, in a desktop chat, ask Briar to make something of it. Briar can pick up what we were talking about and get on with the work.",
+        "The harness gives Briar access to those earlier conversations and the tools to do what I ask. Here, that meant going from a shared article to a finished playlist in my Spotify account. Reading the page was only the beginning of the job.",
+        "I could have spent the evening finding those albums and adding them myself. Instead I asked Briar, and we got it done in about twelve minutes. I now have thirteen hours of music I fancy listening to.",
         "Now I want to listen to my 90s rave music!",
         "How do you find what you fancy listening to? I’d be interested to hear how you get on with this too.",
         "(Briar helped draft this)"
@@ -165,19 +167,19 @@
         },
         {
           "type": "paragraph",
-          "text": "I didn’t send the article again, type out the album names or explain which buttons to press."
+          "text": "Briar went back to our Telegram conversation, found the link and read the article. It pulled out the 15 albums and started finding them in Spotify. I didn’t have to send the article again or type out a list of album names."
         },
         {
           "type": "paragraph",
-          "text": "Briar found the message, read the article and put the albums into Spotify in the order they appeared. It selected standard editions without the extra tracks you get on deluxe releases, so I could listen to the albums themselves from start to finish."
+          "text": "There was a bit of fiddling to get into Spotify. Briar wasn’t signed in where it first tried, so it found the browser where I was already signed in and carried on. It dealt with that too, rather than leaving me another job to sort out."
         },
         {
           "type": "paragraph",
-          "text": "Getting into Spotify took a little sorting out, which Briar handled too. I didn’t have to interrupt what I was doing to get the playlist made."
+          "text": "It found the standard album releases, avoiding the extra tracks on deluxe editions where possible, and added them in the article’s order. Then it checked the finished sequence. I wanted to hear each album from start to finish, and that’s how Briar put them together."
         },
         {
           "type": "paragraph",
-          "text": "The result was 15 albums, 173 tracks and about 13 hours of music, ready to play in my Spotify account."
+          "text": "From my request to the finished playlist took about twelve minutes: 15 albums, 173 tracks and about 13 hours of music, ready to play in my Spotify account."
         },
         {
           "type": "paragraph",
@@ -193,7 +195,15 @@
         },
         {
           "type": "paragraph",
-          "text": "I’d already sent Briar the article. Later I asked for a playlist, and it sorted it out. I now have thirteen hours of music I fancy listening to, without spending the evening putting it together myself."
+          "text": "We’ve been building Briar so we can work together like this. I share something I’ve spotted in the Guardian on Telegram, then later, in a desktop chat, ask Briar to make something of it. Briar can pick up what we were talking about and get on with the work."
+        },
+        {
+          "type": "paragraph",
+          "text": "The harness gives Briar access to those earlier conversations and the tools to do what I ask. Here, that meant going from a shared article to a finished playlist in my Spotify account. Reading the page was only the beginning of the job."
+        },
+        {
+          "type": "paragraph",
+          "text": "I could have spent the evening finding those albums and adding them myself. Instead I asked Briar, and we got it done in about twelve minutes. I now have thirteen hours of music I fancy listening to."
         },
         {
           "type": "paragraph",
@@ -253,7 +263,8 @@
           "label": "The RIAA’s December 2008 change of approach",
           "url": "https://www.wired.com/2008/12/riaa-says-it-pl/"
         }
-      ]
+      ],
+      "dateModified": "2026-10-16"
     },
     {
       "id": "the-token-bonfire",
