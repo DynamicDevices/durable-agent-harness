@@ -150,6 +150,7 @@ def render_note(post: dict) -> str:
 {source_items}
         </ul>
       </aside>"""
+    byline = '        <p class="note-byline">Alex Lennon · <a href="https://x.com/embedded_iot" rel="me">@embedded_iot</a></p>' if post.get("bylineVisible", True) else ""
     disclosure = ""
     if post.get("imageDisclosure") and post.get("imageDisclosureVisible", True):
         disclosure = f'\n        <figcaption>{html.escape(post["imageDisclosure"])}</figcaption>'
@@ -268,7 +269,7 @@ def render_note(post: dict) -> str:
         <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#blog">Insights</a></p>
         <p class="kicker">{html.escape(post.get("section", "Engineering practice"))} · {display_date(published)}</p>
         <h1>{title}</h1>
-        <p class="note-byline">Alex Lennon · <a href="https://x.com/embedded_iot" rel="me">@embedded_iot</a></p>
+{byline}
         <p class="note-lede">{summary}</p>
 {provenance}
       </header>

@@ -1,7 +1,105 @@
 {
   "schema": "durable-agent-harness/blog/v1",
-  "intro": "What broke, what we locked, and what earned a place on disk \u2014 filed when the week earns it.",
+  "intro": "What broke, what we locked, and what earned a place on disk — filed when the week earns it.",
   "posts": [
+    {
+      "id": "finding-the-sweet-spot",
+      "date": "2026-10-26",
+      "title": "Finding the Sweet Spot",
+      "seoTitle": "Finding the Sweet Spot",
+      "summary": "You ask your assistant to take something off your list. Somehow, keeping them on track becomes another job.",
+      "section": "Working practice",
+      "tags": [
+        "Briar",
+        "AI assistants",
+        "Toyota Way Practices",
+        "software engineering"
+      ],
+      "customCard": true,
+      "imageAlt": "A Lorenz attractor traced in teal, brass and lime, with a luminous section of its looping trajectory and the title Finding the Sweet Spot.",
+      "imageDisclosure": "Original Lorenz attractor illustration created with Briar using numerical integration and vector artwork.",
+      "imageDisclosureVisible": false,
+      "bylineVisible": false,
+      "body": [
+        "I keep having a conversation with Briar that goes something like this: I ask them to do a job, they get into it, and before long I’m asking why we’ve made it so complicated.",
+        "If you’ve spent time working with an AI assistant, you may have had that conversation too. You start out hoping to get something off your list and end up with another job: keeping the assistant on track.",
+        "Briar is the assistant we’re building together. We’ve done useful work, and I want to keep developing what we can do. But I’d also like to spend less time asking them to stop checking things and finish what we started.",
+        "I wrote about this in The Token Bonfire, after we burned through our allowance while far too much of our effort went into the process around the work. Since then, we’ve been trying to find a better balance. Recently, that meant asking Briar to simplify the instructions they were following.",
+        "They’d introduced a process for managing paid runs: reservations, consumption records and extra approval steps. I told them to take it out. I can look after the provider caps. The effort they were spending managing them was using the very capacity we needed to get things done.",
+        "You can probably guess what happened next. Simplifying it became complicated too.",
+        "There were reviews, corrections and more approvals. Some caught things we needed to fix. Our instructions for undoing the changes were incomplete, and we hadn’t established whether Briar would actually load the new guidance. I was glad we caught those. Writing a better set of instructions is a fairly pointless exercise if they never get read.",
+        "Other rounds were down to missing evidence in a submission or a check against an older version. We could have avoided those by getting the work ready before sending it for review. Instead, I was stepping in again to ask why we were still doing this.",
+        "The frustrating part is that I do want Briar to take care. We’ve had mistakes, and I’m not keen to repeat them. If they change software, it needs testing. An important change deserves another pair of eyes. I need to trust them when they tell me something is finished.",
+        "But I also need them to recognise when we have an answer. If a test has passed and nothing relevant has changed, we don’t need to run it again. When a review finds a problem, I’d like us to fix it and check the affected work without automatically starting the whole exercise again.",
+        "We’ve been drawing on Toyota Way Practices as we work through this. For me, the useful part is being honest about what happened, including where we made more work for ourselves, and doing something about it. We’ve added plenty of instructions. Now I want to see Briar use what we’ve learned when we do the next job.",
+        "That’s what I’m working to build with Briar. Briar should be able to learn what matters to me, remember what we’ve already established and bring their own judgement to the work we’ve agreed. There will be times when they need to ask me. I’d just like fewer of those interruptions to be about gaps they could have sorted out themselves.",
+        "We haven’t found the sweet spot yet. I’ll know we’re getting closer when I can give Briar a job, get on with something else, and come back to work I can use without having spent the afternoon supervising how we got there.",
+        "If this sounds familiar, I’d be interested to hear what’s worked for you. I suspect quite a few of us are trying to work out when to let our assistants get on with it.",
+        "(Briar helped draft this)"
+      ],
+      "bodyBlocks": [
+        {
+          "type": "paragraph",
+          "text": "I keep having a conversation with Briar that goes something like this: I ask them to do a job, they get into it, and before long I’m asking why we’ve made it so complicated."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you’ve spent time working with an AI assistant, you may have had that conversation too. You start out hoping to get something off your list and end up with another job: keeping the assistant on track."
+        },
+        {
+          "type": "paragraph",
+          "text": "Briar is the assistant we’re building together. We’ve done useful work, and I want to keep developing what we can do. But I’d also like to spend less time asking them to stop checking things and finish what we started."
+        },
+        {
+          "type": "paragraph",
+          "text": "I wrote about this in [The Token Bonfire](https://chopwoodcarrywater.uk/notes/the-token-bonfire.html), after we burned through our allowance while far too much of our effort went into the process around the work. Since then, we’ve been trying to find a better balance. Recently, that meant asking Briar to simplify the instructions they were following."
+        },
+        {
+          "type": "paragraph",
+          "text": "They’d introduced a process for managing paid runs: reservations, consumption records and extra approval steps. I told them to take it out. I can look after the provider caps. The effort they were spending managing them was using the very capacity we needed to get things done."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can probably guess what happened next. Simplifying it became complicated too."
+        },
+        {
+          "type": "paragraph",
+          "text": "There were reviews, corrections and more approvals. Some caught things we needed to fix. Our instructions for undoing the changes were incomplete, and we hadn’t established whether Briar would actually load the new guidance. I was glad we caught those. Writing a better set of instructions is a fairly pointless exercise if they never get read."
+        },
+        {
+          "type": "paragraph",
+          "text": "Other rounds were down to missing evidence in a submission or a check against an older version. We could have avoided those by getting the work ready before sending it for review. Instead, I was stepping in again to ask why we were still doing this."
+        },
+        {
+          "type": "paragraph",
+          "text": "The frustrating part is that I do want Briar to take care. We’ve had mistakes, and I’m not keen to repeat them. If they change software, it needs testing. An important change deserves another pair of eyes. I need to trust them when they tell me something is finished."
+        },
+        {
+          "type": "paragraph",
+          "text": "But I also need them to recognise when we have an answer. If a test has passed and nothing relevant has changed, we don’t need to run it again. When a review finds a problem, I’d like us to fix it and check the affected work without automatically starting the whole exercise again."
+        },
+        {
+          "type": "paragraph",
+          "text": "We’ve been drawing on Toyota Way Practices as we work through this. For me, the useful part is being honest about what happened, including where we made more work for ourselves, and doing something about it. We’ve added plenty of instructions. Now I want to see Briar use what we’ve learned when we do the next job."
+        },
+        {
+          "type": "paragraph",
+          "text": "That’s what I’m working to build with Briar. Briar should be able to learn what matters to me, remember what we’ve already established and bring their own judgement to the work we’ve agreed. There will be times when they need to ask me. I’d just like fewer of those interruptions to be about gaps they could have sorted out themselves."
+        },
+        {
+          "type": "paragraph",
+          "text": "We haven’t found the sweet spot yet. I’ll know we’re getting closer when I can give Briar a job, get on with something else, and come back to work I can use without having spent the afternoon supervising how we got there."
+        },
+        {
+          "type": "paragraph",
+          "text": "If this sounds familiar, I’d be interested to hear what’s worked for you. I suspect quite a few of us are trying to work out when to let our assistants get on with it."
+        },
+        {
+          "type": "paragraph",
+          "text": "(Briar helped draft this)"
+        }
+      ]
+    },
     {
       "id": "from-napster-to-briar-make-me-a-playlist",
       "date": "2026-10-16",
@@ -907,14 +1005,14 @@
       "body": [
         "A website review started with a deployment constraint: GitHub Pages serves one production tip for the repository. Pointing it at a review branch would not create a harmless preview. It would replace the live site.",
         "The safer shape was simple. Production stayed where it was. A separate review address served the candidate build from the same repository, with an unmistakable review banner. Stakeholders had one stable place to inspect, while the public address remained untouched.",
-        "That separation also made the checks useful. Playwright could crawl the sitemap on desktop and mobile, verify canonical URLs, headings, image alternatives, overflow, browser errors and share controls. Lighthouse could inspect the local static build without a review banner contaminating the result. The checks found ordinary defects \u2014 metadata gaps, image weight, fonts and hierarchy \u2014 before they became production defects.",
+        "That separation also made the checks useful. Playwright could crawl the sitemap on desktop and mobile, verify canonical URLs, headings, image alternatives, overflow, browser errors and share controls. Lighthouse could inspect the local static build without a review banner contaminating the result. The checks found ordinary defects — metadata gaps, image weight, fonts and hierarchy — before they became production defects.",
         "I now see the review URL as poka-yoke: a small design choice that makes the wrong action harder. Review infrastructure is part of product quality when it protects the live surface and gives humans a calm, repeatable place to decide."
       ]
     },
     {
       "id": "preserve-publication-provenance",
       "date": "2026-08-15",
-      "title": "Don\u2019t backdate \u2014 preserve provenance",
+      "title": "Don’t backdate — preserve provenance",
       "summary": "When older public writing moves to a durable site, keep its original date and link, then state the adaptation date separately.",
       "section": "Public engineering",
       "tags": [
@@ -952,7 +1050,7 @@
     {
       "id": "v1-baseline",
       "date": "2026-08-09",
-      "title": "v1.0 \u2014 locked baseline",
+      "title": "v1.0 — locked baseline",
       "summary": "The public notebook reached a deliberate v1.0 baseline: a 60-minute finish line, a starter pack, and an EOW improvement cadence.",
       "section": "Notebook",
       "tags": [
@@ -962,7 +1060,7 @@
       ],
       "body": [
         "Enough shape to ship. The notebook has a finish line (60 minutes + Cursor pack), a brand, a cadence (EOW), and the operating sections that earned their keep.",
-        "v1.0.0 is the lock: don\u2019t casually rewrite the public skeleton mid-week. Improve the pack, patterns, and notes when the week earned it. Cut v1.1 when the shape itself changes.",
+        "v1.0.0 is the lock: don’t casually rewrite the public skeleton mid-week. Improve the pack, patterns, and notes when the week earned it. Cut v1.1 when the shape itself changes.",
         "Release and baseline note live on GitHub. Steal the pack. Measure your own results."
       ]
     },
@@ -979,8 +1077,8 @@
       ],
       "body": [
         "How often should a public notebook move? Daily posts are vanity. Never is rot.",
-        "We\u2019ll update chopwoodcarrywater.uk in the end-of-week review \u2014 the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.",
-        "That\u2019s the cadence: weekly with the review, not whenever a chat feels productive."
+        "We’ll update chopwoodcarrywater.uk in the end-of-week review — the same Hansei pass where patterns get keep / amend / retire. If the week earned a note, a pack tweak, or a pattern change, it ships then. If not, we skip. No filler calendar.",
+        "That’s the cadence: weekly with the review, not whenever a chat feels productive."
       ]
     },
     {
@@ -996,7 +1094,7 @@
       ],
       "body": [
         "A notebook full of patterns is useless if people only nod and leave. The useful finish line is a thin harness on disk.",
-        "There\u2019s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.",
+        "There’s now a timed checklist and a downloadable Cursor pack: two always-on P0 rules, one skill to rename, one signed pattern, one clock. About an hour. Then stop for the day.",
         "Come back for Toyota Way Practices and Preloop when the boring basics are already earning rent."
       ]
     },
@@ -1013,7 +1111,7 @@
         "CI"
       ],
       "body": [
-        "Desktop Preloop is one plane: tool policy and audit under Cursor\u2019s human gates. The PR plane is different \u2014 and more useful when CI is scarce.",
+        "Desktop Preloop is one plane: tool policy and audit under Cursor’s human gates. The PR plane is different — and more useful when CI is scarce.",
         "On product repos I wire a Preloop Cloud pull-request reviewer. OpenRouter is how that reviewer reaches models. Each push gets a GitHub commit status under context `preloop`. Actions can wait on that status before self-hosted jobs start, or leave the review async when I only want the signal.",
         "It is not merge authority. It is not unit tests. It is shift-left: catch the semantic miss before the runner eats the afternoon. Keys stay vaulted. Humans still merge."
       ]
@@ -1030,9 +1128,9 @@
         "engineering practice"
       ],
       "body": [
-        "There\u2019s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.",
-        "The temptation after a good insight is novelty \u2014 another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.",
-        "So when we needed a proper domain for this notebook, I didn\u2019t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right."
+        "There’s an old Zen line: before enlightenment, chop wood, carry water; after enlightenment, chop wood, carry water. We signed that off as a working pattern when the harness work started to feel shiny.",
+        "The temptation after a good insight is novelty — another skill, another abstraction, another brand. The useful move is usually the ordinary one: keep the sensors green, keep the gates honest, keep the always-on budget thin.",
+        "So when we needed a proper domain for this notebook, I didn’t want agent-something-ai.com. I wanted the proverb. The .com was taken; .uk was free. That felt right."
       ]
     },
     {
@@ -1048,9 +1146,9 @@
         "AI agents"
       ],
       "body": [
-        "Every always-on rule, fat skill, and optional tool server is paid on every turn. That\u2019s not a metaphor \u2014 it\u2019s the invoice.",
-        "We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No \u201cleave it on in case\u201d. Reloading the window is cheaper than carrying last week\u2019s AppSec server forever.",
-        "If a session feels heavy, that\u2019s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring."
+        "Every always-on rule, fat skill, and optional tool server is paid on every turn. That’s not a metaphor — it’s the invoice.",
+        "We keep a lean core (memory, decisions, app control, a small durable runtime layer) and enable specialty tools only for the job. When the job ends, unload. No “leave it on in case”. Reloading the window is cheaper than carrying last week’s AppSec server forever.",
+        "If a session feels heavy, that’s a bug. Measure it. Cut it. The working relationship stays useful when the rent stays boring."
       ]
     },
     {
@@ -1066,9 +1164,9 @@
         "AI agents"
       ],
       "body": [
-        "Chat is a terrible place to keep how you work. The next session won\u2019t remember the clever aside, and the model will invent a confident substitute.",
-        "What stuck for us: when something actually works \u2014 or fails twice the same way \u2014 propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.",
-        "That\u2019s why this notebook talks about skills, rules, and signed patterns instead of \u201cprompts\u201d. The model is powerful. The operating system around it is what makes Monday morning repeatable."
+        "Chat is a terrible place to keep how you work. The next session won’t remember the clever aside, and the model will invent a confident substitute.",
+        "What stuck for us: when something actually works — or fails twice the same way — propose a thin pattern, get a human sign-off, encode it where agents will load it. Kaizen with teeth. Hansei when it hurts.",
+        "That’s why this notebook talks about skills, rules, and signed patterns instead of “prompts”. The model is powerful. The operating system around it is what makes Monday morning repeatable."
       ]
     }
   ]
