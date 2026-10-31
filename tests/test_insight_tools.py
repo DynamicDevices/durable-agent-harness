@@ -28,6 +28,31 @@ render_reviews = load_module(
 
 
 class InsightToolsTest(unittest.TestCase):
+    def test_editorial_image_is_accessible_and_has_no_caption(self):
+        post = {"bodyBlocks": [{"type": "image", "file": "briar-testing-v1.png",
+                 "alt": 'A test bench & "tools"', "width": 1440, "height": 810}]}
+        rendered = render_notes.render_body(post)
+        self.assertIn('alt="A test bench &amp; &quot;tools&quot;"', rendered)
+        self.assertIn('width="1440" height="810"', rendered)
+        self.assertNotIn("figcaption", rendered)
+        self.assertIn("https://chopwoodcarrywater.uk/assets/notes/", render_notes.render_body(post, feed=True))
+        post["bodyBlocks"][0]["file"] = "../private.png"
+        with self.assertRaises(ValueError):
+            render_notes.render_body(post)
+
+    def test_custom_hero_does_not_replace_social_image(self):
+        post = {"id": "briar", "date": "2026-10-31", "title": "Briar",
+                "summary": "Working with Briar.", "body": ["Text."],
+                "heroImage": "briar-cover-v1.png", "heroWidth": 1440, "heroHeight": 810,
+                "heroAlt": "Workbench", "bylineVisible": False}
+        rendered = render_notes.render_note(post)
+        self.assertIn('src="../assets/notes/briar-cover-v1.png" width="1440" height="810"', rendered)
+        self.assertIn('content="https://chopwoodcarrywater.uk/assets/notes/briar-og.png"', rendered)
+        self.assertNotIn('class="note-byline"', rendered)
+        post["heroImage"] = "../private.png"
+        with self.assertRaises(ValueError):
+            render_notes.render_note(post)
+
     def test_private_draft_package_is_complete_and_non_destructive(self):
         with tempfile.TemporaryDirectory() as directory:
             target = new_insight.create_package(

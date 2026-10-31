@@ -69,6 +69,13 @@ def render_body(post: dict, *, feed: bool = False) -> str:
             tag = "h2" if kind == "heading" else "p"
             rendered = f"<{tag}>{text}</{tag}>"
             blocks.append(f"<blockquote>{rendered}</blockquote>" if kind == "quote" else rendered)
+        elif kind == "image":
+            filename = block["file"]
+            if not re.fullmatch(r"[a-z0-9-]+\.png", filename):
+                raise ValueError("Editorial image must be a local PNG filename")
+            source = f"{ORIGIN}/assets/notes/{filename}" if feed else f"../assets/notes/{filename}"
+            alt = html.escape(block["alt"], quote=True)
+            blocks.append(f'<figure class="note-hero"><img src="{source}" alt="{alt}" width="{int(block["width"])}" height="{int(block["height"])}" loading="lazy"></figure>')
         elif kind == "figure":
             filename = block["file"]
             if not re.fullmatch(r"[a-z0-9-]+\.png", filename):
@@ -121,6 +128,11 @@ def render_homepage_insights(posts: list[dict], limit: int = 6) -> None:
 def render_note(post: dict) -> str:
     url = canonical(post)
     image = image_url(post)
+    hero_file = post.get("heroImage", f"{post['id']}-og.png")
+    if not re.fullmatch(r"[a-z0-9-]+\.png", hero_file):
+        raise ValueError("Hero image must be a local PNG filename")
+    hero_width = int(post.get("heroWidth", 1200))
+    hero_height = int(post.get("heroHeight", 627))
     title = html.escape(post["title"])
     seo_title = html.escape(post.get("seoTitle", post["title"]))
     summary = html.escape(post["summary"])
@@ -128,7 +140,7 @@ def render_note(post: dict) -> str:
         post.get("imageAlt", f"Chop Wood Carry Water insight: {post['title']}")
     )
     hero_image_alt = html.escape(
-        post.get("imageAlt", f"Illustrated title card for {post['title']}")
+        post.get("heroAlt", post.get("imageAlt", f"Illustrated title card for {post['title']}"))
     )
     published = post["date"]
     modified = post.get("dateModified", published)
@@ -274,7 +286,7 @@ def render_note(post: dict) -> str:
 {provenance}
       </header>
       <figure class="note-hero">
-        <img src="../assets/notes/{post['id']}-og.png" width="1200" height="627"
+        <img src="../assets/notes/{hero_file}" width="{hero_width}" height="{hero_height}"
              alt="{hero_image_alt}" fetchpriority="high">{disclosure}
       </figure>
       <div class="note-body">
