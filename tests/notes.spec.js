@@ -80,13 +80,20 @@ test.describe("shareable notes", () => {
       expect(jsonLd.image.width).toBe(1200);
       expect(jsonLd.image.height).toBe(627);
 
-      const card = page.locator(".note-hero img");
-      await expect(card).toHaveJSProperty("naturalWidth", 1200);
-      await expect(card).toHaveJSProperty("naturalHeight", 627);
+      const card = page.locator("main > article > .note-hero img");
+      await expect(card).toHaveJSProperty("naturalWidth", post.heroWidth || 1200);
+      await expect(card).toHaveJSProperty("naturalHeight", post.heroHeight || 627);
       await expect(card).toHaveAttribute(
         "alt",
-        post.imageAlt || `Illustrated title card for ${post.title}`,
+        post.heroAlt || post.imageAlt || `Illustrated title card for ${post.title}`,
       );
+      for (const block of (post.bodyBlocks || []).filter(block => block.type === "image")) {
+        const image = page.locator(`.note-body img[src="../assets/notes/${block.file}"]`);
+        await image.scrollIntoViewIfNeeded();
+        await expect(image).toHaveJSProperty("naturalWidth", block.width);
+        await expect(image).toHaveJSProperty("naturalHeight", block.height);
+        await expect(image).toHaveAttribute("alt", block.alt);
+      }
       if (post.discussionUrl) {
         await expect(page.getByRole("link", { name: "Join the discussion on LinkedIn" })).toHaveAttribute(
           "href",
