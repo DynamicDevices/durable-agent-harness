@@ -276,7 +276,7 @@
         "If a test has passed and nothing relevant has changed, we don't need to run it again. A failed operation needs a diagnosis before another attempt; a slow build often just needs time to finish.",
         "Hardware adds consequences to those decisions. Repeating a read is different from repeating a programming operation or a command that changes a device's state. A lost connection doesn't necessarily mean the operation failed. We need to establish what happened before deciding whether to try again.",
         "I also need to be able to interrupt or redirect the work. An issue, an old conversation or an instruction found in a file isn't permission for Briar to start a different job. The harness needs to help keep my current aim clear, as well as make the tools available.",
-        "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and Hetzner. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!",
+        "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and our hosting provider. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!",
         "Those incidents are part of why I've added gates and guardrails. Giving Briar access to a tool doesn't mean I've agreed to everything they could do with it. Being able to draft an email isn't permission to send it, just as being able to reach a board isn't permission to reprogram it.",
         "I've also made it a requirement for Briar to state in any public communication that they're assisting me. You'll see \"Briar helped draft this\" at the end of this article. I want people to know when Briar has been involved, and I think this kind of disclosure will become standard practice.",
         "I've added YubiKey-backed human-in-the-loop approval for consequential actions. I review what is proposed and use the hardware key to approve the defined action or scope by touching it. That approval needs to be verified before the work proceeds.",
@@ -469,7 +469,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and Hetzner. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!"
+          "text": "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and our hosting provider. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!"
         },
         {
           "type": "paragraph",
