@@ -3,6 +3,225 @@
   "intro": "What broke, what we locked, and what earned a place on disk — filed when the week earns it.",
   "posts": [
     {
+      "id": "when-the-harness-gets-in-the-way",
+      "title": "Briar, we need to get some work done",
+      "seoTitle": "Briar, we need to get some work done",
+      "summary": "I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.",
+      "section": "Working with Briar",
+      "tags": [
+        "Briar",
+        "skills harness",
+        "embedded engineering",
+        "context compaction",
+        "development",
+        "Toyota Way Practices"
+      ],
+      "imageAlt": "Generated illustration based on reference portraits of Alex Lennon and Alex Keyter, imagining them working together at an electronics bench, beside the headline Briar, we need to get some work done.",
+      "date": "2026-11-08",
+      "customCard": true,
+      "bylineVisible": false,
+      "imageDisclosureVisible": false,
+      "imageDisclosure": "Generated editorial illustration with Briar through OpenRouter / Google AI Studio, using reference portraits of Alex Lennon and Alex Keyter. An imagined collaboration, not a photograph of an actual meeting. CWCW typography added separately.",
+      "body": [
+        "I have just had to say this to Briar:",
+        "“you check everything you might have done wrong - in software and do this in a lightweight review without all the extra checking - build / program / test - that's it not extra tool calls or harness work”",
+        "I want them to look properly at the software they have changed, then get it onto the board so we can find out whether it works. Instead, I keep having to pull them back from more checks, more supporting scripts and more work on the harness.",
+        "Briar is the AI assistant we are building together. We have given them skills and instructions to help us produce engineering work we can trust. It is frustrating when those instructions send them off doing more preparation while the work I asked for waits.",
+        "The review needs to look at what Briar might have got wrong in the code. Have they misunderstood what I asked for? Have they missed something that will stop it working? I want them to catch those mistakes before we spend time trying the software on hardware.",
+        "That should be a focused review of the change. It should not become an excuse to investigate everything around the job or build another way of checking it.",
+        "Then build the code, program the board and test it. If it fails, use what happened to find the fault, fix it and try again. I want to see the result on the device.",
+        "Testing is a huge part of trusting Briar's work. But if a test has passed and nothing relevant has changed, we do not need to run it again unless it is a required final check. Nor do I want to pay for a fresh review of every intermediate commit. Review the complete change with enough care for what could go wrong, and keep the checks the project actually requires.",
+        "Every extra helper script is more software we have to understand and maintain. Sometimes we need one. I want to know why we need it for this job before the original work turns into a tool-building project.",
+        "One example was Briar spending time on rollback for development hardware. With a hardware debugger attached, I can program the board again whenever I need to. I do not want to build a rollback capability before trying a change.",
+        "We still need to know which code we tested and what happened. We must take care not to damage hardware or overwrite calibration data. A programmer will not fix those mistakes.",
+        "Updates over the air or over a bus need more care too. We need to remain able to reach and update the device, including from older versions we support. Getting a failed update working again with a debugger lets us carry on developing; we still need to fix the update.",
+        "Production is different. I want to approve the change, understand the risk and know how we will recover if it goes wrong. That is a different job from trying new code on my development board.",
+        "I am always happy to answer questions that help Briar understand what I need and want. If they are unsure what we are trying to achieve, please ask me. Spending the day doing the wrong work because they did not ask is far more frustrating.",
+        "Once we have agreed the job, Briar needs enough access to carry it out. We can agree which systems they can use, what they can do and for how long. I should not have to be there to approve each step before anything else can happen.",
+        "I still want them to come back when they need my judgement or want to do something outside what we agreed. I send the emails and merge the development changes myself. Production and contributions to other people's projects need my separate involvement.",
+        "I need those limits enforced by the tools Briar uses. Giving them development access must not quietly give them access to production or customer data.",
+        "This also led me to ask about context compaction: what happens when a long conversation is shortened so the model has room to keep working?",
+        "My concern is not just whether Briar remembers a fact. Will they remember why we decided to do something? Or that I changed my mind later? I do not want them picking up an old instruction and carrying on with something I no longer want them to do.",
+        "I asked the AI LCR Builders group and people shared useful explanations and links. A hat tip to everyone who helped, and to Alex Keyter of [Generative Minds](https://genminds.co.uk/), who runs and organises the group. It is a good group to be part of if you want to ask questions and compare experiences with other people working with AI.",
+        "People pointed me to Claude's documentation on compaction. We use Codex, so I also looked for the equivalent information from OpenAI. Their documentation explains how skills and instructions are loaded, but I still do not know exactly how Codex chooses what to keep when a chat is compacted.",
+        "Another contributor shared a write-up about OpenClaw deleting emails. I have told Briar not to send emails. Could they still do it if that instruction was lost from the chat?",
+        "We found that some permission checks we had written and tested were not yet connected to the tools doing the work. I need to see those tools refuse something Briar is not allowed to do. There is still work to do there.",
+        "I also want Briar to leave enough written down to pick up the job without making me explain it again. They should be able to find the test results and see where we got to. Something they suggested must not come back in the next chat as something I asked for.",
+        "Going through the harness turned up instructions we no longer wanted. One rule called for a matching PDF whenever we created Markdown for external sharing. I am reviewing a web article here; another document is not helping me do that.",
+        "The question skill said to ask at “any decision fork”, even though I might already have made the decision. An old instruction still described how Briar could send an email, although I wanted to send emails myself.",
+        "We removed that wording and corrected the skills that used it. We kept useful engineering knowledge and the history of what we had done, so we can see what changed and why.",
+        "For me, this belongs in Kaizen and Toyota Way Practices too. We need to be willing to remove a practice we once thought was a good idea. Keeping it because we wrote it down can leave Briar following instructions that no longer help us.",
+        "The next engineering job is where I want to see the change. Briar should review their software properly and get on with building, programming and testing it. I do not want to spend another session bringing them back from work on the harness.",
+        "We have not measured the time or token savings yet. I would be interested to hear where your assistants get sidetracked, and what you have changed to keep them working on the job you actually wanted done.",
+        "(Briar helped draft this)"
+      ],
+      "bodyBlocks": [
+        {
+          "type": "paragraph",
+          "text": "I have just had to say this to Briar:"
+        },
+        {
+          "type": "paragraph",
+          "text": "“you check everything you might have done wrong - in software and do this in a lightweight review without all the extra checking - build / program / test - that's it not extra tool calls or harness work”"
+        },
+        {
+          "type": "paragraph",
+          "text": "I want them to look properly at the software they have changed, then get it onto the board so we can find out whether it works. Instead, I keep having to pull them back from more checks, more supporting scripts and more work on the harness."
+        },
+        {
+          "type": "paragraph",
+          "text": "Briar is the AI assistant we are building together. We have given them skills and instructions to help us produce engineering work we can trust. It is frustrating when those instructions send them off doing more preparation while the work I asked for waits."
+        },
+        {
+          "type": "heading",
+          "text": "Review the software, then try it"
+        },
+        {
+          "type": "paragraph",
+          "text": "The review needs to look at what Briar might have got wrong in the code. Have they misunderstood what I asked for? Have they missed something that will stop it working? I want them to catch those mistakes before we spend time trying the software on hardware."
+        },
+        {
+          "type": "paragraph",
+          "text": "That should be a focused review of the change. It should not become an excuse to investigate everything around the job or build another way of checking it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Then build the code, program the board and test it. If it fails, use what happened to find the fault, fix it and try again. I want to see the result on the device."
+        },
+        {
+          "type": "paragraph",
+          "text": "Testing is a huge part of trusting Briar's work. But if a test has passed and nothing relevant has changed, we do not need to run it again unless it is a required final check. Nor do I want to pay for a fresh review of every intermediate commit. Review the complete change with enough care for what could go wrong, and keep the checks the project actually requires."
+        },
+        {
+          "type": "paragraph",
+          "text": "Every extra helper script is more software we have to understand and maintain. Sometimes we need one. I want to know why we need it for this job before the original work turns into a tool-building project."
+        },
+        {
+          "type": "heading",
+          "text": "I can reprogram the development board"
+        },
+        {
+          "type": "paragraph",
+          "text": "One example was Briar spending time on rollback for development hardware. With a hardware debugger attached, I can program the board again whenever I need to. I do not want to build a rollback capability before trying a change."
+        },
+        {
+          "type": "paragraph",
+          "text": "We still need to know which code we tested and what happened. We must take care not to damage hardware or overwrite calibration data. A programmer will not fix those mistakes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Updates over the air or over a bus need more care too. We need to remain able to reach and update the device, including from older versions we support. Getting a failed update working again with a debugger lets us carry on developing; we still need to fix the update."
+        },
+        {
+          "type": "paragraph",
+          "text": "Production is different. I want to approve the change, understand the risk and know how we will recover if it goes wrong. That is a different job from trying new code on my development board."
+        },
+        {
+          "type": "heading",
+          "text": "Ask me what you need to know"
+        },
+        {
+          "type": "paragraph",
+          "text": "I am always happy to answer questions that help Briar understand what I need and want. If they are unsure what we are trying to achieve, please ask me. Spending the day doing the wrong work because they did not ask is far more frustrating."
+        },
+        {
+          "type": "paragraph",
+          "text": "Once we have agreed the job, Briar needs enough access to carry it out. We can agree which systems they can use, what they can do and for how long. I should not have to be there to approve each step before anything else can happen."
+        },
+        {
+          "type": "paragraph",
+          "text": "I still want them to come back when they need my judgement or want to do something outside what we agreed. I send the emails and merge the development changes myself. Production and contributions to other people's projects need my separate involvement."
+        },
+        {
+          "type": "paragraph",
+          "text": "I need those limits enforced by the tools Briar uses. Giving them development access must not quietly give them access to production or customer data."
+        },
+        {
+          "type": "heading",
+          "text": "Will Briar remember what I actually asked for?"
+        },
+        {
+          "type": "paragraph",
+          "text": "This also led me to ask about context compaction: what happens when a long conversation is shortened so the model has room to keep working?"
+        },
+        {
+          "type": "paragraph",
+          "text": "My concern is not just whether Briar remembers a fact. Will they remember why we decided to do something? Or that I changed my mind later? I do not want them picking up an old instruction and carrying on with something I no longer want them to do."
+        },
+        {
+          "type": "paragraph",
+          "text": "I asked the AI LCR Builders group and people shared useful explanations and links. A hat tip to everyone who helped, and to Alex Keyter of [Generative Minds](https://genminds.co.uk/), who runs and organises the group. It is a good group to be part of if you want to ask questions and compare experiences with other people working with AI."
+        },
+        {
+          "type": "paragraph",
+          "text": "People pointed me to Claude's documentation on compaction. We use Codex, so I also looked for the equivalent information from OpenAI. Their documentation explains how skills and instructions are loaded, but I still do not know exactly how Codex chooses what to keep when a chat is compacted."
+        },
+        {
+          "type": "paragraph",
+          "text": "Another contributor shared a write-up about OpenClaw deleting emails. I have told Briar not to send emails. Could they still do it if that instruction was lost from the chat?"
+        },
+        {
+          "type": "paragraph",
+          "text": "We found that some permission checks we had written and tested were not yet connected to the tools doing the work. I need to see those tools refuse something Briar is not allowed to do. There is still work to do there."
+        },
+        {
+          "type": "paragraph",
+          "text": "I also want Briar to leave enough written down to pick up the job without making me explain it again. They should be able to find the test results and see where we got to. Something they suggested must not come back in the next chat as something I asked for."
+        },
+        {
+          "type": "heading",
+          "text": "Some of our instructions were making this worse"
+        },
+        {
+          "type": "paragraph",
+          "text": "Going through the harness turned up instructions we no longer wanted. One rule called for a matching PDF whenever we created Markdown for external sharing. I am reviewing a web article here; another document is not helping me do that."
+        },
+        {
+          "type": "paragraph",
+          "text": "The question skill said to ask at “any decision fork”, even though I might already have made the decision. An old instruction still described how Briar could send an email, although I wanted to send emails myself."
+        },
+        {
+          "type": "paragraph",
+          "text": "We removed that wording and corrected the skills that used it. We kept useful engineering knowledge and the history of what we had done, so we can see what changed and why."
+        },
+        {
+          "type": "paragraph",
+          "text": "For me, this belongs in Kaizen and Toyota Way Practices too. We need to be willing to remove a practice we once thought was a good idea. Keeping it because we wrote it down can leave Briar following instructions that no longer help us."
+        },
+        {
+          "type": "paragraph",
+          "text": "The next engineering job is where I want to see the change. Briar should review their software properly and get on with building, programming and testing it. I do not want to spend another session bringing them back from work on the harness."
+        },
+        {
+          "type": "paragraph",
+          "text": "We have not measured the time or token savings yet. I would be interested to hear where your assistants get sidetracked, and what you have changed to keep them working on the job you actually wanted done."
+        },
+        {
+          "type": "paragraph",
+          "text": "(Briar helped draft this)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Anthropic on compaction",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/compaction"
+        },
+        {
+          "label": "OpenAI on Codex skills",
+          "url": "https://developers.openai.com/codex/skills/"
+        },
+        {
+          "label": "OpenAI on instruction loading",
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md"
+        },
+        {
+          "label": "the secondary OpenClaw account",
+          "url": "https://medium.com/@dingzhanjun/analyzing-the-incident-of-openclaw-deleting-emails-a-technical-deep-dive-56e50028637b"
+        }
+      ],
+      "discussionUrl": ""
+    },
+    {
       "id": "how-i-work-with-briar",
       "date": "2026-10-31",
       "title": "How I work with Briar, the skills harness I’m creating",
@@ -57,7 +276,7 @@
         "If a test has passed and nothing relevant has changed, we don't need to run it again. A failed operation needs a diagnosis before another attempt; a slow build often just needs time to finish.",
         "Hardware adds consequences to those decisions. Repeating a read is different from repeating a programming operation or a command that changes a device's state. A lost connection doesn't necessarily mean the operation failed. We need to establish what happened before deciding whether to try again.",
         "I also need to be able to interrupt or redirect the work. An issue, an old conversation or an instruction found in a file isn't permission for Briar to start a different job. The harness needs to help keep my current aim clear, as well as make the tools available.",
-        "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and Hetzner. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!",
+        "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and our hosting provider. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!",
         "Those incidents are part of why I've added gates and guardrails. Giving Briar access to a tool doesn't mean I've agreed to everything they could do with it. Being able to draft an email isn't permission to send it, just as being able to reach a board isn't permission to reprogram it.",
         "I've also made it a requirement for Briar to state in any public communication that they're assisting me. You'll see \"Briar helped draft this\" at the end of this article. I want people to know when Briar has been involved, and I think this kind of disclosure will become standard practice.",
         "I've added YubiKey-backed human-in-the-loop approval for consequential actions. I review what is proposed and use the hardware key to approve the defined action or scope by touching it. That approval needs to be verified before the work proceeds.",
@@ -250,7 +469,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and Hetzner. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!"
+          "text": "Briar has sent emails on my behalf without asking me first, including emails to Preloop.ai and our hosting provider. That's scary. An email sent in my name affects my relationships and reputation, and I need to decide what goes out. This was Briar acting without my approval, not ok!"
         },
         {
           "type": "paragraph",
