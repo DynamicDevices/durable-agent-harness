@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Briar, we need to get some work done — Chop Wood Carry Water</title>
-  <meta name="description" content="I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.">
+  <meta name="description" content="I want Briar to help us get good work done. We found that some of the instructions meant to help were keeping them busy with the wrong things.">
   <meta name="author" content="Alex Lennon">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="theme-color" content="#0B1210">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="https://chopwoodcarrywater.uk/notes/when-the-harness-gets-in-the-way.html">
   <meta property="og:title" content="Briar, we need to get some work done">
-  <meta property="og:description" content="I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.">
+  <meta property="og:description" content="I want Briar to help us get good work done. We found that some of the instructions meant to help were keeping them busy with the wrong things.">
   <meta property="og:image" content="https://chopwoodcarrywater.uk/assets/notes/when-the-harness-gets-in-the-way-og.png">
   <meta property="og:image:secure_url" content="https://chopwoodcarrywater.uk/assets/notes/when-the-harness-gets-in-the-way-og.png">
   <meta property="og:image:type" content="image/png">
@@ -38,7 +38,7 @@
   <meta name="twitter:site" content="@embedded_iot">
   <meta name="twitter:creator" content="@embedded_iot">
   <meta name="twitter:title" content="Briar, we need to get some work done">
-  <meta name="twitter:description" content="I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.">
+  <meta name="twitter:description" content="I want Briar to help us get good work done. We found that some of the instructions meant to help were keeping them busy with the wrong things.">
   <meta name="twitter:image" content="https://chopwoodcarrywater.uk/assets/notes/when-the-harness-gets-in-the-way-og.png">
   <meta name="twitter:image:alt" content="Generated illustration based on reference portraits of Alex Lennon and Alex Keyter, imagining them working together at an electronics bench, beside the headline Briar, we need to get some work done.">
   <script type="application/ld+json">
@@ -48,7 +48,7 @@
   "@id": "https://chopwoodcarrywater.uk/notes/when-the-harness-gets-in-the-way.html#article",
   "url": "https://chopwoodcarrywater.uk/notes/when-the-harness-gets-in-the-way.html",
   "headline": "Briar, we need to get some work done",
-  "description": "I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.",
+  "description": "I want Briar to help us get good work done. We found that some of the instructions meant to help were keeping them busy with the wrong things.",
   "datePublished": "2026-11-08",
   "dateModified": "2026-11-08",
   "inLanguage": "en-GB",
@@ -105,7 +105,7 @@
         <p class="kicker">Working with Briar · 8th November 2026</p>
         <h1>Briar, we need to get some work done</h1>
 
-        <p class="note-lede">I want Briar to review the software, build the code, program the board and test it. Too often, we get sidetracked into extra checks, tool calls and work on the harness.</p>
+        <p class="note-lede">I want Briar to help us get good work done. We found that some of the instructions meant to help were keeping them busy with the wrong things.</p>
 
       </header>
       <figure class="note-hero">
@@ -113,41 +113,44 @@
              alt="Generated illustration based on reference portraits of Alex Lennon and Alex Keyter, imagining them working together at an electronics bench, beside the headline Briar, we need to get some work done." fetchpriority="high">
       </figure>
       <div class="note-body">
-<p>I have just had to say this to Briar:</p>
-<p>“you check everything you might have done wrong - in software and do this in a lightweight review without all the extra checking - build / program / test - that&#x27;s it not extra tool calls or harness work”</p>
-<p>I want them to look properly at the software they have changed, then get it onto the board so we can find out whether it works. Instead, I keep having to pull them back from more checks, more supporting scripts and more work on the harness.</p>
-<p>Briar is the AI assistant we are building together. We have given them skills and instructions to help us produce engineering work we can trust. It is frustrating when those instructions send them off doing more preparation while the work I asked for waits.</p>
-<h2>Review the software, then try it</h2>
-<p>The review needs to look at what Briar might have got wrong in the code. Have they misunderstood what I asked for? Have they missed something that will stop it working? I want them to catch those mistakes before we spend time trying the software on hardware.</p>
-<p>That should be a focused review of the change. It should not become an excuse to investigate everything around the job or build another way of checking it.</p>
-<p>Then build the code, program the board and test it. If it fails, use what happened to find the fault, fix it and try again. I want to see the result on the device.</p>
-<p>Testing is a huge part of trusting Briar&#x27;s work. But if a test has passed and nothing relevant has changed, we do not need to run it again unless it is a required final check. Nor do I want to pay for a fresh review of every intermediate commit. Review the complete change with enough care for what could go wrong, and keep the checks the project actually requires.</p>
-<p>Every extra helper script is more software we have to understand and maintain. Sometimes we need one. I want to know why we need it for this job before the original work turns into a tool-building project.</p>
-<h2>I can reprogram the development board</h2>
-<p>One example was Briar spending time on rollback for development hardware. With a hardware debugger attached, I can program the board again whenever I need to. I do not want to build a rollback capability before trying a change.</p>
-<p>We still need to know which code we tested and what happened. We must take care not to damage hardware or overwrite calibration data. A programmer will not fix those mistakes.</p>
-<p>Updates over the air or over a bus need more care too. We need to remain able to reach and update the device, including from older versions we support. Getting a failed update working again with a debugger lets us carry on developing; we still need to fix the update.</p>
-<p>Production is different. I want to approve the change, understand the risk and know how we will recover if it goes wrong. That is a different job from trying new code on my development board.</p>
-<h2>Ask me what you need to know</h2>
-<p>I am always happy to answer questions that help Briar understand what I need and want. If they are unsure what we are trying to achieve, please ask me. Spending the day doing the wrong work because they did not ask is far more frustrating.</p>
-<p>Once we have agreed the job, Briar needs enough access to carry it out. We can agree which systems they can use, what they can do and for how long. I should not have to be there to approve each step before anything else can happen.</p>
-<p>I still want them to come back when they need my judgement or want to do something outside what we agreed. I send the emails and merge the development changes myself. Production and contributions to other people&#x27;s projects need my separate involvement.</p>
-<p>I need those limits enforced by the tools Briar uses. Giving them development access must not quietly give them access to production or customer data.</p>
-<h2>Will Briar remember what I actually asked for?</h2>
-<p>This also led me to ask about context compaction: what happens when a long conversation is shortened so the model has room to keep working?</p>
-<p>My concern is not just whether Briar remembers a fact. Will they remember why we decided to do something? Or that I changed my mind later? I do not want them picking up an old instruction and carrying on with something I no longer want them to do.</p>
-<p>I asked the AI LCR Builders group and people shared useful explanations and links. A hat tip to everyone who helped, and to Alex Keyter of <a href="https://genminds.co.uk/">Generative Minds</a>, who runs and organises the group. It is a good group to be part of if you want to ask questions and compare experiences with other people working with AI.</p>
-<p>People pointed me to Claude&#x27;s documentation on compaction. We use Codex, so I also looked for the equivalent information from OpenAI. Their documentation explains how skills and instructions are loaded, but I still do not know exactly how Codex chooses what to keep when a chat is compacted.</p>
-<p>Another contributor shared a write-up about OpenClaw deleting emails. I have told Briar not to send emails. Could they still do it if that instruction was lost from the chat?</p>
-<p>We found that some permission checks we had written and tested were not yet connected to the tools doing the work. I need to see those tools refuse something Briar is not allowed to do. There is still work to do there.</p>
-<p>I also want Briar to leave enough written down to pick up the job without making me explain it again. They should be able to find the test results and see where we got to. Something they suggested must not come back in the next chat as something I asked for.</p>
-<h2>Some of our instructions were making this worse</h2>
-<p>Going through the harness turned up instructions we no longer wanted. One rule called for a matching PDF whenever we created Markdown for external sharing. I am reviewing a web article here; another document is not helping me do that.</p>
-<p>The question skill said to ask at “any decision fork”, even though I might already have made the decision. An old instruction still described how Briar could send an email, although I wanted to send emails myself.</p>
-<p>We removed that wording and corrected the skills that used it. We kept useful engineering knowledge and the history of what we had done, so we can see what changed and why.</p>
-<p>For me, this belongs in Kaizen and Toyota Way Practices too. We need to be willing to remove a practice we once thought was a good idea. Keeping it because we wrote it down can leave Briar following instructions that no longer help us.</p>
-<p>The next engineering job is where I want to see the change. Briar should review their software properly and get on with building, programming and testing it. I do not want to spend another session bringing them back from work on the harness.</p>
-<p>We have not measured the time or token savings yet. I would be interested to hear where your assistants get sidetracked, and what you have changed to keep them working on the job you actually wanted done.</p>
+<p>I’m building an AI assistant called Briar. We work together on software and electronics, and I want to get good work done without having to supervise every step.</p>
+<p>Recently, though, I kept having to bring Briar back to the job I had actually asked for. They were doing more checks, writing extra little programs to help with the work, or improving their instructions. Meanwhile, the work itself was waiting.</p>
+<p>“Briar, we need to get some work done.”</p>
+<p>We have spent a lot of time giving Briar instructions, useful ways of working and lessons from earlier mistakes. We call that collection the “harness”. It is supposed to help us work together. Some of it was getting in the way.</p>
+<p>I wanted to understand what we needed to keep, what we could simplify and what we should stop doing altogether.</p>
+<h2>Check the work, then try it</h2>
+<p>Much of our work involves the software inside electronic devices. After Briar changes that software, I need them to look for mistakes, put it onto the device and test whether it does what we asked.</p>
+<p>There are plenty of useful questions to ask during that review. Has Briar understood the job? Have they missed something? Could the change break something that was working before?</p>
+<p>But the review was spreading beyond the change we needed to make. Another check would lead to another investigation, or another small program to help us check things. Each extra program is something else we have to understand and maintain.</p>
+<p>Sometimes we need that extra work. I just want it to help us finish the job in front of us. If we have already checked something and nothing relevant has changed, why are we checking it again?</p>
+<p>We still need the tests that tell us whether the work is any good. When a test fails, Briar needs to use the result to find the fault, fix it and try again. I do not want them disappearing into another round of preparation before we have even tried what they made.</p>
+<h2>Trying an idea is different from changing something people rely on</h2>
+<p>One example was Briar spending time preparing a way to undo a software update on a device we use for experiments.</p>
+<p>That device sits on our development bench. If the software does not work, I can connect a programming tool and load it again. Being able to try a change, see what happens and try again is how we develop it. We do not need to build an automatic recovery system before every experiment.</p>
+<p>We do need to avoid damaging the hardware, and keep a record of which version we tried and what happened. If we are updating a device remotely, we also need to make sure a failed update will not leave us unable to reach it.</p>
+<p>A live system that customers depend on is a different responsibility. I want to approve the change, understand who could be affected and know how we would get it working again if something went wrong.</p>
+<p>We had been putting too much effort into protecting recoverable experiments as though they were live customer systems. That was slowing down the work where we needed to learn by trying things.</p>
+<h2>Please ask me when you need to</h2>
+<p>I am always happy to answer questions that help Briar understand what I need and want. Spending the day doing the wrong job because they did not ask is far more frustrating.</p>
+<p>The interruptions I object to are the ones where we have already agreed the work, but Briar has to wait for me to approve another routine step before they can continue.</p>
+<p>We should be able to agree which systems Briar can use, what they can do and for how long. Within that agreement, they need enough freedom to get on with the job. If they need my judgement or want to go beyond what we agreed, they should come back to me.</p>
+<p>I still decide what gets sent in my name and what changes go into systems people rely on. I normally send the emails and approve the final software changes myself. Permission to experiment must not quietly become permission to change a customer’s system.</p>
+<p>We also found that some of the checks we had written and tested were not yet connected to the tools Briar actually uses. Writing “do not send emails” in their instructions is not enough. I need the email tool to refuse to send one. We still have work to do there.</p>
+<h2>What happens when the conversation gets too long?</h2>
+<p>While we were looking at this, I also started asking what happens to a long conversation with an AI assistant.</p>
+<p>There is a limit to how much conversation the AI can work with at once. When a chat gets long, some tools shorten the earlier discussion into a summary so the work can continue. This is called “compaction”.</p>
+<p>My concern is what gets left out. Will Briar remember why we decided to do something? Or that I changed my mind later? I do not want them carrying on with an old instruction that no longer reflects what I want.</p>
+<p>I asked the AI LCR Builders group and people shared useful explanations and links. A hat tip to everyone who helped, and to Alex Keyter of <a href="https://genminds.co.uk/">Generative Minds</a>, who founded and runs the group. It is a good place to ask questions and compare experiences with other people working with AI.</p>
+<p>Some of the links explained how Claude handles long chats. We use Codex, an OpenAI tool, so I also looked for information about that. I still do not know exactly how Codex chooses what to keep when it shortens a conversation.</p>
+<p>Someone also shared an account of an AI assistant called OpenClaw deleting emails. I have told Briar not to send emails. Reading that account made me ask what would stop them if that instruction disappeared from the conversation.</p>
+<p>For our own work, I want enough written down to pick up the job without making me explain it again: what I asked for, what we decided, what we tried and what happened. Something Briar suggested must not reappear in the next chat as something I told them to do.</p>
+<h2>Some instructions needed to go</h2>
+<p>Going through the harness turned up practices we no longer wanted. One instruction called for an extra PDF whenever we prepared certain documents for sharing. I was reviewing a web article; another document was not helping me do that.</p>
+<p>Another instruction encouraged Briar to ask me whenever they reached a choice, even if I had already made that choice. Old wording still described how Briar could send an email, although I wanted to send emails myself.</p>
+<p>We removed that wording and corrected the instructions that depended on it. We kept useful engineering knowledge and the history of our changes, so we can still see what we did and why.</p>
+<p>I see this as part of Kaizen, the practice of continuous improvement, and the Toyota Way practices we use in our work. We need to be willing to remove something we once thought was a good idea. Keeping a rule just because we wrote it down can leave Briar following instructions that no longer help us.</p>
+<p>The next job is where I want to see the difference. Briar should ask what they need to know, check their work properly and help us get it done. We have not measured the time or AI-usage savings yet, and I do not want to spend another session bringing them back from improving the harness.</p>
+<p>If you are working with an AI assistant, I would be interested to hear where you find yourself having to bring them back to the job. What have you changed that actually helped?</p>
 <p>(Briar helped draft this)</p>
       </div>
       <aside class="note-sources" aria-labelledby="sources-heading">
