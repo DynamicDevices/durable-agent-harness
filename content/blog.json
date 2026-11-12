@@ -16,9 +16,9 @@
         "attention"
       ],
       "customCard": true,
-      "imageAlt": "Several open project notebooks surround an unfinished task sheet beside the title: I’m getting more done. Why is it stressing me out?",
-      "imageDisclosure": "Original digitally drawn editorial illustration created with Briar; not a photograph of actual project work.",
-      "imageDisclosureVisible": false,
+      "imageAlt": "Portrait-guided generated illustration of Alex reviewing agent chats on a laptop, with the title: I'm getting more done. Why is it stressing me out?",
+      "imageDisclosure": "AI-generated illustration of Alex using an approved portrait as a likeness reference. The workspace and chat interface are imagined, not a documentary photograph or exact Codex screenshot. Created with Google Gemini through OpenRouter; CWCW typography added separately.",
+      "imageDisclosureVisible": true,
       "body": [
         "I’m finding that I can do much more project work with Briar, the AI assistant I’m building. We work together on software and electronics, and we have several jobs moving at once. But I’m getting into a cognitive overload situation switching between them to monitor what’s happening and make sure they stay on track.",
         "I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. I’m beginning to wonder whether I now have more unfinished work than I can comfortably put out of my mind.",
