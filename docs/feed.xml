@@ -5,7 +5,63 @@
     <link>https://chopwoodcarrywater.uk/</link>
     <description>Engineering insights on durable working relationships with AI coding agents.</description>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 08 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>I&#x27;m getting more done. Why is it stressing me out?</title>
+      <link>https://chopwoodcarrywater.uk/notes/more-work-more-supervision.html</link>
+      <guid isPermaLink="true">https://chopwoodcarrywater.uk/notes/more-work-more-supervision.html</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
+      <description>Working with Briar is helping me do more project work. I’m still having to keep too much of it in my head.</description>
+      <content:encoded><![CDATA[<p>I’m finding that I can do much more project work with Briar, the AI assistant I’m building. We work together on software and electronics, and we have several jobs moving at once. But I think I’m running into cognitive overload, switching between them to monitor what’s happening and make sure they stay on track.</p>
+<p>I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. It feels as though I have more in progress than I can comfortably keep track of, even though Briar is doing much of the work.</p>
+<p>We use automation to create and manage shared specification documents and project-management issues, so there is a written record of what we have agreed. But Briar doesn’t always pick up the requirements and decisions recorded there. I still have to remember them and bring them back into the conversation. That is what I mean by cognitive overload here: having the information written down hasn’t stopped me needing to keep it in my head.</p>
+<h2>Is this encouraging me to keep switching?</h2>
+<p>I’m wondering whether this way of working also tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of.</p>
+<p>This might be a useful way for some people with ADHD to work. Briar could help turn an idea into a first step, keep a record of where we have got to and make it easier to return after doing something else. But I can also see how having several projects available all the time could encourage more switching and leave more work unfinished.</p>
+<p>NICE’s ADHD guidance <a href="https://www.nice.org.uk/guidance/ng87/chapter/Recommendations">[1</a>] includes shorter periods of focus with movement breaks, reducing distractions and reinforcing verbal requests with written instructions. That doesn’t mean moving to another project is the same as taking a break. Equally, a small laboratory study <a href="https://doi.org/10.1177/10870547231154902">[2</a>] found lower switching costs in adults with ADHD, so we shouldn’t assume switching is always a disadvantage.</p>
+<p>I haven’t found direct evidence that moving between AI agents reinforces ADHD behaviours. I want to understand when switching helps me make progress, and when I’m making it harder to concentrate on getting something finished.</p>
+<h2>More unfinished work to think about</h2>
+<p>The switching is only part of it. There is also the work I’m still keeping in my head. I had read that we tend to remember unfinished tasks, then forget about them once they are dealt with. This is often described as the Zeigarnik effect.</p>
+<p>When we looked into it, a 2025 review of the research <a href="https://www.nature.com/articles/s41599-025-05000-w">[3</a>] found no overall memory advantage for unfinished tasks, although it did find a tendency to return to interrupted work. So I wouldn’t describe it as a rule that the brain remembers a job until it is done and then forgets it.</p>
+<p>There is more directly relevant research linking unfinished work with continuing to think about it outside working hours. A 2026 review <a href="https://doi.org/10.1080/10615806.2026.2616302">[4</a>] found an association between unfinished tasks and work-related thoughts, particularly dwelling on the work in a way that causes distress.</p>
+<p>That is closer to what I’m concerned about. Briar helps me move more projects forward, but I still need to remember what each one needs and whether it is actually being dealt with. I think having more of that to keep track of is contributing to the cognitive overload.</p>
+<p>Other experiments on unfinished goals <a href="https://doi.org/10.1037/a0024192">[5</a>] found that making specific plans reduced intrusive thoughts and interference with other activities, even before the work was finished.</p>
+<p>That makes me question whether recording an issue is enough for me. If I still have to keep checking that Briar is following the requirements, I haven’t really been able to put it down. The problem is not just how many jobs I have open, but whether I can leave them with Briar without having to keep stepping back in.</p>
+<h2>Why I still have to step in</h2>
+<p>In my last post, I wrote about having to bring Briar back to the job I had actually asked for. We have changed their instructions and ways of working, which we call the harness. We are still adding unnecessary complexity, though, and I’m still having to intervene too often.</p>
+<p>One recent example was an application for updating the software inside a customer’s electronic devices.</p>
+<p>We use command-line tools for development and testing. The customer needs a straightforward graphical application they can use without knowing how the devices work internally.</p>
+<p>I had to explain that customers should not need to know the identifiers of individual devices. The application should find those and select the software supplied with the release, while allowing the user to choose another file. Updating the controller should not require physically disconnecting its sensors.</p>
+<p>I ended up saying:</p>
+<p>“This is all FAR TOO COMPLICATED. You need to make the update process much simpler and more automated.”</p>
+<p>Briar changed the application to find the devices, fill in the software files and provide one button to update them. That was much closer to what I wanted. Passing the software tests still left us needing to try the complete process on the connected hardware.</p>
+<p>We had done substantial work, but I was still having to bring us back to how the customer would actually use it.</p>
+<p>The updater is a good example of why specification capture is critical: getting a clear account of what we want before we get too far into building it.</p>
+<p>“Make an updater” leaves a lot open. Who is going to use it? What should they have to know? What needs to keep working afterwards? Those questions affect the software we build and the tests we need to run.</p>
+<p>Often I start by talking through what I want. Helping me turn that into a clear specification is part of the work I want to do with Briar.</p>
+<p>I’m happy for them to ask questions that help us understand the customer’s needs. Having to repeat something we have already agreed is much more frustrating, particularly when we have built something that now needs changing.</p>
+<p>We had a more serious example while working on a product that collects pressure readings from several sensors. The readings pass through a controller before reaching the software that displays them. We need to preserve the sensor’s full measurement range throughout that journey, with any conversion into a different output format handled by the controller.</p>
+<p>We had specified this, but Briar treated it as a compatibility problem and changed the middleware without making sure the sensor sent the full reading in the first place. I caught that: middleware cannot recover measurement information already lost at the sensor end. If I hadn’t, we could have shipped a product with degraded readings that didn’t meet the specification. Having the requirement written down hadn’t been enough.</p>
+<p>I need Briar to keep using those requirements as we build and test, including when deciding whether we have finished.</p>
+<p>I’m still concerned about requirements disappearing when a long AI conversation is shortened so the work can continue. This is called compaction. I suspect it contributes to some of the forgetting, but I don’t yet know whether it caused a particular mistake. We can also capture a requirement badly, or write it down and then fail to use it.</p>
+<p>I don’t need every exchange loaded back into the chat. I need my later decisions and the results of what we tried kept clearly so we can continue without me reconstructing it. Otherwise I have to keep remembering it myself while trying to concentrate on another project.</p>
+<p>We have also been reducing repeated checks and unnecessary material being read into chats. Token usage seems much better now. Tokens measure the text an AI processes and produces, and excessive usage has been a problem for us.</p>
+<p>Those changes may be helping, but I haven’t established why usage looks better. I’m pleased to see it, although it hasn’t resolved the amount of work I’m keeping in mind.</p>
+<h2>Knowing when I can leave a job alone</h2>
+<p>There are jobs where I have been able to see what we have tested and make a decision about what can wait. We recently got audio and video working on a screen we use for development. Briar worked through the software changes and testing, and I could see the video and hear the sound on the actual device.</p>
+<p>There was still some delay between the picture and the sound. I chose to leave that for a separate issue, and we made a development release. We knew what we had checked and what we were leaving for later.</p>
+<p>Briar helped us get something working, we tried it, and I could make a decision about the remaining problem. I want more of our jobs to reach that point without needing so much redirection along the way.</p>
+<p>I can already get much more done with Briar. I’m now questioning how many jobs I should have underway at once, and what I need to know before I can leave one of them alone. A clear account of what happens next might help, but only if I can rely on us following it.</p>
+<p>What I want is to be able to leave one job with Briar and concentrate on another without carrying both in my head.</p>
+<p>If you are working this way too, I’d be interested to compare notes on what has helped you do that. Where can you leave the work alone, and where do you still find yourself having to step back in?</p>
+<h2>References</h2>
+<p><a href="https://www.nice.org.uk/guidance/ng87/chapter/Recommendations">1. NICE’s ADHD guidance</a></p>
+<p><a href="https://doi.org/10.1177/10870547231154902">2. a small laboratory study</a></p>
+<p><a href="https://www.nature.com/articles/s41599-025-05000-w">3. a 2025 review of the research</a></p>
+<p><a href="https://doi.org/10.1080/10615806.2026.2616302">4. A 2026 review</a></p>
+<p><a href="https://doi.org/10.1037/a0024192">5. experiments on unfinished goals</a></p>
+<p>(Briar helped draft this)</p>]]></content:encoded>
+    </item>
     <item>
       <title>Briar, we need to get some work done</title>
       <link>https://chopwoodcarrywater.uk/notes/when-the-harness-gets-in-the-way.html</link>
