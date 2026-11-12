@@ -46,7 +46,7 @@
         "We recently got audio and video working on a screen we use for development. Briar worked through the software changes and testing, and I could see the video and hear the sound on the actual device.",
         "There was still some delay between the picture and the sound. I chose to leave that for a separate issue, and we made a development release. We knew what we had checked and what we were leaving for later.",
         "Briar helped us get something working, we tried it, and I could make a decision about the remaining problem. I want more of our jobs to reach that point without needing so much redirection along the way.",
-        "I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. There is always another job I can move to, with something to investigate or a decision to make. I can keep moving between them while taking on more than I can comfortably keep track of.",
+        "I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of.",
         "This might be a useful way for some people with ADHD to work. Briar could help turn an idea into a first step, keep a record of where we have got to and make it easier to return after doing something else. But I can also see how having several projects available all the time could encourage more switching and leave more work unfinished.",
         "[NICE’s ADHD guidance](https://www.nice.org.uk/guidance/ng87/chapter/Recommendations) includes shorter periods of focus with movement breaks, reducing distractions and reinforcing verbal requests with written instructions. That doesn’t mean moving to another project is the same as taking a break. Equally, [a small laboratory study](https://doi.org/10.1177/10870547231154902) found lower switching costs in adults with ADHD, so we shouldn’t assume switching is always a disadvantage.",
         "I haven’t found direct evidence that moving between AI agents reinforces ADHD behaviours. I want to understand when switching helps me make progress, and when I’m making it harder to concentrate on getting something finished.",
@@ -184,7 +184,7 @@
         },
         {
           "type": "paragraph",
-          "text": "I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. There is always another job I can move to, with something to investigate or a decision to make. I can keep moving between them while taking on more than I can comfortably keep track of."
+          "text": "I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of."
         },
         {
           "type": "paragraph",
