@@ -112,15 +112,11 @@
       <div class="note-body">
 <p>I’m finding that I can do much more project work with Briar, the AI assistant I’m building. We work together on software and electronics, and we have several jobs moving at once. But I’m getting into a cognitive overload situation switching between them to monitor what’s happening and make sure they stay on track.</p>
 <p>I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. I’m beginning to wonder whether I now have more unfinished work than I can comfortably put out of my mind.</p>
-<p>In my last post, I wrote about having to bring Briar back to the job I had actually asked for. We have changed their instructions and ways of working, which we call the harness. We are still adding unnecessary complexity, though, and I’m still having to intervene too often.</p>
-<h2>The customer should not have to understand our development tools</h2>
-<p>One recent example was an application for updating the software inside a customer’s electronic devices.</p>
-<p>We use command-line tools for development and testing. The customer needs a straightforward graphical application they can use without knowing how the devices work internally.</p>
-<p>I had to explain that customers should not need to know the identifiers of individual devices. The application should find those and select the software supplied with the release, while allowing the user to choose another file. Updating the controller should not require physically disconnecting its sensors.</p>
-<p>I ended up saying:</p>
-<p>“This is all FAR TOO COMPLICATED. You need to make the update process much simpler and more automated.”</p>
-<p>Briar changed the application to find the devices, fill in the software files and provide one button to update them. That was much closer to what I wanted. Passing the software tests still left us needing to try the complete process on the connected hardware.</p>
-<p>We had done substantial work, but I was still having to bring us back to how the customer would actually use it.</p>
+<h2>Is this encouraging me to keep switching?</h2>
+<p>I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of.</p>
+<p>This might be a useful way for some people with ADHD to work. Briar could help turn an idea into a first step, keep a record of where we have got to and make it easier to return after doing something else. But I can also see how having several projects available all the time could encourage more switching and leave more work unfinished.</p>
+<p><a href="https://www.nice.org.uk/guidance/ng87/chapter/Recommendations">NICE’s ADHD guidance</a> includes shorter periods of focus with movement breaks, reducing distractions and reinforcing verbal requests with written instructions. That doesn’t mean moving to another project is the same as taking a break. Equally, <a href="https://doi.org/10.1177/10870547231154902">a small laboratory study</a> found lower switching costs in adults with ADHD, so we shouldn’t assume switching is always a disadvantage.</p>
+<p>I haven’t found direct evidence that moving between AI agents reinforces ADHD behaviours. I want to understand when switching helps me make progress, and when I’m making it harder to concentrate on getting something finished.</p>
 <h2>More unfinished work to think about</h2>
 <p>I had read that we tend to remember unfinished tasks, then forget about them once they are dealt with. This is often described as the Zeigarnik effect.</p>
 <p>When we looked into it, <a href="https://www.nature.com/articles/s41599-025-05000-w">a 2025 review of the research</a> found no overall memory advantage for unfinished tasks, although it did find a tendency to return to interrupted work. So I wouldn’t describe it as a rule that the brain remembers a job until it is done and then forgets it.</p>
@@ -128,6 +124,15 @@
 <p>That fits my concern about having more projects underway. Briar helps me move them forward, but I still need to remember what each one needs and whether it is actually being dealt with.</p>
 <p>Other <a href="https://doi.org/10.1037/a0024192">experiments on unfinished goals</a> found that making specific plans reduced intrusive thoughts and interference with other activities, even before the work was finished.</p>
 <p>That makes me question whether recording an issue is enough for me. If I still have to keep checking that Briar is following the requirements, I haven’t really been able to put it down.</p>
+<h2>The customer should not have to understand our development tools</h2>
+<p>In my last post, I wrote about having to bring Briar back to the job I had actually asked for. We have changed their instructions and ways of working, which we call the harness. We are still adding unnecessary complexity, though, and I’m still having to intervene too often.</p>
+<p>One recent example was an application for updating the software inside a customer’s electronic devices.</p>
+<p>We use command-line tools for development and testing. The customer needs a straightforward graphical application they can use without knowing how the devices work internally.</p>
+<p>I had to explain that customers should not need to know the identifiers of individual devices. The application should find those and select the software supplied with the release, while allowing the user to choose another file. Updating the controller should not require physically disconnecting its sensors.</p>
+<p>I ended up saying:</p>
+<p>“This is all FAR TOO COMPLICATED. You need to make the update process much simpler and more automated.”</p>
+<p>Briar changed the application to find the devices, fill in the software files and provide one button to update them. That was much closer to what I wanted. Passing the software tests still left us needing to try the complete process on the connected hardware.</p>
+<p>We had done substantial work, but I was still having to bring us back to how the customer would actually use it.</p>
 <h2>We need to capture what I mean and keep using it</h2>
 <p>Good specification capture is critical: getting a clear account of what we want before we get too far into building it.</p>
 <p>“Make an updater” leaves a lot open. Who is going to use it? What should they have to know? What needs to keep working afterwards? Those questions affect the software we build and the tests we need to run.</p>
@@ -140,11 +145,6 @@
 <p>We recently got audio and video working on a screen we use for development. Briar worked through the software changes and testing, and I could see the video and hear the sound on the actual device.</p>
 <p>There was still some delay between the picture and the sound. I chose to leave that for a separate issue, and we made a development release. We knew what we had checked and what we were leaving for later.</p>
 <p>Briar helped us get something working, we tried it, and I could make a decision about the remaining problem. I want more of our jobs to reach that point without needing so much redirection along the way.</p>
-<h2>Is this encouraging me to keep switching?</h2>
-<p>I’m also wondering whether jumping between Briar chats on different projects tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of.</p>
-<p>This might be a useful way for some people with ADHD to work. Briar could help turn an idea into a first step, keep a record of where we have got to and make it easier to return after doing something else. But I can also see how having several projects available all the time could encourage more switching and leave more work unfinished.</p>
-<p><a href="https://www.nice.org.uk/guidance/ng87/chapter/Recommendations">NICE’s ADHD guidance</a> includes shorter periods of focus with movement breaks, reducing distractions and reinforcing verbal requests with written instructions. That doesn’t mean moving to another project is the same as taking a break. Equally, <a href="https://doi.org/10.1177/10870547231154902">a small laboratory study</a> found lower switching costs in adults with ADHD, so we shouldn’t assume switching is always a disadvantage.</p>
-<p>I haven’t found direct evidence that moving between AI agents reinforces ADHD behaviours. I want to understand when switching helps me make progress, and when I’m making it harder to concentrate on getting something finished.</p>
 <h2>The token usage seems better</h2>
 <p>Token usage seems much better. Tokens measure the text an AI processes and produces, and excessive usage has been a problem for us.</p>
 <p>We have been reducing repeated checks and unnecessary material being read into chats. That may be helping, but I haven’t established why usage looks better. I’m pleased to see it, although it hasn’t resolved the amount of work I’m keeping in mind.</p>
