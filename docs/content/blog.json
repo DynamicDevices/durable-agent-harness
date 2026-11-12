@@ -18,10 +18,11 @@
       "customCard": true,
       "imageAlt": "Portrait-guided generated illustration of Alex reviewing agent chats on a laptop, with the title: I'm getting more done. Why is it stressing me out?",
       "imageDisclosure": "AI-generated illustration of Alex using an approved portrait as a likeness reference. The workspace and chat interface are imagined, not a documentary photograph or exact Codex screenshot. Created with Google Gemini through OpenRouter; CWCW typography added separately.",
-      "imageDisclosureVisible": true,
+      "imageDisclosureVisible": false,
       "body": [
         "I’m finding that I can do much more project work with Briar, the AI assistant I’m building. We work together on software and electronics, and we have several jobs moving at once. But I think I’m running into cognitive overload, switching between them to monitor what’s happening and make sure they stay on track.",
-        "I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. It feels as though I have more in progress than I can comfortably keep track of, even though Briar is doing much of the work. That is what I mean by cognitive overload here: I’m still having to keep the requirements, decisions and unfinished jobs in my head.",
+        "I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. It feels as though I have more in progress than I can comfortably keep track of, even though Briar is doing much of the work.",
+        "We use automation to create and manage shared specification documents and project-management issues, so there is a written record of what we have agreed. But Briar doesn’t always pick up the requirements and decisions recorded there. I still have to remember them and bring them back into the conversation. That is what I mean by cognitive overload here: having the information written down hasn’t stopped me needing to keep it in my head.",
         "I’m wondering whether this way of working also tends to reinforce ADHD behaviours. While I’m waiting for Briar to work on one job, there are always other jobs underway that need checking. I end up jumping between chats to see how each is getting on, with more in progress than I can comfortably keep track of.",
         "This might be a useful way for some people with ADHD to work. Briar could help turn an idea into a first step, keep a record of where we have got to and make it easier to return after doing something else. But I can also see how having several projects available all the time could encourage more switching and leave more work unfinished.",
         "NICE’s ADHD guidance [1] includes shorter periods of focus with movement breaks, reducing distractions and reinforcing verbal requests with written instructions. That doesn’t mean moving to another project is the same as taking a break. Equally, a small laboratory study [2] found lower switching costs in adults with ADHD, so we shouldn’t assume switching is always a disadvantage.",
@@ -69,7 +70,11 @@
         },
         {
           "type": "paragraph",
-          "text": "I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. It feels as though I have more in progress than I can comfortably keep track of, even though Briar is doing much of the work. That is what I mean by cognitive overload here: I’m still having to keep the requirements, decisions and unfinished jobs in my head."
+          "text": "I need to remember what we agreed on each job, what still needs testing and whether Briar has got distracted by something that isn’t needed. When I go back to a chat, I can find myself explaining a requirement again rather than moving the work forward. It feels as though I have more in progress than I can comfortably keep track of, even though Briar is doing much of the work."
+        },
+        {
+          "type": "paragraph",
+          "text": "We use automation to create and manage shared specification documents and project-management issues, so there is a written record of what we have agreed. But Briar doesn’t always pick up the requirements and decisions recorded there. I still have to remember them and bring them back into the conversation. That is what I mean by cognitive overload here: having the information written down hasn’t stopped me needing to keep it in my head."
         },
         {
           "type": "heading",
